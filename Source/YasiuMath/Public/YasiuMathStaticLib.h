@@ -123,8 +123,18 @@ namespace YasiuMath {
 
     namespace Trigonometry {
         /* Spread points on tangent line to arc, angle is in radians. Distance between points is equal to given Spread Distance */
+
+        /**
+         * Spread points on tangent line to arc located by angle and radius of given arc.
+         * Points are moved away from tangent point by spreadDistance
+         * @tparam T 
+         * @param angle 
+         * @param radius 
+         * @param spreadDistance 
+         * @return 
+         */
         template<typename T>
-        std::vector<std::pair<T, T>> SpreadPointsOnArcByAngleRadius( const T angle, const T radius, const T spreadDistance )
+        std::vector<std::pair<T, T>> SpreadPointsOnTangentByAngleRadius( const T angle, const T radius, const T spreadDistance )
         {
             assert(radius > 0);
             assert(spreadDistance > 0);
@@ -161,23 +171,36 @@ namespace YasiuMath {
             return result;
         }
 
-        /* Spread points on tangent line to circle by giving X and Y input */
+        /**
+         * Spread points on tangent line to arc.
+         * XY is tangent point location, and arc center is 0,0.
+         * Points are moved away from tangent point by spreadDistance
+         * @tparam T 
+         * @param X 
+         * @param Y 
+         * @param spreadDistance 
+         * @return 
+         */
         template<typename T>
-        std::vector<std::pair<T, T>> SpreadPointsOnArcByXY( const T X, const T Y, const T spreadDistance )
+        std::vector<std::pair<T, T>> SpreadPointsOnTangentByXY( const T X, const T Y, const T spreadDistance )
         {
             T angle = atan2f(Y, X);
             T radius = sqrtf((X * X) + (Y * Y));
-            return SpreadPointsOnArcByAngleRadius(angle, radius, spreadDistance);
+            return SpreadPointsOnTangentByAngleRadius(angle, radius, spreadDistance);
         }
 
         /*
-         * This function finds radius of circle both line segments end up touch each other ends.
+         * Finds radius of circle for both tangent line that intersect.
          * Tangents on circle are defined by angle Alfa and Beta.
-         * Tangent line distance to meeting point from circle intersection is `width`.
+         * Tangent line distance to meeting point from circle intersection is `symmetricWidth`.
          * Angle is in radians.
+         * 
+         *		sin (alfa) * A  - sin(beta) * b
+         * R = ----------------------------------
+         *		cos(beta) - cos(alfa)
          */
         template<typename T>
-        T FindMinimalRadiusForIntersectingTangentsOnArc( const float alfa, const float beta, const float symmetricWidth )
+        T FindMinimalRadiusForIntersectingTangentsOnArc( const T alfa, const T beta, const T symmetricWidth )
         {
             /*
              *		sin (alfa) * A  - sin(beta) * b
@@ -204,10 +227,10 @@ namespace YasiuMath {
          */
         template<typename T>
         std::pair<T, T> FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric(
-            const float alfa,
-            const float beta,
-            const float widthA,
-            float widthB
+            const T alfa,
+            const T beta,
+            const T widthA,
+            const T widthB
         )
         {
             std::pair<T, T> result;
