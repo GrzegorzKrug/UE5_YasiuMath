@@ -1,24 +1,34 @@
 {
-	"FileVersion": 3,
-	"Version": 1,
-	"VersionName": "1.0",
-	"FriendlyName": "YasiuMath",
-	"Description": "",
-	"Category": "Other",
-	"CreatedBy": "Krug Grzegorz (Youshisu)",
-	"CreatedByURL": "",
-	"DocsURL": "",
-	"MarketplaceURL": "",
-	"SupportURL": "",
-	"CanContainContent": true,
-	"IsBetaVersion": false,
-	"IsExperimentalVersion": false,
-	"Installed": false,
-	"Modules": [
-		{
-			"Name": "YasiuMath",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
-		}
-	]
+  "FileVersion": 1,
+  "Version": 1,
+  "VersionName": "0.4.0",
+  "FriendlyName": "Yasiu Math",
+  "Description": "Math functions library",
+  "Category": "Math",
+  "CreatedBy": "Krug Grzegorz (Youshisu)",
+  "CreatedByURL": "https://github.com/GrzegorzKrug",
+  "DocsURL": "https://github.com/GrzegorzKrug/UE5_YasiuMath/tree/main/Documentation",
+  "FabURL": "https://www.fab.com/listings/6f23ad4c-25b9-4818-a9eb-118e661d3032",
+  "MarketplaceURL": "https://www.fab.com/listings/6f23ad4c-25b9-4818-a9eb-118e661d3032",
+  "SupportURL": "",
+  "CanContainContent": false,
+  "IsBetaVersion": true,
+  "IsExperimentalVersion": false,
+  "Installed": false,
+  "EngineVersion": "5.7",
+  "Modules": [
+    {
+      "Name": "YasiuMath",
+      "Type": "Runtime",
+      "LoadingPhase": "Default",
+      "PlatformAllowList": [
+        "Win64",
+        "Linux",
+        "Mac",
+        "Android",
+        "IOS"
+      ],
+      "PlatformDenyList": []
+    }
+  ]
 }

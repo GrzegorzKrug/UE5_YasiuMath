@@ -4,9 +4,23 @@ using UnrealBuildTool;
 
 public class YasiuMath : ModuleRules
 {
+	public bool bStrictIncludesCheck = false;
+
 	public YasiuMath(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+		if (bStrictIncludesCheck)
+		{
+			bUseUnity = false;
+			PCHUsage = PCHUsageMode.NoPCHs;
+
+			// Enable additional checks used for Engine modules
+			bTreatAsEngineModule = true;
+		}
+
+		// bUseUnity = false;
+		// PCHUsage = ModuleRules.PCHUsageMode.NoPCHs;
+		// bTreatAsEngineModule = true;
 
 		PublicIncludePaths.AddRange(
 			new string[]

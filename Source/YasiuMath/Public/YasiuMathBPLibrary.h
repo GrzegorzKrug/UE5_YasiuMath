@@ -1,8 +1,13 @@
+/** 
+ * Copyright (c) 2025 Grzegorz Krug.
+ * All Rights Reserved.
+ */
 #pragma once
 
 
 #include "CoreMinimal.h"
 #include "Templates/Tuple.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 
 #include "YasiuMathBPLibrary.generated.h"
 
@@ -48,6 +53,7 @@ public:
      * @param symmetricWidth width from tangent point to intersect
      */
     UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trygonometry")
+    //UFUNCTION(BlueprintCallable)
     double FindMinimalRadiusForIntersectingTangentsOnArc( double alfa, double beta, double symmetricWidth );
 
     /**

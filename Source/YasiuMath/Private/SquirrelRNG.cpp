@@ -1,4 +1,10 @@
+/** 
+ * Copyright (c) 2025 Grzegorz Krug.
+ * All Rights Reserved.
+*/
+
 #include "SquirrelRNG.h"
+
 
 //Squirrel13_RNG::Squirrel13_RNG(int position = 0, unsigned int seed = 1) :
 //	m_position{ position }, m_seed{ seed }
@@ -25,7 +31,6 @@ uint32_t USquirrel13_RNG::get_current_random() const
     } else if ( m_variant == 1 ) {
         randomValue = USquirrel13_RNG::RNG_1(m_position, m_seed);
     } else {
-        /// Wrong variant: use default
         randomValue = USquirrel13_RNG::RNG_0(m_position, m_seed);
     }
     return randomValue;
@@ -64,7 +69,13 @@ void USquirrel13_RNG::set_position( int new_position ) { m_position = new_positi
 
 void USquirrel13_RNG::set_seed( int new_seed ) { m_seed = new_seed; }
 
-void USquirrel13_RNG::noiseVariant( int new_variant ) { m_variant = new_variant; }
+void USquirrel13_RNG::noiseVariant( int new_variant )
+{
+    m_variant = new_variant;
+    if (m_variant>3) {
+        /* Todo: Warning Log ?*/
+    }
+}
 
 void USquirrel13_RNG::resetSeedPos()
 {

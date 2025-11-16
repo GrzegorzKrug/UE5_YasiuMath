@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2025 Grzegorz Krug.
+ * All Rights Reserved.
+ */
+
 #pragma once
 //#include <stdint.h>
 // #include <cstdint>
@@ -39,10 +44,9 @@ protected:
     int32 init_seed = 0;
 
 public:
-
     /* Init object */
-    void Init(int seed, int position=0);
-    
+    void Init( int seed, int position = 0 );
+
     /* Return uint32_t without changing position */
     uint32_t get_current_random() const; /// Return uint32_t
 
@@ -50,33 +54,31 @@ public:
     uint32_t get_random();
 
     /* Move position by 1 and return double in range <0, 1> */
-    UFUNCTION(BlueprintCallable)
-    int get_random_int(const int& min, const int& max);
+    UFUNCTION(BlueprintCallable, Category="RNG")
+    int get_random_int( const int& min, const int& max );
 
     /* Return double in range <0, 1> without changing position */
-    UFUNCTION(BlueprintCallable)
-    int get_current_int(const int& min, const int& max) const;
-    
+    UFUNCTION(BlueprintCallable, Category="RNG")
+    int get_current_int( const int& min, const int& max ) const;
+
     /* Move position by 1 and return double in range <0, 1> */
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, Category="RNG")
     double get_random_double();
 
-    /* Return double in range <0, 1> without changing position */
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, Category="RNG")
     double get_current_double() const;
 
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, Category="RNG")
     void set_position( int new_position );
 
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, Category="RNG")
     void set_seed( int new_seed );
 
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, Category="RNG")
     void noiseVariant( int newVariant );
 
-
     /* Reset to initial values */
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, Category="RNG")
     void resetSeedPos();
 
     static uint32_t RNG_0( int position, unsigned int seed );

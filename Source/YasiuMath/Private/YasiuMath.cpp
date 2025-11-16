@@ -1,3 +1,8 @@
+/** 
+ * Copyright (c) 2025 Grzegorz Krug.
+ * All Rights Reserved.
+*/
+
 #include "YasiuMath.h"
 
 #define LOCTEXT_NAMESPACE "FYasiuMathModule"
