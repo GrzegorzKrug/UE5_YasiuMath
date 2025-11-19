@@ -1,16 +1,17 @@
-/**
+/*
  * Copyright (c) 2025 Grzegorz Krug.
  * All Rights Reserved.
  */
 
 #pragma once
-//#include <stdint.h>
-// #include <cstdint>
 #include  "CoreMinimal.h"
 
 #include  "SquirrelRNG.generated.h"
 
 
+/**
+ * @brief Random number generator. Seedable. Gives better random values than epic generator.
+ */
 UCLASS(BlueprintType)
 class YASIUMATH_API USquirrel13_RNG : public UObject {
 public:
@@ -44,42 +45,56 @@ protected:
     int32 init_seed = 0;
 
 public:
-    /* Init object */
-    void Init( int seed, int position = 0 );
+    /**
+     * This function provides access to change private variables for C++ object which is not accessible in Blueprints.
+     * @brief Modify internal values to custom.
+     */
+    UFUNCTION(BlueprintCallable, Category="RNG")
+    void InitBP( int seed, int position = 0 );
 
-    /* Return uint32_t without changing position */
-    uint32_t get_current_random() const; /// Return uint32_t
+    /** @internal Return current uint32_t without changing position */
+    uint32_t get_current_random() const;
 
-    /* Move position by 1 and return uint32_t */
+    /** @internal Move position by 1 and return uint32_t */
     uint32_t get_random();
 
-    /* Move position by 1 and return double in range <0, 1> */
+    /** @brief Move position by 1 and return random value as integer in range <min, max> */
     UFUNCTION(BlueprintCallable, Category="RNG")
-    int get_random_int( const int& min, const int& max );
+    int GetNextInt( int min, int max );
 
-    /* Return double in range <0, 1> without changing position */
+    /** @brief Return random value scaled to integer range <min, max> at current position */
     UFUNCTION(BlueprintCallable, Category="RNG")
-    int get_current_int( const int& min, const int& max ) const;
+    int GetCurrentInt( int min, int max ) const;
 
-    /* Move position by 1 and return double in range <0, 1> */
+    /**
+     * @brief Move position by 1 and return double in range <0, 1>
+     */
     UFUNCTION(BlueprintCallable, Category="RNG")
-    double get_random_double();
+    double GetNextDouble();
 
+    /** @brief Return last random double in range <0, 1> */
     UFUNCTION(BlueprintCallable, Category="RNG")
-    double get_current_double() const;
+    double GetCurrentDouble() const;
 
+    /** @brief Set generator position */
     UFUNCTION(BlueprintCallable, Category="RNG")
-    void set_position( int new_position );
+    void SetPosition( int new_position );
+    
+    /** @brief Offset generator position */
+    UFUNCTION(BlueprintCallable, Category="RNG")
+    void IncrementPosition( int offset=1 );
 
+    /** @brief Set seed noise seed */
     UFUNCTION(BlueprintCallable, Category="RNG")
-    void set_seed( int new_seed );
+    void SetSeed( int new_seed );
+    
+    /** @brief Internal noise variants (it is not initialized), default=0, max=3 */
+    UFUNCTION(BlueprintCallable, Category="RNG")
+    void SetNoiseVariant( int newVariant=0 );
 
+    /** @brief Reset to internal initial values */
     UFUNCTION(BlueprintCallable, Category="RNG")
-    void noiseVariant( int newVariant );
-
-    /* Reset to initial values */
-    UFUNCTION(BlueprintCallable, Category="RNG")
-    void resetSeedPos();
+    void ResetSeedPos();
 
     static uint32_t RNG_0( int position, unsigned int seed );
 
@@ -89,6 +104,6 @@ public:
 
     static uint32_t RNG_3( int position, unsigned int seed );
 
-
-    void Serialize( FArchive& Ar ) override;
+    /** @brief Serialization of RNG Object */
+    virtual void Serialize( FArchive& Ar ) override;
 };

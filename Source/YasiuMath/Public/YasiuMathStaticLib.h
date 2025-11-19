@@ -1,4 +1,4 @@
-/** 
+/* 
  * Copyright (c) 2025 Grzegorz Krug.
  * All Rights Reserved.
  */
@@ -15,9 +15,13 @@
 #include <unordered_set>
 
 
+
 namespace YasiuMath {
+    /**
+     * @brief Helper object, for point description in algorithm
+     */
     template<typename T>
-    struct YASIUMATH_API Point {
+    struct Point {
         T x = 0;
         T y = 0;
 
@@ -44,8 +48,11 @@ namespace YasiuMath {
     };
 
 
+    /**
+     * @brief Helper object, for point description in algorithm
+     */
     template<typename U, typename T>
-    struct YASIUMATH_API IndexedPair {
+    struct IndexedPair {
         U index = 0;
         T first;
         T second;
@@ -72,9 +79,12 @@ namespace YasiuMath {
     };
 
 
-    /* Object 'point' that has its angle related to center */
+    /**
+     * @brief Object 'point' that has its angle related to center.
+     * Helper object, for point description in algorithm
+     */
     template<typename T>
-    struct YASIUMATH_API PointAngle {
+    struct PointAngle {
         int index = 0;
         T angle = 0;
 
@@ -105,6 +115,38 @@ namespace YasiuMath {
     };
 
 
+    /** Collection of functions working with angles */
+    namespace AngleUtils {
+        template<typename T>
+        static inline T Degrees2Radians( T degree )
+        {
+            return std::numbers::pi * degree / 180.f;
+        }
+
+        template<typename T>
+        static inline T Radians2Degrees( T radian )
+        {
+            return radian * 180.f / std::numbers::pi();
+        }
+        
+        /**
+         * Angle normalization removes any excesive amount of periods from its value.
+         * @brief Normalize angle by removing full periods from value, result is in range <0, period>
+         * @warning Does not support negative periods
+         */
+        template<typename T>
+        static  T NormalizeAngleToPeriod( T angle, T period = 360.f )
+        {
+            if ( period < 0 ) { return angle; }
+            auto temp = fmod(angle, period);
+            if ( temp < 0 ) {
+                temp += period;
+            }
+            return temp;
+        }
+    }
+
+
 // public:
     // template<typename T>
     // static std::vector<std::pair<T, T>> SpreadPointsOnArcByXY( const T X, const T Y, const T spreadDistance );
@@ -112,22 +154,11 @@ namespace YasiuMath {
     // template<typename T>
     // static std::vector<std::pair<T, T>> SpreadPointsOnArcByAngleRadius( const T angle, const T radius,
     // const T spreadDistance );
-    template<typename T>
-    YASIUMATH_API inline T Degrees2Radians( T degree )
-    {
-        return std::numbers::pi * degree / 180.f;
-    }
 
-    template<typename T>
-    YASIUMATH_API inline T Radians2Degrees( T radian )
-    {
-        return radian * 180.f / std::numbers::pi();
-    }
-
-
+    /**
+     * @brief Functions that calculate trigonometry problems
+     */
     namespace Trigonometry {
-        /* Spread points on tangent line to arc, angle is in radians. Distance between points is equal to given Spread Distance */
-
         /**
          * Spread points on tangent line to arc located by angle and radius of given arc.
          * Points are moved away from tangent point by spreadDistance
@@ -193,15 +224,24 @@ namespace YasiuMath {
             return SpreadPointsOnTangentByAngleRadius(angle, radius, spreadDistance);
         }
 
-        /*
-         * Finds radius of circle for both tangent line that intersect.
-         * Tangents on circle are defined by angle Alfa and Beta.
-         * Tangent line distance to meeting point from circle intersection is `symmetricWidth`.
-         * Angle is in radians.
+        /**
+         * @brief Finds radius of circle for both tangent line that intersect.
+         * Tangents on circle are defined by angle Alfa and Beta. Where point with angle 0 is has value \f$\{X, 0\}\f$ and goes counter-clockwise
          * 
-         *		sin (alfa) * A  - sin(beta) * b
-         * R = ----------------------------------
-         *		cos(beta) - cos(alfa)
+         * Tangent line distance to meeting point from circle intersection is **symmetricWidth**.
+         * 
+         * Angle is in **radians**.
+         * 
+         *
+         \f[
+         R=\frac{\sin(\alpha)*A-\sin(\beta)*B}{\cos(\beta)-\cos(\alpha)}
+         \f]
+         *		
+         * @tparam T 
+         * @param alfa 
+         * @param beta 
+         * @param symmetricWidth 
+         * @return 
          */
         template<typename T>
         T FindMinimalRadiusForIntersectingTangentsOnArc( const T alfa, const T beta, const T symmetricWidth )
@@ -214,7 +254,7 @@ namespace YasiuMath {
             T angleDiff = fmod(abs(alfa - beta), 360);
             assert(symmetricWidth > 0);
             assert(angleDiff > 0);
-            assert(angleDiff != 180); /// Only place when they don't meet in infinite space
+            assert(angleDiff != 180); // Only place when they don't meet in infinite space
 
             T nominator = symmetricWidth * (sin(alfa) + sin(beta));
             T denominator = cos(beta) - cos(alfa);
@@ -223,11 +263,24 @@ namespace YasiuMath {
             return result;
         }
 
-        /*
-         * This function finds radius of circle both line segments end up touch each other ends.
-         * Tangents on circle are defined by angle Alfa and Beta.
-         * Tangent line distance to meeting point from circle intersection is `width`.
-         * Angle is in radians.
+        /**
+         * @brief Finds radius of 2 circles for both tangent line that intersect.
+         * Tangents on circle are defined by angle Alfa and Beta. Where point with angle 0 is has value \f$\{X, 0\}\f$ and goes counter-clockwise
+         * 
+         * Tangent line distance to meeting point from circle intersection is **symmetricWidth**.
+         * 
+         * Angle is in **radians**.
+         *  
+         \f[
+         R=\frac{\sin(\alpha)*A-\sin(\beta)*B}{\cos(\beta)-\cos(\alpha)}
+         \f]
+         *		
+         * @tparam T 
+         * @param alfa angle of first point
+         * @param beta angle of second point
+         * @param widthA distance for first point
+         * @param widthB distance for second point
+         * @return Pair of distances
          */
         template<typename T>
         std::pair<T, T> FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric(
@@ -279,7 +332,13 @@ namespace YasiuMath {
     }
 
 
+    /**
+     * Collection of convex hull functions
+     */
     namespace ConvexHull {
+        /// @cond INTERNAL
+
+        /* Helper function for convex hull */
         template<typename T>
         inline std::pair<T, T> CalculateVector(
             const std::vector<std::pair<T, T>>& polygonPoints,
@@ -310,7 +369,7 @@ namespace YasiuMath {
             return temp1 - temp2;
         }
 
-        /* Function to check backawrds if any previous points need to be removed */
+        /* Function to check backwards if any previous points need to be removed */
         template<typename T>
         static void CheckHullBackwards(
             std::vector<int>& currentConvex,
@@ -353,6 +412,10 @@ namespace YasiuMath {
             return;
         }
 
+
+        /**
+         * @brief Helper function for convex calculation
+         */
         template<typename T>
         static void AddPointToConvex(
             std::vector<int>& currentConvex,
@@ -371,8 +434,16 @@ namespace YasiuMath {
             // std::cout << " +Hull point added: " << index << "\n";
         };
 
+        /// @endcond 
+
+        /**
+         * Find Convex Hull in 2D space
+         * @tparam T numeric type of points
+         * @param polygonPoints collection of points X,Y
+         * @return Collection of indexes assigned to convex hull in order
+         */
         template<typename T>
-        static std::vector<int> ConvexHull( const std::vector<std::pair<T, T>>& polygonPoints )
+        static std::vector<int> ConvexHull2D( const std::vector<std::pair<T, T>>& polygonPoints )
         {
             if ( polygonPoints.size() == 0 ) {
                 return {};

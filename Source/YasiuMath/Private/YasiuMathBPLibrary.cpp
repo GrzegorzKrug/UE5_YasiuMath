@@ -1,4 +1,4 @@
-/** 
+/*
  * Copyright (c) 2025 Grzegorz Krug.
  * All Rights Reserved.
 */
@@ -7,13 +7,6 @@
 
 #include "YasiuMathStaticLib.h"
 
-// std::vector<std::pair<T, T>> SpreadPointsOnArcByXY( const T X, const T Y, const T spreadDistance )
-//
-// TArray<UYasiuMathFunctionLibrary::GetPoint(const FVector & StartPoint, const FVector & EndPoint, float Alpha)
-// {
-//     /**/
-//     return YasiuMath::Trigonometry::SpreadPointsOnArcByXY<double>()
-// }
 
 void UYasiuMathFunctionLibrary::SpreadPointsOnTangentByXY(
     TArray<FVector2D>& out,
@@ -71,9 +64,14 @@ void UYasiuMathFunctionLibrary::ConvexHull2D( TArray<int>& result, const TArray<
     for ( int i = 0; i < polygonPoints.Num(); i++ ) {
         vect->push_back(std::pair<double, double>{polygonPoints[i].X, polygonPoints[i].Y});
     }
-    std::vector<int> res = YasiuMath::ConvexHull::ConvexHull(*vect);
+    std::vector<int> res = YasiuMath::ConvexHull::ConvexHull2D(*vect);
 
     for ( auto r : res ) {
         result.Add(r);
     }
+}
+
+double UYasiuMathFunctionLibrary::ClipAngleToCycle( double angle, double period )
+{
+    return YasiuMath::AngleUtils::NormalizeAngleToPeriod(angle, period);
 }

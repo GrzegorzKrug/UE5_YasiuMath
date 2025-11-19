@@ -1,4 +1,4 @@
-# Installing the Yasiu Math Plugin
+# Installation of plugin
 
 ## 1. Download and Extract the Plugin
 1. Download the ZIP file containing the plugin.

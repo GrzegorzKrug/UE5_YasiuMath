@@ -1,4 +1,4 @@
-# Runtime Math Library
+# About Math Library
 
 ## Overview
 A compact Unreal Engine 5.0+ runtime library designed to help create game mechanics, procedural content generation and custom tools.
@@ -14,10 +14,14 @@ A compact Unreal Engine 5.0+ runtime library designed to help create game mechan
 ## Components
 
 ### RNG (Random Number Generation)
-- **Squirrel 13**: Seedable random number generator for deterministic procedural generation
+**Squirrel 13**: Seedable random number generator 
+- Gives more random results than unreal random functions
+- Supports deterministic generation
 
 ### Math Utilities
 - **Trigonometry**: Runtime trigonometric functions
 - **Convex Functions**: Mathematical operations for procedural geometry and content generation
 
-*Source code contains complete implementation with detailed explanations for each function.*
+# Documentation
+
+[All functions list](https://grzegorzkrug.github.io/UE5_YasiuMath/functions_func.html)

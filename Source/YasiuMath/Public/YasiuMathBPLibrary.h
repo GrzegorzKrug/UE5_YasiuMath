@@ -1,4 +1,4 @@
-/** 
+/* 
  * Copyright (c) 2025 Grzegorz Krug.
  * All Rights Reserved.
  */
@@ -12,8 +12,11 @@
 #include "YasiuMathBPLibrary.generated.h"
 
 
-UCLASS()
-class YASIUMATH_API UYasiuMathFunctionLibrary : public UBlueprintFunctionLibrary {
+/**
+ * BP Function library having all important functions exposed for BP Editor
+ */
+UCLASS(BlueprintType)
+class UYasiuMathFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 
 public:
@@ -45,15 +48,15 @@ public:
      * Tangents on circle are defined by angle Alfa and Beta.
      * Tangent line distance to meeting point from circle intersection is `symmetricWidth`.
      * Angle is in radians.
-     *		     sin (alfa) * A  - sin(beta) * b
-     *	    R = ----------------------------------
-     *	         cos(beta) - cos(alfa)
+     \f[
+         R=\frac{\sin(\alpha)*A-\sin(\beta)*B}{\cos(\beta)-\cos(\alpha)}
+     \f]
      * @param alfa angle of first tangent
      * @param beta  angle of second tangent
      * @param symmetricWidth width from tangent point to intersect
      */
-    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trygonometry")
-    //UFUNCTION(BlueprintCallable)
+    // UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trigonometry")
+    UFUNCTION(BlueprintCallable)
     double FindMinimalRadiusForIntersectingTangentsOnArc( double alfa, double beta, double symmetricWidth );
 
     /**
@@ -62,6 +65,9 @@ public:
      * Tangent line distance to meeting point from circle intersection is `symmetricWidth`.
      * Angle is in radians.
      * First radius is bigger.
+     \f[
+         R=\frac{\sin(\alpha)*A-\sin(\beta)*B}{\cos(\beta)-\cos(\alpha)}
+     \f]
      * @param alfa 
      * @param beta 
      * @param widthA 
@@ -78,4 +84,10 @@ public:
      */
     UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Convex")
     void ConvexHull2D( TArray<int>& result, const TArray<FVector2D>& polygonPoints );
+
+    /** @brief Normalize angle to its period, to be in range <0, period>
+     *  @warning Does not support negative periods
+     */
+    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Convex")
+    double ClipAngleToCycle( double angle, double period );
 };

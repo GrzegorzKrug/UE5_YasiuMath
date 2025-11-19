@@ -1,0 +1,49 @@
+name: Build Doxygen docs & publish to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main    # run on pushes to main; change as needed
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Doxygen and graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz
+          DOXYGEN_URL=$(curl -s https://api.github.com/repos/doxygen/doxygen/releases/latest \
+            | grep "browser_download_url" \
+            | grep -E linux.*tar \
+            | head -n 1 \
+            | sed -E 's/.*"browser_download_url": "(.*)".*/\1/')
+          wget $DOXYGEN_URL -O doxygen.tar.gz
+          tar -xzf doxygen.tar.gz
+          sudo cp doxygen*/bin/doxygen /usr/local/bin/
+
+      - name: Show Doxygen version
+        run: doxygen --version
+
+      - name: Run Doxygen
+        # Assumes Doxyfile at repo root; generates output to docs/html
+        run: doxygen Doxyfile
+
+      - name: Setup git config
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html
+          publish_branch: gh-pages
+          # optional: keep_history: true
