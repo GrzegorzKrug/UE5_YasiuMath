@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['use_20plugin_0',['How to use plugin',['../md_Documentation_2Usage.html',1,'']]]
+  ['generation_0',['RNG (Random Number Generation)',['../md_Documentation_2About.html#autotoc_md4',1,'']]]
 ];

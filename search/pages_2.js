@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['how_20to_20use_20plugin_0',['How to use plugin',['../md_Documentation_2Usage.html',1,'']]]
+  ['3_20finished_0',['3. Finished!',['../md_Documentation_2Instalation.html#autotoc_md13',1,'']]]
 ];

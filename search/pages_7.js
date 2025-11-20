@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['plugin_0',['plugin',['../md_Documentation_2Usage.html',1,'How to use plugin'],['../md_Documentation_2Instalation.html',1,'Installation of plugin']]]
+  ['enable_20the_20plugin_20in_20unreal_20engine_0',['2. Enable the Plugin in Unreal Engine',['../md_Documentation_2Instalation.html#autotoc_md11',1,'']]],
+  ['engine_1',['2. Enable the Plugin in Unreal Engine',['../md_Documentation_2Instalation.html#autotoc_md11',1,'']]],
+  ['extract_20the_20plugin_2',['1. Download and Extract the Plugin',['../md_Documentation_2Instalation.html#autotoc_md9',1,'']]]
 ];

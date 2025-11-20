@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['blueprints_0',['blueprints',['../md_Documentation_2Usage.html#autotoc_md16',1,'Squirrel RNG in Blueprints'],['../md_Documentation_2Usage.html#autotoc_md15',1,'Use in blueprints']]]
+  ['blueprints_0',['Squirrel RNG in Blueprints',['../md_Documentation_2Usage.html#autotoc_md16',1,'']]],
+  ['blueprints_1',['Use in blueprints',['../md_Documentation_2Usage.html#autotoc_md15',1,'']]]
 ];
