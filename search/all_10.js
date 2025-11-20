@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['object_20to_20variable_20to_20keep_20it_20alive_0',['3. Promote object to variable to keep it alive',['../md_Documentation_2Usage.html#autotoc_md16',1,'']]],
-  ['of_20plugin_1',['Installation of plugin',['../md_Documentation_2Instalation.html',1,'']]],
-  ['overview_2',['Overview',['../md_Documentation_2About.html#autotoc_md1',1,'']]]
+  ['plugin_0',['plugin',['../md_Documentation_2Instalation.html#autotoc_md8',1,'1. Download and Extract the Plugin'],['../md_Documentation_2Usage.html',1,'How to use plugin'],['../md_Documentation_2Instalation.html',1,'Installation of plugin']]],
+  ['plugin_20in_20unreal_20engine_1',['2. Enable the Plugin in Unreal Engine',['../md_Documentation_2Instalation.html#autotoc_md10',1,'']]],
+  ['point_2',['Point',['../structYasiuMath_1_1Point.html',1,'YasiuMath']]],
+  ['pointangle_3',['PointAngle',['../structYasiuMath_1_1PointAngle.html',1,'YasiuMath']]]
 ];

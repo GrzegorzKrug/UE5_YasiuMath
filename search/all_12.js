@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['random_20number_20generation_0',['RNG (Random Number Generation)',['../md_Documentation_2About.html#autotoc_md4',1,'']]],
-  ['resetseedpos_1',['resetSeedPos',['../classUSquirrel13__RNG.html#ae8a47352448d9a73e71c7a1ad38c8358',1,'USquirrel13_RNG']]],
-  ['rng_20in_20blueprints_2',['Squirrel RNG in Blueprints',['../md_Documentation_2Usage.html#autotoc_md15',1,'']]],
-  ['rng_20random_20number_20generation_3',['RNG (Random Number Generation)',['../md_Documentation_2About.html#autotoc_md4',1,'']]]
+  ['serialize_0',['Serialize',['../classUSquirrel13__RNG.html#aa07dc5a65c27876ab25a42c539ce320d',1,'USquirrel13_RNG']]],
+  ['set_5fposition_1',['set_position',['../classUSquirrel13__RNG.html#a0f0dc5e5c0eb70417a2cbb2099109251',1,'USquirrel13_RNG']]],
+  ['set_5fseed_2',['set_seed',['../classUSquirrel13__RNG.html#a5c99ceeb5116dcc82690b21da920576f',1,'USquirrel13_RNG']]],
+  ['spreadpointsontangentbyangleradius_3',['spreadpointsontangentbyangleradius',['../classUYasiuMathFunctionLibrary.html#ae848642257ee1450e2193b015471d56f',1,'UYasiuMathFunctionLibrary::SpreadPointsOnTangentByAngleRadius()'],['../namespaceYasiuMath_1_1Trigonometry.html#a8805107e89bc32cf46f47e1ed3db1e43',1,'YasiuMath::Trigonometry::SpreadPointsOnTangentByAngleRadius()']]],
+  ['spreadpointsontangentbyxy_4',['spreadpointsontangentbyxy',['../classUYasiuMathFunctionLibrary.html#aaea2ff884f7e45dca09b804827e299cc',1,'UYasiuMathFunctionLibrary::SpreadPointsOnTangentByXY()'],['../namespaceYasiuMath_1_1Trigonometry.html#aa7bc14fbaed48606f6c94bc97d46e0a7',1,'YasiuMath::Trigonometry::SpreadPointsOnTangentByXY()']]],
+  ['squirrel_20rng_20in_20blueprints_5',['Squirrel RNG in Blueprints',['../md_Documentation_2Usage.html#autotoc_md15',1,'']]]
 ];

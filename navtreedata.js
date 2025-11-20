@@ -40,9 +40,7 @@ var NAVTREE =
       [ "3. Finished!", "md_Documentation_2Instalation.html#autotoc_md12", null ]
     ] ],
     [ "How to use plugin", "md_Documentation_2Usage.html", [
-      [ "Use in blueprints", "md_Documentation_2Usage.html#autotoc_md14", [
-        [ "3. Promote object to variable to keep it alive", "md_Documentation_2Usage.html#autotoc_md16", null ]
-      ] ],
+      [ "Use in blueprints", "md_Documentation_2Usage.html#autotoc_md14", null ],
       [ "C++", "md_Documentation_2Usage.html#autotoc_md17", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
