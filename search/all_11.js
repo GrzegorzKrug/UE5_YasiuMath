@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['random_20number_20generation_0',['RNG (Random Number Generation)',['../md_Documentation_2About.html#autotoc_md4',1,'']]],
-  ['resetseedpos_1',['resetSeedPos',['../classUSquirrel13__RNG.html#ae8a47352448d9a73e71c7a1ad38c8358',1,'USquirrel13_RNG']]],
-  ['rng_20random_20number_20generation_2',['RNG (Random Number Generation)',['../md_Documentation_2About.html#autotoc_md4',1,'']]]
+  ['plugin_0',['plugin',['../md_Documentation_2Instalation.html#autotoc_md8',1,'1. Download and Extract the Plugin'],['../md_Documentation_2Usage.html',1,'How to use plugin'],['../md_Documentation_2Instalation.html',1,'Installation of plugin']]],
+  ['plugin_20in_20unreal_20engine_1',['2. Enable the Plugin in Unreal Engine',['../md_Documentation_2Instalation.html#autotoc_md10',1,'']]],
+  ['point_2',['Point',['../structYasiuMath_1_1Point.html',1,'YasiuMath']]],
+  ['pointangle_3',['PointAngle',['../structYasiuMath_1_1PointAngle.html',1,'YasiuMath']]],
+  ['promote_20object_20to_20variable_20to_20keep_20it_20alive_4',['3. Promote object to variable to keep it alive',['../md_Documentation_2Usage.html#autotoc_md16',1,'']]]
 ];

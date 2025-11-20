@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Yasiu Math: How to use</title>
+<title>Yasiu Math: How to use plugin</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,13 +97,12 @@ $(document).ready(function(){initNavTree('md_Documentation_2Usage.html',''); ini
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">How to use</div></div>
+  <div class="headertitle"><div class="title">How to use plugin</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md12"></a> </p>
-<h1><a class="anchor" id="autotoc_md13"></a>
-Blueprints</h1>
-<p>To find all available functions:</p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md13"></a> </p>
+<h1><a class="anchor" id="autotoc_md14"></a>
+Use in blueprints</h1>
 <ol type="1">
 <li>Right-click in the Blueprint graph. <br  />
 </li>
@@ -111,18 +110,28 @@ Blueprints</h1>
 </li>
 <li>Select the function you need.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md14"></a>
-Squirrel in Blueprints</h2>
-<p>To spawn the Squirrel object in Blueprints, use: <br  />
- <b>CreateFromClass</b> <br  />
-</p>
-<hr  />
-<h1><a class="anchor" id="autotoc_md16"></a>
-C++ Integration</h1>
-<p>To access Yasiu math utilities or the Squirrel random generator in C++, include the required headers in your files:</p>
+<p><em>All functions from library are located under same category.</em></p>
+<h3><a class="anchor" id="autotoc_md15"></a>
+Squirrel RNG in Blueprints</h3>
+<p>Squirrel Object is not treated as ActorComponent, it has to be spawned from class using node <b>CreateFromClass</b> <br  />
+</p><ol type="1">
+<li>Right-click in the Blueprint graph.</li>
+</ol>
+<ol type="1">
+<li>Search for "Spawn From Class"</li>
+<li>Put <b>Squirrel 13 RNG</b> into class parameter </li>
+</ol>
+<h2><a class="anchor" id="autotoc_md16"></a>
+3. Promote object to variable to keep it alive</h2>
+<h1><a class="anchor" id="autotoc_md17"></a>
+C++</h1>
+<p>To access Yasiu Math utilities or the Squirrel random generator in C++, include the required headers in your files:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;YasiuMathStaticLib.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;SquirrelRNG.h&quot;</span></div>
-</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md18"></a>
+Full documentation</h3>
+<p><a href="https://grzegorzkrug.github.io/UE5_YasiuMath/functions_func.html">Documentation page</a> </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

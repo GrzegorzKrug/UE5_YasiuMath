@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['use_0',['How to use',['../md_Documentation_2Usage.html',1,'']]]
+  ['use_20plugin_0',['How to use plugin',['../md_Documentation_2Usage.html',1,'']]]
 ];
