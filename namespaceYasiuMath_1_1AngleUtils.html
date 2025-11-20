@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Yasiu Math: How to use plugin</title>
+<title>Yasiu Math: YasiuMath::AngleUtils Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('md_Documentation_2Usage.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('namespaceYasiuMath_1_1AngleUtils.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -96,45 +96,70 @@ $(document).ready(function(){initNavTree('md_Documentation_2Usage.html',''); ini
 </div>
 </div>
 
-<div><div class="header">
-  <div class="headertitle"><div class="title">How to use plugin</div></div>
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">YasiuMath::AngleUtils Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md13"></a> </p>
-<h1><a class="anchor" id="autotoc_md14"></a>
-Use in blueprints</h1>
-<ol type="1">
-<li>Right-click in the Blueprint graph. <br  />
-</li>
-<li>Search under the category <b>Math / Yasiu</b>. <br  />
-</li>
-<li>Select the function you need.</li>
-</ol>
-<p><em>All functions from library are located under same category.</em></p>
-<h3><a class="anchor" id="autotoc_md15"></a>
-Squirrel RNG in Blueprints</h3>
-<p>Squirrel Object is not treated as ActorComponent, it has to be spawned from class using node <b>CreateFromClass</b> <br  />
-</p><ol type="1">
-<li>Right-click in the Blueprint graph.</li>
-<li>Search for "Spawn From Class"</li>
-<li>Put <b>Squirrel 13 RNG</b> into class parameter</li>
-<li>Promote object to variable to keep it alive inside actor/component</li>
-</ol>
-<hr  />
-<h1><a class="anchor" id="autotoc_md17"></a>
-C++</h1>
-<p>To access Yasiu Math utilities or the Squirrel random generator in C++, include the required headers in your files:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;YasiuMathStaticLib.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;SquirrelRNG.h&quot;</span></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md18"></a>
-Full documentation</h3>
-<p><a href="https://grzegorzkrug.github.io/UE5_YasiuMath/functions_func.html">All functions list</a> </p>
-</div></div><!-- contents -->
-</div><!-- PageDoc -->
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a7cb27e828328fe16f7fc172e1476bf05" id="r_a7cb27e828328fe16f7fc172e1476bf05"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7cb27e828328fe16f7fc172e1476bf05"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceYasiuMath_1_1AngleUtils.html#a7cb27e828328fe16f7fc172e1476bf05">NormalizeAngle</a> (T angle, T period=360.f)</td></tr>
+<tr class="memdesc:a7cb27e828328fe16f7fc172e1476bf05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize angle to its period, to be in range &lt;0, period&gt;  <br /></td></tr>
+<tr class="separator:a7cb27e828328fe16f7fc172e1476bf05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Collection of functions working with angles </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a7cb27e828328fe16f7fc172e1476bf05" name="a7cb27e828328fe16f7fc172e1476bf05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cb27e828328fe16f7fc172e1476bf05">&#9670;&#160;</a></span>NormalizeAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T YasiuMath::AngleUtils::NormalizeAngle </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>period</em> = <code>360.f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Normalize angle to its period, to be in range &lt;0, period&gt; </p>
+<dl class="section warning"><dt>Warning</dt><dd>Does not support negative periods </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="namespaceYasiuMath.html">YasiuMath</a></li><li class="navelem"><a class="el" href="namespaceYasiuMath_1_1AngleUtils.html">AngleUtils</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

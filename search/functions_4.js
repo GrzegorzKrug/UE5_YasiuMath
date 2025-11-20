@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['noisevariant_0',['noiseVariant',['../classUSquirrel13__RNG.html#a413b5558821dac3378ae999a337dd6c6',1,'USquirrel13_RNG']]]
+  ['normalizeangle_0',['NormalizeAngle',['../namespaceYasiuMath_1_1AngleUtils.html#a7cb27e828328fe16f7fc172e1476bf05',1,'YasiuMath::AngleUtils']]]
 ];

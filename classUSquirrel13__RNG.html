@@ -34,7 +34,7 @@ MathJax.Hub.Config({
   <td id="projectalign">
    <div id="projectname">Yasiu Math<span id="projectnumber">&#160;1</span>
    </div>
-   <div id="projectbrief">Collection of mathematic functions that help create game mechanics and create procedural tools</div>
+   <div id="projectbrief">Collection of mathematic functions that help create game mechanics and procedural tools</div>
   </td>
  </tr>
  </tbody>
@@ -114,50 +114,85 @@ Inheritance diagram for USquirrel13_RNG:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abae8ab11cefe1ebf31d450eaf79760d7" id="r_abae8ab11cefe1ebf31d450eaf79760d7"><td class="memItemLeft" align="right" valign="top"><a id="abae8ab11cefe1ebf31d450eaf79760d7" name="abae8ab11cefe1ebf31d450eaf79760d7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> (int seed, int position=0)</td></tr>
-<tr class="memdesc:abae8ab11cefe1ebf31d450eaf79760d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinitialize object, changes internal initial values. <br /></td></tr>
-<tr class="separator:abae8ab11cefe1ebf31d450eaf79760d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a829c0fdeb2d13525563c873cbcb7d4ea" id="r_a829c0fdeb2d13525563c873cbcb7d4ea"><td class="memItemLeft" align="right" valign="top"><a id="a829c0fdeb2d13525563c873cbcb7d4ea" name="a829c0fdeb2d13525563c873cbcb7d4ea"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_random_int</b> (const int &amp;min, const int &amp;max)</td></tr>
-<tr class="memdesc:a829c0fdeb2d13525563c873cbcb7d4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move position by 1 and return integer in range &lt;min, max&gt; <br /></td></tr>
-<tr class="separator:a829c0fdeb2d13525563c873cbcb7d4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5eb12be516e6ea6c60ea24678e79873a" id="r_a5eb12be516e6ea6c60ea24678e79873a"><td class="memItemLeft" align="right" valign="top"><a id="a5eb12be516e6ea6c60ea24678e79873a" name="a5eb12be516e6ea6c60ea24678e79873a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_current_int</b> (const int &amp;min, const int &amp;max) const</td></tr>
-<tr class="memdesc:a5eb12be516e6ea6c60ea24678e79873a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return last random integer in range &lt;min, max&gt; without changing position. <br /></td></tr>
-<tr class="separator:a5eb12be516e6ea6c60ea24678e79873a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9121d980e1a5f0767dc9d9dbe88fe3b5" id="r_a9121d980e1a5f0767dc9d9dbe88fe3b5"><td class="memItemLeft" align="right" valign="top"><a id="a9121d980e1a5f0767dc9d9dbe88fe3b5" name="a9121d980e1a5f0767dc9d9dbe88fe3b5"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>get_random_double</b> ()</td></tr>
-<tr class="memdesc:a9121d980e1a5f0767dc9d9dbe88fe3b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move position by 1 and return double in range &lt;0, 1&gt; <br /></td></tr>
-<tr class="separator:a9121d980e1a5f0767dc9d9dbe88fe3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a360d282aa898abd105357bfea782001b" id="r_a360d282aa898abd105357bfea782001b"><td class="memItemLeft" align="right" valign="top"><a id="a360d282aa898abd105357bfea782001b" name="a360d282aa898abd105357bfea782001b"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>get_current_double</b> () const</td></tr>
-<tr class="memdesc:a360d282aa898abd105357bfea782001b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return last random double in range &lt;0, 1&gt; <br /></td></tr>
-<tr class="separator:a360d282aa898abd105357bfea782001b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f0dc5e5c0eb70417a2cbb2099109251" id="r_a0f0dc5e5c0eb70417a2cbb2099109251"><td class="memItemLeft" align="right" valign="top"><a id="a0f0dc5e5c0eb70417a2cbb2099109251" name="a0f0dc5e5c0eb70417a2cbb2099109251"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_position</b> (int new_position)</td></tr>
-<tr class="memdesc:a0f0dc5e5c0eb70417a2cbb2099109251"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set generator position. <br /></td></tr>
-<tr class="separator:a0f0dc5e5c0eb70417a2cbb2099109251"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c99ceeb5116dcc82690b21da920576f" id="r_a5c99ceeb5116dcc82690b21da920576f"><td class="memItemLeft" align="right" valign="top"><a id="a5c99ceeb5116dcc82690b21da920576f" name="a5c99ceeb5116dcc82690b21da920576f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_seed</b> (int new_seed)</td></tr>
-<tr class="memdesc:a5c99ceeb5116dcc82690b21da920576f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set seed noise seed. <br /></td></tr>
-<tr class="separator:a5c99ceeb5116dcc82690b21da920576f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a413b5558821dac3378ae999a337dd6c6" id="r_a413b5558821dac3378ae999a337dd6c6"><td class="memItemLeft" align="right" valign="top"><a id="a413b5558821dac3378ae999a337dd6c6" name="a413b5558821dac3378ae999a337dd6c6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>noiseVariant</b> (int newVariant)</td></tr>
-<tr class="memdesc:a413b5558821dac3378ae999a337dd6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change noise variants &lt;0, 4&gt; <br /></td></tr>
-<tr class="separator:a413b5558821dac3378ae999a337dd6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8a47352448d9a73e71c7a1ad38c8358" id="r_ae8a47352448d9a73e71c7a1ad38c8358"><td class="memItemLeft" align="right" valign="top"><a id="ae8a47352448d9a73e71c7a1ad38c8358" name="ae8a47352448d9a73e71c7a1ad38c8358"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetSeedPos</b> ()</td></tr>
-<tr class="memdesc:ae8a47352448d9a73e71c7a1ad38c8358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset to initial values. <br /></td></tr>
-<tr class="separator:ae8a47352448d9a73e71c7a1ad38c8358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7c536d7b9a7f4b0d31d1f45f2952a32" id="r_ae7c536d7b9a7f4b0d31d1f45f2952a32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUSquirrel13__RNG.html#ae7c536d7b9a7f4b0d31d1f45f2952a32">InitBP</a> (int seed, int position=0)</td></tr>
+<tr class="memdesc:ae7c536d7b9a7f4b0d31d1f45f2952a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modify starting values to custom.  <br /></td></tr>
+<tr class="separator:ae7c536d7b9a7f4b0d31d1f45f2952a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a50daf32fabcf27a60abbfe34bdaaa8" id="r_a9a50daf32fabcf27a60abbfe34bdaaa8"><td class="memItemLeft" align="right" valign="top"><a id="a9a50daf32fabcf27a60abbfe34bdaaa8" name="a9a50daf32fabcf27a60abbfe34bdaaa8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>GetNextInt</b> (int min, int max)</td></tr>
+<tr class="memdesc:a9a50daf32fabcf27a60abbfe34bdaaa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move position by 1 and return random value as integer in range &lt;min, max&gt; <br /></td></tr>
+<tr class="separator:a9a50daf32fabcf27a60abbfe34bdaaa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac47d4e2b3d4d284d819e9afc87316440" id="r_ac47d4e2b3d4d284d819e9afc87316440"><td class="memItemLeft" align="right" valign="top"><a id="ac47d4e2b3d4d284d819e9afc87316440" name="ac47d4e2b3d4d284d819e9afc87316440"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>GetCurrentInt</b> (int min, int max) const</td></tr>
+<tr class="memdesc:ac47d4e2b3d4d284d819e9afc87316440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return random value scaled to integer range &lt;min, max&gt; at current position. <br /></td></tr>
+<tr class="separator:ac47d4e2b3d4d284d819e9afc87316440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a859b7ce1974448979b0c74518d43278f" id="r_a859b7ce1974448979b0c74518d43278f"><td class="memItemLeft" align="right" valign="top"><a id="a859b7ce1974448979b0c74518d43278f" name="a859b7ce1974448979b0c74518d43278f"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>GetNextDouble</b> ()</td></tr>
+<tr class="memdesc:a859b7ce1974448979b0c74518d43278f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move position by 1 and return double in range &lt;0, 1&gt; <br /></td></tr>
+<tr class="separator:a859b7ce1974448979b0c74518d43278f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cbc543c399f233c149135a2dd2ae832" id="r_a2cbc543c399f233c149135a2dd2ae832"><td class="memItemLeft" align="right" valign="top"><a id="a2cbc543c399f233c149135a2dd2ae832" name="a2cbc543c399f233c149135a2dd2ae832"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>GetCurrentDouble</b> () const</td></tr>
+<tr class="memdesc:a2cbc543c399f233c149135a2dd2ae832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return last random double in range &lt;0, 1&gt; <br /></td></tr>
+<tr class="separator:a2cbc543c399f233c149135a2dd2ae832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0e0562cf0f6ba8e16b53a21087f96c1" id="r_ad0e0562cf0f6ba8e16b53a21087f96c1"><td class="memItemLeft" align="right" valign="top"><a id="ad0e0562cf0f6ba8e16b53a21087f96c1" name="ad0e0562cf0f6ba8e16b53a21087f96c1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetPosition</b> (int new_position)</td></tr>
+<tr class="memdesc:ad0e0562cf0f6ba8e16b53a21087f96c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set generator position. <br /></td></tr>
+<tr class="separator:ad0e0562cf0f6ba8e16b53a21087f96c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2996fc7b5c833d0d6958931dfc3616a" id="r_ad2996fc7b5c833d0d6958931dfc3616a"><td class="memItemLeft" align="right" valign="top"><a id="ad2996fc7b5c833d0d6958931dfc3616a" name="ad2996fc7b5c833d0d6958931dfc3616a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>IncrementPosition</b> (int offset=1)</td></tr>
+<tr class="memdesc:ad2996fc7b5c833d0d6958931dfc3616a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset generator position. <br /></td></tr>
+<tr class="separator:ad2996fc7b5c833d0d6958931dfc3616a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a678110142e8179cc9f102f5939453d50" id="r_a678110142e8179cc9f102f5939453d50"><td class="memItemLeft" align="right" valign="top"><a id="a678110142e8179cc9f102f5939453d50" name="a678110142e8179cc9f102f5939453d50"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetSeed</b> (int new_seed)</td></tr>
+<tr class="memdesc:a678110142e8179cc9f102f5939453d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set seed noise seed. <br /></td></tr>
+<tr class="separator:a678110142e8179cc9f102f5939453d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2737ccdd5e2cbe962561c180d3f99e36" id="r_a2737ccdd5e2cbe962561c180d3f99e36"><td class="memItemLeft" align="right" valign="top"><a id="a2737ccdd5e2cbe962561c180d3f99e36" name="a2737ccdd5e2cbe962561c180d3f99e36"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetNoiseVariant</b> (int newVariant=0)</td></tr>
+<tr class="memdesc:a2737ccdd5e2cbe962561c180d3f99e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal noise variants (it is not initialized), default=0, max=3. <br /></td></tr>
+<tr class="separator:a2737ccdd5e2cbe962561c180d3f99e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d3850b06314b050b1adba64c1669373" id="r_a1d3850b06314b050b1adba64c1669373"><td class="memItemLeft" align="right" valign="top"><a id="a1d3850b06314b050b1adba64c1669373" name="a1d3850b06314b050b1adba64c1669373"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ResetSeedPos</b> ()</td></tr>
+<tr class="memdesc:a1d3850b06314b050b1adba64c1669373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset to internal initial values. <br /></td></tr>
+<tr class="separator:a1d3850b06314b050b1adba64c1669373"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa07dc5a65c27876ab25a42c539ce320d" id="r_aa07dc5a65c27876ab25a42c539ce320d"><td class="memItemLeft" align="right" valign="top"><a id="aa07dc5a65c27876ab25a42c539ce320d" name="aa07dc5a65c27876ab25a42c539ce320d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Serialize</b> (FArchive &amp;Ar) override</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Serialize</b> (FArchive &amp;Ar) override</td></tr>
 <tr class="memdesc:aa07dc5a65c27876ab25a42c539ce320d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization of RNG Object. <br /></td></tr>
 <tr class="separator:aa07dc5a65c27876ab25a42c539ce320d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Copyright (c) 2025 Grzegorz Krug. All Rights Reserved. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae7c536d7b9a7f4b0d31d1f45f2952a32" name="ae7c536d7b9a7f4b0d31d1f45f2952a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c536d7b9a7f4b0d31d1f45f2952a32">&#9670;&#160;</a></span>InitBP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void USquirrel13_RNG::InitBP </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>seed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>position</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Modify starting values to custom. </p>
+<p>This function provides access to change private variables for C++ object that is not accessible in Blueprints. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>Source/YasiuMath/Public/<a class="el" href="SquirrelRNG_8h_source.html">SquirrelRNG.h</a></li>
 <li>Source/YasiuMath/Private/<b>SquirrelRNG.cpp</b></li>
 </ul>

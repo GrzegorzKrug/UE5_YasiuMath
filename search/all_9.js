@@ -1,8 +1,8 @@
 var searchData=
 [
   ['generation_0',['RNG (Random Number Generation)',['../md_Documentation_2About.html#autotoc_md4',1,'']]],
-  ['get_5fcurrent_5fdouble_1',['get_current_double',['../classUSquirrel13__RNG.html#a360d282aa898abd105357bfea782001b',1,'USquirrel13_RNG']]],
-  ['get_5fcurrent_5fint_2',['get_current_int',['../classUSquirrel13__RNG.html#a5eb12be516e6ea6c60ea24678e79873a',1,'USquirrel13_RNG']]],
-  ['get_5frandom_5fdouble_3',['get_random_double',['../classUSquirrel13__RNG.html#a9121d980e1a5f0767dc9d9dbe88fe3b5',1,'USquirrel13_RNG']]],
-  ['get_5frandom_5fint_4',['get_random_int',['../classUSquirrel13__RNG.html#a829c0fdeb2d13525563c873cbcb7d4ea',1,'USquirrel13_RNG']]]
+  ['getcurrentdouble_1',['GetCurrentDouble',['../classUSquirrel13__RNG.html#a2cbc543c399f233c149135a2dd2ae832',1,'USquirrel13_RNG']]],
+  ['getcurrentint_2',['GetCurrentInt',['../classUSquirrel13__RNG.html#ac47d4e2b3d4d284d819e9afc87316440',1,'USquirrel13_RNG']]],
+  ['getnextdouble_3',['GetNextDouble',['../classUSquirrel13__RNG.html#a859b7ce1974448979b0c74518d43278f',1,'USquirrel13_RNG']]],
+  ['getnextint_4',['GetNextInt',['../classUSquirrel13__RNG.html#a9a50daf32fabcf27a60abbfe34bdaaa8',1,'USquirrel13_RNG']]]
 ];

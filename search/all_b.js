@@ -2,7 +2,8 @@ var searchData=
 [
   ['in_20blueprints_0',['in blueprints',['../md_Documentation_2Usage.html#autotoc_md15',1,'Squirrel RNG in Blueprints'],['../md_Documentation_2Usage.html#autotoc_md14',1,'Use in blueprints']]],
   ['in_20unreal_20engine_1',['2. Enable the Plugin in Unreal Engine',['../md_Documentation_2Instalation.html#autotoc_md10',1,'']]],
-  ['indexedpair_2',['IndexedPair',['../structYasiuMath_1_1IndexedPair.html',1,'YasiuMath']]],
-  ['init_3',['Init',['../classUSquirrel13__RNG.html#abae8ab11cefe1ebf31d450eaf79760d7',1,'USquirrel13_RNG']]],
-  ['installation_20of_20plugin_4',['Installation of plugin',['../md_Documentation_2Instalation.html',1,'']]]
+  ['incrementposition_2',['IncrementPosition',['../classUSquirrel13__RNG.html#ad2996fc7b5c833d0d6958931dfc3616a',1,'USquirrel13_RNG']]],
+  ['indexedpair_3',['IndexedPair',['../structYasiuMath_1_1IndexedPair.html',1,'YasiuMath']]],
+  ['initbp_4',['InitBP',['../classUSquirrel13__RNG.html#ae7c536d7b9a7f4b0d31d1f45f2952a32',1,'USquirrel13_RNG']]],
+  ['installation_20of_20plugin_5',['Installation of plugin',['../md_Documentation_2Instalation.html',1,'']]]
 ];

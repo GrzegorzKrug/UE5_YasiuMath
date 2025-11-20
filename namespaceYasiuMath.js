@@ -1,5 +1,8 @@
 var namespaceYasiuMath =
 [
+    [ "AngleUtils", "namespaceYasiuMath_1_1AngleUtils.html", [
+      [ "NormalizeAngle", "namespaceYasiuMath_1_1AngleUtils.html#a7cb27e828328fe16f7fc172e1476bf05", null ]
+    ] ],
     [ "ConvexHull", "namespaceYasiuMath_1_1ConvexHull.html", [
       [ "ConvexHull2D", "namespaceYasiuMath_1_1ConvexHull.html#a9398ebbd4067e31a89e077464565ae0a", null ]
     ] ],
