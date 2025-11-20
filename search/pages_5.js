@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['of_20plugin_0',['Installation of plugin',['../md_Documentation_2Instalation.html',1,'']]]
+  ['math_20library_0',['About Math Library',['../md_Documentation_2About.html',1,'']]]
 ];
