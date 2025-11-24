@@ -45,7 +45,7 @@ var NAVTREEINDEX0 =
 "md_Documentation_2Instalation.html#autotoc_md8":[1,0],
 "md_Documentation_2Usage.html":[2],
 "md_Documentation_2Usage.html#autotoc_md14":[2,0],
-"md_Documentation_2Usage.html#autotoc_md17":[2,1],
+"md_Documentation_2Usage.html#autotoc_md18":[2,1],
 "namespaceYasiuMath_1_1AngleUtils.html":[3,0,0,0],
 "namespaceYasiuMath_1_1AngleUtils.html#a9b871900e7139385e6e4c9a7a099a96a":[3,0,0,0,0],
 "namespaceYasiuMath_1_1ConvexHull.html":[3,0,0,2],

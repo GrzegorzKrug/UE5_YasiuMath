@@ -165,8 +165,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Find points that create convex hull in 2D Space </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">result</td><td>result array with point indexes </td></tr>
-    <tr><td class="paramname">polygonPoints</td><td>Points in 2D Space </td></tr>
+    <tr><td class="paramname">result</td><td>Result array of input point indexes </td></tr>
+    <tr><td class="paramname">polygonPoints</td><td>Array of points in 2D Space </td></tr>
   </table>
   </dd>
 </dl>
@@ -202,9 +202,9 @@ Public Member Functions</h2></td></tr>
 </p>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">alfa</td><td>angle of first tangent </td></tr>
-    <tr><td class="paramname">beta</td><td>angle of second tangent </td></tr>
-    <tr><td class="paramname">symmetricWidth</td><td>width from tangent point to intersect </td></tr>
+    <tr><td class="paramname">alfa</td><td>Tangent point location defined by angle </td></tr>
+    <tr><td class="paramname">beta</td><td>Tangent point location defined by angle </td></tr>
+    <tr><td class="paramname">symmetricWidth</td><td>Width from tangent point to intersect </td></tr>
   </table>
   </dd>
 </dl>
@@ -245,10 +245,10 @@ Public Member Functions</h2></td></tr>
 </p>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">alfa</td><td></td></tr>
-    <tr><td class="paramname">beta</td><td></td></tr>
-    <tr><td class="paramname">widthA</td><td></td></tr>
-    <tr><td class="paramname">widthB</td><td></td></tr>
+    <tr><td class="paramname">alfa</td><td>Tangent point location defined by angle </td></tr>
+    <tr><td class="paramname">beta</td><td>Tangent point location defined by angle </td></tr>
+    <tr><td class="paramname">widthA</td><td>Distance from intersection for point A </td></tr>
+    <tr><td class="paramname">widthB</td><td>Distance from intersection for point B </td></tr>
   </table>
   </dd>
 </dl>
@@ -284,17 +284,11 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Spread points on tangent line to arc located by angle and radius of given arc. Points are moved away from tangent point by spreadDistance </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Spread points on tangent line to arc located by angle and radius of given arc. Points are moved away from tangent point by spreadDistance </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">angle</td><td></td></tr>
-    <tr><td class="paramname">radius</td><td></td></tr>
-    <tr><td class="paramname">spreadDistance</td><td></td></tr>
+    <tr><td class="paramname">angle</td><td>Tangent location defined by angle </td></tr>
+    <tr><td class="paramname">radius</td><td>Radius of arc </td></tr>
+    <tr><td class="paramname">spreadDistance</td><td>Distance to spread in one direction from tangent point </td></tr>
   </table>
   </dd>
 </dl>
@@ -332,10 +326,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">out</td><td></td></tr>
-    <tr><td class="paramname">X</td><td></td></tr>
-    <tr><td class="paramname">Y</td><td></td></tr>
-    <tr><td class="paramname">spreadDistance</td><td></td></tr>
+    <tr><td class="paramname">out</td><td>Result Array </td></tr>
+    <tr><td class="paramname">X</td><td>Position X </td></tr>
+    <tr><td class="paramname">Y</td><td>Position Y </td></tr>
+    <tr><td class="paramname">spreadDistance</td><td>Distance to spread in one direction from tangent point </td></tr>
   </table>
   </dd>
 </dl>

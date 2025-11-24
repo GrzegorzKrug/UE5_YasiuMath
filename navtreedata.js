@@ -41,7 +41,7 @@ var NAVTREE =
     ] ],
     [ "How to use plugin", "md_Documentation_2Usage.html", [
       [ "Use in blueprints", "md_Documentation_2Usage.html#autotoc_md14", null ],
-      [ "C++", "md_Documentation_2Usage.html#autotoc_md17", null ]
+      [ "C++", "md_Documentation_2Usage.html#autotoc_md18", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
