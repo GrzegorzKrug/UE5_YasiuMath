@@ -22,24 +22,23 @@ class UYasiuMathFunctionLibrary : public UBlueprintFunctionLibrary {
 public:
     /**
      * 
-     * @param out 
-     * @param X 
-     * @param Y 
-     * @param spreadDistance 
+     * @param out Result Array
+     * @param X Position X
+     * @param Y Position Y
+     * @param spreadDistance Distance to spread in one direction from tangent point
      */
-    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trygonometry")
+    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trigonometry")
     void SpreadPointsOnTangentByXY( TArray<FVector2D>& out, const double X, const double Y, const double spreadDistance );
 
     /**
      * Spread points on tangent line to arc located by angle and radius of given arc.
      * Points are moved away from tangent point by spreadDistance
-     * @tparam T 
-     * @param angle 
-     * @param radius 
-     * @param spreadDistance 
+     * @param angle Tangent location defined by angle
+     * @param radius Radius of arc
+     * @param spreadDistance Distance to spread in one direction from tangent point
      * @return 
      */
-    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trygonometry")
+    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trigonometry")
     void SpreadPointsOnTangentByAngleRadius( TArray<FVector2D>& out, double angle, double radius, double spreadDistance );
 
 
@@ -51,12 +50,11 @@ public:
      \f[
          R=\frac{\sin(\alpha)*A-\sin(\beta)*B}{\cos(\beta)-\cos(\alpha)}
      \f]
-     * @param alfa angle of first tangent
-     * @param beta  angle of second tangent
-     * @param symmetricWidth width from tangent point to intersect
+     * @param alfa Tangent point location defined by angle
+     * @param beta Tangent point location defined by angle
+     * @param symmetricWidth Width from tangent point to intersect
      */
-    // UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trigonometry")
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trigonometry")
     double FindMinimalRadiusForIntersectingTangentsOnArc( double alfa, double beta, double symmetricWidth );
 
     /**
@@ -68,19 +66,19 @@ public:
      \f[
          R=\frac{\sin(\alpha)*A-\sin(\beta)*B}{\cos(\beta)-\cos(\alpha)}
      \f]
-     * @param alfa 
-     * @param beta 
-     * @param widthA 
-     * @param widthB 
+     * @param alfa Tangent point location defined by angle
+     * @param beta Tangent point location defined by angle
+     * @param widthA Distance from intersection for point A
+     * @param widthB Distance from intersection for point B
      * @return 
      */
-    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trygonometry")
+    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trigonometry")
     FVector2D FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric( double alfa, double beta, double widthA, double widthB );
 
     /**
      * Find points that create convex hull in 2D Space
-     * @param result result array with point indexes
-     * @param polygonPoints Points in 2D Space
+     * @param result Result array of input point indexes
+     * @param polygonPoints Array of points in 2D Space
      */
     UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Convex")
     void ConvexHull2D( TArray<int>& result, const TArray<FVector2D>& polygonPoints );

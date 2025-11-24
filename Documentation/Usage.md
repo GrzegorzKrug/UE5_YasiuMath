@@ -7,6 +7,11 @@
 
 *All functions from library are located under same category.*
 
+### Functions accessible in BP
+
+[BP Function library](https://grzegorzkrug.github.io/UE5_YasiuMath/classUYasiuMathFunctionLibrary.html)
+
+
 ### Squirrel RNG in Blueprints
 Squirrel Object is not treated as ActorComponent, it has to be spawned from class using node
  **CreateFromClass**  
@@ -14,6 +19,7 @@ Squirrel Object is not treated as ActorComponent, it has to be spawned from clas
 2. Search for "Spawn From Class"
 3. Put **Squirrel 13 RNG** into class parameter
 4. Promote object to variable to keep it alive inside actor/component
+
 
 ---
 
