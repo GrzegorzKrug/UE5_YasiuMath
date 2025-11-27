@@ -1,15 +1,13 @@
 # How to use plugin
 
-# Use in blueprints
+## Use in blueprints
 1. Right-click in the Blueprint graph.  
 2. Search under the category **Math / Yasiu**.  
 3. Select the function you need.
 
 *All functions from library are located under same category.*
 
-### Functions accessible in BP
-
-[BP Function library](https://grzegorzkrug.github.io/UE5_YasiuMath/classUYasiuMathFunctionLibrary.html)
+[Functions accessible in BP](https://grzegorzkrug.github.io/UE5_YasiuMath/classUYasiuMathFunctionLibrary.html)
 
 
 ### Squirrel RNG in Blueprints
@@ -23,13 +21,21 @@ Squirrel Object is not treated as ActorComponent, it has to be spawned from clas
 
 ---
 
-# C++
-To access Yasiu Math utilities or the Squirrel random generator in C++, include the required headers in your files:
-
+## C++
+To access math functions add include in your file:
 ```cpp
 #include "YasiuMathStaticLib.h"
+```
+Functions are nested in name spaces: [List of functions in C++](https://grzegorzkrug.github.io/UE5_YasiuMath/namespacemembers_func.html)
+
+---
+To access the Squirrel random generator in C++, add include in your file:
+```cpp
 #include "SquirrelRNG.h"
 ```
-
-### Full documentation
-[All functions list](https://grzegorzkrug.github.io/UE5_YasiuMath/functions_func.html)
+It is **UObject**, so it must comply with unreal eninge rules for objects lifecycle.
+Store ref value as any UObject if you want it to persist in game for longer.
+```cpp
+UPROPERTY()
+TObjectPtr<USquirrel13_RNG> rng;  /* uninitialized */
+```

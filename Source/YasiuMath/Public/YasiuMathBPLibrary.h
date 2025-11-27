@@ -22,10 +22,10 @@ class UYasiuMathFunctionLibrary : public UBlueprintFunctionLibrary {
 public:
     /**
      * 
-     * @param out Result Array
      * @param X Position X
      * @param Y Position Y
      * @param spreadDistance Distance to spread in one direction from tangent point
+     * @returns **TArray** of 2 points
      */
     UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trigonometry")
     void SpreadPointsOnTangentByXY( TArray<FVector2D>& out, const double X, const double Y, const double spreadDistance );
@@ -36,7 +36,7 @@ public:
      * @param angle Tangent location defined by angle
      * @param radius Radius of arc
      * @param spreadDistance Distance to spread in one direction from tangent point
-     * @return 
+     * @returns **TArray** of 2 points
      */
     UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trigonometry")
     void SpreadPointsOnTangentByAngleRadius( TArray<FVector2D>& out, double angle, double radius, double spreadDistance );

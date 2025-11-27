@@ -15,7 +15,6 @@
 #include <unordered_set>
 
 
-
 namespace YasiuMath {
     /**
      * @brief Helper object, for point description in algorithm
@@ -118,27 +117,27 @@ namespace YasiuMath {
     /** Collection of functions working with angles */
     namespace AngleUtils {
         template<typename T>
-        static inline T Degrees2Radians( T degree )
+        static inline double Degrees2Radians( T degree )
         {
-            return std::numbers::pi * degree / 180.f;
+            return static_cast<T>(std::numbers::pi * degree / 180.f);
         }
 
         template<typename T>
         static inline T Radians2Degrees( T radian )
         {
-            return radian * 180.f / std::numbers::pi();
+            return static_cast<T>(radian * 180.f / std::numbers::pi);
         }
-        
+
         /**
-         * Angle normalization removes any excesive amount of periods from its value.
+         * Angle normalization removes any excessive amount of periods from its value.
          * @brief Normalize angle by removing full periods from value, result is in range <0, period>
          * @warning Does not support negative periods
          */
         template<typename T>
-        static  T NormalizeAngleToPeriod( T angle, T period = 360.f )
+        static T NormalizeAngleToPeriod( T angle, T period = 360.f )
         {
             if ( period < 0 ) { return angle; }
-            auto temp = fmod(angle, period);
+            T temp = static_cast<T>(fmod(angle, period));
             if ( temp < 0 ) {
                 temp += period;
             }
@@ -336,7 +335,7 @@ namespace YasiuMath {
      * Collection of convex hull functions
      */
     namespace ConvexHull {
-        /// @cond INTERNAL
+        /* @cond INTERNAL */
 
         /* Helper function for convex hull */
         template<typename T>
@@ -434,7 +433,7 @@ namespace YasiuMath {
             // std::cout << " +Hull point added: " << index << "\n";
         };
 
-        /// @endcond 
+        /* @endcond */
 
         /**
          * Find Convex Hull in 2D space
