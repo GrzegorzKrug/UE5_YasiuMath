@@ -27,21 +27,23 @@ var NAVTREE =
   [ "Yasiu Math", "index.html", [
     [ "About Math Library", "md_Documentation_2About.html", [
       [ "Overview", "md_Documentation_2About.html#autotoc_md1", null ],
-      [ "Features", "md_Documentation_2About.html#autotoc_md2", null ],
-      [ "Components", "md_Documentation_2About.html#autotoc_md3", [
-        [ "RNG (Random Number Generation)", "md_Documentation_2About.html#autotoc_md4", null ],
-        [ "Math Utilities", "md_Documentation_2About.html#autotoc_md5", null ]
+      [ "Features", "md_Documentation_2About.html#autotoc_md3", null ],
+      [ "Components", "md_Documentation_2About.html#autotoc_md5", [
+        [ "RNG (Random Number Generation)", "md_Documentation_2About.html#autotoc_md6", null ],
+        [ "Math Utilities", "md_Documentation_2About.html#autotoc_md7", null ]
       ] ],
-      [ "Documentation", "md_Documentation_2About.html#autotoc_md6", null ]
+      [ "Documentation", "md_Documentation_2About.html#autotoc_md9", null ]
     ] ],
     [ "Installation of plugin", "md_Documentation_2Instalation.html", [
-      [ "1. Download and Extract the Plugin", "md_Documentation_2Instalation.html#autotoc_md8", null ],
-      [ "2. Enable the Plugin in Unreal Engine", "md_Documentation_2Instalation.html#autotoc_md10", null ],
-      [ "3. Finished!", "md_Documentation_2Instalation.html#autotoc_md12", null ]
+      [ "1. Download and Extract the Plugin", "md_Documentation_2Instalation.html#autotoc_md11", null ],
+      [ "2. Enable the Plugin in Unreal Engine", "md_Documentation_2Instalation.html#autotoc_md13", null ],
+      [ "3. Finished!", "md_Documentation_2Instalation.html#autotoc_md15", null ]
     ] ],
     [ "How to use plugin", "md_Documentation_2Usage.html", [
-      [ "Use in blueprints", "md_Documentation_2Usage.html#autotoc_md14", null ],
-      [ "C++", "md_Documentation_2Usage.html#autotoc_md18", null ]
+      [ "Use in blueprints", "md_Documentation_2Usage.html#autotoc_md17", [
+        [ "Squirrel RNG in Blueprints", "md_Documentation_2Usage.html#autotoc_md18", null ]
+      ] ],
+      [ "C++", "md_Documentation_2Usage.html#autotoc_md20", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

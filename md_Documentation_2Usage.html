@@ -99,8 +99,8 @@ $(function(){initNavTree('md_Documentation_2Usage.html','',''); });
   <div class="headertitle"><div class="title">How to use plugin </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md13"></a></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md16"></a></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 Use in blueprints</h1>
 <ol type="1">
 <li>Right-click in the Blueprint graph. <br  />
@@ -110,11 +110,9 @@ Use in blueprints</h1>
 <li>Select the function you need.</li>
 </ol>
 <p><em>All functions from library are located under same category.</em></p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
-Functions accessible in BP</h3>
-<p><a href="https://grzegorzkrug.github.io/UE5_YasiuMath/classUYasiuMathFunctionLibrary.html">BP Function library</a></p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
-Squirrel RNG in Blueprints</h3>
+<p><a href="https://grzegorzkrug.github.io/UE5_YasiuMath/classUYasiuMathFunctionLibrary.html">Functions accessible in BP</a></p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+Squirrel RNG in Blueprints</h2>
 <p>Squirrel Object is not treated as ActorComponent, it has to be spawned from class using node <b>CreateFromClass</b> <br  />
 </p><ol type="1">
 <li>Right-click in the Blueprint graph.</li>
@@ -123,15 +121,16 @@ Squirrel RNG in Blueprints</h3>
 <li>Promote object to variable to keep it alive inside actor/component</li>
 </ol>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
 C++</h1>
-<p>To access Yasiu Math utilities or the Squirrel random generator in C++, include the required headers in your files:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;YasiuMathStaticLib.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;SquirrelRNG.h&quot;</span></div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
-Full documentation</h3>
-<p><a href="https://grzegorzkrug.github.io/UE5_YasiuMath/functions_func.html">All functions list</a> </p>
-</div></div><!-- contents -->
+<p>To access math functions add include in your file: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;YasiuMathStaticLib.h&quot;</span></div>
+</div><!-- fragment --><p> Functions are nested in name spaces: <a href="https://grzegorzkrug.github.io/UE5_YasiuMath/namespacemembers_func.html">List of functions in C++</a></p>
+<hr  />
+<p> To access the Squirrel random generator in C++, add include in your file: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;SquirrelRNG.h&quot;</span></div>
+</div><!-- fragment --><p> It is <b>UObject</b>, so it must comply with unreal eninge rules for objects lifecycle. Store ref value as any UObject if you want it to persist in game for longer. </p><div class="fragment"><div class="line">UPROPERTY()</div>
+<div class="line">TObjectPtr&lt;<a class="code hl_class" href="classUSquirrel13__RNG.html">USquirrel13_RNG</a>&gt; rng;  <span class="comment">/* uninitialized */</span></div>
+<div class="ttc" id="aclassUSquirrel13__RNG_html"><div class="ttname"><a href="classUSquirrel13__RNG.html">USquirrel13_RNG</a></div><div class="ttdoc">Random number generator. Seedable. Gives better random values than epic generator.</div><div class="ttdef"><b>Definition</b> SquirrelRNG.h:16</div></div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
