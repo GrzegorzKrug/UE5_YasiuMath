@@ -20,11 +20,14 @@ uint32_t USquirrel13_RNG::get_current_random() const
 
     if ( m_variant == 3 ) {
         randomValue = USquirrel13_RNG::RNG_3(m_position, m_seed);
-    } else if ( m_variant == 2 ) {
+    }
+    else if ( m_variant == 2 ) {
         randomValue = USquirrel13_RNG::RNG_2(m_position, m_seed);
-    } else if ( m_variant == 1 ) {
+    }
+    else if ( m_variant == 1 ) {
         randomValue = USquirrel13_RNG::RNG_1(m_position, m_seed);
-    } else {
+    }
+    else {
         randomValue = USquirrel13_RNG::RNG_0(m_position, m_seed);
     }
     return randomValue;

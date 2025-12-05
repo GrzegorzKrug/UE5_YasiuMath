@@ -2,15 +2,17 @@
  * Copyright (c) 2025 Grzegorz Krug.
  * All Rights Reserved.
  */
+/// \file
+
 #pragma once
 
 #include <vector>
 #include <cassert>
 #include <numbers>
 #include <cmath>
-#include <iostream>
-#include <math.h>
-#include <ostream>
+// #include <iostream>
+// #include <math.h>
+// #include <ostream>
 #include <algorithm>
 #include <unordered_set>
 
@@ -34,7 +36,8 @@ namespace YasiuMath {
         {
             if ( x == 0.f ) {
                 return y;
-            } else {
+            }
+            else {
                 return static_cast<T>(atan2(y, x));
             }
         }
@@ -114,7 +117,7 @@ namespace YasiuMath {
     };
 
 
-    /** Collection of functions working with angles */
+    /** @brief Collection of functions working with angles and rotation */
     namespace AngleUtils {
         template<typename T>
         static inline double Degrees2Radians( T degree )
@@ -155,7 +158,7 @@ namespace YasiuMath {
     // const T spreadDistance );
 
     /**
-     * @brief Functions that calculate trigonometry problems
+     * @brief Functions that calculate trigonometry problems in 2D / 3D space
      */
     namespace Trigonometry {
         /**
@@ -312,16 +315,19 @@ namespace YasiuMath {
                 if ( radius1 > radius2 ) {
                     result.first = radius1;
                     result.second = radius2;
-                } else {
+                }
+                else {
                     result.first = radius2;
                     result.second = radius1;
                 }
-            } else {
+            }
+            else {
                 /* Pack shorter radius to first */
                 if ( radius1 < radius2 ) {
                     result.first = radius1;
                     result.second = radius2;
-                } else {
+                }
+                else {
                     result.first = radius2;
                     result.second = radius1;
                 }
@@ -332,11 +338,10 @@ namespace YasiuMath {
 
 
     /**
-     * Collection of convex hull functions
+     * @brief Collection of convex hull functions and helper functions
      */
     namespace ConvexHull {
         /* @cond INTERNAL */
-
         /* Helper function for convex hull */
         template<typename T>
         inline std::pair<T, T> CalculateVector(
@@ -388,7 +393,8 @@ namespace YasiuMath {
                     currentConvex.at(currentConvex.size() - 1)
                 );
                 cross = Cross<T>(vec1, vec2);
-            } else {
+            }
+            else {
                 std::pair<T, T> vec1 = CalculateVector<T>(
                     allPoints,
                     currentConvex.at(currentConvex.size() - 1),
@@ -405,7 +411,8 @@ namespace YasiuMath {
                 currentConvex.pop_back();
                 // std::cout << "	  Last element now: " << currentConvex.at(currentConvex.size() - 1) << "\n";
                 CheckHullBackwards(currentConvex, checkIndex, allPoints, clockWise);
-            } else {
+            }
+            else {
                 // std::cout << " Checked pt: " << checkIndex << "\n";
             }
             return;
@@ -446,9 +453,11 @@ namespace YasiuMath {
         {
             if ( polygonPoints.size() == 0 ) {
                 return {};
-            } else if ( polygonPoints.size() == 1 ) {
+            }
+            else if ( polygonPoints.size() == 1 ) {
                 return {0};
-            } else if ( polygonPoints.size() == 2 ) {
+            }
+            else if ( polygonPoints.size() == 2 ) {
                 return {0, 1};
             }
 
@@ -487,9 +496,11 @@ namespace YasiuMath {
                 // std::cout << "Comparing angle(" << point.index << "): " << angle << " < " << angleThreshold << "\n";
                 if ( point.first == top.first && point.first == bottom.second ) {
                     /* Ignore */
-                } else if ( angle > angleThreshold ) {
+                }
+                else if ( angle > angleThreshold ) {
                     pointsOnLeft.emplace_back(point.index, angle);
-                } else {
+                }
+                else {
                     pointsOnRight.emplace_back(point.index, angle);
                 }
             }

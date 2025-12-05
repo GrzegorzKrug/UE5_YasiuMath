@@ -2,8 +2,10 @@
  * Copyright (c) 2025 Grzegorz Krug.
  * All Rights Reserved.
  */
-#pragma once
 
+/// \file
+
+#pragma once
 
 #include "CoreMinimal.h"
 #include "Templates/Tuple.h"
@@ -88,4 +90,13 @@ public:
      */
     UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Convex")
     double ClipAngleToCycle( double angle, double period );
+
+    /**
+     * Rotate Box and calculate new bounding box along same axes to fix old box inside.
+     * @param BoxSize 
+     * @param rotation 
+     * @return 
+     */
+    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Angle")
+    FVector RotateBoundingBox( const FVector& BoxSize, const FQuat& rotation );
 };

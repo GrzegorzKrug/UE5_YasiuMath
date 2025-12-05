@@ -28,7 +28,13 @@
         "Android",
         "IOS"
       ],
-      "PlatformDenyList": []
+      "PlatformDenyList": [],
+	  "WhitelistTargets": [
+				"Editor",
+				"Game",
+				"Client",
+				"Server"
+		]
     }
   ]
 }

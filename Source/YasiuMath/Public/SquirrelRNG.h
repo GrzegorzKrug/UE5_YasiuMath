@@ -2,8 +2,10 @@
  * Copyright (c) 2025 Grzegorz Krug.
  * All Rights Reserved.
  */
+/// \file
 
 #pragma once
+
 #include  "CoreMinimal.h"
 
 #include  "SquirrelRNG.generated.h"
@@ -79,18 +81,18 @@ public:
     /** @brief Set generator position */
     UFUNCTION(BlueprintCallable, Category="RNG")
     void SetPosition( int new_position );
-    
+
     /** @brief Offset generator position */
     UFUNCTION(BlueprintCallable, Category="RNG")
-    void IncrementPosition( int offset=1 );
+    void IncrementPosition( int offset = 1 );
 
     /** @brief Set seed noise seed */
     UFUNCTION(BlueprintCallable, Category="RNG")
     void SetSeed( int new_seed );
-    
+
     /** @brief Internal noise variants (it is not initialized), default=0, max=3 */
     UFUNCTION(BlueprintCallable, Category="RNG")
-    void SetNoiseVariant( int newVariant=0 );
+    void SetNoiseVariant( int newVariant = 0 );
 
     /** @brief Reset to internal initial values */
     UFUNCTION(BlueprintCallable, Category="RNG")

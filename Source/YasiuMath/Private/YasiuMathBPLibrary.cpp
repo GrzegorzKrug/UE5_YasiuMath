@@ -5,7 +5,10 @@
 
 #include "YasiuMathBPLibrary.h"
 
-#include "YasiuMathStaticLib.h"
+#include "YasiuMathLib.h"
+#include "YasiuMathUnrealLib.h"
+
+#include <memory>
 
 
 void UYasiuMathFunctionLibrary::SpreadPointsOnTangentByXY(
@@ -66,6 +69,7 @@ void UYasiuMathFunctionLibrary::ConvexHull2D( TArray<int>& result, const TArray<
     }
     std::vector<int> res = YasiuMath::ConvexHull::ConvexHull2D(*vect);
 
+    result.Empty();
     for ( auto r : res ) {
         result.Add(r);
     }
@@ -74,4 +78,10 @@ void UYasiuMathFunctionLibrary::ConvexHull2D( TArray<int>& result, const TArray<
 double UYasiuMathFunctionLibrary::ClipAngleToCycle( double angle, double period )
 {
     return YasiuMath::AngleUtils::NormalizeAngleToPeriod(angle, period);
+}
+
+FVector UYasiuMathFunctionLibrary::RotateBoundingBox( const FVector& BoxSize, const FQuat& Rotation )
+{
+    return YasiuMath::AngleUtils::RotateBoundingBox(BoxSize, Rotation);
+    // return {0, 0, 0};
 }
