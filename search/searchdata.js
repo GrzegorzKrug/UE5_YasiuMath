@@ -3,8 +3,9 @@ var indexSectionsWithContent =
   0: "123abcdefghilmnoprstuy",
   1: "ipu",
   2: "y",
-  3: "cfginrs",
-  4: "123abcdefghilmnoprstu"
+  3: "sy",
+  4: "cfginrs",
+  5: "123abcdefghilmnoprstu"
 };
 
 var indexSectionNames =
@@ -12,8 +13,9 @@ var indexSectionNames =
   0: "all",
   1: "classes",
   2: "namespaces",
-  3: "functions",
-  4: "pages"
+  3: "files",
+  4: "functions",
+  5: "pages"
 };
 
 var indexSectionLabels =
@@ -21,7 +23,8 @@ var indexSectionLabels =
   0: "All",
   1: "Classes",
   2: "Namespaces",
-  3: "Functions",
-  4: "Pages"
+  3: "Files",
+  4: "Functions",
+  5: "Pages"
 };
 

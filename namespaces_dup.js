@@ -2,7 +2,8 @@ var namespaces_dup =
 [
     [ "YasiuMath", null, [
       [ "AngleUtils", "namespaceYasiuMath_1_1AngleUtils.html", [
-        [ "NormalizeAngleToPeriod", "namespaceYasiuMath_1_1AngleUtils.html#a9b871900e7139385e6e4c9a7a099a96a", null ]
+        [ "NormalizeAngleToPeriod", "namespaceYasiuMath_1_1AngleUtils.html#a9b871900e7139385e6e4c9a7a099a96a", null ],
+        [ "RotateBoundingBox", "namespaceYasiuMath_1_1AngleUtils.html#ac963a3abddcdac5e01665eaee5fc4743", null ]
       ] ],
       [ "Trigonometry", "namespaceYasiuMath_1_1Trigonometry.html", [
         [ "FindMinimalRadiusForIntersectingTangentsOnArc", "namespaceYasiuMath_1_1Trigonometry.html#a9f5895c931517c1d7ac65ebaa525a9a6", null ],

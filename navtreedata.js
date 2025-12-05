@@ -69,7 +69,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"SquirrelRNG_8h_source.html"
+"SquirrelRNG_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

@@ -117,6 +117,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a679692e29440cc0fe9620ddec3b9b4b3" id="r_a679692e29440cc0fe9620ddec3b9b4b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a679692e29440cc0fe9620ddec3b9b4b3">ConvexHull2D</a> (TArray&lt; int &gt; &amp;result, const TArray&lt; FVector2D &gt; &amp;polygonPoints)</td></tr>
 <tr class="memitem:ae034d293d70a24bd75d910b47525e522" id="r_ae034d293d70a24bd75d910b47525e522"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae034d293d70a24bd75d910b47525e522">ClipAngleToCycle</a> (double angle, double period)</td></tr>
 <tr class="memdesc:ae034d293d70a24bd75d910b47525e522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize angle to its period, to be in range &lt;0, period&gt;.  <br /></td></tr>
+<tr class="memitem:aaa74a498cf10dd30a3d078d97e2ad64a" id="r_aaa74a498cf10dd30a3d078d97e2ad64a"><td class="memItemLeft" align="right" valign="top">FVector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa74a498cf10dd30a3d078d97e2ad64a">RotateBoundingBox</a> (const FVector &amp;BoxSize, const FQuat &amp;rotation)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>BP Function library having all important functions exposed for BP Editor </p>
@@ -249,6 +250,35 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">beta</td><td>Tangent point location defined by angle </td></tr>
     <tr><td class="paramname">widthA</td><td>Distance from intersection for point A </td></tr>
     <tr><td class="paramname">widthB</td><td>Distance from intersection for point B </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="aaa74a498cf10dd30a3d078d97e2ad64a" name="aaa74a498cf10dd30a3d078d97e2ad64a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa74a498cf10dd30a3d078d97e2ad64a">&#9670;&#160;</a></span>RotateBoundingBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FVector UYasiuMathFunctionLibrary::RotateBoundingBox </td>
+          <td>(</td>
+          <td class="paramtype">const FVector &amp;</td>          <td class="paramname"><span class="paramname"><em>BoxSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const FQuat &amp;</td>          <td class="paramname"><span class="paramname"><em>rotation</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Rotate Box and calculate new bounding box along same axes to fix old box inside. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">BoxSize</td><td></td></tr>
+    <tr><td class="paramname">rotation</td><td></td></tr>
   </table>
   </dd>
 </dl>

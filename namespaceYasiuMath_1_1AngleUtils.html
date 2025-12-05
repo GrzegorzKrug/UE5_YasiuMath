@@ -99,15 +99,19 @@ $(function(){initNavTree('namespaceYasiuMath_1_1AngleUtils.html','',''); });
   <div class="headertitle"><div class="title">YasiuMath::AngleUtils Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Collection of functions working with angles and rotation.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9b871900e7139385e6e4c9a7a099a96a" id="r_a9b871900e7139385e6e4c9a7a099a96a"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a9b871900e7139385e6e4c9a7a099a96a template"><td class="memItemLeft" align="right" valign="top">static T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b871900e7139385e6e4c9a7a099a96a">NormalizeAngleToPeriod</a> (T angle, T period=360.f)</td></tr>
 <tr class="memdesc:a9b871900e7139385e6e4c9a7a099a96a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize angle by removing full periods from value, result is in range &lt;0, period&gt;.  <br /></td></tr>
+<tr class="memitem:ac963a3abddcdac5e01665eaee5fc4743" id="r_ac963a3abddcdac5e01665eaee5fc4743"><td class="memItemLeft" align="right" valign="top">FVector YASIUMATH_API&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac963a3abddcdac5e01665eaee5fc4743">RotateBoundingBox</a> (const FVector &amp;Box, const FQuat &amp;Rotation)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Collection of functions working with angles </p>
+<div class="textblock"><p>Collection of functions working with angles and rotation. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a9b871900e7139385e6e4c9a7a099a96a" name="a9b871900e7139385e6e4c9a7a099a96a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b871900e7139385e6e4c9a7a099a96a">&#9670;&#160;</a></span>NormalizeAngleToPeriod()</h2>
@@ -140,6 +144,35 @@ template&lt;typename T&gt; </div>
 
 <p>Normalize angle by removing full periods from value, result is in range &lt;0, period&gt;. </p>
 <p>Angle normalization removes any excessive amount of periods from its value. </p><dl class="section warning"><dt>Warning</dt><dd>Does not support negative periods </dd></dl>
+
+</div>
+</div>
+<a id="ac963a3abddcdac5e01665eaee5fc4743" name="ac963a3abddcdac5e01665eaee5fc4743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac963a3abddcdac5e01665eaee5fc4743">&#9670;&#160;</a></span>RotateBoundingBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FVector YASIUMATH_API YasiuMath::AngleUtils::RotateBoundingBox </td>
+          <td>(</td>
+          <td class="paramtype">const FVector &amp;</td>          <td class="paramname"><span class="paramname"><em>Box</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const FQuat &amp;</td>          <td class="paramname"><span class="paramname"><em>Rotation</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Rotate Box and calculate new bounding box along same axes to fit old box inside. Function can take both BoxDimensions and Box Extent. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Box</td><td></td></tr>
+    <tr><td class="paramname">Rotation</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
