@@ -118,25 +118,30 @@ Squirrel RNG in Blueprints</h2>
 <li>Right-click in the Blueprint graph.</li>
 <li>Search for "Spawn From Class"</li>
 <li>Put <b>Squirrel 13 RNG</b> into class parameter</li>
-<li>Promote object to variable to keep it alive inside actor/component</li>
+<li>Promote object to variable to keep it alive<ul>
+<li>This is only required to keep object alive during gameplay and prevent UE from destroying it.</li>
+</ul>
+</li>
 </ol>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
 C++</h1>
-<p>To use math functions include this in your file: </p><div class="fragment"><div class="line"><span class="comment">// Functions in plain c++</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="YasiuMathStaticLib_8h.html">YasiuMathStaticLib.h</a>&quot;</span></div>
+<p>To use math functions include this in your file: </p><div class="fragment"><div class="line"><span class="comment">// Functions in c++</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="YasiuMathLib_8h.html">YasiuMathLib.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Functions that use UE types</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="YasiuMathUnrealFuncs_8h.html">YasiuMathUnrealFuncs.h</a>&quot;</span></div>
-<div class="ttc" id="aYasiuMathStaticLib_8h_html"><div class="ttname"><a href="YasiuMathStaticLib_8h.html">YasiuMathStaticLib.h</a></div></div>
-<div class="ttc" id="aYasiuMathUnrealFuncs_8h_html"><div class="ttname"><a href="YasiuMathUnrealFuncs_8h.html">YasiuMathUnrealFuncs.h</a></div></div>
-</div><!-- fragment --><p>Functions are located in namespaces: <a href="https://grzegorzkrug.github.io/UE5_YasiuMath/namespacemembers_func.html">List of functions in C++</a></p>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="YasiuMathUnrealLib_8h.html">YasiuMathUnrealLib.h</a>&quot;</span></div>
+<div class="ttc" id="aYasiuMathLib_8h_html"><div class="ttname"><a href="YasiuMathLib_8h.html">YasiuMathLib.h</a></div></div>
+<div class="ttc" id="aYasiuMathUnrealLib_8h_html"><div class="ttname"><a href="YasiuMathUnrealLib_8h.html">YasiuMathUnrealLib.h</a></div></div>
+</div><!-- fragment --><p><a href="https://grzegorzkrug.github.io/UE5_YasiuMath/namespacemembers_func.html">List of all functions for C++</a></p>
+<p>Functions are grouped into namespaces: <a href="https://grzegorzkrug.github.io/UE5_YasiuMath/namespaces.html">Name spaces</a></p>
 <hr  />
 <p> To access the Squirrel random generator in C++, add include in your file: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="SquirrelRNG_8h.html">SquirrelRNG.h</a>&quot;</span></div>
 <div class="ttc" id="aSquirrelRNG_8h_html"><div class="ttname"><a href="SquirrelRNG_8h.html">SquirrelRNG.h</a></div></div>
-</div><!-- fragment --><p> It is <b>UObject</b>, so it must comply with unreal eninge rules for objects lifecycle. Store ref value as any UObject if you want it to persist in game for longer. </p><div class="fragment"><div class="line">UPROPERTY()</div>
-<div class="line">TObjectPtr&lt;<a class="code hl_class" href="classUSquirrel13__RNG.html">USquirrel13_RNG</a>&gt; rng;  <span class="comment">/* uninitialized */</span></div>
-<div class="ttc" id="aclassUSquirrel13__RNG_html"><div class="ttname"><a href="classUSquirrel13__RNG.html">USquirrel13_RNG</a></div><div class="ttdoc">Random number generator. Seedable. Gives better random values than epic generator.</div><div class="ttdef"><b>Definition</b> SquirrelRNG.h:17</div></div>
+</div><!-- fragment --><p> It is <b>UObject</b>, so it must comply with unreal engine rules for objects lifecycle. Store ref value as any UObject if you want it to persist in game for longer. </p><div class="fragment"><div class="line"><span class="comment">/* Declaration in class, initialize in CDO */</span></div>
+<div class="line">UPROPERTY()</div>
+<div class="line">TObjectPtr&lt;<a class="code hl_class" href="classUSquirrel13__RNG.html">USquirrel13_RNG</a>&gt; rng;</div>
+<div class="ttc" id="aclassUSquirrel13__RNG_html"><div class="ttname"><a href="classUSquirrel13__RNG.html">USquirrel13_RNG</a></div><div class="ttdoc">Random number generator. Seedable. Gives better random values than epic generator.</div><div class="ttdef"><b>Definition</b> SquirrelRNG.h:18</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

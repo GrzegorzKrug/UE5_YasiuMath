@@ -1,4 +1,4 @@
-var YasiuMathStaticLib_8h =
+var YasiuMathLib_8h =
 [
     [ "YasiuMath::Point&lt; T &gt;", "structYasiuMath_1_1Point.html", null ],
     [ "YasiuMath::IndexedPair&lt; U, T &gt;", "structYasiuMath_1_1IndexedPair.html", null ],
