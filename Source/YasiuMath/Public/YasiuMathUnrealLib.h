@@ -25,6 +25,6 @@ namespace YasiuMath {
         //
         // int YASIUMATH_API FasterSum( const int A, const int B );
 
-        // std::vector<double> RotateBoundingBox( const std::vector<double>& BoxSize, const std::vector<double>& Rotation );
+        // std::vector<double> RotateBoundingBox( const std::vector<double>& DebugBoxSize, const std::vector<double>& Rotation );
     }
 }

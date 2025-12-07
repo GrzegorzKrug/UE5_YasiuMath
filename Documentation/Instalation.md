@@ -29,3 +29,11 @@ YourProject
 
 ## 3. Finished!
 After the editor restarts, the Yasiu Math plugin is installed and ready to use.
+
+
+# C++ Dependency
+Add dependency to your project in build file: `ProjectName.Build.cs`
+```cs
+   PrivateDependencyModuleNames.AddRange(new string[] { "YasiuMath" });
+```
+

@@ -28,5 +28,8 @@ This library provides essential mathematical utilities that work both at runtime
 
 ---
 
-## Documentation
+### Instalation
+Check this page [Instalation](Instalation.md).
+
+### Usage
 Check this page [How to use](Usage.md), to find out how to use functions in BP or C++.

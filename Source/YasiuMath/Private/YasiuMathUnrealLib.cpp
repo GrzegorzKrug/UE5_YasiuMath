@@ -4,7 +4,7 @@
 */
 
 #include "YasiuMathUnrealLib.h"
-
+#include "CoreMinimal.h"
 
 FVector YasiuMath::AngleUtils::RotateBoundingBox( const FVector& Box, const FQuat& Rotation )
 {

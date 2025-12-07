@@ -13,7 +13,7 @@ public class YasiuMath : ModuleRules
 
 	public YasiuMath(ReadOnlyTargetRules Target) : base(Target)
 	{
-		CppStandard = CppStandardVersion.Cpp20;
+		// CppStandard = CppStandardVersion.Cpp20;
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 
 		if (bStrictIncludesCheck)

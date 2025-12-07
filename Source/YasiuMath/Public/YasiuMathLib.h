@@ -8,13 +8,21 @@
 
 #include <vector>
 #include <cassert>
-#include <numbers>
 #include <cmath>
+// #include <numbers>
 // #include <iostream>
 // #include <math.h>
 // #include <ostream>
 #include <algorithm>
 #include <unordered_set>
+
+#include "YasiuConstants.h"
+
+#if __cplusplus >= 202002L
+#define CPP20_OR_LATER 1
+#else
+#define CPP20_OR_LATER 0
+#endif
 
 
 namespace YasiuMath {
@@ -45,7 +53,7 @@ namespace YasiuMath {
         T fastAngleModded()
         {
             // return fastAngle();
-            return static_cast<T>(fmod(fastAngle(), static_cast<T>(std::numbers::pi)));
+            return static_cast<T>(fmod(fastAngle(), static_cast<T>(YasiuNums::Y_PI)));
         }
     };
 
@@ -122,18 +130,19 @@ namespace YasiuMath {
         template<typename T>
         static inline double Degrees2Radians( T degree )
         {
-            return static_cast<T>(std::numbers::pi * degree / 180.f);
+            return static_cast<T>(YasiuNums::Y_PI * degree / 180.f);
         }
 
         template<typename T>
         static inline T Radians2Degrees( T radian )
         {
-            return static_cast<T>(radian * 180.f / std::numbers::pi);
+            return static_cast<T>(radian * 180.f / YasiuNums::Y_PI);
         }
 
         /**
-         * Angle normalization removes any excessive amount of periods from its value.
          * @brief Normalize angle by removing full periods from value, result is in range <0, period>
+         * 
+         * Angle normalization removes any excessive amount of periods from its value.
          * @warning Does not support negative periods
          */
         template<typename T>
@@ -179,7 +188,7 @@ namespace YasiuMath {
             std::vector<std::pair<T, T>> result;
 
             /* Beta = 90 - alfa */
-            T beta = static_cast<T>(std::numbers::pi / 2. - angle);
+            T beta = static_cast<T>(YasiuNums::Y_PI / 2. - angle);
 
             /*
              * sin(B) = opposite / hypotenuse -> dy = sin * hypotenuse
@@ -209,7 +218,8 @@ namespace YasiuMath {
         }
 
         /**
-         * Spread points on tangent line to arc.
+         * @brief Spread points on tangent line to arc.
+         * 
          * XY is tangent point location, and arc center is 0,0.
          * Points are moved away from tangent point by spreadDistance
          * @tparam T 
@@ -228,6 +238,7 @@ namespace YasiuMath {
 
         /**
          * @brief Finds radius of circle for both tangent line that intersect.
+         * 
          * Tangents on circle are defined by angle Alfa and Beta. Where point with angle 0 is has value \f$\{X, 0\}\f$ and goes counter-clockwise
          * 
          * Tangent line distance to meeting point from circle intersection is **symmetricWidth**.
@@ -443,7 +454,7 @@ namespace YasiuMath {
         /* @endcond */
 
         /**
-         * Find Convex Hull in 2D space
+         * @brief Find Convex Hull in 2D space from given points.
          * @tparam T numeric type of points
          * @param polygonPoints collection of points X,Y
          * @return Collection of indexes assigned to convex hull in order
@@ -533,10 +544,18 @@ namespace YasiuMath {
                         // std::cout << "This is top index, stop loop: " << nextPoint.index << "\n";
                         break;
                     }
+#if CPP20_OR_LATER
                     if ( visitedPoints.contains(nextPoint.index) ) {
                         // std::cout << "Skipping visited point: " << nextPoint.index << "\n";
                         continue;
                     }
+#else
+                    if ( visitedPoints.find(nextPoint.index) != visitedPoints.end() ) {
+                        // std::cout << "Skipping visited point: " << nextPoint.index << "\n";
+                        continue;
+                    }
+#endif
+
                     // std::cout << nextPoint.index << "\n";
 
                     visitedPoints.insert(nextPoint.index);
