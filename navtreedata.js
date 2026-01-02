@@ -30,21 +30,22 @@ var NAVTREE =
       [ "Features", "md_Documentation_2About.html#autotoc_md3", null ],
       [ "Components", "md_Documentation_2About.html#autotoc_md5", [
         [ "RNG (Random Number Generation)", "md_Documentation_2About.html#autotoc_md6", null ],
-        [ "Math Utilities", "md_Documentation_2About.html#autotoc_md7", null ]
-      ] ],
-      [ "Documentation", "md_Documentation_2About.html#autotoc_md9", null ]
+        [ "Math Utilities", "md_Documentation_2About.html#autotoc_md7", null ],
+        [ "Instalation", "md_Documentation_2About.html#autotoc_md9", null ],
+        [ "Usage", "md_Documentation_2About.html#autotoc_md10", null ]
+      ] ]
     ] ],
     [ "Installation of plugin", "md_Documentation_2Instalation.html", [
-      [ "1. Download and Extract the Plugin", "md_Documentation_2Instalation.html#autotoc_md11", null ],
-      [ "2. Enable the Plugin in Unreal Engine", "md_Documentation_2Instalation.html#autotoc_md13", null ],
-      [ "3. Finished!", "md_Documentation_2Instalation.html#autotoc_md15", null ],
-      [ "C++ Dependency", "md_Documentation_2Instalation.html#autotoc_md16", null ]
+      [ "1. Download and Extract the Plugin", "md_Documentation_2Instalation.html#autotoc_md12", null ],
+      [ "2. Enable the Plugin in Unreal Engine", "md_Documentation_2Instalation.html#autotoc_md14", null ],
+      [ "3. Finished!", "md_Documentation_2Instalation.html#autotoc_md16", null ],
+      [ "C++ Dependency", "md_Documentation_2Instalation.html#autotoc_md17", null ]
     ] ],
     [ "How to use plugin", "md_Documentation_2Usage.html", [
-      [ "Use in blueprints", "md_Documentation_2Usage.html#autotoc_md18", [
-        [ "Squirrel RNG in Blueprints", "md_Documentation_2Usage.html#autotoc_md19", null ]
+      [ "Use in blueprints", "md_Documentation_2Usage.html#autotoc_md19", [
+        [ "Squirrel RNG in Blueprints", "md_Documentation_2Usage.html#autotoc_md20", null ]
       ] ],
-      [ "C++", "md_Documentation_2Usage.html#autotoc_md21", null ]
+      [ "C++", "md_Documentation_2Usage.html#autotoc_md22", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
