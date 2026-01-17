@@ -7,5 +7,5 @@
 
 
 namespace YasiuNums {
-	constexpr double Y_PI = 3.14159265358979323846;
+    constexpr double Y_PI = 3.14159265358979323846;
 };

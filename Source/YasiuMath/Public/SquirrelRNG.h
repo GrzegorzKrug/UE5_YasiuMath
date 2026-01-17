@@ -14,7 +14,7 @@
 /**
  * @brief Random number generator. Seedable. Gives better random values than epic generator.
  */
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, Blueprintable)
 class YASIUMATH_API USquirrel13_RNG : public UObject {
 public:
     GENERATED_BODY()
@@ -58,7 +58,7 @@ public:
     uint32_t get_current_random() const;
 
     /** @internal Move position by 1 and return uint32_t */
-    uint32_t get_random();
+    uint32_t get_next_random();
 
     /** @brief Move position by 1 and return random value as integer in range <min, max> */
     UFUNCTION(BlueprintCallable, Category="RNG")
@@ -98,12 +98,16 @@ public:
     UFUNCTION(BlueprintCallable, Category="RNG")
     void ResetSeedPos();
 
+    /* Noise variant */
     static uint32_t RNG_0( int position, unsigned int seed );
 
+    /* Noise variant */
     static uint32_t RNG_1( int position, unsigned int seed );
 
+    /* Noise variant */
     static uint32_t RNG_2( int position, unsigned int seed );
 
+    /* Noise variant */
     static uint32_t RNG_3( int position, unsigned int seed );
 
     /** @brief Serialization of RNG Object */

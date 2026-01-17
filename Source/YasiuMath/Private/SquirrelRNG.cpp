@@ -33,7 +33,7 @@ uint32_t USquirrel13_RNG::get_current_random() const
     return randomValue;
 }
 
-uint32_t USquirrel13_RNG::get_random()
+uint32_t USquirrel13_RNG::get_next_random()
 {
     m_position++;
     return get_current_random();
@@ -47,14 +47,14 @@ int USquirrel13_RNG::GetNextInt( const int min, const int max )
 
 int USquirrel13_RNG::GetCurrentInt( const int min, const int max ) const
 {
-    int diff = max - min;
+    const int diff = max - min;
     return FMath::RoundToInt32(GetCurrentDouble() * diff) + min;
 }
 
 double USquirrel13_RNG::GetNextDouble()
 {
     m_position++;
-    return static_cast<double>(get_random()) / UINT32_MAX;
+    return GetCurrentDouble();
 }
 
 double USquirrel13_RNG::GetCurrentDouble() const
@@ -62,14 +62,20 @@ double USquirrel13_RNG::GetCurrentDouble() const
     return static_cast<double>(get_current_random()) / UINT32_MAX;
 };
 
-void USquirrel13_RNG::SetPosition( int new_position ) { m_position = new_position; }
+void USquirrel13_RNG::SetPosition( int new_position )
+{
+    m_position = new_position;
+}
 
 void USquirrel13_RNG::IncrementPosition( int offset )
 {
     m_position += offset;
 };
 
-void USquirrel13_RNG::SetSeed( int new_seed ) { m_seed = new_seed; }
+void USquirrel13_RNG::SetSeed( int new_seed )
+{
+    m_seed = new_seed;
+}
 
 void USquirrel13_RNG::SetNoiseVariant( int new_variant )
 {
@@ -161,8 +167,5 @@ uint32_t USquirrel13_RNG::RNG_3( int position, unsigned int seed )
 void USquirrel13_RNG::Serialize( FArchive& Ar )
 {
     UObject::Serialize(Ar);
-    Ar << init_seed;
-    Ar << init_position;
-    Ar << m_variant;
-    Ar << m_position;
+    Ar << init_seed; // Non-Uproperty
 }

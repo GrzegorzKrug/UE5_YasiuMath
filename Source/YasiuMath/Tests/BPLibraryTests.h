@@ -1,5 +1,9 @@
+#pragma once
+
 #include "Misc/AutomationTest.h"
 #include "YasiuMathBPLibrary.h"
+#include "SquirrelRNG.h"
+#include "Serialization/BufferArchive.h"
 
 /*
  * 3 Plugins in game project
@@ -112,3 +116,73 @@ bool MathBoxPillarRotation::RunTest( const FString& Parameters )
 
     return true;
 }
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(
+    RNG_Test,
+    "Plugins.Yasiu.Math.RNG1",
+    EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter
+)
+
+
+bool RNG_Test::RunTest( const FString& Parameters )
+{
+    constexpr double YASIU_EPS = 0.0001;
+    auto* RNG = NewObject<USquirrel13_RNG>();
+
+    int seed = 123;
+    RNG->SetPosition(5);
+    RNG->SetSeed(seed);
+    double ret = RNG->GetNextDouble();
+    TestNearlyEqual(TEXT("Is same 1?"), ret, RNG->GetCurrentDouble(), YASIU_EPS);
+
+    int ret2{};
+    ret2 = RNG->GetNextInt(0, 5000);
+    TestEqual(TEXT("Is same 2?"), ret2, RNG->GetCurrentInt(0, 5000));
+    ret2 = RNG->GetNextInt(-900, 500);
+    TestEqual(TEXT("Is same 3?"), ret2, RNG->GetCurrentInt(-900, 500));
+    
+    RNG->SetPosition(450);
+    RNG->SetSeed(184);
+    RNG->SetNoiseVariant(1);
+
+    FBufferArchive arch{};
+    arch.SetIsLoading(false);
+    arch.SetIsSaving(true);
+    RNG->Serialize(arch);
+    // FArchive saved = arch;
+    double valAfterSave = RNG->GetNextDouble();
+    
+    RNG->SetPosition(450);
+    RNG->SetSeed(184);
+    RNG->SetNoiseVariant(1);
+    TestNearlyEqual(TEXT("Is same before saving ?"), valAfterSave, RNG->GetNextDouble(), YASIU_EPS);
+
+    RNG->GetNextDouble();
+    TestNotEqual(TEXT("Should be different 1"), valAfterSave, RNG->GetNextDouble());
+    RNG->SetPosition(12);
+    RNG->SetSeed(13);
+    RNG->SetNoiseVariant(2);
+
+    TestNotEqual(TEXT("Should be different 2"), valAfterSave, RNG->GetNextDouble());
+
+    auto arch2 = FMemoryReader(arch);
+    arch2.SetIsLoading(true);
+    arch2.SetIsSaving(false);
+    
+    auto RNG_2 = NewObject<USquirrel13_RNG>();
+    RNG_2->Serialize(arch2);
+    TestNearlyEqual(TEXT("Is same after loading 1?"), valAfterSave, RNG_2->GetNextDouble(), YASIU_EPS);
+    // TestNearlyEqual(TEXT("Is same after loading 2?"), valAfterSave, RNG_2->GetNextDouble(), YASIU_EPS);
+    // TestNearlyEqual(TEXT("Is same after loading 3?"), valAfterSave, RNG_2->GetNextDouble(), YASIU_EPS);
+    // TestNearlyEqual(TEXT("Is same after loading 4?"), valAfterSave, RNG_2->GetNextDouble(), YASIU_EPS);
+    // TestNearlyEqual(TEXT("Is same after loading 5?"), valAfterSave, RNG_2->GetNextDouble(), YASIU_EPS);
+    // TestNearlyEqual(TEXT("Is same after loading 6?"), valAfterSave, RNG_2->GetNextDouble(), YASIU_EPS);
+
+    /* Reset */
+    RNG_2->SetPosition(450);
+    RNG_2->SetSeed(184);
+    RNG_2->SetNoiseVariant(1);
+    TestNearlyEqual(TEXT("Is same after reset?"), valAfterSave, RNG_2->GetNextDouble(), YASIU_EPS);
+
+    return true;
+};
