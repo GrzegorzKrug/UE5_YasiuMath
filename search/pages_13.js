@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['the_20plugin_0',['1. Download and Extract the Plugin',['../md_Documentation_2Instalation.html#autotoc_md12',1,'']]],
-  ['the_20plugin_20in_20unreal_20engine_1',['2. Enable the Plugin in Unreal Engine',['../md_Documentation_2Instalation.html#autotoc_md14',1,'']]],
-  ['to_20use_20plugin_2',['How to use plugin',['../md_Documentation_2Usage.html',1,'']]]
+  ['squirrel_20rng_20in_20blueprints_0',['Squirrel RNG in Blueprints',['../baseuse.html#autotoc_md20',1,'']]],
+  ['start_1',['Quick Start',['../mainpage.html',1,'']]]
 ];

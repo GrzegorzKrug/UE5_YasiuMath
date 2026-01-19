@@ -130,21 +130,47 @@ double&#160;</td><td class="memItemRight"><b>GetCurrentDouble</b> () const</td><
 <tr class="memitem:ad0e0562cf0f6ba8e16b53a21087f96c1" id="r_ad0e0562cf0f6ba8e16b53a21087f96c1"><td class="memItemLeft"><a id="ad0e0562cf0f6ba8e16b53a21087f96c1" name="ad0e0562cf0f6ba8e16b53a21087f96c1"></a>
 void&#160;</td><td class="memItemRight"><b>SetPosition</b> (int new_position)</td></tr>
 <tr class="memdesc:ad0e0562cf0f6ba8e16b53a21087f96c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set generator position. <br /></td></tr>
-<tr class="memitem:ad2996fc7b5c833d0d6958931dfc3616a" id="r_ad2996fc7b5c833d0d6958931dfc3616a"><td class="memItemLeft"><a id="ad2996fc7b5c833d0d6958931dfc3616a" name="ad2996fc7b5c833d0d6958931dfc3616a"></a>
-void&#160;</td><td class="memItemRight"><b>IncrementPosition</b> (int offset=1)</td></tr>
-<tr class="memdesc:ad2996fc7b5c833d0d6958931dfc3616a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset generator position. <br /></td></tr>
+<tr class="memitem:a4b46cb4f3aa4b3d04e767225edfde007" id="r_a4b46cb4f3aa4b3d04e767225edfde007"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4b46cb4f3aa4b3d04e767225edfde007">OffsetPosition</a> (int offset=1)</td></tr>
+<tr class="memdesc:a4b46cb4f3aa4b3d04e767225edfde007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset current position, can be positive and negative.  <br /></td></tr>
 <tr class="memitem:a678110142e8179cc9f102f5939453d50" id="r_a678110142e8179cc9f102f5939453d50"><td class="memItemLeft"><a id="a678110142e8179cc9f102f5939453d50" name="a678110142e8179cc9f102f5939453d50"></a>
 void&#160;</td><td class="memItemRight"><b>SetSeed</b> (int new_seed)</td></tr>
 <tr class="memdesc:a678110142e8179cc9f102f5939453d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set seed noise seed. <br /></td></tr>
 <tr class="memitem:a2737ccdd5e2cbe962561c180d3f99e36" id="r_a2737ccdd5e2cbe962561c180d3f99e36"><td class="memItemLeft"><a id="a2737ccdd5e2cbe962561c180d3f99e36" name="a2737ccdd5e2cbe962561c180d3f99e36"></a>
 void&#160;</td><td class="memItemRight"><b>SetNoiseVariant</b> (int newVariant=0)</td></tr>
-<tr class="memdesc:a2737ccdd5e2cbe962561c180d3f99e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal noise variants (it is not initialized), default=0, max=3. <br /></td></tr>
+<tr class="memdesc:a2737ccdd5e2cbe962561c180d3f99e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal noise variants (it is not initialized), default=0, max=5 Invalid variants will use default noise. <br /></td></tr>
 <tr class="memitem:a1d3850b06314b050b1adba64c1669373" id="r_a1d3850b06314b050b1adba64c1669373"><td class="memItemLeft"><a id="a1d3850b06314b050b1adba64c1669373" name="a1d3850b06314b050b1adba64c1669373"></a>
 void&#160;</td><td class="memItemRight"><b>ResetSeedPos</b> ()</td></tr>
 <tr class="memdesc:a1d3850b06314b050b1adba64c1669373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset to internal initial values. <br /></td></tr>
 <tr class="memitem:aea23820677da582efd48543842cb3a68" id="r_aea23820677da582efd48543842cb3a68"><td class="memItemLeft"><a id="aea23820677da582efd48543842cb3a68" name="aea23820677da582efd48543842cb3a68"></a>
 virtual void&#160;</td><td class="memItemRight"><b>Serialize</b> (FArchive &amp;Ar) override</td></tr>
 <tr class="memdesc:aea23820677da582efd48543842cb3a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialization of RNG Object. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a32e0bd53b5ea7a07d14e5c2f76d45810" id="r_a32e0bd53b5ea7a07d14e5c2f76d45810"><td class="memItemLeft"><a id="a32e0bd53b5ea7a07d14e5c2f76d45810" name="a32e0bd53b5ea7a07d14e5c2f76d45810"></a>
+static uint32_t&#160;</td><td class="memItemRight"><b>RNG_0</b> (int position, unsigned int seed)</td></tr>
+<tr class="memdesc:a32e0bd53b5ea7a07d14e5c2f76d45810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Noise variant. <br /></td></tr>
+<tr class="memitem:a7a8e1fa95de8100c38101356ae0c1c51" id="r_a7a8e1fa95de8100c38101356ae0c1c51"><td class="memItemLeft"><a id="a7a8e1fa95de8100c38101356ae0c1c51" name="a7a8e1fa95de8100c38101356ae0c1c51"></a>
+static uint32_t&#160;</td><td class="memItemRight"><b>RNG_1</b> (int position, unsigned int seed)</td></tr>
+<tr class="memdesc:a7a8e1fa95de8100c38101356ae0c1c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Noise variant. <br /></td></tr>
+<tr class="memitem:a81ac6715eda9c9bd51c4ec2f212b6697" id="r_a81ac6715eda9c9bd51c4ec2f212b6697"><td class="memItemLeft"><a id="a81ac6715eda9c9bd51c4ec2f212b6697" name="a81ac6715eda9c9bd51c4ec2f212b6697"></a>
+static uint32_t&#160;</td><td class="memItemRight"><b>RNG_2</b> (int position, unsigned int seed)</td></tr>
+<tr class="memdesc:a81ac6715eda9c9bd51c4ec2f212b6697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Noise variant. <br /></td></tr>
+<tr class="memitem:a2da74ed47f02cd912dc0cc3bc1b3fc31" id="r_a2da74ed47f02cd912dc0cc3bc1b3fc31"><td class="memItemLeft"><a id="a2da74ed47f02cd912dc0cc3bc1b3fc31" name="a2da74ed47f02cd912dc0cc3bc1b3fc31"></a>
+static uint32_t&#160;</td><td class="memItemRight"><b>RNG_3</b> (int position, unsigned int seed)</td></tr>
+<tr class="memdesc:a2da74ed47f02cd912dc0cc3bc1b3fc31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Noise variant. <br /></td></tr>
+<tr class="memitem:a7eb6f58f0f360b6d12a9cba68b9924d3" id="r_a7eb6f58f0f360b6d12a9cba68b9924d3"><td class="memItemLeft"><a id="a7eb6f58f0f360b6d12a9cba68b9924d3" name="a7eb6f58f0f360b6d12a9cba68b9924d3"></a>
+static uint32_t&#160;</td><td class="memItemRight"><b>RNG_4</b> (int position, unsigned int seed)</td></tr>
+<tr class="memdesc:a7eb6f58f0f360b6d12a9cba68b9924d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Noise variant. <br /></td></tr>
+<tr class="memitem:a3c9a74baad0881729c5f26fca7fb0d41" id="r_a3c9a74baad0881729c5f26fca7fb0d41"><td class="memItemLeft"><a id="a3c9a74baad0881729c5f26fca7fb0d41" name="a3c9a74baad0881729c5f26fca7fb0d41"></a>
+static uint32_t&#160;</td><td class="memItemRight"><b>RNG_5</b> (int position, unsigned int seed)</td></tr>
+<tr class="memdesc:a3c9a74baad0881729c5f26fca7fb0d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Noise variant. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a77ce5d55854d24a50ebc2afb46a5b043" id="r_a77ce5d55854d24a50ebc2afb46a5b043"><td class="memItemLeft"><a id="a77ce5d55854d24a50ebc2afb46a5b043" name="a77ce5d55854d24a50ebc2afb46a5b043"></a>
+int&#160;</td><td class="memItemRight"><b>m_variant</b> {0}</td></tr>
+<tr class="memdesc:a77ce5d55854d24a50ebc2afb46a5b043"><td class="mdescLeft">&#160;</td><td class="mdescRight">variable related to selected noise variant <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Random number generator. Seedable. Gives better random values than epic generator. </p>
@@ -170,6 +196,26 @@ virtual void&#160;</td><td class="memItemRight"><b>Serialize</b> (FArchive &amp;
 
 <p>Modify internal values to custom. </p>
 <p>This function provides access to change private variables for C++ object which is not accessible in Blueprints. </p>
+
+</div>
+</div>
+<a id="a4b46cb4f3aa4b3d04e767225edfde007" name="a4b46cb4f3aa4b3d04e767225edfde007"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b46cb4f3aa4b3d04e767225edfde007">&#9670;&#160;</a></span>OffsetPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void USquirrel13_RNG::OffsetPosition </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset current position, can be positive and negative. </p>
+<p>Position + Offset </p>
 
 </div>
 </div>

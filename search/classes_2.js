@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['usquirrel13_5frng_0',['USquirrel13_RNG',['../classUSquirrel13__RNG.html',1,'']]],
-  ['uyasiumathfunctionlibrary_1',['UYasiuMathFunctionLibrary',['../classUYasiuMathFunctionLibrary.html',1,'']]]
+  ['upcg32_5frng_0',['UPCG32_RNG',['../classUPCG32__RNG.html',1,'']]],
+  ['usquirrel13_5frng_1',['USquirrel13_RNG',['../classUSquirrel13__RNG.html',1,'']]],
+  ['uyasiumathfunctionlibrary_2',['UYasiuMathFunctionLibrary',['../classUYasiuMathFunctionLibrary.html',1,'']]]
 ];

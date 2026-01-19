@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['squirrelrng_2eh_0',['SquirrelRNG.h',['../SquirrelRNG_8h.html',1,'']]]
+  ['pcg_5frng_2eh_0',['PCG_RNG.h',['../PCG__RNG_8h.html',1,'']]]
 ];

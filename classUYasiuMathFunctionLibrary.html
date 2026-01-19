@@ -100,6 +100,9 @@ $(function(){initNavTree('classUYasiuMathFunctionLibrary.html','','classUYasiuMa
 </div><!--header-->
 <div class="contents">
 
+<p>BP Function library having all implementations ready for use in BP Editor.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="YasiuMathBPLibrary_8h_source.html">YasiuMathBPLibrary.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for UYasiuMathFunctionLibrary:</div>
@@ -122,11 +125,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a679692e29440cc0fe9620ddec3b9b4b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find points that create convex hull in 2D Space.  <br /></td></tr>
 <tr class="memitem:ae034d293d70a24bd75d910b47525e522" id="r_ae034d293d70a24bd75d910b47525e522"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ae034d293d70a24bd75d910b47525e522">ClipAngleToCycle</a> (double angle, double period)</td></tr>
 <tr class="memdesc:ae034d293d70a24bd75d910b47525e522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize angle to its period, to be in range &lt;0, period&gt;.  <br /></td></tr>
-<tr class="memitem:aaa74a498cf10dd30a3d078d97e2ad64a" id="r_aaa74a498cf10dd30a3d078d97e2ad64a"><td class="memItemLeft">FVector&#160;</td><td class="memItemRight"><a class="el" href="#aaa74a498cf10dd30a3d078d97e2ad64a">RotateBoundingBox</a> (const FVector &amp;BoxSize, const FQuat &amp;rotation)</td></tr>
-<tr class="memdesc:aaa74a498cf10dd30a3d078d97e2ad64a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate Box and calculate new bounding box along same axes to fix old box inside.  <br /></td></tr>
+<tr class="memitem:a2906171433f9633f346fe8e204fb6540" id="r_a2906171433f9633f346fe8e204fb6540"><td class="memItemLeft">FVector&#160;</td><td class="memItemRight"><a class="el" href="#a2906171433f9633f346fe8e204fb6540">RotateBoundingBox</a> (const FVector &amp;BoxSize, const FQuat &amp;Rotation)</td></tr>
+<tr class="memdesc:a2906171433f9633f346fe8e204fb6540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate Box and calculate new bounding box along same axes to fix old box inside.213123.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>BP Function library having all important functions exposed for BP Editor </p>
+<div class="textblock"><p>BP Function library having all implementations ready for use in BP Editor. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="ae034d293d70a24bd75d910b47525e522" name="ae034d293d70a24bd75d910b47525e522"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae034d293d70a24bd75d910b47525e522">&#9670;&#160;</a></span>ClipAngleToCycle()</h2>
@@ -269,8 +272,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aaa74a498cf10dd30a3d078d97e2ad64a" name="aaa74a498cf10dd30a3d078d97e2ad64a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa74a498cf10dd30a3d078d97e2ad64a">&#9670;&#160;</a></span>RotateBoundingBox()</h2>
+<a id="a2906171433f9633f346fe8e204fb6540" name="a2906171433f9633f346fe8e204fb6540"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2906171433f9633f346fe8e204fb6540">&#9670;&#160;</a></span>RotateBoundingBox()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,20 +286,21 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const FQuat &amp;</td>          <td class="paramname"><span class="paramname"><em>rotation</em></span>&#160;)</td>
+          <td class="paramtype">const FQuat &amp;</td>          <td class="paramname"><span class="paramname"><em>Rotation</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Rotate Box and calculate new bounding box along same axes to fix old box inside. </p>
+<p>Rotate Box and calculate new bounding box along same axes to fix old box inside.213123. </p>
+<p>Helps find suboptimal bounding box for rotated meshes </p><dl class="section note"><dt>Note</dt><dd>Function can take both Dimensions and Box Extent. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">BoxSize</td><td></td></tr>
-    <tr><td class="paramname">rotation</td><td></td></tr>
+    <tr><td class="paramname">BoxSize</td><td>Dimension of Bounding box </td></tr>
+    <tr><td class="paramname">Rotation</td><td>Rotation to calculate </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns size in same units as passed <b>BoxSize</b> </dd></dl>
 
 </div>
 </div>

@@ -7,6 +7,7 @@ var hierarchy =
       [ "UYasiuMathFunctionLibrary", "classUYasiuMathFunctionLibrary.html", null ]
     ] ],
     [ "UObject", null, [
+      [ "UPCG32_RNG", "classUPCG32__RNG.html", null ],
       [ "USquirrel13_RNG", "classUSquirrel13__RNG.html", null ]
     ] ]
 ];

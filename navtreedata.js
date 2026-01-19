@@ -31,22 +31,11 @@ var NAVTREE =
       [ "Components", "md_Documentation_2About.html#autotoc_md5", [
         [ "RNG (Random Number Generation)", "md_Documentation_2About.html#autotoc_md6", null ],
         [ "Math Utilities", "md_Documentation_2About.html#autotoc_md7", null ],
-        [ "Instalation", "md_Documentation_2About.html#autotoc_md9", null ],
+        [ "Installation", "md_Documentation_2About.html#autotoc_md9", null ],
         [ "Usage", "md_Documentation_2About.html#autotoc_md10", null ]
       ] ]
     ] ],
-    [ "Installation of plugin", "md_Documentation_2Instalation.html", [
-      [ "1. Download and Extract the Plugin", "md_Documentation_2Instalation.html#autotoc_md12", null ],
-      [ "2. Enable the Plugin in Unreal Engine", "md_Documentation_2Instalation.html#autotoc_md14", null ],
-      [ "3. Finished!", "md_Documentation_2Instalation.html#autotoc_md16", null ],
-      [ "C++ Dependency", "md_Documentation_2Instalation.html#autotoc_md17", null ]
-    ] ],
-    [ "How to use plugin", "md_Documentation_2Usage.html", [
-      [ "Use in blueprints", "md_Documentation_2Usage.html#autotoc_md19", [
-        [ "Squirrel RNG in Blueprints", "md_Documentation_2Usage.html#autotoc_md20", null ]
-      ] ],
-      [ "C++", "md_Documentation_2Usage.html#autotoc_md22", null ]
-    ] ],
+    [ "Quick Start", "mainpage.html", "mainpage" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -60,7 +49,8 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -71,7 +61,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"SquirrelRNG_8h.html"
+"PCG__RNG_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

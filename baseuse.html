@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Yasiu Math: Installation of plugin</title>
+<title>Yasiu Math: Usage of plugin</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,7 +70,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('md_Documentation_2Instalation.html','',''); });
+$(function(){initNavTree('baseuse.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -96,44 +96,56 @@ $(function(){initNavTree('md_Documentation_2Instalation.html','',''); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Installation of plugin </div></div>
+  <div class="headertitle"><div class="title">Usage of plugin </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md11"></a></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
-1. Download and Extract the Plugin</h1>
+<div class="textblock"><h1 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+How to use plugin</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+Use in blueprints</h2>
 <ol type="1">
-<li>Download the ZIP file containing the plugin.</li>
-<li>Locate your Unreal Engine project folder on your computer.</li>
-<li>Inside your project folder, create a new folder named <b>Plugins</b> if it doesn’t already exist. <br  />
-<ul>
-<li>Example path: <span class="tt">YourProject/Plugins/</span></li>
+<li>Right-click in the Blueprint graph. <br  />
+</li>
+<li>Search under the category <b>Math / Yasiu</b>. <br  />
+</li>
+<li>Select the function you need.</li>
+</ol>
+<p><em>All functions from library are located under same category.</em></p>
+<p><a href="https://grzegorzkrug.github.io/UE5_YasiuMath/classUYasiuMathFunctionLibrary.html">Functions accessible in BP</a></p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+Squirrel RNG in Blueprints</h3>
+<p>Squirrel Object is not treated as ActorComponent, it has to be spawned from class using node <b>CreateFromClass</b> <br  />
+</p><ol type="1">
+<li>Right-click in the Blueprint graph.</li>
+<li>Search for "Spawn From Class"</li>
+<li>Put <b>Squirrel 13 RNG</b> into class parameter</li>
+<li>Promote object to variable to keep it alive<ul>
+<li>This is only required to keep object alive during gameplay and prevent UE from destroying it.</li>
 </ul>
 </li>
-<li>Extract (unzip) the downloaded plugin ZIP <b>into the Plugins folder</b>.</li>
-</ol>
-<p>Your folder structure should look like this: </p><div class="fragment"><div class="line">YourProject</div>
-<div class="line">├── Content</div>
-<div class="line">├── Source</div>
-<div class="line">└── Plugins</div>
-<div class="line">    └── YasiuMath (plugin files here)</div>
-</div><!-- fragment --><hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
-2. Enable the Plugin in Unreal Engine</h1>
-<ol type="1">
-<li>Open your Unreal Engine project.</li>
-<li>In the top menu, select <b>Edit → Plugins</b>.</li>
-<li>Use the search bar to find <b>Yasiu Math</b>.</li>
-<li>Check the box to enable the plugin.</li>
-<li>When Unreal Engine asks you to restart, click <b>Restart Now</b>.</li>
 </ol>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
-3. Finished!</h1>
-<p>After the editor restarts, the Yasiu Math plugin is installed and ready to use.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
-C++ Dependency</h1>
-<p>Add dependency to your project in build file: <span class="tt">ProjectName.Build.cs</span> </p><div class="fragment"><div class="line">PrivateDependencyModuleNames.AddRange(<span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;YasiuMath&quot;</span> });</div>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
+C++</h2>
+<p>To use math functions include this in your file: </p><div class="fragment"><div class="line"><span class="comment">// Functions in c++</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="YasiuMathLib_8h.html">YasiuMathLib.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Functions that use UE types</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="YasiuMathUnrealLib_8h.html">YasiuMathUnrealLib.h</a>&quot;</span></div>
+<div class="ttc" id="aYasiuMathLib_8h_html"><div class="ttname"><a href="YasiuMathLib_8h.html">YasiuMathLib.h</a></div></div>
+<div class="ttc" id="aYasiuMathUnrealLib_8h_html"><div class="ttname"><a href="YasiuMathUnrealLib_8h.html">YasiuMathUnrealLib.h</a></div></div>
+</div><!-- fragment --><p><a href="https://grzegorzkrug.github.io/UE5_YasiuMath/namespacemembers_func.html">List of all functions for C++</a></p>
+<p>Functions are grouped into namespaces: <a href="https://grzegorzkrug.github.io/UE5_YasiuMath/namespaces.html">Name spaces</a></p>
+<hr  />
+<p> To access one of the RNG in C++, add include in your file: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="SquirrelRNG_8h.html">SquirrelRNG.h</a>&quot;</span></div>
+<div class="line"><span class="comment">/* or */</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="PCG__RNG_8h.html">PCG_RNG.h</a>&quot;</span></div>
+<div class="ttc" id="aPCG__RNG_8h_html"><div class="ttname"><a href="PCG__RNG_8h.html">PCG_RNG.h</a></div></div>
+<div class="ttc" id="aSquirrelRNG_8h_html"><div class="ttname"><a href="SquirrelRNG_8h.html">SquirrelRNG.h</a></div></div>
+</div><!-- fragment --><p> It is <b>UObject</b>, so it must comply with unreal engine rules for objects lifecycle. Store ref value as any UObject if you want it to persist in game for longer. </p><div class="fragment"><div class="line"><span class="comment">/* Declaration in class, initialize this in CDO or during gameplay */</span></div>
+<div class="line">UPROPERTY()</div>
+<div class="line">TObjectPtr&lt;<a class="code hl_class" href="classUSquirrel13__RNG.html">USquirrel13_RNG</a>&gt; rng;</div>
+<div class="ttc" id="aclassUSquirrel13__RNG_html"><div class="ttname"><a href="classUSquirrel13__RNG.html">USquirrel13_RNG</a></div><div class="ttdoc">Random number generator. Seedable. Gives better random values than epic generator.</div><div class="ttdef"><b>Definition</b> SquirrelRNG.h:18</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
@@ -148,6 +160,7 @@ C++ Dependency</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a href="mainpage.html">Quick Start</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>
