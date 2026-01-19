@@ -2,8 +2,8 @@ name: Build Doxygen docs & publish to GitHub Pages
 
 on:
   push:
-    branches:
-      - main    # run on pushes to main; change as needed
+    tags:
+      - '*'
   workflow_dispatch:
 
 jobs:
