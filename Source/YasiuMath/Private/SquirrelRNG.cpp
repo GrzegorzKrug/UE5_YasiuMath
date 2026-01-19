@@ -18,7 +18,13 @@ uint32_t USquirrel13_RNG::get_current_random() const
 {
     uint32_t randomValue = 2025;
 
-    if ( m_variant == 3 ) {
+    if ( m_variant == 5 ) {
+        randomValue = USquirrel13_RNG::RNG_5(m_position, m_seed);
+    }
+    else if ( m_variant == 4 ) {
+        randomValue = USquirrel13_RNG::RNG_4(m_position, m_seed);
+    }
+    else if ( m_variant == 3 ) {
         randomValue = USquirrel13_RNG::RNG_3(m_position, m_seed);
     }
     else if ( m_variant == 2 ) {
@@ -67,7 +73,8 @@ void USquirrel13_RNG::SetPosition( int new_position )
     m_position = new_position;
 }
 
-void USquirrel13_RNG::IncrementPosition( int offset )
+void USquirrel13_RNG::OffsetPosition( int offset )
+
 {
     m_position += offset;
 };
@@ -80,9 +87,6 @@ void USquirrel13_RNG::SetSeed( int new_seed )
 void USquirrel13_RNG::SetNoiseVariant( int new_variant )
 {
     m_variant = new_variant;
-    if ( m_variant > 3 ) {
-        /* Todo: Warning Log ?*/
-    }
 }
 
 void USquirrel13_RNG::ResetSeedPos()
@@ -94,8 +98,8 @@ void USquirrel13_RNG::ResetSeedPos()
 
 uint32_t USquirrel13_RNG::RNG_0( int position, unsigned int seed )
 {
-    constexpr unsigned int BIT_NOISE1 = 0xB5297A4D;
-    constexpr unsigned int BIT_NOISE2 = 0x68E41DA4;
+    constexpr unsigned int BIT_NOISE1 = 0xB5297A42;
+    constexpr unsigned int BIT_NOISE2 = 0x5FE41DA4;
     constexpr unsigned int BIT_NOISE3 = 0x1B54C4E9;
 
     uint32_t mangled{(unsigned int)position};
@@ -112,9 +116,9 @@ uint32_t USquirrel13_RNG::RNG_0( int position, unsigned int seed )
 
 uint32_t USquirrel13_RNG::RNG_1( int position, unsigned int seed )
 {
-    constexpr unsigned int BIT_NOISE1 = 0xB4297B4C;
-    constexpr unsigned int BIT_NOISE2 = 0x67E13DA5;
-    constexpr unsigned int BIT_NOISE3 = 0x1B55C4E8;
+    constexpr unsigned int BIT_NOISE1 = 0xB4297B26;
+    constexpr unsigned int BIT_NOISE2 = 0x67E23DA5;
+    constexpr unsigned int BIT_NOISE3 = 0xB25AC4E8;
 
     uint32_t mangled{(unsigned int)position};
     mangled *= BIT_NOISE1;
@@ -131,7 +135,7 @@ uint32_t USquirrel13_RNG::RNG_1( int position, unsigned int seed )
 uint32_t USquirrel13_RNG::RNG_2( int position, unsigned int seed )
 {
     constexpr unsigned int BIT_NOISE1 = 0xB3297B5D;
-    constexpr unsigned int BIT_NOISE2 = 0x67E42DA4;
+    constexpr unsigned int BIT_NOISE2 = 0x67E42D4A;
     constexpr unsigned int BIT_NOISE3 = 0x1B47C4E9;
 
     uint32_t mangled{(unsigned int)position};
@@ -151,6 +155,46 @@ uint32_t USquirrel13_RNG::RNG_3( int position, unsigned int seed )
     constexpr unsigned int BIT_NOISE1 = 0xC4397B83;
     constexpr unsigned int BIT_NOISE2 = 0x57E31D4A;
     constexpr unsigned int BIT_NOISE3 = 0x1C33DFD1;
+
+    uint32_t mangled{(unsigned int)position};
+    mangled *= BIT_NOISE1;
+    mangled += seed;
+    mangled ^= (mangled >> 8);
+    mangled += BIT_NOISE2;
+    mangled ^= (mangled << 8);
+    mangled *= BIT_NOISE3;
+    mangled ^= (mangled >> 8);
+
+    return mangled;
+}
+
+uint32_t USquirrel13_RNG::RNG_4( int position, unsigned int seed )
+{
+    constexpr unsigned int BIT_NOISE1 = 0x24397B83;
+    constexpr unsigned int BIT_NOISE2 = 0x57E11D27;
+    constexpr unsigned int BIT_NOISE3 = 0x1C4AD2A3;
+
+    uint32_t mangled{(unsigned int)position};
+    mangled *= BIT_NOISE1;
+    mangled += seed;
+    mangled ^= (mangled >> 8);
+    mangled += BIT_NOISE2;
+    mangled ^= (mangled << 8);
+    mangled *= BIT_NOISE3;
+    mangled ^= (mangled >> 8);
+
+    return mangled;
+}
+
+uint32_t USquirrel13_RNG::RNG_5( int position, unsigned int seed )
+{
+    constexpr unsigned int BIT_NOISE1 = 0xC1397B83;
+    constexpr unsigned int BIT_NOISE2 = 0x57E31D4A;
+    constexpr unsigned int BIT_NOISE3 = 0x1C33DFD1;
+    // constexpr unsigned int BIT_NOISE1 = 0x18397BA83;
+    // constexpr unsigned int BIT_NOISE2 = 0x171331D4A;
+    // constexpr unsigned int BIT_NOISE3 = 0x5C218DFDF;
+
 
     uint32_t mangled{(unsigned int)position};
     mangled *= BIT_NOISE1;

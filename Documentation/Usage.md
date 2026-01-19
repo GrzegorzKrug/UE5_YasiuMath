@@ -1,3 +1,5 @@
+\page baseuse Usage of plugin
+
 # How to use plugin
 
 ## Use in blueprints
@@ -36,14 +38,16 @@ To use math functions include this in your file:
 Functions are grouped into namespaces: [Name spaces](https://grzegorzkrug.github.io/UE5_YasiuMath/namespaces.html)
 
 ---
-To access the Squirrel random generator in C++, add include in your file:
+To access one of the RNG in C++, add include in your file:
 ```cpp
 #include "SquirrelRNG.h"
+/* or */
+#include "PCG_RNG.h"
 ```
 It is **UObject**, so it must comply with unreal engine rules for objects lifecycle.
 Store ref value as any UObject if you want it to persist in game for longer.
 ```cpp
-/* Declaration in class, initialize in CDO */
+/* Declaration in class, initialize this in CDO or during gameplay */
 UPROPERTY()
 TObjectPtr<USquirrel13_RNG> rng;
 ```

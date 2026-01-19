@@ -15,7 +15,7 @@
 
 
 /**
- * BP Function library having all important functions exposed for BP Editor
+ * @brief BP Function library having all implementations ready for use in BP Editor
  */
 UCLASS(BlueprintType)
 class UYasiuMathFunctionLibrary : public UBlueprintFunctionLibrary {
@@ -94,11 +94,14 @@ public:
     double ClipAngleToCycle( double angle, double period );
 
     /**
-     * @brief Rotate Box and calculate new bounding box along same axes to fix old box inside.
-     * @param BoxSize 
-     * @param rotation 
-     * @return 
+     * @brief Rotate Box and calculate new bounding box along same axes to fix old box inside.213123
+     *
+     * Helps find suboptimal bounding box for rotated meshes
+     * @note Function can take both Dimensions and Box Extent.
+     * @param BoxSize Dimension of Bounding box
+     * @param Rotation Rotation to calculate
+     * @return Returns size in same units as passed **BoxSize**
      */
     UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Angle")
-    FVector RotateBoundingBox( const FVector& BoxSize, const FQuat& rotation );
+    FVector RotateBoundingBox( const FVector& BoxSize, const FQuat& Rotation );
 };

@@ -2,6 +2,7 @@
  * Copyright (c) 2025 Grzegorz Krug.
  * All Rights Reserved.
  */
+/* File for used in C++ but requires unreal variables or objects. */
 /// \file
 
 #pragma once
@@ -13,11 +14,13 @@
 namespace YasiuMath {
     namespace AngleUtils {
         /**
-        * Rotate Box and calculate new bounding box along same axes to fit old box inside.
-         * Function can take both BoxDimensions and Box Extent.
-         * @param Box
-         * @param Rotation 
-         * @return 
+         * @brief Rotate Box and calculate new bounding box along same axes to fit old box inside.
+         * 
+         * Helps find suboptimal bounding box for rotated meshes
+         * @note Function can take both Dimensions and Box Extent.
+         * @param Box Dimension of Bounding box
+         * @param Rotation Rotation to calculate
+         * @return Returns size in same units as passed **Box**
          */
         FVector YASIUMATH_API RotateBoundingBox( const FVector& Box, const FQuat& Rotation );
 

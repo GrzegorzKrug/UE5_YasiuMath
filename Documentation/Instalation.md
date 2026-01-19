@@ -1,3 +1,6 @@
+\page install Installation guide
+
+
 # Installation of plugin
 
 ## 1. Download and Extract the Plugin

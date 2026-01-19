@@ -37,6 +37,7 @@ protected:
     UPROPERTY()
     unsigned int m_seed{1};
 
+    /** @brief variable related to selected noise variant */
     UPROPERTY()
     int m_variant{0};
 
@@ -82,15 +83,20 @@ public:
     UFUNCTION(BlueprintCallable, Category="RNG")
     void SetPosition( int new_position );
 
-    /** @brief Offset generator position */
+    /** @brief Offset current position, can be positive and negative
+     *
+     * Position + Offset
+     * */
     UFUNCTION(BlueprintCallable, Category="RNG")
-    void IncrementPosition( int offset = 1 );
+    void OffsetPosition( int offset = 1 );
 
     /** @brief Set seed noise seed */
     UFUNCTION(BlueprintCallable, Category="RNG")
     void SetSeed( int new_seed );
 
-    /** @brief Internal noise variants (it is not initialized), default=0, max=3 */
+    /** @brief Internal noise variants (it is not initialized), default=0, max=5
+     * Invalid variants will use default noise.
+     */
     UFUNCTION(BlueprintCallable, Category="RNG")
     void SetNoiseVariant( int newVariant = 0 );
 
@@ -98,17 +104,23 @@ public:
     UFUNCTION(BlueprintCallable, Category="RNG")
     void ResetSeedPos();
 
-    /* Noise variant */
+    /** @brief Noise variant */
     static uint32_t RNG_0( int position, unsigned int seed );
 
-    /* Noise variant */
+    /** @brief Noise variant */
     static uint32_t RNG_1( int position, unsigned int seed );
 
-    /* Noise variant */
+    /** @brief Noise variant */
     static uint32_t RNG_2( int position, unsigned int seed );
 
-    /* Noise variant */
+    /** @brief Noise variant */
     static uint32_t RNG_3( int position, unsigned int seed );
+
+    /** @brief Noise variant */
+    static uint32_t RNG_4( int position, unsigned int seed );
+
+    /** @brief Noise variant */
+    static uint32_t RNG_5( int position, unsigned int seed );
 
     /** @brief Serialization of RNG Object */
     virtual void Serialize( FArchive& Ar ) override;

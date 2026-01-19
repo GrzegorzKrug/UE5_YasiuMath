@@ -83,5 +83,4 @@ double UYasiuMathFunctionLibrary::ClipAngleToCycle( double angle, double period 
 FVector UYasiuMathFunctionLibrary::RotateBoundingBox( const FVector& BoxSize, const FQuat& Rotation )
 {
     return YasiuMath::AngleUtils::RotateBoundingBox(BoxSize, Rotation);
-    // return {0, 0, 0};
 }
