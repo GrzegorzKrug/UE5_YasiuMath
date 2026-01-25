@@ -1,18 +1,16 @@
-\page baseuse Usage of plugin
+\page baseuse Use of plugin and functions
 
-# How to use plugin
-
-## Use in blueprints
+# How to use it in blueprints
 1. Right-click in the Blueprint graph.  
 2. Search under the category **Math / Yasiu**.  
 3. Select the function you need.
 
 *All functions from library are located under same category.*
 
-[Functions accessible in BP](https://grzegorzkrug.github.io/UE5_YasiuMath/classUYasiuMathFunctionLibrary.html)
+#### [Functions accessible in BP](https://grzegorzkrug.github.io/UE5_YasiuMath/classUYasiuMathFunctionLibrary.html)
 
 
-### Squirrel RNG in Blueprints
+## Squirrel RNG in Blueprints
 Squirrel Object is not treated as ActorComponent, it has to be spawned from class using node
  **CreateFromClass**  
 1. Right-click in the Blueprint graph.
@@ -23,17 +21,17 @@ Squirrel Object is not treated as ActorComponent, it has to be spawned from clas
 
 ---
 
-## C++
+# How to use in C++
 To use math functions include this in your file:
 ```cpp
-// Functions in c++
+"Functions in vanilla C++";
 #include "YasiuMathLib.h"
 
-// Functions that use UE types
+"Functions that use UE types";
 #include "YasiuMathUnrealLib.h"
 ```
 
-[List of all functions for C++](https://grzegorzkrug.github.io/UE5_YasiuMath/namespacemembers_func.html)
+#### [List of all functions for C++](https://grzegorzkrug.github.io/UE5_YasiuMath/namespacemembers_func.html)
 
 Functions are grouped into namespaces: [Name spaces](https://grzegorzkrug.github.io/UE5_YasiuMath/namespaces.html)
 
@@ -50,4 +48,5 @@ Store ref value as any UObject if you want it to persist in game for longer.
 /* Declaration in class, initialize this in CDO or during gameplay */
 UPROPERTY()
 TObjectPtr<USquirrel13_RNG> rng;
+TObjectPtr<UPCG32_RNG> rng;
 ```

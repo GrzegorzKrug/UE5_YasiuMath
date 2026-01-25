@@ -2,6 +2,7 @@
  * Copyright (c) 2025 Grzegorz Krug.
  * All Rights Reserved.
  */
+
 #include "PCG_RNG.h"
 
 uint32_t UPCG32_RNG::next()
@@ -45,7 +46,6 @@ int UPCG32_RNG::GetCurrentInt( int A, int B ) const
     auto diff = B - A;
     return static_cast<int>(GetCurrentDouble() * diff + A);
 }
-
 
 
 void UPCG32_RNG::Serialize( FArchive& Ar )

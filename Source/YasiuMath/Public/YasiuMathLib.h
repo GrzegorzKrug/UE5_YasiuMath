@@ -2,6 +2,7 @@
  * Copyright (c) 2025 Grzegorz Krug.
  * All Rights Reserved.
  */
+
 /// \file
 
 #pragma once
@@ -17,6 +18,8 @@
 #include <unordered_set>
 
 #include "YasiuConstants.h"
+#include "YasiuMathDataTypes.h"
+
 
 #if __cplusplus >= 202002L
 #define CPP20_OR_LATER 1
@@ -26,105 +29,6 @@
 
 
 namespace YasiuMath {
-    /**
-     * @brief Helper object, for point description in algorithm
-     */
-    template<typename T>
-    struct Point {
-        T x = 0;
-        T y = 0;
-
-        Point( T x, T y )
-            : x(x), y(y) {}
-
-        Point( std::pair<T, T> point )
-            : x(point.first), y(point.second) {}
-
-        T fastAngle()
-        {
-            if ( x == 0.f ) {
-                return y;
-            }
-            else {
-                return static_cast<T>(atan2(y, x));
-            }
-        }
-
-        T fastAngleModded()
-        {
-            // return fastAngle();
-            return static_cast<T>(fmod(fastAngle(), static_cast<T>(YasiuNums::Y_PI)));
-        }
-    };
-
-
-    /**
-     * @brief Helper object, for point description in algorithm
-     */
-    template<typename U, typename T>
-    struct IndexedPair {
-        U index = 0;
-        T first;
-        T second;
-
-        IndexedPair() = default;
-
-        IndexedPair( U index, T first, T second )
-            : index(index), first(first), second(second) {};
-
-        Point<T> operator-( const IndexedPair<U, T>& other ) const
-        {
-            return Point<T>{first - other.first, second - other.second};
-        }
-
-        IndexedPair<U, T> subtract( const IndexedPair<U, T>& other ) const
-        {
-            return IndexedPair<U, T>{index, first - other.first, second - other.second};
-        }
-
-        bool operator==( const IndexedPair<U, T>& other ) const
-        {
-            return index == other.index;
-        }
-    };
-
-
-    /**
-     * @brief Object 'point' that has its angle related to center.
-     * Helper object, for point description in algorithm
-     */
-    template<typename T>
-    struct PointAngle {
-        int index = 0;
-        T angle = 0;
-
-        PointAngle( const int& index, T angle )
-            : index(index), angle(angle) {}
-
-        PointAngle( const IndexedPair<int, T>& point )
-        {
-            index = point.index;
-            angle = atan2(point.second, point.first);
-        }
-
-        PointAngle( const int& ind, const T& x, const T& y )
-            : index(ind)
-        {
-            angle = atan2(y, x);
-        }
-
-        bool operator<( const PointAngle<T>& other ) const
-        {
-            return angle < other.angle;
-        }
-
-        bool operator>( const PointAngle<T>& other ) const
-        {
-            return angle > other.angle;
-        }
-    };
-
-
     /** @brief Collection of functions working with angles and rotation */
     namespace AngleUtils {
         template<typename T>
@@ -157,14 +61,6 @@ namespace YasiuMath {
         }
     }
 
-
-// public:
-    // template<typename T>
-    // static std::vector<std::pair<T, T>> SpreadPointsOnArcByXY( const T X, const T Y, const T spreadDistance );
-
-    // template<typename T>
-    // static std::vector<std::pair<T, T>> SpreadPointsOnArcByAngleRadius( const T angle, const T radius,
-    // const T spreadDistance );
 
     /**
      * @brief Functions that calculate trigonometry problems in 2D / 3D space
@@ -462,6 +358,7 @@ namespace YasiuMath {
         template<typename T>
         static std::vector<int> ConvexHull2D( const std::vector<std::pair<T, T>>& polygonPoints )
         {
+            using namespace Types;
             if ( polygonPoints.size() == 0 ) {
                 return {};
             }
@@ -651,5 +548,49 @@ namespace YasiuMath {
         // 	}
         // 	return MinBoundingBoxFromHull(hullPoints);
         // };
+    }
+
+
+    /** @brief Projectile movement functions */
+    namespace Ballistics {
+        /** @brief Linear movement with linear velocity, Fast: O(1) 
+        * 
+        * @param InterceptLocation Position relative to bullet starting position
+        * @param MissilePosition Current Relative position
+        * @param MissileVelocity Current Vector
+        * @param BulletSpeed Maximal bullet speed
+        * @return Flag if solution is valid
+        */
+        bool InterceptMissile_Linear(
+            Types::Vec3<float>& InterceptLocation,
+            const Types::Vec3<float>& MissilePosition,
+            const Types::Vec3<float>& MissileVelocity,
+            const float BulletSpeed
+        );
+
+        /** @brief Iterative state prediction. Returns first possible intercept location and time.
+         *
+         * Accuracy is based on DeltaTime.
+         *
+         *
+         *  @note There is no iteration limit. Loop is restricted by **N = QueryTime / DeltaTime**
+         *  @note Suggested **Delta** range: <0.1 , 1>. Depending on space and distance.
+         * 
+         * @param PredictedLocation Predicted intercept location
+         * @param EstimatedTime Prediction time to intercept
+         * @param Missile State of missile
+         * @param Interceptor Params of interceptor
+         * @param QueryTime Prediction time
+         * @param DeltaTime Prediction resolution, how big steps to make. Smaller steps = more steps.
+         * @return Flag is solution found estimated intercept location
+         */
+        bool InterceptMissile_Dynamic(
+            Types::Vec3<float>& PredictedLocation,
+            double& EstimatedTime,
+            Types::ProjectileDynamicState<double> Missile,
+            const Types::InterceptorParams& Interceptor,
+            double QueryTime = 10,
+            double DeltaTime = 0.1
+        );
     }
 };

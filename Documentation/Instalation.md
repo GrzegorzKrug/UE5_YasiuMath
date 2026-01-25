@@ -1,16 +1,20 @@
 \page install Installation guide
 
-
 # Installation of plugin
 
 ## 1. Download and Extract the Plugin
+
 1. Download the ZIP file containing the plugin.
+    - From Source [Repository](https://github.com/GrzegorzKrug/UE5_YasiuMath)
+    - From FAB [Marketplace](https://www.fab.com/listings/2918e6a2-a380-48a5-90e8-d6c98dfde2a9)
+
 2. Locate your Unreal Engine project folder on your computer.
-3. Inside your project folder, create a new folder named **Plugins** if it doesn’t already exist.  
-   - Example path: `YourProject/Plugins/`
+3. Inside your project folder, create a new folder named **Plugins** if it doesn’t already exist.
+    - Example path: `YourProject/Plugins/`
 4. Extract (unzip) the downloaded plugin ZIP **into the Plugins folder**.
 
 Your folder structure should look like this:
+
 ```
 YourProject
 ├── Content
@@ -21,7 +25,8 @@ YourProject
 
 ---
 
-## 2. Enable the Plugin in Unreal Engine
+## 2A. Enable the Plugin in Unreal Engine
+
 1. Open your Unreal Engine project.
 2. In the top menu, select **Edit → Plugins**.
 3. Use the search bar to find **Yasiu Math**.
@@ -30,13 +35,17 @@ YourProject
 
 ---
 
-## 3. Finished!
-After the editor restarts, the Yasiu Math plugin is installed and ready to use.
+## 2B. C++ Dependency
 
+Add dependency to your project in build file: **ProjectName.Build.cs**
 
-# C++ Dependency
-Add dependency to your project in build file: `ProjectName.Build.cs`
 ```cs
    PrivateDependencyModuleNames.AddRange(new string[] { "YasiuMath" });
 ```
+
+---
+
+## 3. Finished!
+
+After the editor restarts, the Yasiu Math plugin is installed and ready to use.
 

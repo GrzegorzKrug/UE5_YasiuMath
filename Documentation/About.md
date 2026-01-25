@@ -8,6 +8,7 @@ tools.
 This library provides essential mathematical utilities that work both at runtime and within the editor, enabling deterministic
 procedural generation and solve common mathematics problems.
 
+
 ---
 
 ## Features
@@ -22,23 +23,23 @@ procedural generation and solve common mathematics problems.
 ## Components
 
 ### RNG (Random Number Generation)
+
 Gives better results than unreal random functions
 
 - **Squirrel 13**: Seedable RNG with position offset
-- **PCG**: State based RNG
+- **PCG 32**: State based RNG
 
-
-### Math Utilities
+### Math functions
 
 - **Trigonometry**: Runtime trigonometric functions
 - **Convex Functions**: Mathematical operations for procedural geometry and content generation
 
 ---
 
-### Installation
+### Quick links
 
-\ref install
+- \ref mainpage
 
-### Usage
+- [MarketPlace (Fab)](https://www.fab.com/listings/2918e6a2-a380-48a5-90e8-d6c98dfde2a9)
 
-Check this page \ref baseuse, to find out how to use functions in BP or C++.
+- [Source code](https://github.com/GrzegorzKrug/UE5_YasiuMath)

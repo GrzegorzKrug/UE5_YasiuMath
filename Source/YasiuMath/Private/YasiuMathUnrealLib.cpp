@@ -1,7 +1,7 @@
 /* 
  * Copyright (c) 2025 Grzegorz Krug.
  * All Rights Reserved.
-*/
+ */
 
 #include "YasiuMathUnrealLib.h"
 #include "CoreMinimal.h"

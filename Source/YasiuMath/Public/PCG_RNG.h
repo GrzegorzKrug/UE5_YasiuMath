@@ -2,6 +2,7 @@
  * Copyright (c) 2025 Grzegorz Krug.
  * All Rights Reserved.
  */
+
 /// \file
 
 #pragma once
@@ -21,13 +22,15 @@ class UPCG32_RNG : public UObject {
 public:
     uint32_t next();
 
+    /** @brief Set state and stream in PCG */
     UFUNCTION(BlueprintCallable, Category="RNG")
     void InitBP( int64 stateIn, int64 streamIn );
 
+    /** @brief Set only state in PCG */
     UFUNCTION(BlueprintCallable, Category="RNG")
     void SetState( int64 stateIn ) { state = static_cast<uint64_t>(stateIn); };
 
-    /** @brief Stream used for generating new numbers */
+    /** @brief Set stream variable, used for generating next states */
     UFUNCTION(BlueprintCallable, Category="RNG")
     void SetStream( int64 streamIn ) { stream = static_cast<uint64_t>(streamIn); };
 
@@ -49,7 +52,10 @@ public:
     UFUNCTION(BlueprintCallable, Category="RNG")
     int GetCurrentInt( int A, int B ) const;
 
-    /** @private */
+    /** @brief Function used to save object
+     *  @private 
+     * Will save state, stream and last random number as part of object
+     */
     virtual void Serialize( FArchive& Ar ) override;
 
 protected:

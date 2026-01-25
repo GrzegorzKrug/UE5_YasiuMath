@@ -7,6 +7,7 @@
 #include "YasiuMathBPLibrary.h"
 #include "SquirrelRNG.h"
 #include "PCG_RNG.h"
+#include "Serialization/MemoryReader.h"
 
 /*
  * 3 Plugins in game project
