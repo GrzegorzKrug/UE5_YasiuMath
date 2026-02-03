@@ -66,6 +66,11 @@ double USquirrel13_RNG::GetNextDouble()
 double USquirrel13_RNG::GetCurrentDouble() const
 {
     return static_cast<double>(get_current_random()) / UINT32_MAX;
+}
+
+int USquirrel13_RNG::GetPosition() const
+{
+    return m_position;
 };
 
 void USquirrel13_RNG::SetPosition( int new_position )
@@ -77,6 +82,11 @@ void USquirrel13_RNG::OffsetPosition( int offset )
 
 {
     m_position += offset;
+}
+
+int32 USquirrel13_RNG::GetSeed() const
+{
+    return m_seed;
 };
 
 void USquirrel13_RNG::SetSeed( int new_seed )

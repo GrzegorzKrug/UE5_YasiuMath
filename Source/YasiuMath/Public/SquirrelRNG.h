@@ -62,49 +62,58 @@ public:
     /** @internal Move position by 1 and return uint32_t */
     uint32_t get_next_random();
 
+    /** @brief Return random value scaled to integer range <min, max> at current position */
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
+    int GetCurrentInt( int min, int max ) const;
+
     /** @brief Move position by 1 and return random value as integer in range <min, max> */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     int GetNextInt( int min, int max );
 
-    /** @brief Return random value scaled to integer range <min, max> at current position */
-    UFUNCTION(BlueprintCallable, Category="RNG")
-    int GetCurrentInt( int min, int max ) const;
+    /** @brief Return last random double in range <0, 1> */
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
+    double GetCurrentDouble() const;
 
     /**
      * @brief Move position by 1 and return double in range <0, 1>
      */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     double GetNextDouble();
 
-    /** @brief Return last random double in range <0, 1> */
-    UFUNCTION(BlueprintCallable, Category="RNG")
-    double GetCurrentDouble() const;
+    /** @brief Get generator position */
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
+    int GetPosition() const;
 
     /** @brief Set generator position */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void SetPosition( int new_position );
 
     /** @brief Offset current position, can be positive and negative
      *
      * Position + Offset
      * */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void OffsetPosition( int offset = 1 );
 
+    /** @brief Get generator position */
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
+    int32 GetSeed() const;
+
     /** @brief Set seed noise seed */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void SetSeed( int new_seed );
 
     /** @brief Internal noise variants (it is not initialized), default=0, max=5
      * Invalid variants will use default noise.
      */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void SetNoiseVariant( int newVariant = 0 );
 
     /** @brief Reset to internal initial values */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void ResetSeedPos();
 
+protected:
     /** @brief Noise variant */
     static uint32_t RNG_0( int position, unsigned int seed );
 

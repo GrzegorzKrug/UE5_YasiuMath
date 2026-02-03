@@ -20,22 +20,12 @@ YourProject
 ├── Content
 ├── Source
 └── Plugins
-	└── YasiuMath (plugin files here)
+	└── YasiuMath (put plugin files into this folder)
 ```
 
 ---
 
-## 2A. Enable the Plugin in Unreal Engine
-
-1. Open your Unreal Engine project.
-2. In the top menu, select **Edit → Plugins**.
-3. Use the search bar to find **Yasiu Math**.
-4. Check the box to enable the plugin.
-5. When Unreal Engine asks you to restart, click **Restart Now**.
-
----
-
-## 2B. C++ Dependency
+## 2A. C++ Dependency
 
 Add dependency to your project in build file: **ProjectName.Build.cs**
 
@@ -45,7 +35,17 @@ Add dependency to your project in build file: **ProjectName.Build.cs**
 
 ---
 
+## 2B. Enable the Plugin in Unreal Engine
+
+1. Open your Unreal Engine project.
+2. In the top menu, select **Edit → Plugins**.
+3. Use the search bar to find **Yasiu Math**.
+   1. Should be enabled. If not then check the box to enable the plugin.
+4. When Unreal Engine asks you to restart, click **Restart Now**.
+
+---
+
 ## 3. Finished!
 
-After the editor restarts, the Yasiu Math plugin is installed and ready to use.
+After the editor restarts, the Plugin is installed and ready to use.
 
