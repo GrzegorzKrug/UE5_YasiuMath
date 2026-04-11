@@ -76,7 +76,7 @@ bool YasiuMath::Ballistics::InterceptMissile_Dynamic(
     /* 1-Indexed for time calculation */
     for ( unsigned int i = 1; i < StepsN + 1; i++ ) {
         /* Missile update */
-        Missile.Step(DeltaTime);
+        Missile.DiscreteStep(DeltaTime);
 
         /* Interceptor state update */
         Velocity += Interceptor.Acceleration * DeltaTime;

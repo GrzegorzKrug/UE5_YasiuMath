@@ -5,6 +5,19 @@
 
 #include "SquirrelRNG.h"
 
+#include "Net/UnrealNetwork.h"
+
+
+void USquirrel13_RNG::GetLifetimeReplicatedProps( TArray<class FLifetimeProperty>& OutLifetimeProps ) const
+{
+    UObject::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+    DOREPLIFETIME(USquirrel13_RNG, m_position);
+    DOREPLIFETIME(USquirrel13_RNG, m_seed);
+    DOREPLIFETIME(USquirrel13_RNG, m_variant);
+    DOREPLIFETIME(USquirrel13_RNG, init_position);
+    DOREPLIFETIME(USquirrel13_RNG, init_seed);
+}
 
 void USquirrel13_RNG::InitBP( int seed, int position )
 {
@@ -222,4 +235,66 @@ void USquirrel13_RNG::Serialize( FArchive& Ar )
 {
     UObject::Serialize(Ar);
     Ar << init_seed; // Non-Uproperty
+    if ( Ar.IsLoading() ) {
+        UE_LOGFMT(LogTemp, Log, "Loading seed: init_seed: {0}, m_seed: {1}", init_seed, m_seed);
+    }
+    else {
+        UE_LOGFMT(LogTemp, Log, "Saving seed: init_seed: {0}, m_seed: {1}", init_seed, m_seed);
+    }
+}
+
+USquirrel13_RNGComponent::USquirrel13_RNGComponent()
+{
+    RNG = CreateDefaultSubobject<USquirrel13_RNG>(TEXT("RNG"));
+}
+
+void USquirrel13_RNGComponent::GetLifetimeReplicatedProps( TArray<class FLifetimeProperty>& OutLifetimeProps ) const
+{
+    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+    DOREPLIFETIME(USquirrel13_RNGComponent, RNG);
+}
+
+void USquirrel13_RNGComponent::InitBP( int seed, int pos )
+{
+    RNG->InitBP(seed, pos);
+}
+
+int32 USquirrel13_RNGComponent::GetSeed() const
+{
+    return RNG->GetSeed();
+}
+
+void USquirrel13_RNGComponent::SetSeed( int64 Seed )
+{
+    RNG->SetSeed(Seed);
+}
+
+int USquirrel13_RNGComponent::GetPosition() const
+{
+    return RNG->GetPosition();
+}
+
+void USquirrel13_RNGComponent::SetPosition( int Pos )
+{
+    RNG->SetPosition(Pos);
+}
+
+int USquirrel13_RNGComponent::GetCurrentInt( int min, int max ) const
+{
+    return RNG->GetCurrentInt(min, max);
+}
+
+int USquirrel13_RNGComponent::GetNextInt( int min, int max )
+{
+    return RNG->GetNextInt(min, max);
+}
+
+double USquirrel13_RNGComponent::GetCurrentDouble() const
+{
+    return RNG->GetCurrentDouble();
+}
+
+double USquirrel13_RNGComponent::GetNextDouble()
+{
+    return RNG->GetNextDouble();
 }

@@ -29,6 +29,12 @@
 
 
 namespace YasiuMath {
+    template<typename T>
+    using Vec3 = YasiuMath::Types::Vec3<T>;
+    using Vec3f = YasiuMath::Types::Vec3<float>;
+    using Vec3d = YasiuMath::Types::Vec3<double>;
+
+
     /** @brief Collection of functions working with angles and rotation */
     namespace AngleUtils {
         template<typename T>
@@ -553,6 +559,238 @@ namespace YasiuMath {
 
     /** @brief Projectile movement functions */
     namespace Ballistics {
+        /** @brief Ballistic state. Can move in time with \ref Step function
+         *
+         * Self-sufficient to predict next state with \ref Step and \ref MultiStep
+         * @warning AirFrictionCoeff must be within <0, 1> range, otherwise model will not be correct or could crash.
+         * 
+         */
+
+        template<typename T>
+        struct ProjectileDynamicState {
+            virtual ~ProjectileDynamicState() {};
+
+            /** @brief Current position */
+            Vec3<T> Position = 0;
+
+            /** @brief Movement velocity vector */
+            Vec3<T> Velocity = 0;
+
+            /** @brief Acceleration or Deceleration or combined with Gravity Forces */
+            Vec3<T> ThrustVector = 0;
+
+            /** @brief Movement resistance opposite to current velocity vector. Must be in <0, 1> range. More in details...
+             *
+             * $$Drag = Velocity^2 * Coeff$$
+             */
+            T AirFrictionCoeff = 0;
+
+            /** @brief Maximal speed(length) of velocity vector */
+            T MaxSpeed = 1000;
+
+
+            /** @brief Prediction 
+             *
+             * Accuracy depends on DeltaTime. Big delta is faster but with bigger numeric error.
+             * 
+             * @param QueryTime Predict position at this time
+             * @param DeltaTime Time for single step, suggested range <0.1, 1>
+             * @return New State at query time
+             */
+            ProjectileDynamicState Predict( T QueryTime, T DeltaTime ) const
+            {
+                ProjectileDynamicState<T> TempState = *this;
+                TempState.AutoStep(QueryTime, DeltaTime);
+                return TempState;
+            }
+
+            /**
+             * @brief Quick prediction of ballistic state at time.
+             * Limitation: Only constant acceleration and no Air Drag.
+             * O(1)
+             *
+             * @param QueryTime Time To Predict
+             * @return Flag tells if projectile has reached full speed or still accelerates
+             *
+             * @note Use \ref Predict for accurate state
+             */
+            ProjectileDynamicState PredictQuick( T QueryTime ) const
+            {
+                /* Static because must return bool ( can not return Copied value )
+                 * Formula:
+                 * | V + At | = V_max
+                 * V_max is scalar, max speed
+                 * V - Velocity vec
+                 * A - Acceleration/Thrust vec
+                 * t - time
+                 * 
+                 * 0 = t^2 * A^2 + 2t * VA + V^2 - V_max^2
+                 * Now-> do components sum x+y+z
+                 */
+                ProjectileDynamicState<T> ProjectileState = *this;
+
+                if ( ProjectileState.ThrustVector.IsNearly0() ) {
+                    ProjectileState.Position = ProjectileState.Position + ProjectileState.Velocity * QueryTime;
+                    return ProjectileState;
+                }
+
+                const T Xa = ProjectileState.ThrustVector.LengthSquared();
+                const T Xb = 2 * (ProjectileState.Velocity * ProjectileState.ThrustVector).Sum();
+                const T Xc = ProjectileState.Velocity.LengthSquared() - ProjectileState.MaxSpeed * ProjectileState.MaxSpeed;
+
+                const T delta = Xb * Xb - 4 * Xa * Xc;
+                T TimeToMaxSpeed = -1;
+
+                if ( delta < 0 ) {
+                    /* Technically should never occur
+                     * Case(Accel=0) is computed before (Accel 0 can't fall into negative delta condition)
+                     */
+                    throw std::runtime_error("Delta negative. Can't return false. Solution is not Valid at all.");
+                    // return false;
+                }
+                else if ( fabs(delta) <= YasiuMath::Constants::EPSILON ) {
+                    /* 1 solution close to ~0 */
+                    TimeToMaxSpeed = -Xb / (2 * Xa);
+                }
+                else {
+                    /* 2 Solutions */
+                    T x1 = (-Xb - std::sqrt(delta)) / (2 * Xa);
+                    T x2 = (-Xb + std::sqrt(delta)) / (2 * Xa);
+
+                    if ( x1 > 0 ) {
+                        TimeToMaxSpeed = x1;
+                    }
+                    else if ( x2 > 0 ) {
+                        TimeToMaxSpeed = x2;
+                    }
+
+                    if ( x1 > 0 && x2 > 0 && x1 < x2 ) {
+                        /* Pick smaller X only when both are valid */
+                        TimeToMaxSpeed = x1;
+                    }
+                }
+
+                /*  
+                 * /\ Accel
+                 * |    / |
+                 * |   /  |
+                 * |  /   |
+                 * | /  X |
+                 * ----------> Time
+                 * X - Area is velocity -> Triangle formula 
+                 */
+                /* TimeMax<0 to catch error when limit is set 0, not to use <= to not use clamping */
+                if ( QueryTime < TimeToMaxSpeed || TimeToMaxSpeed < 0 ) {
+                    /* Travel to MaxSpeed only */
+                    ProjectileState.Position += ProjectileState.Velocity * QueryTime + ProjectileState.ThrustVector * (0.5 *
+                        QueryTime * QueryTime);
+                    ProjectileState.Velocity += ProjectileState.ThrustVector * QueryTime;
+                }
+                else {
+                    /* Acceleration Phase */
+                    ProjectileState.Position += ProjectileState.Velocity * TimeToMaxSpeed + ProjectileState.ThrustVector * (0.5 *
+                        TimeToMaxSpeed * TimeToMaxSpeed);
+                    /* Account for velocity changes */
+                    ProjectileState.Velocity += ProjectileState.ThrustVector * TimeToMaxSpeed;
+
+                    /* Normalize to Max */
+                    ProjectileState.Velocity = ProjectileState.Velocity.NormalizeInPlace() * ProjectileState.MaxSpeed;
+                    /* Max Speed reached */
+                    float RestofTime = QueryTime - TimeToMaxSpeed;
+                    if ( RestofTime > 0 ) {
+                        /* Add rest travel time */
+                        ProjectileState.Position += ProjectileState.Velocity * RestofTime;
+                    }
+                }
+
+                return ProjectileState;
+            }
+
+            /**
+             * @brief Discrete Step. Function used to modify state in time.
+             * @param deltaTime Time distance to move at single step.
+             * 
+             * @warning Using big deltaTime can lead to numeric inaccuracy when dealing with air drag.
+             * 
+             */
+            virtual void DiscreteStep( T deltaTime )
+            {
+                auto oldVel = Velocity;
+                /* Acceleration */
+                if ( !ThrustVector.IsNearly0() ) {
+                    Velocity += (ThrustVector) * deltaTime;
+                }
+
+                /* Friction as last step to damp all forces */
+                if ( AirFrictionCoeff > 0 ) {
+                    /* Preserve sign! not loose it with square */
+                    Vec3<T> drag = (Velocity * Velocity.Abs()) * AirFrictionCoeff * deltaTime;
+                    Velocity -= drag;
+                }
+
+
+                /* Speed limit */
+                /* Not need for checking Velocity!=0 safety/optimization */
+                if ( MaxSpeed > 0 && Velocity.Length() > MaxSpeed ) {
+                    Velocity = Velocity.NormalizeInPlace() * MaxSpeed;
+                }
+
+                Position += (oldVel + Velocity) * (deltaTime * 0.5);
+            };
+
+
+            /** @brief Step function. O(1) for AirDrag=0. 
+             * 
+             * Iterative prediction for models with AirDrag > 0
+             * Loop count is **N = QueryTime / DeltaTime**
+             * 
+             * @param QueryTime Time to predict into future
+             * @param DeltaTime Step size, suggested range <0.1, 1> for stability.
+             * 
+             * @note Last step has very small DeltaTime depending on math error
+             */
+            void AutoStep( T QueryTime, T DeltaTime )
+            {
+                if ( AirFrictionCoeff == 0 ) {
+                    const auto Result = PredictQuick(QueryTime);
+                    *this = Result;
+                }
+                else {
+                    const int N = QueryTime / DeltaTime;
+                    for ( int i = 0; i < N; i++ ) {
+                        Step(DeltaTime);
+                    }
+
+                    T missingTime = QueryTime - (DeltaTime * N);
+                    if ( missingTime > 0 ) {
+                        Step(missingTime);
+                    }
+                }
+            }
+        };
+
+
+        /** @brief Params used for ballistics predictions
+         * 
+         */
+        struct InterceptorParams {
+            /** @brief */
+            Vec3f Position{0};
+
+            /** @brief Speed at which object can start moving */
+            float InitialSpeed{0};
+
+            /** @brief Acceleration in any direction*/
+            float Acceleration{0};
+
+            /** @brief Max speed object can reach with acceleration, 0 or less is ingored */
+            float MaxSpeed = {0};
+
+            /** @brief Keep in <0, 1> range! */
+            float AirResistance = {0};
+        };
+
+
         /** @brief Linear movement with linear velocity, Fast: O(1) 
         * 
         * @param InterceptLocation Position relative to bullet starting position
@@ -587,15 +825,15 @@ namespace YasiuMath {
         bool InterceptMissile_Dynamic(
             Types::Vec3<float>& PredictedLocation,
             double& EstimatedTime,
-            Types::ProjectileDynamicState<double> Missile,
-            const Types::InterceptorParams& Interceptor,
+            ProjectileDynamicState<double> Missile,
+            const InterceptorParams& Interceptor,
             double QueryTime = 10,
             double DeltaTime = 0.1
         );
     }
 
 
-    /** @brief Numeric functions */
+    /** @brief Any functions that don't have category */
     namespace Numeric {
         /** @brief Checks if value is nearly 0, \ref YasiuMath::Constants::EPSILON */
         template<typename T>
@@ -606,7 +844,7 @@ namespace YasiuMath {
     }
 
 
-    /** @brief Projectile movement functions */
+    /** @brief Functions that calculate something using algebra */
     namespace Algebra {
         /**
          * @brief Remaps Value between **input** range to **output** range with optional clamping.

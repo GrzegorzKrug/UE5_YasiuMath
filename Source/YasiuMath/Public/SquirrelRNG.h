@@ -15,7 +15,7 @@
 /**
  * @brief Random number generator. Seedable. Gives better random values than epic generator.
  */
-UCLASS(BlueprintType, Blueprintable)
+UCLASS(BlueprintType, Blueprintable, DefaultToInstanced)
 class YASIUMATH_API USquirrel13_RNG : public UObject {
 public:
     GENERATED_BODY()
@@ -31,21 +31,30 @@ public:
     USquirrel13_RNG( int position, unsigned int seed, unsigned int variant )
         : m_position(position), m_seed(seed), m_variant(variant), init_position(position), init_seed(seed) {};
 
+    virtual void GetLifetimeReplicatedProps( TArray<class FLifetimeProperty>& OutLifetimeProps ) const override;
+
+    /** @brief Serialization of RNG Object */
+    virtual void Serialize( FArchive& Ar ) override;
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    int SomeValue{0};
+
 protected:
-    UPROPERTY()
+    UPROPERTY(Replicated)
     int m_position{0};
 
-    UPROPERTY()
+    UPROPERTY(Replicated)
     unsigned int m_seed{1};
 
     /** @brief variable related to selected noise variant */
-    UPROPERTY()
+    UPROPERTY(Replicated)
     int m_variant{0};
 
-    UPROPERTY()
+    UPROPERTY(Replicated)
     unsigned int init_position = 0;
 
     // UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(Replicated)
     int32 init_seed = 0;
 
 public:
@@ -53,7 +62,7 @@ public:
      * This function provides access to change private variables for C++ object which is not accessible in Blueprints.
      * @brief Modify internal values to custom.
      */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void InitBP( int seed, int position = 0 );
 
     /** @internal Return current uint32_t without changing position */
@@ -131,7 +140,50 @@ protected:
 
     /** @brief Noise variant */
     static uint32_t RNG_5( int position, unsigned int seed );
+};
 
-    /** @brief Serialization of RNG Object */
-    virtual void Serialize( FArchive& Ar ) override;
+
+/// Squirrel RNG as Actor Component for NetReplication
+UCLASS(BlueprintType, Blueprintable)
+class YASIUMATH_API USquirrel13_RNGComponent : public UActorComponent {
+    GENERATED_BODY()
+
+public:
+    USquirrel13_RNGComponent();
+
+    virtual void GetLifetimeReplicatedProps( TArray<class FLifetimeProperty>& OutLifetimeProps ) const override;
+
+    UPROPERTY(BlueprintReadWrite, Replicated, Category="Yasiu|RNG")
+    TObjectPtr<USquirrel13_RNG> RNG;
+    // USquirrel13_RNG* RNG;
+
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Category="Yasiu|RNG")
+    int TempValue11 = 11;
+
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
+    void InitBP( int seed, int pos = 0 );
+
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
+    int32 GetSeed() const;
+
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
+    void SetSeed( int64 Seed );
+
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
+    int GetPosition() const;
+
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
+    void SetPosition( int Pos );
+
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG", BlueprintPure=false)
+    int GetCurrentInt( int min, int max ) const;
+
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
+    int GetNextInt( int min, int max );
+
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG", BlueprintPure=false)
+    double GetCurrentDouble() const;
+
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
+    double GetNextDouble();
 };
