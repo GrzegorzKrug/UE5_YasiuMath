@@ -1,25 +1,19 @@
-/* 
- * Copyright (c) 2025 Grzegorz Krug.
- * All Rights Reserved.
- */
-
-/// \file
-
 #pragma once
 
-#include "CoreMinimal.h"
-#include "Templates/Tuple.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
 
-#include "YasiuMathBPLibrary.generated.h"
+#include "YasiuMathBP//YasiuMathBPLibrary.h"
+
+
+#include "BPFunLib_Trigonometry.generated.h"
 
 
 /**
- * @brief BP Function library having all implementations ready for use in BP Editor
+* @brief BP Function library used with trigonometry
  */
 UCLASS(BlueprintType)
-class UYasiuMathFunctionLibrary : public UBlueprintFunctionLibrary {
+class UYasiuMathFL_Trigonometry : public UYasiuMathFunctionLibrary {
     GENERATED_BODY()
+
 
 public:
     /**
@@ -35,7 +29,7 @@ public:
 
     /**
      * @brief Spread points on tangent line to arc located by angle and radius of given arc.
-     * Points are moved away from tangent point by spreadDistance
+     * Points are moved away from tangent point by spreadDistance in perpendicular direction
      * @param angle Tangent location defined by angle
      * @param radius Radius of arc
      * @param spreadDistance Distance to spread in one direction from tangent point
@@ -78,30 +72,4 @@ public:
      */
     UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trigonometry")
     FVector2D FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric( double alfa, double beta, double widthA, double widthB );
-
-    /**
-     * @brief Find points that create convex hull in 2D Space
-     * @param result Result array of input point indexes
-     * @param polygonPoints Array of points in 2D Space
-     */
-    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Convex")
-    void ConvexHull2D( TArray<int>& result, const TArray<FVector2D>& polygonPoints );
-
-    /** @brief Normalize angle to its period, to be in range <0, period>
-     *  @warning Does not support negative periods
-     */
-    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Angle")
-    double ClipAngleToCycle( double angle, double period );
-
-    /**
-     * @brief Rotate Box and calculate new bounding box along same axes to fix old box inside.213123
-     *
-     * Helps find suboptimal bounding box for rotated meshes
-     * @note Function can take both Dimensions and Box Extent.
-     * @param BoxSize Dimension of Bounding box
-     * @param Rotation Rotation to calculate
-     * @return Returns size in same units as passed **BoxSize**
-     */
-    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Angle")
-    FVector RotateBoundingBox( const FVector& BoxSize, const FQuat& Rotation );
 };

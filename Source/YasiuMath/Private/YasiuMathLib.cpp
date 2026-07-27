@@ -66,7 +66,7 @@ bool YasiuMath::Ballistics::InterceptMissile_Dynamic(
     double Velocity = Interceptor.InitialSpeed;
     double Range = 0;
 
-    if ( DeltaTime < EPSILON ) {
+    if ( DeltaTime < YasiuMath::Constants::EPSILON ) {
         /* Too Small Eps */
         throw std::runtime_error("Delta time in Intercept is too small");
     }

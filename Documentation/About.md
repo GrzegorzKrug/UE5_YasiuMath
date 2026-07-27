@@ -36,7 +36,7 @@ Gives better results than unreal random functions
 
 ---
 
-### Quick links
+## Start
 
 - \ref mainpage
 

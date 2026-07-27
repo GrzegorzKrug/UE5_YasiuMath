@@ -17,7 +17,7 @@
 #include <algorithm>
 #include <unordered_set>
 
-#include "YasiuConstants.h"
+#include "Constants.h"
 #include "YasiuMathDataTypes.h"
 
 
@@ -34,13 +34,13 @@ namespace YasiuMath {
         template<typename T>
         static inline double Degrees2Radians( T degree )
         {
-            return static_cast<T>(YasiuNums::Y_PI * degree / 180.f);
+            return static_cast<T>(YasiuMath::Constants::Y_PI * degree / 180.f);
         }
 
         template<typename T>
         static inline T Radians2Degrees( T radian )
         {
-            return static_cast<T>(radian * 180.f / YasiuNums::Y_PI);
+            return static_cast<T>(radian * 180.f / YasiuMath::Constants::Y_PI);
         }
 
         /**
@@ -84,7 +84,7 @@ namespace YasiuMath {
             std::vector<std::pair<T, T>> result;
 
             /* Beta = 90 - alfa */
-            T beta = static_cast<T>(YasiuNums::Y_PI / 2. - angle);
+            T beta = static_cast<T>(YasiuMath::Constants::Y_PI / 2. - angle);
 
             /*
              * sin(B) = opposite / hypotenuse -> dy = sin * hypotenuse
@@ -592,5 +592,58 @@ namespace YasiuMath {
             double QueryTime = 10,
             double DeltaTime = 0.1
         );
+    }
+
+
+    /** @brief Numeric functions */
+    namespace Numeric {
+        /** @brief Checks if value is nearly 0, \ref YasiuMath::Constants::EPSILON */
+        template<typename T>
+        static bool IsNearly0( T Value )
+        {
+            return std::fabs(Value) <= YasiuMath::Constants::EPSILON;
+        }
+    }
+
+
+    /** @brief Projectile movement functions */
+    namespace Algebra {
+        /**
+         * @brief Remaps Value between **input** range to **output** range with optional clamping.
+         * @tparam T numeric type
+         * @param Value Input value
+         * @param InMin Input range low value
+         * @param InMax Input range high value
+         * @param OutMin Output range low value
+         * @param OutMax Output range high value
+         * @param ClampOutput Flag to clamp output
+         * @return Value
+         */
+        template<typename T>
+        static T Remap( const T Value, const T InMin, const T InMax, T OutMin, T OutMax, const bool ClampOutput = false )
+        {
+            const T SubVal = Value - InMin;
+            const T Divid = InMax - InMin;
+
+            if ( OutMax < OutMin ) {
+                std::swap(OutMin, OutMax);
+            }
+
+            if ( Numeric::IsNearly0(Divid) ) {
+                /* What to return? Any result will not be accurate, but 0 division goes to max */
+                return OutMax;
+            }
+
+            const T Factor = SubVal / Divid;
+
+
+            const T SubValOut = OutMax - OutMin;
+            const T Output = (Factor * SubValOut) + OutMin;
+            if ( ClampOutput ) {
+                return std::clamp(Output, OutMin, OutMax);
+            }
+
+            return Output;
+        }
     }
 };

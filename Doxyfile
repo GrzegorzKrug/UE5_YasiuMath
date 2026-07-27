@@ -990,7 +990,9 @@ WARN_LOGFILE           =
 # directories like /usr/src/myproject. Separate the files or directories with
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
-INPUT                  = Source/YasiuMath/Public Documentation
+INPUT                  = Documentation \
+    Source/YasiuMath/Public \
+    Source/YasiuMath/Public/YasiuMathBP 
 
 # This tag can be used to specify the character encoding of the source files
 # that Doxygen parses. Internally Doxygen uses the UTF-8 encoding. Doxygen uses

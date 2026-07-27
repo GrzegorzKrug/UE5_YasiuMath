@@ -9,7 +9,7 @@
 
 #include <cmath>
 #include <stdexcept>
-#include "YasiuConstants.h"
+#include "Constants.h"
 
 /// \file
 
@@ -18,9 +18,6 @@
 namespace YasiuMath {
     /** @brief Helper types used in algorithms */
     namespace Types {
-        /** @brief Value used for number stability check */
-        constexpr double EPSILON = 1e-7;
-
         /**
          * @brief Pair-like type, Helper for point description in ConvexHull algorithm
          * 
@@ -55,7 +52,7 @@ namespace YasiuMath {
             T fastAngleModded()
             {
                 // return fastAngle();
-                return static_cast<T>(fmod(fastAngle(), static_cast<T>(YasiuNums::Y_PI)));
+                return static_cast<T>(fmod(fastAngle(), static_cast<T>(YasiuMath::Constants::Y_PI)));
             }
         };
 
@@ -333,8 +330,8 @@ namespace YasiuMath {
                 return *this;
             }
 
-            /** @brief Check if vector has any element other than 0, uses \ref EPSILON */
-            bool IsNearly0( const T EPS = EPSILON ) const
+            /** @brief Check if vector has any element other than 0, uses \ref YasiuMath::Constants::EPSILON */
+            bool IsNearly0( const T EPS = YasiuMath::Constants::EPSILON ) const
             {
                 return AbsSum() < EPS;
             }
@@ -385,7 +382,7 @@ namespace YasiuMath {
                 }
 
                 T missingTime = QueryTime - (DeltaTime * N);
-                if ( missingTime > EPSILON ) {
+                if ( missingTime > YasiuMath::Constants::EPSILON ) {
                     Step(missingTime);
                 }
             }
@@ -467,7 +464,7 @@ namespace YasiuMath {
                     throw std::runtime_error("Delta negative. Can't return false. Solution is not Valid at all.");
                     // return false;
                 }
-                else if ( fabs(delta) <= EPSILON ) {
+                else if ( fabs(delta) <= YasiuMath::Constants::EPSILON ) {
                     /* 1 solution ~ 0 */
                     TimeToMaxSpeed = -Xb / (2 * Xa);
                 }

@@ -4,7 +4,11 @@
 #include "Misc/AutomationTest.h"
 #include "Serialization/BufferArchive.h"
 
-#include "YasiuMathBPLibrary.h"
+#include "YasiuMathBP/BPFunLib_Algebra.h"
+#include "YasiuMathBP/BPFunLib_Angle.h"
+#include "YasiuMathBP/BPFunLib_ConvexHull.h"
+#include "YasiuMathBP/BPFunLib_Trigonometry.h"
+
 #include "SquirrelRNG.h"
 #include "PCG_RNG.h"
 #include "Serialization/MemoryReader.h"
@@ -15,36 +19,86 @@
  */
 
 
-// Define a simple automation test
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(
-    BasicCallTests,
-    "Plugins.Yasiu.Math.Base",
+    BasicCallTests1,
+    "Plugins.Yasiu.Math.Base.1",
     EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter
 )
 
 
-bool BasicCallTests::RunTest( const FString& Parameters )
+bool BasicCallTests1::RunTest( const FString& Parameters )
 {
     TArray<int> resultsInt{};
     TArray<FVector2D> resultsVector2{};
 
-    UYasiuMathFunctionLibrary* MathLib = NewObject<UYasiuMathFunctionLibrary>();
+    auto* MathLib = NewObject<UYasiuMathFL_Angle>();
     MathLib->ClipAngleToCycle(5, 5);
+    MathLib->ClipAngleToCycle(350, 10);
+
+    FVector Box{50, 50, 50};
+    FQuat rotation{};
+    MathLib->RotateBoundingBox(Box, rotation);
+
+    return true; // Return true if test completed successfully
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(
+    BasicCallTests2,
+    "Plugins.Yasiu.Math.Base.2",
+    EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter
+)
+
+
+bool BasicCallTests2::RunTest( const FString& Parameters )
+{
+    TArray<int> resultsInt{};
+    TArray<FVector2D> resultsVector2{};
+
+    auto* MathLib = NewObject<UYasiuMathFL_Trigonometry>();
 
     MathLib->SpreadPointsOnTangentByXY(resultsVector2, 5, 5, 10);
     MathLib->SpreadPointsOnTangentByAngleRadius(resultsVector2, 50, 15, 5);
     MathLib->FindMinimalRadiusForIntersectingTangentsOnArc(4, 10, 5);
     MathLib->FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric(10, 25, 5, 10);
 
+    return true; // Return true if test completed successfully
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(
+    BasicCallTests3,
+    "Plugins.Yasiu.Math.Base.3",
+    EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter
+)
+
+
+bool BasicCallTests3::RunTest( const FString& Parameters )
+{
+    TArray<int> resultsInt{};
+    TArray<FVector2D> resultsVector2{};
+
+    auto* MathLib = NewObject<UYasiuMathFL_ConvexHull>();
+
     TArray<FVector2D> points{{2, 4}, {5, 4}, {3, 4}, {10, 10}};
     MathLib->ConvexHull2D(resultsInt, points);
+    return true; // Return true if test completed successfully
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(
+    BasicCallTests4,
+    "Plugins.Yasiu.Math.Base.4",
+    EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter
+)
 
 
-    MathLib->ClipAngleToCycle(350, 10);
+bool BasicCallTests4::RunTest( const FString& Parameters )
+{
+    TArray<int> resultsInt{};
+    TArray<FVector2D> resultsVector2{};
 
-    FVector Box{50, 50, 50};
-    FQuat rotation{};
-    MathLib->RotateBoundingBox(Box, rotation);
+    auto* MathLib = NewObject<UYasiuMathFL_Algebra>();
+    MathLib->RemapDouble(5, 0, 10, 0, 100);
+    MathLib->RemapFloat(5, 0, 10, 0, 100);
+
 
     return true; // Return true if test completed successfully
 }
@@ -59,7 +113,7 @@ IMPLEMENT_SIMPLE_AUTOMATION_TEST(
 bool MathBoxRotation::RunTest( const FString& Parameters )
 {
     constexpr float YASIU_EPS = 0.0001f;
-    UYasiuMathFunctionLibrary* MathLib = NewObject<UYasiuMathFunctionLibrary>();
+    auto* MathLib = NewObject<UYasiuMathFL_Angle>();
 
     FVector Box{100, 100, 100};
     FRotator rotator{};
@@ -90,7 +144,7 @@ IMPLEMENT_SIMPLE_AUTOMATION_TEST(
 bool MathBoxPillarRotation::RunTest( const FString& Parameters )
 {
     constexpr float YASIU_EPS = 0.0001f;
-    UYasiuMathFunctionLibrary* MathLib = NewObject<UYasiuMathFunctionLibrary>();
+    auto* MathLib = NewObject<UYasiuMathFL_Angle>();
 
     FVector Box{65, 150, 352};
     FRotator rotator{0, 0, 0};

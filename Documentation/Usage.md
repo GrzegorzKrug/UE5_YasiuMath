@@ -7,8 +7,7 @@
 
 *All functions from library are located under same category.*
 
-#### [Functions accessible in BP](https://grzegorzkrug.github.io/UE5_YasiuMath/classUYasiuMathFunctionLibrary.html)
-
+#### [**Functions accessible in BP**](classUYasiuMathFunctionLibrary.html)
 
 ## Squirrel RNG in Blueprints
 Squirrel Object is not treated as ActorComponent, it has to be spawned from class using node
@@ -27,13 +26,14 @@ To use math functions include this in your file:
 "Functions in vanilla C++";
 #include "YasiuMathLib.h"
 
-"Functions that use UE types";
+"Functions that use Unreal types";
 #include "YasiuMathUnrealLib.h"
 ```
 
-#### [List of all functions for C++](https://grzegorzkrug.github.io/UE5_YasiuMath/namespacemembers_func.html)
+<!-- Local redirector -->
+#### [**List of all functions for C++**](namespacemembers_func.html)
 
-Functions are grouped into namespaces: [Name spaces](https://grzegorzkrug.github.io/UE5_YasiuMath/namespaces.html)
+Functions are grouped into namespaces: [**Name spaces**](namespaces.html)
 
 ---
 To access one of the RNG in C++, add include in your file:
