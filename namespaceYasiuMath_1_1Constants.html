@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Yasiu Math: Source/YasiuMath/Public/YasiuConstants.h Source File</title>
+<title>Yasiu Math: YasiuMath::Constants Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,6 +16,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
@@ -90,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('YasiuConstants_8h_source.html','',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('namespaceYasiuMath_1_1Constants.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -116,28 +123,38 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('YasiuConstants
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">YasiuConstants.h</div></div>
+  <div class="headertitle"><div class="title">YasiuMath::Constants Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="YasiuConstants_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 2025 Grzegorz Krug.</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * All Rights Reserved.</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span>YasiuNums {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">constexpr</span> <span class="keywordtype">double</span> Y_PI = 3.14159265358979323846;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">constexpr</span> <span class="keywordtype">double</span> EPS = 1e-8;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>};</div>
-</div><!-- fragment --></div><!-- contents -->
+
+<p>Constant values used across library.  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a3fe041b9aecdb9abf7811edf4457337f" id="r_a3fe041b9aecdb9abf7811edf4457337f"><td class="memItemLeft"><a id="a3fe041b9aecdb9abf7811edf4457337f" name="a3fe041b9aecdb9abf7811edf4457337f"></a>
+constexpr double&#160;</td><td class="memItemRight"><b>Y_PI</b> = 3.14159265358979323846</td></tr>
+<tr class="memdesc:a3fe041b9aecdb9abf7811edf4457337f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Famous PI value. <br /></td></tr>
+<tr class="memitem:adeb8ac4e74bfd7486ff00fbac09203d2" id="r_adeb8ac4e74bfd7486ff00fbac09203d2"><td class="memItemLeft"><a id="adeb8ac4e74bfd7486ff00fbac09203d2" name="adeb8ac4e74bfd7486ff00fbac09203d2"></a>
+constexpr double&#160;</td><td class="memItemRight"><b>EPSILON</b> = 1e-8</td></tr>
+<tr class="memdesc:adeb8ac4e74bfd7486ff00fbac09203d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value used for number stability check. <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Constant values used across library. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>Source</b></li><li class="navelem"><b>YasiuMath</b></li><li class="navelem"><b>Public</b></li><li class="navelem"><a href="YasiuConstants_8h.html">YasiuConstants.h</a></li>
+    <li class="navelem"><a href="namespaceYasiuMath.html">YasiuMath</a></li><li class="navelem"><a href="namespaceYasiuMath_1_1Constants.html">Constants</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

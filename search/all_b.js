@@ -2,7 +2,7 @@ var searchData=
 [
   ['in_20blueprints_0',['Squirrel RNG in Blueprints',['../baseuse.html#autotoc_md20',1,'']]],
   ['in_20blueprints_1',['How to use it in blueprints',['../baseuse.html#autotoc_md18',1,'']]],
-  ['in_20bp_2',['&lt;a href=&quot;https://grzegorzkrug.github.io/UE5_YasiuMath/classUYasiuMathFunctionLibrary.html&quot;&gt;Functions accessible in BP&lt;/a&gt;',['../baseuse.html#autotoc_md19',1,'']]],
+  ['in_20bp_2',['&lt;a href=&quot;https://grzegorzkrug.github.io/UE5_YasiuMath/classUYasiuMathFunctionLibrary.html&quot;&gt;&lt;b&gt;Functions accessible in BP&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md19',1,'']]],
   ['in_20c_3',['How to use in C++',['../baseuse.html#autotoc_md22',1,'']]],
   ['in_20unreal_20engine_4',['2B. Enable the Plugin in Unreal Engine',['../install.html#autotoc_md15',1,'']]],
   ['index_5',['index',['../structYasiuMath_1_1Types_1_1IndexedPair.html#a69d310cff7bf8cf6e73c84ac26ba2e3b',1,'YasiuMath::Types::IndexedPair']]],
@@ -14,6 +14,6 @@ var searchData=
   ['interceptmissile_5fdynamic_11',['InterceptMissile_Dynamic',['../namespaceYasiuMath_1_1Ballistics.html#a8f703a6ca840acd2f2c0f4963e110ee2',1,'YasiuMath::Ballistics']]],
   ['interceptmissile_5flinear_12',['InterceptMissile_Linear',['../namespaceYasiuMath_1_1Ballistics.html#a300b3610f8af1f2916b815b8ca3faa05',1,'YasiuMath::Ballistics']]],
   ['interceptorparams_13',['InterceptorParams',['../structYasiuMath_1_1Types_1_1InterceptorParams.html',1,'YasiuMath::Types']]],
-  ['isnearly0_14',['IsNearly0',['../structYasiuMath_1_1Types_1_1Vec3.html#ac250bb066376d9b1da1fc92856dfea1d',1,'YasiuMath::Types::Vec3']]],
+  ['isnearly0_14',['IsNearly0',['../structYasiuMath_1_1Types_1_1Vec3.html#a6eb5a635774b591a5c670130063b5cfb',1,'YasiuMath::Types::Vec3::IsNearly0()'],['../namespaceYasiuMath_1_1Numeric.html#a1516b5b2410f4317ea3e52936b24ece7',1,'YasiuMath::Numeric::IsNearly0()']]],
   ['it_20in_20blueprints_15',['How to use it in blueprints',['../baseuse.html#autotoc_md18',1,'']]]
 ];

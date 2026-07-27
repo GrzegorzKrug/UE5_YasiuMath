@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('YasiuMathLib_8
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;unordered_set&gt;</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="YasiuConstants_8h.html">YasiuConstants.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="Constants_8h.html">Constants.h</a>&quot;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="YasiuMathDataTypes_8h.html">YasiuMathDataTypes.h</a>&quot;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
@@ -154,13 +154,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('YasiuMathLib_8
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span> Degrees2Radians( T degree )</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(YasiuNums::Y_PI * degree / 180.f);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(<a class="code hl_variable" href="namespaceYasiuMath_1_1Constants.html#a3fe041b9aecdb9abf7811edf4457337f">YasiuMath::Constants::Y_PI</a> * degree / 180.f);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">static</span> <span class="keyword">inline</span> T Radians2Degrees( T radian )</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(radian * 180.f / YasiuNums::Y_PI);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(radian * 180.f / <a class="code hl_variable" href="namespaceYasiuMath_1_1Constants.html#a3fe041b9aecdb9abf7811edf4457337f">YasiuMath::Constants::Y_PI</a>);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('YasiuMathLib_8
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            std::vector&lt;std::pair&lt;T, T&gt;&gt; result;</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="comment">/* Beta = 90 - alfa */</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            T beta = <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(YasiuNums::Y_PI / 2. - angle);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            T beta = <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(<a class="code hl_variable" href="namespaceYasiuMath_1_1Constants.html#a3fe041b9aecdb9abf7811edf4457337f">YasiuMath::Constants::Y_PI</a> / 2. - angle);</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="comment">/*</span></div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">             * sin(B) = opposite / hypotenuse -&gt; dy = sin * hypotenuse</span></div>
@@ -628,67 +628,78 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('YasiuMathLib_8
 <div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>    }</div>
 </div>
 <div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span> </div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span> </div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>    <span class="keyword">namespace </span>Numeric {</div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> IsNearly0( T Value )</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>        {</div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>            <span class="keywordflow">return</span> std::fabs(Value) &lt;= YasiuNums::EPS;</div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>        }</div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>    }</div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span> </div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span></div>
-<div class="foldopen" id="foldopen00608" data-start="{" data-end="}">
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno"><a class="line" href="namespaceYasiuMath_1_1Algebra.html">  608</a></span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceYasiuMath_1_1Algebra.html">Algebra</a> {</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>        <span class="keyword">static</span> T Remap( <span class="keyword">const</span> T Value, <span class="keyword">const</span> T InMin, <span class="keyword">const</span> T InMax, T OutMin, T OutMax, <span class="keyword">const</span> <span class="keywordtype">bool</span> ClampOutput = <span class="keyword">false</span> )</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>        {</div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>            <span class="keyword">const</span> T SubVal = Value - InMin;</div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>            <span class="keyword">const</span> T Divid = InMax - InMin;</div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span> </div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>            <span class="keywordflow">if</span> ( OutMax &lt; OutMin ) {</div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>                std::swap(OutMin, OutMax);</div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>            }</div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span> </div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>            <span class="keywordflow">if</span> ( Numeric::IsNearly0(Divid) ) {</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>                <span class="comment">/* What to return? Any result will not be accurate, but 0 division goes to max */</span></div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>                <span class="keywordflow">return</span> OutMax;</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>            }</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span> </div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>            <span class="keyword">const</span> T Factor = SubVal / Divid;</div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span> </div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span> </div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>            <span class="keyword">const</span> T SubValOut = OutMax - OutMin;</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>            <span class="keyword">const</span> T Output = (Factor * SubValOut) + OutMin;</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>            <span class="keywordflow">if</span> ( ClampOutput ) {</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>                <span class="keywordflow">return</span> std::clamp(Output, OutMin, OutMax);</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>            }</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span> </div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>            <span class="keywordflow">return</span> Output;</div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>        }</div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>    }</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span></div>
+<div class="foldopen" id="foldopen00599" data-start="{" data-end="}">
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno"><a class="line" href="namespaceYasiuMath_1_1Numeric.html">  599</a></span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceYasiuMath_1_1Numeric.html">Numeric</a> {</div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00602" data-start="{" data-end="}">
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno"><a class="line" href="namespaceYasiuMath_1_1Numeric.html#a1516b5b2410f4317ea3e52936b24ece7">  602</a></span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceYasiuMath_1_1Numeric.html#a1516b5b2410f4317ea3e52936b24ece7">IsNearly0</a>( T Value )</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>        {</div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>            <span class="keywordflow">return</span> std::fabs(Value) &lt;= <a class="code hl_variable" href="namespaceYasiuMath_1_1Constants.html#adeb8ac4e74bfd7486ff00fbac09203d2">YasiuMath::Constants::EPSILON</a>;</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>        }</div>
 </div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>};</div>
-<div class="ttc" id="aYasiuConstants_8h_html"><div class="ttname"><a href="YasiuConstants_8h.html">YasiuConstants.h</a></div></div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>    }</div>
+</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span> </div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span></div>
+<div class="foldopen" id="foldopen00610" data-start="{" data-end="}">
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno"><a class="line" href="namespaceYasiuMath_1_1Algebra.html">  610</a></span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceYasiuMath_1_1Algebra.html">Algebra</a> {</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00623" data-start="{" data-end="}">
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno"><a class="line" href="namespaceYasiuMath_1_1Algebra.html#aba93ed33da129cd39c5e78a58ebe225f">  623</a></span>        <span class="keyword">static</span> T <a class="code hl_function" href="namespaceYasiuMath_1_1Algebra.html#aba93ed33da129cd39c5e78a58ebe225f">Remap</a>( <span class="keyword">const</span> T Value, <span class="keyword">const</span> T InMin, <span class="keyword">const</span> T InMax, T OutMin, T OutMax, <span class="keyword">const</span> <span class="keywordtype">bool</span> ClampOutput = <span class="keyword">false</span> )</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>        {</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>            <span class="keyword">const</span> T SubVal = Value - InMin;</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>            <span class="keyword">const</span> T Divid = InMax - InMin;</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span> </div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>            <span class="keywordflow">if</span> ( OutMax &lt; OutMin ) {</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>                std::swap(OutMin, OutMax);</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>            }</div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span> </div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>            <span class="keywordflow">if</span> ( <a class="code hl_function" href="namespaceYasiuMath_1_1Numeric.html#a1516b5b2410f4317ea3e52936b24ece7">Numeric::IsNearly0</a>(Divid) ) {</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>                <span class="comment">/* What to return? Any result will not be accurate, but 0 division goes to max */</span></div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>                <span class="keywordflow">return</span> OutMax;</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>            }</div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span> </div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>            <span class="keyword">const</span> T Factor = SubVal / Divid;</div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span> </div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span> </div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>            <span class="keyword">const</span> T SubValOut = OutMax - OutMin;</div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>            <span class="keyword">const</span> T Output = (Factor * SubValOut) + OutMin;</div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>            <span class="keywordflow">if</span> ( ClampOutput ) {</div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>                <span class="keywordflow">return</span> std::clamp(Output, OutMin, OutMax);</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>            }</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span> </div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>            <span class="keywordflow">return</span> Output;</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>        }</div>
+</div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>    }</div>
+</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>};</div>
+<div class="ttc" id="aConstants_8h_html"><div class="ttname"><a href="Constants_8h.html">Constants.h</a></div></div>
 <div class="ttc" id="aYasiuMathDataTypes_8h_html"><div class="ttname"><a href="YasiuMathDataTypes_8h.html">YasiuMathDataTypes.h</a></div></div>
-<div class="ttc" id="anamespaceYasiuMath_1_1Algebra_html"><div class="ttname"><a href="namespaceYasiuMath_1_1Algebra.html">YasiuMath::Algebra</a></div><div class="ttdoc">Projectile movement functions.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:608</div></div>
+<div class="ttc" id="anamespaceYasiuMath_1_1Algebra_html"><div class="ttname"><a href="namespaceYasiuMath_1_1Algebra.html">YasiuMath::Algebra</a></div><div class="ttdoc">Numeric functions.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:610</div></div>
+<div class="ttc" id="anamespaceYasiuMath_1_1Algebra_html_aba93ed33da129cd39c5e78a58ebe225f"><div class="ttname"><a href="namespaceYasiuMath_1_1Algebra.html#aba93ed33da129cd39c5e78a58ebe225f">YasiuMath::Algebra::Remap</a></div><div class="ttdeci">static T Remap(const T Value, const T InMin, const T InMax, T OutMin, T OutMax, const bool ClampOutput=false)</div><div class="ttdoc">Remaps Value between Low/High input to Low/High Output with optional clamping.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:623</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1AngleUtils_html"><div class="ttname"><a href="namespaceYasiuMath_1_1AngleUtils.html">YasiuMath::AngleUtils</a></div><div class="ttdoc">Collection of functions working with angles and rotation.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:33</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1AngleUtils_html_a9b871900e7139385e6e4c9a7a099a96a"><div class="ttname"><a href="namespaceYasiuMath_1_1AngleUtils.html#a9b871900e7139385e6e4c9a7a099a96a">YasiuMath::AngleUtils::NormalizeAngleToPeriod</a></div><div class="ttdeci">static T NormalizeAngleToPeriod(T angle, T period=360.f)</div><div class="ttdoc">Normalize angle by removing full periods from value, result is in range &lt;0, period&gt;.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:53</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1Ballistics_html"><div class="ttname"><a href="namespaceYasiuMath_1_1Ballistics.html">YasiuMath::Ballistics</a></div><div class="ttdoc">Projectile movement functions.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:555</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1Ballistics_html_a300b3610f8af1f2916b815b8ca3faa05"><div class="ttname"><a href="namespaceYasiuMath_1_1Ballistics.html#a300b3610f8af1f2916b815b8ca3faa05">YasiuMath::Ballistics::InterceptMissile_Linear</a></div><div class="ttdeci">bool InterceptMissile_Linear(Types::Vec3&lt; float &gt; &amp;InterceptLocation, const Types::Vec3&lt; float &gt; &amp;MissilePosition, const Types::Vec3&lt; float &gt; &amp;MissileVelocity, const float BulletSpeed)</div><div class="ttdoc">Linear movement with linear velocity, Fast: O(1).</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1Ballistics_html_a8f703a6ca840acd2f2c0f4963e110ee2"><div class="ttname"><a href="namespaceYasiuMath_1_1Ballistics.html#a8f703a6ca840acd2f2c0f4963e110ee2">YasiuMath::Ballistics::InterceptMissile_Dynamic</a></div><div class="ttdeci">bool InterceptMissile_Dynamic(Types::Vec3&lt; float &gt; &amp;PredictedLocation, double &amp;EstimatedTime, Types::ProjectileDynamicState&lt; double &gt; Missile, const Types::InterceptorParams &amp;Interceptor, double QueryTime=10, double DeltaTime=0.1)</div><div class="ttdoc">Iterative state prediction. Returns first possible intercept location and time.</div></div>
+<div class="ttc" id="anamespaceYasiuMath_1_1Constants_html_a3fe041b9aecdb9abf7811edf4457337f"><div class="ttname"><a href="namespaceYasiuMath_1_1Constants.html#a3fe041b9aecdb9abf7811edf4457337f">YasiuMath::Constants::Y_PI</a></div><div class="ttdeci">constexpr double Y_PI</div><div class="ttdoc">Famous PI value.</div><div class="ttdef"><b>Definition</b> Constants.h:14</div></div>
+<div class="ttc" id="anamespaceYasiuMath_1_1Constants_html_adeb8ac4e74bfd7486ff00fbac09203d2"><div class="ttname"><a href="namespaceYasiuMath_1_1Constants.html#adeb8ac4e74bfd7486ff00fbac09203d2">YasiuMath::Constants::EPSILON</a></div><div class="ttdeci">constexpr double EPSILON</div><div class="ttdoc">Value used for number stability check.</div><div class="ttdef"><b>Definition</b> Constants.h:17</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1ConvexHull_html"><div class="ttname"><a href="namespaceYasiuMath_1_1ConvexHull.html">YasiuMath::ConvexHull</a></div><div class="ttdoc">Collection of convex hull functions and helper functions.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:250</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1ConvexHull_html_a9398ebbd4067e31a89e077464565ae0a"><div class="ttname"><a href="namespaceYasiuMath_1_1ConvexHull.html#a9398ebbd4067e31a89e077464565ae0a">YasiuMath::ConvexHull::ConvexHull2D</a></div><div class="ttdeci">static std::vector&lt; int &gt; ConvexHull2D(const std::vector&lt; std::pair&lt; T, T &gt; &gt; &amp;polygonPoints)</div><div class="ttdoc">Find Convex Hull in 2D space from given points.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:359</div></div>
+<div class="ttc" id="anamespaceYasiuMath_1_1Numeric_html"><div class="ttname"><a href="namespaceYasiuMath_1_1Numeric.html">YasiuMath::Numeric</a></div><div class="ttdoc">Numeric functions.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:599</div></div>
+<div class="ttc" id="anamespaceYasiuMath_1_1Numeric_html_a1516b5b2410f4317ea3e52936b24ece7"><div class="ttname"><a href="namespaceYasiuMath_1_1Numeric.html#a1516b5b2410f4317ea3e52936b24ece7">YasiuMath::Numeric::IsNearly0</a></div><div class="ttdeci">static bool IsNearly0(T Value)</div><div class="ttdoc">Checks if value is nearly 0, YasiuMath::Constants::EPSILON.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:602</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1Trigonometry_html"><div class="ttname"><a href="namespaceYasiuMath_1_1Trigonometry.html">YasiuMath::Trigonometry</a></div><div class="ttdoc">Functions that calculate trigonometry problems in 2D / 3D space.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:68</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1Trigonometry_html_a8805107e89bc32cf46f47e1ed3db1e43"><div class="ttname"><a href="namespaceYasiuMath_1_1Trigonometry.html#a8805107e89bc32cf46f47e1ed3db1e43">YasiuMath::Trigonometry::SpreadPointsOnTangentByAngleRadius</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; T, T &gt; &gt; SpreadPointsOnTangentByAngleRadius(const T angle, const T radius, const T spreadDistance)</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:79</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1Trigonometry_html_a9f5895c931517c1d7ac65ebaa525a9a6"><div class="ttname"><a href="namespaceYasiuMath_1_1Trigonometry.html#a9f5895c931517c1d7ac65ebaa525a9a6">YasiuMath::Trigonometry::FindMinimalRadiusForIntersectingTangentsOnArc</a></div><div class="ttdeci">T FindMinimalRadiusForIntersectingTangentsOnArc(const T alfa, const T beta, const T symmetricWidth)</div><div class="ttdoc">Finds radius of circle for both tangent line that intersect.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:156</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1Trigonometry_html_aa7bc14fbaed48606f6c94bc97d46e0a7"><div class="ttname"><a href="namespaceYasiuMath_1_1Trigonometry.html#aa7bc14fbaed48606f6c94bc97d46e0a7">YasiuMath::Trigonometry::SpreadPointsOnTangentByXY</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; T, T &gt; &gt; SpreadPointsOnTangentByXY(const T X, const T Y, const T spreadDistance)</div><div class="ttdoc">Spread points on tangent line to arc.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:128</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1Trigonometry_html_abe52c6b88aaf42f766f7f1f39f5fe2e2"><div class="ttname"><a href="namespaceYasiuMath_1_1Trigonometry.html#abe52c6b88aaf42f766f7f1f39f5fe2e2">YasiuMath::Trigonometry::FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric</a></div><div class="ttdeci">std::pair&lt; T, T &gt; FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric(const T alfa, const T beta, const T widthA, const T widthB)</div><div class="ttdoc">Finds radius of 2 circles for both tangent line that intersect. Tangents on circle are defined by ang...</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:195</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1Types_html"><div class="ttname"><a href="namespaceYasiuMath_1_1Types.html">YasiuMath::Types</a></div><div class="ttdoc">Helper types used in algorithms.</div><div class="ttdef"><b>Definition</b> YasiuMathDataTypes.h:20</div></div>
-<div class="ttc" id="anamespaceYasiuMath_html"><div class="ttname"><a href="namespaceYasiuMath.html">YasiuMath</a></div><div class="ttdoc">Categorized name spaces.</div><div class="ttdef"><b>Definition</b> YasiuMathDataTypes.h:18</div></div>
-<div class="ttc" id="astructYasiuMath_1_1Types_1_1InterceptorParams_html"><div class="ttname"><a href="structYasiuMath_1_1Types_1_1InterceptorParams.html">YasiuMath::Types::InterceptorParams</a></div><div class="ttdoc">Params used for ballistics predictions.</div><div class="ttdef"><b>Definition</b> YasiuMathDataTypes.h:523</div></div>
-<div class="ttc" id="astructYasiuMath_1_1Types_1_1ProjectileDynamicState_html"><div class="ttname"><a href="structYasiuMath_1_1Types_1_1ProjectileDynamicState.html">YasiuMath::Types::ProjectileDynamicState</a></div><div class="ttdoc">Ballistic state. Can move in time with Step function.</div><div class="ttdef"><b>Definition</b> YasiuMathDataTypes.h:351</div></div>
-<div class="ttc" id="astructYasiuMath_1_1Types_1_1Vec3_html"><div class="ttname"><a href="structYasiuMath_1_1Types_1_1Vec3.html">YasiuMath::Types::Vec3</a></div><div class="ttdoc">Structure reflecting vector of size 3, Templated Type.</div><div class="ttdef"><b>Definition</b> YasiuMathDataTypes.h:141</div></div>
+<div class="ttc" id="anamespaceYasiuMath_html"><div class="ttname"><a href="namespaceYasiuMath.html">YasiuMath</a></div><div class="ttdoc">Categorized name spaces.</div><div class="ttdef"><b>Definition</b> Constants.h:10</div></div>
+<div class="ttc" id="astructYasiuMath_1_1Types_1_1InterceptorParams_html"><div class="ttname"><a href="structYasiuMath_1_1Types_1_1InterceptorParams.html">YasiuMath::Types::InterceptorParams</a></div><div class="ttdoc">Params used for ballistics predictions.</div><div class="ttdef"><b>Definition</b> YasiuMathDataTypes.h:520</div></div>
+<div class="ttc" id="astructYasiuMath_1_1Types_1_1ProjectileDynamicState_html"><div class="ttname"><a href="structYasiuMath_1_1Types_1_1ProjectileDynamicState.html">YasiuMath::Types::ProjectileDynamicState</a></div><div class="ttdoc">Ballistic state. Can move in time with Step function.</div><div class="ttdef"><b>Definition</b> YasiuMathDataTypes.h:348</div></div>
+<div class="ttc" id="astructYasiuMath_1_1Types_1_1Vec3_html"><div class="ttname"><a href="structYasiuMath_1_1Types_1_1Vec3.html">YasiuMath::Types::Vec3</a></div><div class="ttdoc">Structure reflecting vector of size 3, Templated Type.</div><div class="ttdef"><b>Definition</b> YasiuMathDataTypes.h:138</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

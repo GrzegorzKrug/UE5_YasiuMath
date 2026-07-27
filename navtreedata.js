@@ -30,9 +30,9 @@ var NAVTREE =
       [ "Features", "md_Documentation_2About.html#autotoc_md3", null ],
       [ "Components", "md_Documentation_2About.html#autotoc_md5", [
         [ "RNG (Random Number Generation)", "md_Documentation_2About.html#autotoc_md6", null ],
-        [ "Math functions", "md_Documentation_2About.html#autotoc_md7", null ],
-        [ "Quick links", "md_Documentation_2About.html#autotoc_md9", null ]
-      ] ]
+        [ "Math functions", "md_Documentation_2About.html#autotoc_md7", null ]
+      ] ],
+      [ "Start", "md_Documentation_2About.html#autotoc_md9", null ]
     ] ],
     [ "Quick Start", "mainpage.html", "mainpage" ],
     [ "Namespaces", "namespaces.html", [
@@ -61,7 +61,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"PCG__RNG_8h.html"
+"Constants_8h.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

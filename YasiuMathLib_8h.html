@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('YasiuMathLib_8
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;unordered_set&gt;</code><br />
-<code>#include &quot;<a class="el" href="YasiuConstants_8h_source.html">YasiuConstants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Constants_8h_source.html">Constants.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="YasiuMathDataTypes_8h_source.html">YasiuMathDataTypes.h</a>&quot;</code><br />
 </div>
 <p><a href="YasiuMathLib_8h_source.html">Go to the source code of this file.</a></p>
@@ -148,8 +148,10 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:namespaceYasiuMath_1_1ConvexHull"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of convex hull functions and helper functions. <br /></td></tr>
 <tr class="memitem:YasiuMath_3A_3ABallistics" id="r_YasiuMath_3A_3ABallistics"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespaceYasiuMath_1_1Ballistics.html">YasiuMath::Ballistics</a></td></tr>
 <tr class="memdesc:namespaceYasiuMath_1_1Ballistics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projectile movement functions. <br /></td></tr>
+<tr class="memitem:YasiuMath_3A_3ANumeric" id="r_YasiuMath_3A_3ANumeric"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespaceYasiuMath_1_1Numeric.html">YasiuMath::Numeric</a></td></tr>
+<tr class="memdesc:namespaceYasiuMath_1_1Numeric"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceYasiuMath_1_1Numeric.html" title="Numeric functions.">Numeric</a> functions. <br /></td></tr>
 <tr class="memitem:YasiuMath_3A_3AAlgebra" id="r_YasiuMath_3A_3AAlgebra"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="namespaceYasiuMath_1_1Algebra.html">YasiuMath::Algebra</a></td></tr>
-<tr class="memdesc:namespaceYasiuMath_1_1Algebra"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projectile movement functions. <br /></td></tr>
+<tr class="memdesc:namespaceYasiuMath_1_1Algebra"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceYasiuMath_1_1Numeric.html" title="Numeric functions.">Numeric</a> functions. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -174,6 +176,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:a300b3610f8af1f2916b815b8ca3faa05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear movement with linear velocity, Fast: O(1).  <br /></td></tr>
 <tr class="memitem:a8f703a6ca840acd2f2c0f4963e110ee2" id="r_a8f703a6ca840acd2f2c0f4963e110ee2"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="namespaceYasiuMath_1_1Ballistics.html#a8f703a6ca840acd2f2c0f4963e110ee2">YasiuMath::Ballistics::InterceptMissile_Dynamic</a> (<a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; float &gt; &amp;PredictedLocation, double &amp;EstimatedTime, <a class="el" href="structYasiuMath_1_1Types_1_1ProjectileDynamicState.html">Types::ProjectileDynamicState</a>&lt; double &gt; Missile, const <a class="el" href="structYasiuMath_1_1Types_1_1InterceptorParams.html">Types::InterceptorParams</a> &amp;Interceptor, double QueryTime=10, double DeltaTime=0.1)</td></tr>
 <tr class="memdesc:a8f703a6ca840acd2f2c0f4963e110ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterative state prediction. Returns first possible intercept location and time.  <br /></td></tr>
+<tr class="memitem:a1516b5b2410f4317ea3e52936b24ece7" id="r_a1516b5b2410f4317ea3e52936b24ece7"><td class="memTemplParams" colspan="2"><a id="a1516b5b2410f4317ea3e52936b24ece7" name="a1516b5b2410f4317ea3e52936b24ece7"></a>
+template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a1516b5b2410f4317ea3e52936b24ece7 template"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><b>YasiuMath::Numeric::IsNearly0</b> (T Value)</td></tr>
+<tr class="memdesc:a1516b5b2410f4317ea3e52936b24ece7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if value is nearly 0, <a class="el" href="namespaceYasiuMath_1_1Constants.html#adeb8ac4e74bfd7486ff00fbac09203d2" title="YasiuMath::Constants::EPSILON">YasiuMath::Constants::EPSILON</a>. <br /></td></tr>
+<tr class="memitem:aba93ed33da129cd39c5e78a58ebe225f" id="r_aba93ed33da129cd39c5e78a58ebe225f"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:aba93ed33da129cd39c5e78a58ebe225f template"><td class="memItemLeft">static T&#160;</td><td class="memItemRight"><a class="el" href="namespaceYasiuMath_1_1Algebra.html#aba93ed33da129cd39c5e78a58ebe225f">YasiuMath::Algebra::Remap</a> (const T Value, const T InMin, const T InMax, T OutMin, T OutMax, const bool ClampOutput=false)</td></tr>
+<tr class="memdesc:aba93ed33da129cd39c5e78a58ebe225f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remaps Value between Low/High input to Low/High Output with optional clamping.  <br /></td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

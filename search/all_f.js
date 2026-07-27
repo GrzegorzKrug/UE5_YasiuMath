@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['of_20all_20functions_20for_20c_0',['&lt;a href=&quot;https://grzegorzkrug.github.io/UE5_YasiuMath/namespacemembers_func.html&quot;&gt;List of all functions for C++&lt;/a&gt;',['../baseuse.html#autotoc_md23',1,'']]],
+  ['of_20all_20functions_20for_20c_0',['&lt;a href=&quot;https://grzegorzkrug.github.io/UE5_YasiuMath/namespacemembers_func.html&quot;&gt;&lt;b&gt;List of all functions for C++&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md23',1,'']]],
   ['of_20plugin_1',['Installation of plugin',['../install.html#autotoc_md10',1,'']]],
   ['of_20plugin_20and_20functions_2',['Use of plugin and functions',['../baseuse.html',1,'mainpage']]],
   ['offsetposition_3',['OffsetPosition',['../classUSquirrel13__RNG.html#a4b46cb4f3aa4b3d04e767225edfde007',1,'USquirrel13_RNG']]],
