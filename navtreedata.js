@@ -30,9 +30,8 @@ var NAVTREE =
       [ "Features", "md_Documentation_2About.html#autotoc_md3", null ],
       [ "Components", "md_Documentation_2About.html#autotoc_md5", [
         [ "RNG (Random Number Generation)", "md_Documentation_2About.html#autotoc_md6", null ],
-        [ "Math Utilities", "md_Documentation_2About.html#autotoc_md7", null ],
-        [ "Installation", "md_Documentation_2About.html#autotoc_md9", null ],
-        [ "Usage", "md_Documentation_2About.html#autotoc_md10", null ]
+        [ "Math functions", "md_Documentation_2About.html#autotoc_md7", null ],
+        [ "Quick links", "md_Documentation_2About.html#autotoc_md9", null ]
       ] ]
     ] ],
     [ "Quick Start", "mainpage.html", "mainpage" ],
@@ -40,7 +39,8 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -64,6 +64,6 @@ var NAVTREEINDEX =
 "PCG__RNG_8h.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronization';
-var SYNCOFFMSG = 'click to enable panel synchronization';
-var LISTOFALLMEMBERS = 'List of all members';
+const SYNCONMSG = 'click to disable panel synchronization';
+const SYNCOFFMSG = 'click to enable panel synchronization';
+const LISTOFALLMEMBERS = 'List of all members';

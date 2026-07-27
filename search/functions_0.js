@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['clipangletocycle_0',['ClipAngleToCycle',['../classUYasiuMathFunctionLibrary.html#ae034d293d70a24bd75d910b47525e522',1,'UYasiuMathFunctionLibrary']]],
-  ['convexhull2d_1',['ConvexHull2D',['../classUYasiuMathFunctionLibrary.html#a679692e29440cc0fe9620ddec3b9b4b3',1,'UYasiuMathFunctionLibrary::ConvexHull2D()'],['../namespaceYasiuMath_1_1ConvexHull.html#a9398ebbd4067e31a89e077464565ae0a',1,'YasiuMath::ConvexHull::ConvexHull2D()']]]
+  ['abs_0',['Abs',['../structYasiuMath_1_1Types_1_1Vec3.html#a9c1a92a1baf0d469802df4d229c2d704',1,'YasiuMath::Types::Vec3']]],
+  ['abssum_1',['AbsSum',['../structYasiuMath_1_1Types_1_1Vec3.html#af703722fdfb96493a954b7e6c36c05e2',1,'YasiuMath::Types::Vec3']]]
 ];

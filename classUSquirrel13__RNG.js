@@ -4,6 +4,8 @@ var classUSquirrel13__RNG =
     [ "GetCurrentInt", "classUSquirrel13__RNG.html#ac47d4e2b3d4d284d819e9afc87316440", null ],
     [ "GetNextDouble", "classUSquirrel13__RNG.html#a859b7ce1974448979b0c74518d43278f", null ],
     [ "GetNextInt", "classUSquirrel13__RNG.html#a9a50daf32fabcf27a60abbfe34bdaaa8", null ],
+    [ "GetPosition", "classUSquirrel13__RNG.html#a9fb49d1b45894cbecb3ab388e0d12b37", null ],
+    [ "GetSeed", "classUSquirrel13__RNG.html#a45583396a167c24a88092209e5e4f6d5", null ],
     [ "InitBP", "classUSquirrel13__RNG.html#ae7c536d7b9a7f4b0d31d1f45f2952a32", null ],
     [ "OffsetPosition", "classUSquirrel13__RNG.html#a4b46cb4f3aa4b3d04e767225edfde007", null ],
     [ "ResetSeedPos", "classUSquirrel13__RNG.html#a1d3850b06314b050b1adba64c1669373", null ],

@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['unreal_20engine_0',['2. Enable the Plugin in Unreal Engine',['../install.html#autotoc_md14',1,'']]],
-  ['usage_1',['Usage',['../md_Documentation_2About.html#autotoc_md10',1,'']]],
-  ['usage_20of_20plugin_2',['Usage of plugin',['../baseuse.html',1,'mainpage']]],
-  ['use_20in_20blueprints_3',['Use in blueprints',['../baseuse.html#autotoc_md19',1,'']]],
-  ['use_20plugin_4',['How to use plugin',['../baseuse.html#autotoc_md18',1,'']]],
-  ['utilities_5',['Math Utilities',['../md_Documentation_2About.html#autotoc_md7',1,'']]]
+  ['unreal_20engine_0',['2B. Enable the Plugin in Unreal Engine',['../install.html#autotoc_md15',1,'']]],
+  ['use_20in_20c_1',['How to use in C++',['../baseuse.html#autotoc_md22',1,'']]],
+  ['use_20it_20in_20blueprints_2',['How to use it in blueprints',['../baseuse.html#autotoc_md18',1,'']]],
+  ['use_20of_20plugin_20and_20functions_3',['Use of plugin and functions',['../baseuse.html',1,'mainpage']]]
 ];

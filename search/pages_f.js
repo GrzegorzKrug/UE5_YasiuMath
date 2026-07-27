@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['of_20plugin_0',['of plugin',['../install.html#autotoc_md11',1,'Installation of plugin'],['../baseuse.html',1,'Usage of plugin']]],
-  ['overview_1',['Overview',['../md_Documentation_2About.html#autotoc_md1',1,'']]]
+  ['of_20all_20functions_20for_20c_0',['&lt;a href=&quot;https://grzegorzkrug.github.io/UE5_YasiuMath/namespacemembers_func.html&quot;&gt;List of all functions for C++&lt;/a&gt;',['../baseuse.html#autotoc_md23',1,'']]],
+  ['of_20plugin_1',['Installation of plugin',['../install.html#autotoc_md10',1,'']]],
+  ['of_20plugin_20and_20functions_2',['Use of plugin and functions',['../baseuse.html',1,'mainpage']]],
+  ['overview_3',['Overview',['../md_Documentation_2About.html#autotoc_md1',1,'']]]
 ];
