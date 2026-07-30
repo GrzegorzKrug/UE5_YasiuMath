@@ -21,6 +21,7 @@
  * Check individual library:
  * - \ref UYasiuMathFL_Angle
  * - \ref UYasiuMathFL_Algebra
+ * - \ref UYasiuMathFL_Ballistic
  * - \ref UYasiuMathFL_ConvexHull
  * - \ref UYasiuMathFL_Trigonometry
  */
@@ -30,7 +31,4 @@ class UYasiuMathFunctionLibrary : public UBlueprintFunctionLibrary {
 
 
 public:
-
-
-
 };

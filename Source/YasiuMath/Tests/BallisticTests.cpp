@@ -59,13 +59,6 @@ bool InterceptTest0::RunTest( const FString& Parameters )
     /* Correct */
     YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_F, Proj_F, Int_F, 0, 0.1);
     YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_D, Proj_D, Int_D, 0, 0.1);
-    
-    // /* Mixed */
-    // YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_D, Proj_D, Int_F, 0, 0.1);
-    // YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_F, Proj_F, Int_F, 0, 0.1);
-    // YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_F, Proj_F, Int_F, 0, 0.1);
-    // YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_F, Proj_F, Int_F, 0, 0.1);
-    // YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_F, Proj_F, Int_F, 0, 0.1);
 
     return true;
 };

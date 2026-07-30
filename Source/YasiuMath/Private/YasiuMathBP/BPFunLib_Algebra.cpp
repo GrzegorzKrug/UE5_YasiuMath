@@ -1,17 +1,15 @@
+/* 
+ * Copyright (c) 2026 Grzegorz Krug.
+ * All Rights Reserved.
+ */
+
 #include "YasiuMathBP/BPFunLib_Algebra.h"
 
 
 #include "YasiuMathLib.h"
 
 
-float UYasiuMathFL_Algebra::RemapFloat(
-    const float Value,
-    float MinIn,
-    float MaxIn,
-    float MinOut,
-    float MaxOut,
-    bool ClampOut
-)
+float UYasiuMathFL_Algebra::RemapFloat( const float Value, float MinIn, float MaxIn, float MinOut, float MaxOut, bool ClampOut )
 {
     return YasiuMath::Algebra::Remap<float>(Value, MinIn, MaxIn, MinOut, MaxOut, ClampOut);
 }

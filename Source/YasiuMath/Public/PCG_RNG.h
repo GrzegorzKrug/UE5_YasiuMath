@@ -15,9 +15,10 @@
 /**
  * @brief State based RNG, good for MonteCarlo
  */
-UCLASS(BlueprintType, Blueprintable)
+UCLASS(BlueprintType, Blueprintable, DefaultToInstanced)
 class UPCG32_RNG : public UObject {
     GENERATED_BODY()
+
 
 public:
     uint32_t next();
@@ -57,6 +58,7 @@ public:
      * Will save state, stream and last random number as part of object
      */
     virtual void Serialize( FArchive& Ar ) override;
+
 
 protected:
     uint64_t state = 0x853c49e6748fea9bULL;

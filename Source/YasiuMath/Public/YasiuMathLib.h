@@ -10,6 +10,7 @@
 #include <vector>
 #include <cassert>
 #include <cmath>
+#include <stdexcept>
 // #include <numbers>
 // #include <iostream>
 // #include <math.h>
@@ -195,7 +196,7 @@ namespace YasiuMath {
          * @param beta angle of second point
          * @param widthA distance for first point
          * @param widthB distance for second point
-         * @return Pair of distances
+         * @return Pair of radius for each circle
          */
         template<typename T>
         std::pair<T, T> FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric(
@@ -559,9 +560,9 @@ namespace YasiuMath {
 
     /** @brief Projectile movement functions */
     namespace Ballistics {
-        /** @brief Ballistic state. Can move in time with \ref Step function
+        /** @brief Ballistic state. Can move in time with \ref DiscreteStep function
          *
-         * Self-sufficient to predict next state with \ref Step and \ref MultiStep
+         * Self-sufficient to predict next state with \ref DiscreteStep and \ref AutoStep
          * @warning AirFrictionCoeff must be within <0, 1> range, otherwise model will not be correct or could crash.
          * 
          */

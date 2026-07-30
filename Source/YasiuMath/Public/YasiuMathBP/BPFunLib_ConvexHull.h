@@ -1,3 +1,8 @@
+/* 
+ * Copyright (c) 2026 Grzegorz Krug.
+ * All Rights Reserved.
+ */
+
 #pragma once
 
 

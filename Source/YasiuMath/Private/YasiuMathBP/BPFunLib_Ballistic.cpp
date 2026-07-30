@@ -1,3 +1,9 @@
+/* 
+* Copyright (c) 2026 Grzegorz Krug.
+ * All Rights Reserved.
+ */
+
+
 #include "YasiuMathBP/BPFunLib_Ballistic.h"
 
 YasiuMath::Ballistics::ProjectileDynamicState<double> FBallisticObject::ToDynamicObject() const
@@ -42,7 +48,7 @@ FBallisticObject& FBallisticObject::FromDynamic( const YasiuMath::Ballistics::Pr
     return *this;
 }
 
-YasiuMath::Ballistics::InterceptorParams<double> FBallisticInterceptor::ToDynamicObject() const
+YasiuMath::Ballistics::InterceptorParams<double> FBallisticInterceptor::ToInterceptor() const
 {
     YasiuMath::Ballistics::InterceptorParams<double> Out;
     Out.Position.X = Position.X;
@@ -58,7 +64,7 @@ YasiuMath::Ballistics::InterceptorParams<double> FBallisticInterceptor::ToDynami
 }
 
 
-void FBallisticInterceptor::FromDynamic( const YasiuMath::Ballistics::InterceptorParams<double>& Ob )
+void FBallisticInterceptor::FromInterceptor( const YasiuMath::Ballistics::InterceptorParams<double>& Ob )
 {
     Position.X = Ob.Position.X;
     Position.Y = Ob.Position.Y;
@@ -70,16 +76,6 @@ void FBallisticInterceptor::FromDynamic( const YasiuMath::Ballistics::Intercepto
     AirResistance = Ob.AirResistance;
 }
 
-FBallisticObject UYasiuMathFL_Ballistic::PredictPosition(
-    const FBallisticObject& Ob,
-    const float PredictTime,
-    const float DeltaStep
-)
-{
-    const auto Proj = Ob.ToDynamicObject();
-    const auto res = Proj.Predict(PredictTime, DeltaStep);
-    return FBallisticObject().FromDynamic(res);
-}
 
 FBallisticObject UYasiuMathFL_Ballistic::DiscreteStep( const FBallisticObject& Ob, const float DeltaStep )
 {
@@ -88,9 +84,57 @@ FBallisticObject UYasiuMathFL_Ballistic::DiscreteStep( const FBallisticObject& O
     return FBallisticObject().FromDynamic(Proj);
 }
 
-FBallisticObject UYasiuMathFL_Ballistic::AutoStep( const FBallisticObject& Ob, const float PredictTime, const float DeltaStep )
+FBallisticObject UYasiuMathFL_Ballistic::MultiStep( const FBallisticObject& Ob, const float PredictTime, const float DeltaStep )
 {
     auto Proj = Ob.ToDynamicObject();
     Proj.AutoStep(PredictTime, DeltaStep);
     return FBallisticObject().FromDynamic(Proj);
+}
+
+bool UYasiuMathFL_Ballistic::Intercept_Linear(
+    const FVector& TargetPosition,
+    const FVector& TargetVelocity,
+    double InterceptSpeed,
+    FVector& OutLocation
+)
+{
+    YasiuMath::Types::Vec3<double> InterpLoc;
+    const auto ret = YasiuMath::Ballistics::InterceptMissile_Linear(
+        InterpLoc,
+        YasiuMath::Types::Vec3<double>(TargetPosition.X, TargetPosition.Y, TargetPosition.Z),
+        YasiuMath::Types::Vec3<double>(TargetVelocity.X, TargetVelocity.Y, TargetVelocity.Z),
+        InterceptSpeed
+    );
+
+    OutLocation.X = InterpLoc.X;
+    OutLocation.Y = InterpLoc.Y;
+    OutLocation.Z = InterpLoc.Z;
+    return ret;
+}
+
+bool UYasiuMathFL_Ballistic::Intercept_Dynamic(
+    const FBallisticObject& Target,
+    const FBallisticInterceptor Interceptor,
+    FVector& OutLocation,
+    float MaxQueryTime,
+    float DeltaStep
+)
+{
+    YasiuMath::Types::Vec3<double> InterpLoc;
+    const auto tg = Target.ToDynamicObject();
+    const auto inc = Interceptor.ToInterceptor();
+    
+     const auto ret = YasiuMath::Ballistics::InterceptMissile_Dynamic(
+        InterpLoc,
+        tg,
+        inc,
+        MaxQueryTime,
+        DeltaStep
+    );
+
+    OutLocation.X = InterpLoc.X;
+    OutLocation.Y = InterpLoc.Y;
+    OutLocation.Z = InterpLoc.Z;
+    return ret;
+    
 }

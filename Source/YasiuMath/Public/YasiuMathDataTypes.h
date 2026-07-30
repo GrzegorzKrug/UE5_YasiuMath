@@ -8,7 +8,6 @@
 #pragma once
 
 #include <cmath>
-#include <stdexcept>
 #include "Constants.h"
 
 /// \file
@@ -336,6 +335,5 @@ namespace YasiuMath {
                 return AbsSum() < EPS;
             }
         };
-
     }
 }

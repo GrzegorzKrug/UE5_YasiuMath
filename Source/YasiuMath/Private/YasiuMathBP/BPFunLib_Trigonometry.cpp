@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Grzegorz Krug.
+ * Copyright (c) 2026 Grzegorz Krug.
  * All Rights Reserved.
 */
 
@@ -8,7 +8,6 @@
 
 
 #include "YasiuMathLib.h"
-
 
 
 void UYasiuMathFL_Trigonometry::SpreadPointsOnTangentByXY(
@@ -58,6 +57,3 @@ FVector2D UYasiuMathFL_Trigonometry::FindMinimalRadiusForIntersectingTangentsOnA
     auto temp = YasiuMath::Trigonometry::FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric<>(alfa, beta, widthA, widthB);
     return FVector2D{temp.first, temp.second};
 }
-
-
-

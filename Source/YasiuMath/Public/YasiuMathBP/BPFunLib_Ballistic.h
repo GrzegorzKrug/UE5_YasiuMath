@@ -1,3 +1,8 @@
+/* 
+ * Copyright (c) 2026 Grzegorz Krug.
+ * All Rights Reserved.
+ */
+
 #pragma once
 
 
@@ -8,6 +13,9 @@
 #include "BPFunLib_Ballistic.generated.h"
 
 
+/**
+ * @brief Type reflecting \ref YasiuMath::Ballistics::ProjectileDynamicState
+ */
 USTRUCT(BlueprintType, Category="Math|Yasiu|Ballistic")
 struct FBallisticObject {
     GENERATED_BODY()
@@ -41,6 +49,9 @@ struct FBallisticObject {
 };
 
 
+/**
+ * @brief Type reflecting \ref YasiuMath::Ballistics::InterceptorParams
+ */
 USTRUCT(BlueprintType, Category="Math|Yasiu|Ballistic")
 struct FBallisticInterceptor {
     GENERATED_BODY()
@@ -64,9 +75,9 @@ struct FBallisticInterceptor {
     UPROPERTY(BlueprintType)
     double AirResistance = 0;
 
-    YasiuMath::Ballistics::InterceptorParams<double> ToDynamicObject() const;
+    YasiuMath::Ballistics::InterceptorParams<double> ToInterceptor() const;
 
-    void FromDynamic( const YasiuMath::Ballistics::InterceptorParams<double>& Ob );
+    void FromInterceptor( const YasiuMath::Ballistics::InterceptorParams<double>& Ob );
 };
 
 
@@ -79,30 +90,29 @@ class UYasiuMathFL_Ballistic : public UYasiuMathFunctionLibrary {
 
 
 public:
-    
-    /* If air drag is 0 then it uses quick function O(1) */
-    UFUNCTION(BlueprintCallable, BlueprintPure, Category="Math|Yasiu|Ballistic", meta=(DisplayName="Remap"))
-    FBallisticObject PredictPosition( const FBallisticObject& Ob, const float PredictTime, const float DeltaStep );
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure, Category="Math|Yasiu|Ballistic", meta=(DisplayName="Remap"))
+    /* Single iterative step */
+    UFUNCTION(BlueprintCallable, BlueprintPure=false, Category="Math|Yasiu|Ballistic")
     FBallisticObject DiscreteStep( const FBallisticObject& Ob, const float DeltaStep );
-    
-    /* If air drag is 0 then it uses quick function O(1) */
-    UFUNCTION(BlueprintCallable, BlueprintPure, Category="Math|Yasiu|Ballistic", meta=(DisplayName="Remap"))
-    FBallisticObject AutoStep( const FBallisticObject& Ob, const float PredictTime, const float DeltaStep );
 
-    //
-    // /**
-    //  * 
-    //  * @brief Remap float value to given range with optional clamping
-    //  * @param Value Input value
-    //  * @param MinIn Remap from Low
-    //  * @param MaxIn Remap from High
-    //  * @param MinOut Remap to Low
-    //  * @param MaxOut Remap to High
-    //  * @param ClampOut Optional Clamping to Output limits
-    //  * @return 
-    //  */
-    // UFUNCTION(BlueprintCallable, BlueprintPure, Category="Math|Yasiu|Algebra", meta=(DisplayName="Remap"))
-    // double RemapDouble( const double Value, double MinIn, double MaxIn, double MinOut, double MaxOut, bool ClampOut = true );
+    /* If air drag is 0 then it uses quick function O(1) */
+    UFUNCTION(BlueprintCallable, BlueprintPure=false, Category="Math|Yasiu|Ballistic")
+    FBallisticObject MultiStep( const FBallisticObject& Ob, const float PredictTime, const float DeltaStep );
+
+    /** @brief Prediction works only for objects with constant speeds, can not accelerate or be affected by air resistance */
+    UFUNCTION(BlueprintCallable, BlueprintPure=false, Category="Math|Yasiu|Ballistic")
+    bool Intercept_Linear(
+        const FVector& TargetPosition,
+        const FVector& TargetVelocity,
+        double InterceptSpeed,
+        FVector& OutLocation
+    );
+
+    UFUNCTION(BlueprintCallable, BlueprintPure=false, Category="Math|Yasiu|Ballistic")
+    bool Intercept_Dynamic(
+        const FBallisticObject& Target,
+        const FBallisticInterceptor Interceptor,
+        FVector& OutLocation,
+        float MaxQueryTime = 10,
+        float DeltaStep = 0.1
+    );
 };
