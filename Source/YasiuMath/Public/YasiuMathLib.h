@@ -577,7 +577,7 @@ namespace YasiuMath {
             Vec3<T> Velocity = 0;
 
             /** @brief Acceleration or Deceleration or combined with Gravity Forces */
-            Vec3<T> ThrustVector = 0;
+            Vec3<T> Acceleration = 0;
 
             /** @brief Movement resistance opposite to current velocity vector. Must be in <0, 1> range. More in details...
              *
@@ -629,13 +629,13 @@ namespace YasiuMath {
                  */
                 ProjectileDynamicState<T> ProjectileState = *this;
 
-                if ( ProjectileState.ThrustVector.IsNearly0() ) {
+                if ( ProjectileState.Acceleration.IsNearly0() ) {
                     ProjectileState.Position = ProjectileState.Position + ProjectileState.Velocity * QueryTime;
                     return ProjectileState;
                 }
 
-                const T Xa = ProjectileState.ThrustVector.LengthSquared();
-                const T Xb = 2 * (ProjectileState.Velocity * ProjectileState.ThrustVector).Sum();
+                const T Xa = ProjectileState.Acceleration.LengthSquared();
+                const T Xb = 2 * (ProjectileState.Velocity * ProjectileState.Acceleration).Sum();
                 const T Xc = ProjectileState.Velocity.LengthSquared() - ProjectileState.MaxSpeed * ProjectileState.MaxSpeed;
 
                 const T delta = Xb * Xb - 4 * Xa * Xc;
@@ -682,16 +682,16 @@ namespace YasiuMath {
                 /* TimeMax<0 to catch error when limit is set 0, not to use <= to not use clamping */
                 if ( QueryTime < TimeToMaxSpeed || TimeToMaxSpeed < 0 ) {
                     /* Travel to MaxSpeed only */
-                    ProjectileState.Position += ProjectileState.Velocity * QueryTime + ProjectileState.ThrustVector * (0.5 *
+                    ProjectileState.Position += ProjectileState.Velocity * QueryTime + ProjectileState.Acceleration * (0.5 *
                         QueryTime * QueryTime);
-                    ProjectileState.Velocity += ProjectileState.ThrustVector * QueryTime;
+                    ProjectileState.Velocity += ProjectileState.Acceleration * QueryTime;
                 }
                 else {
                     /* Acceleration Phase */
-                    ProjectileState.Position += ProjectileState.Velocity * TimeToMaxSpeed + ProjectileState.ThrustVector * (0.5 *
+                    ProjectileState.Position += ProjectileState.Velocity * TimeToMaxSpeed + ProjectileState.Acceleration * (0.5 *
                         TimeToMaxSpeed * TimeToMaxSpeed);
                     /* Account for velocity changes */
-                    ProjectileState.Velocity += ProjectileState.ThrustVector * TimeToMaxSpeed;
+                    ProjectileState.Velocity += ProjectileState.Acceleration * TimeToMaxSpeed;
 
                     /* Normalize to Max */
                     ProjectileState.Velocity = ProjectileState.Velocity.NormalizeInPlace() * ProjectileState.MaxSpeed;
@@ -717,15 +717,20 @@ namespace YasiuMath {
             {
                 auto oldVel = Velocity;
                 /* Acceleration */
-                if ( !ThrustVector.IsNearly0() ) {
-                    Velocity += (ThrustVector) * deltaTime;
+                if ( !Acceleration.IsNearly0() ) {
+                    Velocity += (Acceleration) * deltaTime;
                 }
 
                 /* Friction as last step to damp all forces */
                 if ( AirFrictionCoeff > 0 ) {
                     /* Preserve sign! not loose it with square */
                     Vec3<T> drag = (Velocity * Velocity.Abs()) * AirFrictionCoeff * deltaTime;
-                    Velocity -= drag;
+                    if ( drag.Length() >= Velocity.Length() ) {
+                        Velocity = 0;
+                    }
+                    else {
+                        Velocity -= drag;
+                    }
                 }
 
 
@@ -758,12 +763,12 @@ namespace YasiuMath {
                 else {
                     const int N = QueryTime / DeltaTime;
                     for ( int i = 0; i < N; i++ ) {
-                        Step(DeltaTime);
+                        DiscreteStep(DeltaTime);
                     }
 
-                    T missingTime = QueryTime - (DeltaTime * N);
+                    const T missingTime = QueryTime - (DeltaTime * N);
                     if ( missingTime > 0 ) {
-                        Step(missingTime);
+                        DiscreteStep(missingTime);
                     }
                 }
             }
@@ -773,21 +778,22 @@ namespace YasiuMath {
         /** @brief Params used for ballistics predictions
          * 
          */
+        template<typename T>
         struct InterceptorParams {
             /** @brief */
             Vec3f Position{0};
 
-            /** @brief Speed at which object can start moving */
-            float InitialSpeed{0};
+            /** @brief Speed at which object starts moving */
+            T InitialSpeed{0};
 
-            /** @brief Acceleration in any direction*/
-            float Acceleration{0};
+            /** @brief Acceleration in any direction */
+            T Acceleration{0};
 
-            /** @brief Max speed object can reach with acceleration, 0 or less is ingored */
-            float MaxSpeed = {0};
+            /** @brief Max speed object can reach with acceleration, 0 or less is ignored */
+            T MaxSpeed = 0;
 
             /** @brief Keep in <0, 1> range! */
-            float AirResistance = {0};
+            T AirResistance = {0};
         };
 
 
@@ -799,11 +805,12 @@ namespace YasiuMath {
         * @param BulletSpeed Maximal bullet speed
         * @return Flag if solution is valid
         */
+        template<typename T>
         bool InterceptMissile_Linear(
-            Types::Vec3<float>& InterceptLocation,
-            const Types::Vec3<float>& MissilePosition,
-            const Types::Vec3<float>& MissileVelocity,
-            const float BulletSpeed
+            Types::Vec3<T>& InterceptLocation,
+            const Types::Vec3<T>& MissilePosition,
+            const Types::Vec3<T>& MissileVelocity,
+            const double BulletSpeed
         );
 
         /** @brief Iterative state prediction. Returns first possible intercept location and time.
@@ -815,19 +822,18 @@ namespace YasiuMath {
          *  @note Suggested **Delta** range: <0.1 , 1>. Depending on space and distance.
          * 
          * @param PredictedLocation Predicted intercept location
-         * @param EstimatedTime Prediction time to intercept
          * @param Missile State of missile
          * @param Interceptor Params of interceptor
-         * @param QueryTime Prediction time
+         * @param MaxQueryTime Prediction time to intercept
          * @param DeltaTime Prediction resolution, how big steps to make. Smaller steps = more steps.
          * @return Flag is solution found estimated intercept location
          */
+        template<typename T>
         bool InterceptMissile_Dynamic(
-            Types::Vec3<float>& PredictedLocation,
-            double& EstimatedTime,
-            ProjectileDynamicState<double> Missile,
-            const InterceptorParams& Interceptor,
-            double QueryTime = 10,
+            Types::Vec3<T>& PredictedLocation,
+            ProjectileDynamicState<T> Missile,
+            const InterceptorParams<T>& Interceptor,
+            double MaxQueryTime = 10,
             double DeltaTime = 0.1
         );
     }

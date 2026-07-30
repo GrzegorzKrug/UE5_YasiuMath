@@ -9,18 +9,19 @@
 
 using namespace YasiuMath::Types;
 
+template<typename T>
 bool YasiuMath::Ballistics::InterceptMissile_Linear(
-    Vec3<float>& InterceptLocation,
-    const Vec3<float>& MissilePosition,
-    const Vec3<float>& MissileVelocity,
-    const float BulletSpeed
+    Vec3<T>& InterceptLocation,
+    const Vec3<T>& MissilePosition,
+    const Vec3<T>& MissileVelocity,
+    const double BulletSpeed
 )
 {
-    float a = MissileVelocity.Dot(MissileVelocity) - BulletSpeed * BulletSpeed;
-    float b = 2.0f * MissilePosition.Dot(MissileVelocity);
-    float c = MissilePosition.Dot(MissilePosition);
+    T a = MissileVelocity.Dot(MissileVelocity) - BulletSpeed * BulletSpeed;
+    T b = 2.0f * MissilePosition.Dot(MissileVelocity);
+    T c = MissilePosition.Dot(MissilePosition);
 
-    float t;
+    T t;
 
     if ( fabs(a) < 1e-6f ) {
         // Bullet speed ~= target speed
@@ -31,12 +32,12 @@ bool YasiuMath::Ballistics::InterceptMissile_Linear(
             return false;
     }
     else {
-        float discriminant = b * b - 4.0f * a * c;
+        T discriminant = b * b - 4.0f * a * c;
         if ( discriminant < 0 )
             return false; // No real solution
-        float sqrtD = sqrtf(discriminant);
-        float t1 = (-b + sqrtD) / (2.0f * a);
-        float t2 = (-b - sqrtD) / (2.0f * a);
+        T sqrtD = sqrtf(discriminant);
+        T t1 = (-b + sqrtD) / (2.0f * a);
+        T t2 = (-b - sqrtD) / (2.0f * a);
 
         // Choose smallest positive t
         t = (t1 > 0 && t2 > 0) ? fminf(t1, t2) : (t1 > 0 ? t1 : t2);
@@ -48,12 +49,12 @@ bool YasiuMath::Ballistics::InterceptMissile_Linear(
     return true;
 }
 
+template<typename T>
 bool YasiuMath::Ballistics::InterceptMissile_Dynamic(
-    Vec3<float>& PredictedLocation,
-    double& EstimatedTime,
-    ProjectileDynamicState<double> Missile,
-    const InterceptorParams& Interceptor,
-    const double QueryTime,
+    Vec3<T>& PredictedLocation,
+    ProjectileDynamicState<T> Missile,
+    const InterceptorParams<T>& Interceptor,
+    const double MaxQueryTime,
     const double DeltaTime
 )
 {
@@ -71,20 +72,25 @@ bool YasiuMath::Ballistics::InterceptMissile_Dynamic(
         throw std::runtime_error("Delta time in Intercept is too small");
     }
 
-    unsigned int StepsN = static_cast<unsigned int>(floor(QueryTime / DeltaTime));
+    unsigned int StepsN = static_cast<unsigned int>(floor(MaxQueryTime / DeltaTime));
 
     /* 1-Indexed for time calculation */
+    // auto QueryTime = 0;
     for ( unsigned int i = 1; i < StepsN + 1; i++ ) {
         /* Missile update */
         Missile.DiscreteStep(DeltaTime);
 
         /* Interceptor state update */
+        const auto oldVel = Velocity;
         Velocity += Interceptor.Acceleration * DeltaTime;
 
         if ( Interceptor.AirResistance > 0 ) {
             /* Velocity is always positive */
-            auto drag = Velocity * Velocity * Interceptor.AirResistance * DeltaTime;
+            const auto drag = Velocity * Velocity * Interceptor.AirResistance * DeltaTime;
             Velocity -= drag;
+            if ( Velocity <= 0 ) {
+                return calculationValid;
+            }
         }
 
         if ( Velocity > Interceptor.MaxSpeed && Interceptor.MaxSpeed > 0 ) {
@@ -92,16 +98,17 @@ bool YasiuMath::Ballistics::InterceptMissile_Dynamic(
         }
 
         /* Dynamic update must be iterative */
-        Range += Velocity * DeltaTime;
+        Range += (Velocity + oldVel) * 0.5 * DeltaTime;
 
         if ( Missile.Position.Length() <= Range ) {
-            EstimatedTime = i * DeltaTime;
+            // QueryTime = i * DeltaTime;
             calculationValid = true;
             /* Reached estimation */
             break;
         }
     }
 
+    /* TODO : fix overshoot calculation */
     PredictedLocation = Missile.Position + InitialOffset;
     return calculationValid;
 }

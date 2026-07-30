@@ -39,6 +39,38 @@ bool BalisticLibGeneral1::RunTest( const FString& Parameters )
 }
 
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(
+    InterceptTest0,
+    "Plugins.Yasiu.Math.Ballistic.Intercept.0",
+    EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter
+)
+
+
+/* Types checking */
+bool InterceptTest0::RunTest( const FString& Parameters )
+{
+    ProjectileDynamicState<float> Proj_F;
+    ProjectileDynamicState<double> Proj_D;
+    InterceptorParams<float> Int_F;
+    InterceptorParams<double> Int_D;
+
+    Vec3<float> Out_F;
+    Vec3<double> Out_D;
+
+    /* Correct */
+    YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_F, Proj_F, Int_F, 0, 0.1);
+    YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_D, Proj_D, Int_D, 0, 0.1);
+    
+    // /* Mixed */
+    // YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_D, Proj_D, Int_F, 0, 0.1);
+    // YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_F, Proj_F, Int_F, 0, 0.1);
+    // YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_F, Proj_F, Int_F, 0, 0.1);
+    // YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_F, Proj_F, Int_F, 0, 0.1);
+    // YasiuMath::Ballistics::InterceptMissile_Dynamic(Out_F, Proj_F, Int_F, 0, 0.1);
+
+    return true;
+};
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(
     InterceptTest1,
     "Plugins.Yasiu.Math.Ballistic.Intercept.1",
     EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter
@@ -57,7 +89,7 @@ bool InterceptTest1::RunTest( const FString& Parameters )
     TestTrue(TEXT("Valid result1"), ret);
     TestNearlyEqual(TEXT("Intercept zone close1"), (result - ValidRes).Length(), 0);
 
-    /* INTANT INTERCEPT */
+    /* Instant INTERCEPT */
     ValidRes = {0, 10, 10};
     result = {};
     PlaneLocation = {0, 10, 10};
@@ -72,18 +104,21 @@ bool InterceptTest1::RunTest( const FString& Parameters )
     BulletSpeed = 0.1;
     ret = YasiuMath::Ballistics::InterceptMissile_Linear(result, PlaneLocation, PlaneMoveVec, BulletSpeed);
     TestFalse(TEXT("Invalid result1"), ret);
+
     BulletSpeed = 0.2;
     ret = YasiuMath::Ballistics::InterceptMissile_Linear(result, PlaneLocation, PlaneMoveVec, BulletSpeed);
     TestFalse(TEXT("Invalid result2"), ret);
+
     BulletSpeed = 0.3;
     ret = YasiuMath::Ballistics::InterceptMissile_Linear(result, PlaneLocation, PlaneMoveVec, BulletSpeed);
     TestFalse(TEXT("Invalid result3"), ret);
+
     PlaneMoveVec = {0, 10, 0};
     BulletSpeed = 10;
     ret = YasiuMath::Ballistics::InterceptMissile_Linear(result, PlaneLocation, PlaneMoveVec, BulletSpeed);
-    TestFalse(TEXT("Invalid result3"), ret);
+    TestFalse(TEXT("Invalid result3b"), ret);
 
-
+    /* <-> */
     PlaneLocation = {0, 10, 5};
     PlaneMoveVec = {0, -2, 3};
     BulletSpeed = 6;
@@ -110,6 +145,206 @@ bool InterceptTest1::RunTest( const FString& Parameters )
     ret = YasiuMath::Ballistics::InterceptMissile_Linear(result, PlaneLocation, PlaneMoveVec, BulletSpeed);
     TestFalse(TEXT("Invalid result7"), ret);
     // TestNearlyEqual(TEXT("Intercept zone close3"), (result - ValidRes).length(), 0);
+
+    return true;
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(
+    InterceptTest2,
+    "Plugins.Yasiu.Math.Ballistic.Intercept.2",
+    EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter
+)
+
+
+bool InterceptTest2::RunTest( const FString& Parameters )
+
+{
+    YasiuMath::Ballistics::InterceptorParams<float> Missile;
+    ProjectileDynamicState<float> Target;
+
+    Vec3<float> ValidRes{0, 0, 10};
+    Vec3<float> result{};
+    const float YASIU_EPS = 0.0001;
+    const float MaxQueryTime = 100;
+    const float DT = 0.1;
+
+    Target.Position = {0, 10, 10};
+    Target.Velocity = {0, -10, 0};
+
+    Missile.InitialSpeed = 10;
+    bool ret = YasiuMath::Ballistics::InterceptMissile_Dynamic(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Valid result1"), ret);
+    TestNearlyEqual(TEXT("Intercept zone close1"), (result - ValidRes).Length(), 0);
+
+    ValidRes = {0, 9, 10};
+    result = {};
+    Target.Position = {0, 10, 10};
+    Missile.InitialSpeed = 10000000.f;
+
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Valid result2"), ret);
+    TestNearlyEqual(TEXT("Intercept zone close2"), (result - ValidRes).Length(), 0);
+    Vector3Test(TEXT("Intercept zone close2b"), result, ValidRes, YASIU_EPS);
+
+    ValidRes = {0, 10, 10};
+    result = {};
+    Target.Position = {0, 10, 10};
+    Missile.InitialSpeed = 0.1f;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestFalse(TEXT("Invalid result1"), ret);
+
+    Missile.InitialSpeed = 0.2f;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestFalse(TEXT("Invalid result2"), ret);
+
+    Missile.InitialSpeed = 0.3f;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestFalse(TEXT("Invalid result3"), ret);
+
+    Target.Velocity = {0, 10, 0};
+    Missile.InitialSpeed = 10.f;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestFalse(TEXT("Invalid result3b"), ret);
+
+    /* <-> */
+    Target.Position = {0, 10, 5};
+    Target.Velocity = {0, -2, 3};
+    Missile.InitialSpeed = 6;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Valid result4"), ret);
+
+    Target.Position = {0, 100, 5};
+    Target.Velocity = {0, 5, 10};
+    Missile.InitialSpeed = 12;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Valid result5"), ret);
+
+    Target.Position = {0, 100, -500};
+    Target.Velocity = {0, 5, 10};
+    Missile.InitialSpeed = 12;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Valid result6"), ret);
+
+    Missile.InitialSpeed = 11;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Valid result7"), ret);
+
+    Target.Position = {0, 100, 500};
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestFalse(TEXT("Invalid result7"), ret);
+    // TestNearlyEqual(TEXT("Intercept zone close3"), (result - ValidRes).length(), 0);
+
+    return true;
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(
+    InterceptTest3,
+    "Plugins.Yasiu.Math.Ballistic.Intercept.3",
+    EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter
+)
+
+
+bool InterceptTest3::RunTest( const FString& Parameters )
+
+{
+    YasiuMath::Ballistics::InterceptorParams<float> Missile;
+    ProjectileDynamicState<float> Target;
+
+    Vec3<float> ValidRes{0, 0, 10};
+    Vec3<float> result{};
+    const float YASIU_EPS = 0.0001;
+    const float MaxQueryTime = 100;
+    const float DT = 0.1;
+
+    Target.Position = {0, 10, 10};
+    Target.Velocity = {0, -10, 0};
+    Target.AirFrictionCoeff = 1e-4;
+    Missile.AirResistance = 1e-6;
+
+    Missile.InitialSpeed = 10;
+    bool ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Valid result1"), ret);
+    // TestNearlyEqual(TEXT("Intercept zone close1"), (result - ValidRes).Length(), 0);
+    // Vector3Test(TEXT("Intercept zone close1b"), result, ValidRes, YASIU_EPS);
+
+    ValidRes = {0, 9, 10};
+    result = {};
+    Target.Position = {0, 10, 10};
+    Missile.InitialSpeed = 100000.f;
+
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Valid result2"), ret);
+    // TestNearlyEqual(TEXT("Intercept zone close2"), (result - ValidRes).Length(), 0);
+    // Vector3Test(TEXT("Intercept zone close2b"), result, ValidRes, YASIU_EPS);
+
+    ValidRes = {0, 10, 10};
+    result = {};
+    Target.Position = {0, 10, 10};
+    Missile.InitialSpeed = 0.1f;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestFalse(TEXT("Invalid result1"), ret);
+
+    Missile.InitialSpeed = 0.2f;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestFalse(TEXT("Invalid result2"), ret);
+
+    Missile.InitialSpeed = 0.3f;
+    Target.AirFrictionCoeff = 0;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestFalse(TEXT("Invalid result3"), ret);
+
+    Target.AirFrictionCoeff = 0;
+    Target.Position = {0, 10, 10};
+    Target.Velocity = {0, 10, 0};
+    Missile.InitialSpeed = 10.f;
+    Missile.Acceleration = 0;
+    Missile.AirResistance = 0.0001;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestFalse(TEXT("Invalid result3b"), ret);
+
+    /* <-> */
+    Target.Position = {0, 10, 5};
+    Target.Velocity = {0, -2, 3};
+    Missile.InitialSpeed = 6;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Valid result4"), ret);
+
+    Target.AirFrictionCoeff = 0.001;
+    Target.Position = {0, 100, 5};
+    Target.Velocity = {0, 5, 10};
+    Missile.InitialSpeed = 12;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Valid result5"), ret);
+
+    Target.AirFrictionCoeff = 0;
+    Target.Position = {0, 100, -500};
+    Target.Velocity = {0, 5, 10};
+    Missile.InitialSpeed = 12;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Valid result6"), ret);
+
+    Missile.InitialSpeed = 11;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Valid result7"), ret);
+
+    Target.Position = {0, 100, 500};
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestFalse(TEXT("Invalid result7"), ret);
+    // TestNearlyEqual(TEXT("Intercept zone close3"), (result - ValidRes).length(), 0);
+
+    Target.AirFrictionCoeff = 0;
+    Missile.InitialSpeed = 0.3f;
+    Missile.Acceleration = 1;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Chase result1"), ret);
+
+    Target.AirFrictionCoeff = 0.001;
+    Target.Position = {0, 10, 10};
+    Target.Velocity = {0, 10, 0};
+    Missile.InitialSpeed = 10.f;
+    Missile.Acceleration = 1;
+    ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<float>(result, Target, Missile, MaxQueryTime, DT);
+    TestTrue(TEXT("Chase result2"), ret);
 
     return true;
 }
@@ -149,7 +384,7 @@ bool BulletState_Test2::RunTest( const FString& Parameters )
     Bullet1.MaxSpeed = 300;
     Bullet1.AirFrictionCoeff = 0;
     Bullet1.Velocity = {10, 0, 0};
-    Bullet1.ThrustVector = {0, 0, 0};
+    Bullet1.Acceleration = {0, 0, 0};
     auto Bullet2 = Bullet1;
     auto Bullet3 = Bullet1;
     auto Bullet4 = Bullet1;
@@ -193,7 +428,7 @@ bool BulletState_Test3::RunTest( const FString& Parameters )
     Bullet1.MaxSpeed = 500;
     Bullet1.AirFrictionCoeff = 0;
     Bullet1.Velocity = {10, 0, 0};
-    Bullet1.ThrustVector = {10, 0, 0};
+    Bullet1.Acceleration = {10, 0, 0};
     auto Bullet2 = Bullet1;
     auto Bullet3 = Bullet1;
     auto Bullet4 = Bullet1;
@@ -255,7 +490,7 @@ bool BulletState_Test4::RunTest( const FString& Parameters )
     Bullet1.MaxSpeed = 0;
     Bullet1.AirFrictionCoeff = 0;
     Bullet1.Velocity = {10, 0, 0};
-    Bullet1.ThrustVector = {10, 0, 0};
+    Bullet1.Acceleration = {10, 0, 0};
     auto Bullet2 = Bullet1;
     auto Bullet3 = Bullet1;
     auto Bullet4 = Bullet1;
@@ -318,7 +553,7 @@ bool BulletState_Test5::RunTest( const FString& Parameters )
     Bullet1.MaxSpeed = 500;
     Bullet1.AirFrictionCoeff = 0.01;
     Bullet1.Velocity = {10, 0, 0};
-    Bullet1.ThrustVector = {1000, 0, 0};
+    Bullet1.Acceleration = {1000, 0, 0};
 
     auto Bullet2 = Bullet1;
     auto Bullet3 = Bullet1;
