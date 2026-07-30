@@ -146,7 +146,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8f78e1f294aa7b7505b78afe663e44f6" id="r_a8f78e1f294aa7b7505b78afe663e44f6"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a8f78e1f294aa7b7505b78afe663e44f6">RemapFloat</a> (const float Value, float MinIn, float MaxIn, float MinOut, float MaxOut, bool ClampOut=true)</td></tr>
 <tr class="memdesc:a8f78e1f294aa7b7505b78afe663e44f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remap float value to given range with optional clamping.  <br /></td></tr>
 <tr class="memitem:abd7a4de3923f419ae102389d2d5d99fc" id="r_abd7a4de3923f419ae102389d2d5d99fc"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#abd7a4de3923f419ae102389d2d5d99fc">RemapDouble</a> (const double Value, double MinIn, double MaxIn, double MinOut, double MaxOut, bool ClampOut=true)</td></tr>
-<tr class="memdesc:abd7a4de3923f419ae102389d2d5d99fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remap float value to given range with optional clamping.  <br /></td></tr>
+<tr class="memdesc:abd7a4de3923f419ae102389d2d5d99fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remap double value to given range with optional clamping.  <br /></td></tr>
+<tr class="memitem:adf71ff0ba41a54b5a6ef9196fb52d258" id="r_adf71ff0ba41a54b5a6ef9196fb52d258"><td class="memItemLeft">FVector&#160;</td><td class="memItemRight"><a class="el" href="#adf71ff0ba41a54b5a6ef9196fb52d258">RemapVector</a> (const FVector &amp;Value, double MinIn, double MaxIn, double MinOut, double MaxOut, bool ClampOut=true)</td></tr>
+<tr class="memdesc:adf71ff0ba41a54b5a6ef9196fb52d258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remap vector value to given range with optional clamping.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>BP Function library containing algebra functions. </p>
@@ -190,7 +192,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Remap float value to given range with optional clamping. </p>
+<p>Remap double value to given range with optional clamping. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Value</td><td>Input value </td></tr>
@@ -202,7 +204,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Vector remapped to given range </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Value remapped to given range </dd></dl>
 
 </div>
 </div>
@@ -258,6 +260,61 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Value remapped to given range </dd></dl>
+
+</div>
+</div>
+<a id="adf71ff0ba41a54b5a6ef9196fb52d258" name="adf71ff0ba41a54b5a6ef9196fb52d258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf71ff0ba41a54b5a6ef9196fb52d258">&#9670;&#160;</a></span>RemapVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FVector UYasiuMathFL_Algebra::RemapVector </td>
+          <td>(</td>
+          <td class="paramtype">const FVector &amp;</td>          <td class="paramname"><span class="paramname"><em>Value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>MinIn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>MaxIn</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>MinOut</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>MaxOut</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>ClampOut</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remap vector value to given range with optional clamping. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Value</td><td>Input value </td></tr>
+    <tr><td class="paramname">MinIn</td><td>Remap from Low </td></tr>
+    <tr><td class="paramname">MaxIn</td><td>Remap from High </td></tr>
+    <tr><td class="paramname">MinOut</td><td>Remap to Low </td></tr>
+    <tr><td class="paramname">MaxOut</td><td>Remap to High </td></tr>
+    <tr><td class="paramname">ClampOut</td><td>Optional Clamping to Output limits </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector remapped to given range </dd></dl>
 
 </div>
 </div>

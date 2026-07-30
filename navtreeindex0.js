@@ -57,6 +57,7 @@ var NAVTREEINDEX0 =
 "classUYasiuMathFL__Algebra.html":[3,0,6],
 "classUYasiuMathFL__Algebra.html#a8f78e1f294aa7b7505b78afe663e44f6":[3,0,6,1],
 "classUYasiuMathFL__Algebra.html#abd7a4de3923f419ae102389d2d5d99fc":[3,0,6,0],
+"classUYasiuMathFL__Algebra.html#adf71ff0ba41a54b5a6ef9196fb52d258":[3,0,6,2],
 "classUYasiuMathFL__Angle.html":[3,0,7],
 "classUYasiuMathFL__Angle.html#a92b0fe313dbfa0fcf1e7f31ce81ddb9a":[3,0,7,1],
 "classUYasiuMathFL__Angle.html#af0da3b4a3d8b1ed36610ac65f7c08ed7":[3,0,7,0],
