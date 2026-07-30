@@ -13,7 +13,7 @@
 
 
 /**
-* @brief BP Function library 
+* @brief BP Function library containing algebra functions
  */
 UCLASS(BlueprintType)
 class UYasiuMathFL_Algebra : public UYasiuMathFunctionLibrary {
@@ -30,7 +30,7 @@ public:
      * @param MinOut Remap to Low
      * @param MaxOut Remap to High
      * @param ClampOut Optional Clamping to Output limits
-     * @return 
+     * @return Value remapped to given range
      */
     UFUNCTION(BlueprintCallable, BlueprintPure, Category="Math|Yasiu|Algebra", meta=(DisplayName="Remap"))
     float RemapFloat( const float Value, float MinIn, float MaxIn, float MinOut, float MaxOut, bool ClampOut = true );
@@ -44,7 +44,7 @@ public:
      * @param MinOut Remap to Low
      * @param MaxOut Remap to High
      * @param ClampOut Optional Clamping to Output limits
-     * @return 
+     * @return Vector remapped to given range
      */
     UFUNCTION(BlueprintCallable, BlueprintPure, Category="Math|Yasiu|Algebra", meta=(DisplayName="Remap"))
     double RemapDouble( const double Value, double MinIn, double MaxIn, double MinOut, double MaxOut, bool ClampOut = true );

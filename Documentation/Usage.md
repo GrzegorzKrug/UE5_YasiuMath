@@ -7,7 +7,9 @@
 
 *All functions from library are located under same category.*
 
-#### [**Functions accessible in BP**](class_u_yasiu_math_function_library.html)
+<!-- #### [**Functions accessible in BP**](class_u_yasiu_math_function_library.html) -->
+#### [**Functions accessible in BP**](classUYasiuMathFunctionLibrary.html)
+
 
 ## Squirrel RNG in Blueprints
 Squirrel Object is not treated as ActorComponent, it has to be spawned from class using node

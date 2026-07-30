@@ -82,7 +82,7 @@ struct FBallisticInterceptor {
 
 
 /**
-* @brief BP Function library 
+* @brief Function library used for projectile prediction and missile interception calculations
  */
 UCLASS(BlueprintType)
 class UYasiuMathFL_Ballistic : public UYasiuMathFunctionLibrary {
@@ -90,15 +90,40 @@ class UYasiuMathFL_Ballistic : public UYasiuMathFunctionLibrary {
 
 
 public:
-    /* Single iterative step */
+    /** @brief Single iterative step 
+     * 
+     * @param Ob Struct with ballistic parameters
+     * @param DeltaStep Single calculation time. Keep in small range <0.01, 1> (for accuracy) 
+     * @return New Object state
+     */
     UFUNCTION(BlueprintCallable, BlueprintPure=false, Category="Math|Yasiu|Ballistic")
     FBallisticObject DiscreteStep( const FBallisticObject& Ob, const float DeltaStep );
 
-    /* If air drag is 0 then it uses quick function O(1) */
+    /** @brief Predict multiple steps in loop. Optimized for AirDrag=0, see details...
+     * 
+     * 
+     * @param Ob Struct with ballistic parameters
+     * @param PredictTime TimeRange to predict
+     * @param DeltaStep Single calculation time. Keep in small range <0.01, 1> (for accuracy). 
+     * Used only when calculating air drag.
+     * 
+     * @return New Object state
+     * 
+     * @note Normally function uses \ref DiscreteStep, but switchest to fast calculation when AirDrag is 0, effectively being **O(1)**
+     * @note \ref YasiuMath::Ballistics::ProjectileDynamicState::AutoStep
+     */
     UFUNCTION(BlueprintCallable, BlueprintPure=false, Category="Math|Yasiu|Ballistic")
-    FBallisticObject MultiStep( const FBallisticObject& Ob, const float PredictTime, const float DeltaStep );
+    FBallisticObject AutoStep( const FBallisticObject& Ob, const float PredictTime, const float DeltaStep );
 
-    /** @brief Prediction works only for objects with constant speeds, can not accelerate or be affected by air resistance */
+    /** @brief Prediction function for linear objects.
+     * Works only for objects with constant speeds, can not accelerate or be affected by air resistance
+     * 
+     * @param TargetPosition Target input position
+     * @param TargetVelocity Target input velocity
+     * @param InterceptSpeed Interceptor speed in any direction
+     * @param OutLocation Output intercept location
+     * @return Flag indicating if output location is valid.
+     */
     UFUNCTION(BlueprintCallable, BlueprintPure=false, Category="Math|Yasiu|Ballistic")
     bool Intercept_Linear(
         const FVector& TargetPosition,
@@ -107,6 +132,14 @@ public:
         FVector& OutLocation
     );
 
+    /** @brief Prediction function for objects with variable speed and resistance
+     * @param Target Struct with dynamic parameters of target
+     * @param Interceptor Struct with dynamic parameters of interceptor
+     * @param OutLocation Output intercept location
+     * @param MaxQueryTime Time range used to find solution.
+     * @param DeltaStep Single calculation time. Keep in small range <0.01, 1> (for accuracy). 
+     * @return Flag indicating if output location is valid.
+     */
     UFUNCTION(BlueprintCallable, BlueprintPure=false, Category="Math|Yasiu|Ballistic")
     bool Intercept_Dynamic(
         const FBallisticObject& Target,

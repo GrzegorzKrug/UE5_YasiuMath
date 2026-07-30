@@ -613,7 +613,7 @@ namespace YasiuMath {
              * @param QueryTime Time To Predict
              * @return Flag tells if projectile has reached full speed or still accelerates
              *
-             * @note Use \ref Predict for accurate state
+             * @note Use \ref Predict for iterative solution when dealing with AirDrag
              */
             ProjectileDynamicState PredictQuick( T QueryTime ) const
             {
@@ -713,6 +713,8 @@ namespace YasiuMath {
              * 
              * @warning Using big deltaTime can lead to numeric inaccuracy when dealing with air drag.
              * 
+             * @warning Keep **deltaTime** in small range <0.01, 1>. Suggested value 0.1.
+             * 
              */
             virtual void DiscreteStep( T deltaTime )
             {
@@ -749,9 +751,11 @@ namespace YasiuMath {
              * 
              * Iterative prediction for models with AirDrag > 0
              * Loop count is **N = QueryTime / DeltaTime**
-             * 
+             *
              * @param QueryTime Time to predict into future
              * @param DeltaTime Step size, suggested range <0.1, 1> for stability.
+             * 
+             * @note Normally function uses \ref DiscreteStep, but switchest to \ref PredictQuick when AirDrag is 0, effectively being O(1)
              * 
              * @note Last step has very small DeltaTime depending on math error
              */

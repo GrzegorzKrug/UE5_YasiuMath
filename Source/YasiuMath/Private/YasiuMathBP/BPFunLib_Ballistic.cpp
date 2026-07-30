@@ -84,7 +84,7 @@ FBallisticObject UYasiuMathFL_Ballistic::DiscreteStep( const FBallisticObject& O
     return FBallisticObject().FromDynamic(Proj);
 }
 
-FBallisticObject UYasiuMathFL_Ballistic::MultiStep( const FBallisticObject& Ob, const float PredictTime, const float DeltaStep )
+FBallisticObject UYasiuMathFL_Ballistic::AutoStep( const FBallisticObject& Ob, const float PredictTime, const float DeltaStep )
 {
     auto Proj = Ob.ToDynamicObject();
     Proj.AutoStep(PredictTime, DeltaStep);

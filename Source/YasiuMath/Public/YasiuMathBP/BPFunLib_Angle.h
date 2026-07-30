@@ -13,7 +13,7 @@
 
 
 /**
-* @brief BP Function library containing algebra functions
+* @brief BP Function library related to rotation and angles
  */
 UCLASS(BlueprintType)
 class UYasiuMathFL_Angle : public UYasiuMathFunctionLibrary {
