@@ -97,8 +97,8 @@ bool BasicCallTests4::RunTest( const FString& Parameters )
     TArray<FVector2D> resultsVector2{};
 
     auto* MathLib = NewObject<UYasiuMathFL_Algebra>();
-    MathLib->RemapDouble(5, 0, 10, 0, 100);
     MathLib->RemapFloat(5, 0, 10, 0, 100);
+    MathLib->RemapVector(FVector(20, 30, 40), 0, 10, 0, 100);
 
 
     return true; // Return true if test completed successfully

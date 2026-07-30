@@ -13,7 +13,10 @@
 
 
 /**
- * @brief State based RNG, good for MonteCarlo
+ * @brief State based RNG, good for MonteCarlo sampling.
+ * 
+ * Supports serialization for saving/loading
+ * 
  */
 UCLASS(BlueprintType, Blueprintable, DefaultToInstanced)
 class UPCG32_RNG : public UObject {

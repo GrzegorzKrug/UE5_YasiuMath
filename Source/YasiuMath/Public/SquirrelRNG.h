@@ -14,6 +14,8 @@
 
 /**
  * @brief Random number generator. Seedable. Gives better random values than epic generator.
+ * 
+ * Supports serialization for saving/loading
  */
 UCLASS(BlueprintType, Blueprintable, DefaultToInstanced)
 class YASIUMATH_API USquirrel13_RNG : public UObject {
