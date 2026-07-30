@@ -25,15 +25,7 @@
 var NAVTREE =
 [
   [ "Yasiu Math", "index.html", [
-    [ "About Math Library", "md_Documentation_2About.html", [
-      [ "Overview", "md_Documentation_2About.html#autotoc_md1", null ],
-      [ "Features", "md_Documentation_2About.html#autotoc_md3", null ],
-      [ "Components", "md_Documentation_2About.html#autotoc_md5", [
-        [ "RNG (Random Number Generation)", "md_Documentation_2About.html#autotoc_md6", null ],
-        [ "Math functions", "md_Documentation_2About.html#autotoc_md7", null ]
-      ] ],
-      [ "Start", "md_Documentation_2About.html#autotoc_md9", null ]
-    ] ],
+    [ "About Math Library", "index.html", "index" ],
     [ "Quick Start", "mainpage.html", "mainpage" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

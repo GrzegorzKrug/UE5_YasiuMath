@@ -144,13 +144,13 @@ Inheritance diagram for UYasiuMathFL_Trigonometry:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a91adcca7f3686db54a097d1ed928c9e5" id="r_a91adcca7f3686db54a097d1ed928c9e5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a91adcca7f3686db54a097d1ed928c9e5">SpreadPointsOnTangentByXY</a> (TArray&lt; FVector2D &gt; &amp;out, const double X, const double Y, const double spreadDistance)</td></tr>
-<tr class="memdesc:a91adcca7f3686db54a097d1ed928c9e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spread points on tangent line to arc located by XY offset from arc center point 0,0. Points are moved away from tangent point by spreadDistance.  <br /></td></tr>
+<tr class="memdesc:a91adcca7f3686db54a097d1ed928c9e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spread points on tangent line to arc located by XY offset from arc center point 0,0.  <br /></td></tr>
 <tr class="memitem:a8a8efcd2448e9bad69e9f70ee6f2e0bc" id="r_a8a8efcd2448e9bad69e9f70ee6f2e0bc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8a8efcd2448e9bad69e9f70ee6f2e0bc">SpreadPointsOnTangentByAngleRadius</a> (TArray&lt; FVector2D &gt; &amp;out, double angle, double radius, double spreadDistance)</td></tr>
-<tr class="memdesc:a8a8efcd2448e9bad69e9f70ee6f2e0bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spread points on tangent line to arc located by angle and radius of given arc. Points are moved away from tangent point by spreadDistance in perpendicular direction.  <br /></td></tr>
+<tr class="memdesc:a8a8efcd2448e9bad69e9f70ee6f2e0bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spread points on tangent line to arc located by angle and radius of given arc.  <br /></td></tr>
 <tr class="memitem:a32c7bc52ec9e3adaa011a0c88b11548c" id="r_a32c7bc52ec9e3adaa011a0c88b11548c"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a32c7bc52ec9e3adaa011a0c88b11548c">FindMinimalRadiusForIntersectingTangentsOnArc</a> (double alfa, double beta, double symmetricWidth)</td></tr>
-<tr class="memdesc:a32c7bc52ec9e3adaa011a0c88b11548c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find radius of circle for both tangent lines that intersect. Tangents on circle are defined by angle Alfa and Beta. Tangent line distance to meeting point from circle intersection is <span class="tt">symmetricWidth</span>. Angle is in radians.  <br /></td></tr>
+<tr class="memdesc:a32c7bc52ec9e3adaa011a0c88b11548c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find radius of circle for both tangent lines that intersect.  <br /></td></tr>
 <tr class="memitem:a743b4019679493f368c69fee11c15e15" id="r_a743b4019679493f368c69fee11c15e15"><td class="memItemLeft">FVector2D&#160;</td><td class="memItemRight"><a class="el" href="#a743b4019679493f368c69fee11c15e15">FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric</a> (double alfa, double beta, double widthA, double widthB)</td></tr>
-<tr class="memdesc:a743b4019679493f368c69fee11c15e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find radius of circle for both tangent line that intersect. Asymmetry comes from 2 different widths. Tangents on circle are defined by angle Alfa and Beta. Tangent line distance to meeting point from circle intersection is <span class="tt">symmetricWidth</span>. Angle is in radians. First radius is bigger.  <br /></td></tr>
+<tr class="memdesc:a743b4019679493f368c69fee11c15e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find radius of circle for both tangent line that intersect.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>BP Function library used with trigonometry. </p>
@@ -179,8 +179,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Find radius of circle for both tangent lines that intersect. Tangents on circle are defined by angle Alfa and Beta. Tangent line distance to meeting point from circle intersection is <span class="tt">symmetricWidth</span>. Angle is in radians. </p>
-<p class="formulaDsp">
+<p>Find radius of circle for both tangent lines that intersect. </p>
+<p>Tangents on circle are defined by angle Alfa and Beta. Tangent line distance to meeting point from circle intersection is <span class="tt">symmetricWidth</span>. Angle is in radians.   </p><p class="formulaDsp">
 \[    R=\frac{\sin(\alpha)*A-\sin(\beta)*B}{\cos(\beta)-\cos(\alpha)}
 \]
 </p>
@@ -224,8 +224,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Find radius of circle for both tangent line that intersect. Asymmetry comes from 2 different widths. Tangents on circle are defined by angle Alfa and Beta. Tangent line distance to meeting point from circle intersection is <span class="tt">symmetricWidth</span>. Angle is in radians. First radius is bigger. </p>
-<p class="formulaDsp">
+<p>Find radius of circle for both tangent line that intersect. </p>
+<p>Asymmetry comes from 2 different widths. Tangents on circle are defined by angle Alfa and Beta. Tangent line distance to meeting point from circle intersection is <span class="tt">symmetricWidth</span>. Angle is in radians. First radius is bigger.   </p><p class="formulaDsp">
 \[    R=\frac{\sin(\alpha)*A-\sin(\beta)*B}{\cos(\beta)-\cos(\alpha)}
 \]
 </p>
@@ -238,7 +238,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pair of radius for each circle. </dd></dl>
 
 </div>
 </div>
@@ -271,16 +271,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Spread points on tangent line to arc located by angle and radius of given arc. Points are moved away from tangent point by spreadDistance in perpendicular direction. </p>
+<p>Spread points on tangent line to arc located by angle and radius of given arc. </p>
+<p>Points are moved away from tangent point by spreadDistance in perpendicular direction</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">out</td><td>Returned collection of points </td></tr>
     <tr><td class="paramname">angle</td><td>Tangent location defined by angle </td></tr>
     <tr><td class="paramname">radius</td><td>Radius of arc </td></tr>
     <tr><td class="paramname">spreadDistance</td><td>Distance to spread in one direction from tangent point </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><b>TArray</b> of 2 points </dd></dl>
 
 </div>
 </div>
@@ -313,16 +314,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Spread points on tangent line to arc located by XY offset from arc center point 0,0. Points are moved away from tangent point by spreadDistance. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Spread points on tangent line to arc located by XY offset from arc center point 0,0. </p>
+<p>Points are moved away from tangent point by spreadDistance </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">out</td><td>Returned collection of points </td></tr>
     <tr><td class="paramname">X</td><td>Position X </td></tr>
     <tr><td class="paramname">Y</td><td>Position Y </td></tr>
     <tr><td class="paramname">spreadDistance</td><td>Distance to spread in one direction from tangent point </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><b>TArray</b> of 2 points </dd></dl>
 
 </div>
 </div>

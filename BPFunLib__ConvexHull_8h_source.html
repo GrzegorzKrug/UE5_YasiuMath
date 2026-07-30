@@ -119,30 +119,35 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('BPFunLib__Conv
   <div class="headertitle"><div class="title">BPFunLib_ConvexHull.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="YasiuMathBPLibrary_8h.html">YasiuMathBP/YasiuMathBPLibrary.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 2026 Grzegorz Krug.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * All Rights Reserved.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;BPFunLib_ConvexHull.generated.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>UCLASS(BlueprintType)</div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classUYasiuMathFL__ConvexHull.html">   14</a></span>class <a class="code hl_class" href="classUYasiuMathFL__ConvexHull.html">UYasiuMathFL_ConvexHull</a> : public <a class="code hl_class" href="classUYasiuMathFunctionLibrary.html">UYasiuMathFunctionLibrary</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    GENERATED_BODY()</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Math|Yasiu|ConvexHull&quot;</span>)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classUYasiuMathFL__ConvexHull.html#a5698c161475c78a4a848071f25d54b0b">   25</a></span>    void <a class="code hl_function" href="classUYasiuMathFL__ConvexHull.html#a5698c161475c78a4a848071f25d54b0b">ConvexHull2D</a>( TArray&lt;<span class="keywordtype">int</span>&gt;&amp; result, const TArray&lt;FVector2D&gt;&amp; polygonPoints );</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="YasiuMathBPLibrary_8h.html">YasiuMathBP/YasiuMathBPLibrary.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;BPFunLib_ConvexHull.generated.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>UCLASS(BlueprintType)</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classUYasiuMathFL__ConvexHull.html">   19</a></span>class <a class="code hl_class" href="classUYasiuMathFL__ConvexHull.html">UYasiuMathFL_ConvexHull</a> : public <a class="code hl_class" href="classUYasiuMathFunctionLibrary.html">UYasiuMathFunctionLibrary</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    GENERATED_BODY()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Math|Yasiu|ConvexHull&quot;</span>)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classUYasiuMathFL__ConvexHull.html#a5698c161475c78a4a848071f25d54b0b">   30</a></span>    void <a class="code hl_function" href="classUYasiuMathFL__ConvexHull.html#a5698c161475c78a4a848071f25d54b0b">ConvexHull2D</a>( TArray&lt;<span class="keywordtype">int</span>&gt;&amp; result, const TArray&lt;FVector2D&gt;&amp; polygonPoints );</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
 </div>
 <div class="ttc" id="aYasiuMathBPLibrary_8h_html"><div class="ttname"><a href="YasiuMathBPLibrary_8h.html">YasiuMathBPLibrary.h</a></div></div>
-<div class="ttc" id="aclassUYasiuMathFL__ConvexHull_html"><div class="ttname"><a href="classUYasiuMathFL__ConvexHull.html">UYasiuMathFL_ConvexHull</a></div><div class="ttdoc">BP Function library used with ConvexHull.</div><div class="ttdef"><b>Definition</b> BPFunLib_ConvexHull.h:14</div></div>
+<div class="ttc" id="aclassUYasiuMathFL__ConvexHull_html"><div class="ttname"><a href="classUYasiuMathFL__ConvexHull.html">UYasiuMathFL_ConvexHull</a></div><div class="ttdoc">BP Function library used with ConvexHull.</div><div class="ttdef"><b>Definition</b> BPFunLib_ConvexHull.h:19</div></div>
 <div class="ttc" id="aclassUYasiuMathFL__ConvexHull_html_a5698c161475c78a4a848071f25d54b0b"><div class="ttname"><a href="classUYasiuMathFL__ConvexHull.html#a5698c161475c78a4a848071f25d54b0b">UYasiuMathFL_ConvexHull::ConvexHull2D</a></div><div class="ttdeci">void ConvexHull2D(TArray&lt; int &gt; &amp;result, const TArray&lt; FVector2D &gt; &amp;polygonPoints)</div><div class="ttdoc">Find points that create convex hull in 2D Space.</div></div>
-<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html">UYasiuMathFunctionLibrary</a></div><div class="ttdoc">BP Function placeholder to group libraries in documentation.</div><div class="ttdef"><b>Definition</b> YasiuMathBPLibrary.h:28</div></div>
+<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html">UYasiuMathFunctionLibrary</a></div><div class="ttdoc">BP Function placeholder to group libraries in documentation.</div><div class="ttdef"><b>Definition</b> YasiuMathBPLibrary.h:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

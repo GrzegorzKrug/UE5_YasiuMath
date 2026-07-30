@@ -119,34 +119,39 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('BPFunLib__Alge
   <div class="headertitle"><div class="title">BPFunLib_Algebra.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="YasiuMathBPLibrary_8h.html">YasiuMathBP//YasiuMathBPLibrary.h</a>&quot;</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 2026 Grzegorz Krug.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * All Rights Reserved.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;BPFunLib_Algebra.generated.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>UCLASS(BlueprintType)</div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classUYasiuMathFL__Algebra.html">   14</a></span>class <a class="code hl_class" href="classUYasiuMathFL__Algebra.html">UYasiuMathFL_Algebra</a> : public <a class="code hl_class" href="classUYasiuMathFunctionLibrary.html">UYasiuMathFunctionLibrary</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    GENERATED_BODY()</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    UFUNCTION(BlueprintCallable, BlueprintPure, Category=<span class="stringliteral">&quot;Math|Yasiu|Algebra&quot;</span>, meta=(DisplayName=<span class="stringliteral">&quot;Remap&quot;</span>))</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classUYasiuMathFL__Algebra.html#a8f78e1f294aa7b7505b78afe663e44f6">   31</a></span>    float <a class="code hl_function" href="classUYasiuMathFL__Algebra.html#a8f78e1f294aa7b7505b78afe663e44f6">RemapFloat</a>( const <span class="keywordtype">float</span> Value, <span class="keywordtype">float</span> MinIn, <span class="keywordtype">float</span> MaxIn, <span class="keywordtype">float</span> MinOut, <span class="keywordtype">float</span> MaxOut, <span class="keywordtype">bool</span> ClampOut = true );</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    UFUNCTION(BlueprintCallable, BlueprintPure, Category=<span class="stringliteral">&quot;Math|Yasiu|Algebra&quot;</span>, meta=(DisplayName=<span class="stringliteral">&quot;Remap&quot;</span>))</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classUYasiuMathFL__Algebra.html#abd7a4de3923f419ae102389d2d5d99fc">   45</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classUYasiuMathFL__Algebra.html#abd7a4de3923f419ae102389d2d5d99fc">RemapDouble</a>( const <span class="keywordtype">double</span> Value, <span class="keywordtype">double</span> MinIn, <span class="keywordtype">double</span> MaxIn, <span class="keywordtype">double</span> MinOut, <span class="keywordtype">double</span> MaxOut, <span class="keywordtype">bool</span> ClampOut = true );</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="YasiuMathBPLibrary_8h.html">YasiuMathBP//YasiuMathBPLibrary.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;BPFunLib_Algebra.generated.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>UCLASS(BlueprintType)</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classUYasiuMathFL__Algebra.html">   19</a></span>class <a class="code hl_class" href="classUYasiuMathFL__Algebra.html">UYasiuMathFL_Algebra</a> : public <a class="code hl_class" href="classUYasiuMathFunctionLibrary.html">UYasiuMathFunctionLibrary</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    GENERATED_BODY()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    UFUNCTION(BlueprintCallable, BlueprintPure, Category=<span class="stringliteral">&quot;Math|Yasiu|Algebra&quot;</span>, meta=(DisplayName=<span class="stringliteral">&quot;Remap&quot;</span>))</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classUYasiuMathFL__Algebra.html#a8f78e1f294aa7b7505b78afe663e44f6">   36</a></span>    float <a class="code hl_function" href="classUYasiuMathFL__Algebra.html#a8f78e1f294aa7b7505b78afe663e44f6">RemapFloat</a>( const <span class="keywordtype">float</span> Value, <span class="keywordtype">float</span> MinIn, <span class="keywordtype">float</span> MaxIn, <span class="keywordtype">float</span> MinOut, <span class="keywordtype">float</span> MaxOut, <span class="keywordtype">bool</span> ClampOut = true );</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    UFUNCTION(BlueprintCallable, BlueprintPure, Category=<span class="stringliteral">&quot;Math|Yasiu|Algebra&quot;</span>, meta=(DisplayName=<span class="stringliteral">&quot;Remap&quot;</span>))</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classUYasiuMathFL__Algebra.html#abd7a4de3923f419ae102389d2d5d99fc">   50</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classUYasiuMathFL__Algebra.html#abd7a4de3923f419ae102389d2d5d99fc">RemapDouble</a>( const <span class="keywordtype">double</span> Value, <span class="keywordtype">double</span> MinIn, <span class="keywordtype">double</span> MaxIn, <span class="keywordtype">double</span> MinOut, <span class="keywordtype">double</span> MaxOut, <span class="keywordtype">bool</span> ClampOut = true );</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
 </div>
 <div class="ttc" id="aYasiuMathBPLibrary_8h_html"><div class="ttname"><a href="YasiuMathBPLibrary_8h.html">YasiuMathBPLibrary.h</a></div></div>
-<div class="ttc" id="aclassUYasiuMathFL__Algebra_html"><div class="ttname"><a href="classUYasiuMathFL__Algebra.html">UYasiuMathFL_Algebra</a></div><div class="ttdoc">BP Function library.</div><div class="ttdef"><b>Definition</b> BPFunLib_Algebra.h:14</div></div>
+<div class="ttc" id="aclassUYasiuMathFL__Algebra_html"><div class="ttname"><a href="classUYasiuMathFL__Algebra.html">UYasiuMathFL_Algebra</a></div><div class="ttdoc">BP Function library.</div><div class="ttdef"><b>Definition</b> BPFunLib_Algebra.h:19</div></div>
 <div class="ttc" id="aclassUYasiuMathFL__Algebra_html_a8f78e1f294aa7b7505b78afe663e44f6"><div class="ttname"><a href="classUYasiuMathFL__Algebra.html#a8f78e1f294aa7b7505b78afe663e44f6">UYasiuMathFL_Algebra::RemapFloat</a></div><div class="ttdeci">float RemapFloat(const float Value, float MinIn, float MaxIn, float MinOut, float MaxOut, bool ClampOut=true)</div><div class="ttdoc">Remap float value to given range with optional clamping.</div></div>
 <div class="ttc" id="aclassUYasiuMathFL__Algebra_html_abd7a4de3923f419ae102389d2d5d99fc"><div class="ttname"><a href="classUYasiuMathFL__Algebra.html#abd7a4de3923f419ae102389d2d5d99fc">UYasiuMathFL_Algebra::RemapDouble</a></div><div class="ttdeci">double RemapDouble(const double Value, double MinIn, double MaxIn, double MinOut, double MaxOut, bool ClampOut=true)</div><div class="ttdoc">Remap float value to given range with optional clamping.</div></div>
-<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html">UYasiuMathFunctionLibrary</a></div><div class="ttdoc">BP Function placeholder to group libraries in documentation.</div><div class="ttdef"><b>Definition</b> YasiuMathBPLibrary.h:28</div></div>
+<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html">UYasiuMathFunctionLibrary</a></div><div class="ttdoc">BP Function placeholder to group libraries in documentation.</div><div class="ttdef"><b>Definition</b> YasiuMathBPLibrary.h:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
