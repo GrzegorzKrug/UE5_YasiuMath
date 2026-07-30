@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Yasiu Math: Source/YasiuMath/Public/YasiuMathBPLibrary.h Source File</title>
+<title>Yasiu Math: Source/YasiuMath/Public/YasiuMathBP/YasiuMathBPLibrary.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('YasiuMathBPLib
 </div><!--header-->
 <div class="contents">
 <a href="YasiuMathBPLibrary_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* </span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 2025 Grzegorz Krug.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 2026 Grzegorz Krug.</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * All Rights Reserved.</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
@@ -131,64 +131,30 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('YasiuMathBPLib
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;Templates/Tuple.h&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;Kismet/BlueprintFunctionLibrary.h&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;YasiuMathBPLibrary.generated.h&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>UCLASS(BlueprintType)</div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classUYasiuMathFunctionLibrary.html">   21</a></span>class <a class="code hl_class" href="classUYasiuMathFunctionLibrary.html">UYasiuMathFunctionLibrary</a> : public UBlueprintFunctionLibrary {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    GENERATED_BODY()</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Math|Yasiu|Trigonometry&quot;</span>)</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classUYasiuMathFunctionLibrary.html#aaea2ff884f7e45dca09b804827e299cc">   35</a></span>    void <a class="code hl_function" href="classUYasiuMathFunctionLibrary.html#aaea2ff884f7e45dca09b804827e299cc">SpreadPointsOnTangentByXY</a>( TArray&lt;FVector2D&gt;&amp; out, const <span class="keywordtype">double</span> X, const <span class="keywordtype">double</span> Y, const <span class="keywordtype">double</span> spreadDistance );</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Math|Yasiu|Trigonometry&quot;</span>)</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classUYasiuMathFunctionLibrary.html#ae848642257ee1450e2193b015471d56f">   46</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classUYasiuMathFunctionLibrary.html#ae848642257ee1450e2193b015471d56f">SpreadPointsOnTangentByAngleRadius</a>( TArray&lt;FVector2D&gt;&amp; out, <span class="keywordtype">double</span> angle, <span class="keywordtype">double</span> radius, <span class="keywordtype">double</span> spreadDistance );</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Math|Yasiu|Trigonometry&quot;</span>)</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classUYasiuMathFunctionLibrary.html#a3894271a43a95cce551c2746898c9cec">   62</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classUYasiuMathFunctionLibrary.html#a3894271a43a95cce551c2746898c9cec">FindMinimalRadiusForIntersectingTangentsOnArc</a>( <span class="keywordtype">double</span> alfa, <span class="keywordtype">double</span> beta, <span class="keywordtype">double</span> symmetricWidth );</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Math|Yasiu|Trigonometry&quot;</span>)</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classUYasiuMathFunctionLibrary.html#a7db2ed4dbe5fb5d761f6c38ab63ab65e">   81</a></span>    FVector2D <a class="code hl_function" href="classUYasiuMathFunctionLibrary.html#a7db2ed4dbe5fb5d761f6c38ab63ab65e">FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric</a>( <span class="keywordtype">double</span> alfa, <span class="keywordtype">double</span> beta, <span class="keywordtype">double</span> widthA, <span class="keywordtype">double</span> widthB );</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Math|Yasiu|Convex&quot;</span>)</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classUYasiuMathFunctionLibrary.html#a679692e29440cc0fe9620ddec3b9b4b3">   90</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classUYasiuMathFunctionLibrary.html#a679692e29440cc0fe9620ddec3b9b4b3">ConvexHull2D</a>( TArray&lt;<span class="keywordtype">int</span>&gt;&amp; result, const TArray&lt;FVector2D&gt;&amp; polygonPoints );</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Math|Yasiu|Angle&quot;</span>)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classUYasiuMathFunctionLibrary.html#ae034d293d70a24bd75d910b47525e522">   96</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classUYasiuMathFunctionLibrary.html#ae034d293d70a24bd75d910b47525e522">ClipAngleToCycle</a>( <span class="keywordtype">double</span> angle, <span class="keywordtype">double</span> period );</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    UFUNCTION(BlueprintCallable, Category = <span class="stringliteral">&quot;Math|Yasiu|Angle&quot;</span>)</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classUYasiuMathFunctionLibrary.html#a2906171433f9633f346fe8e204fb6540">  108</a></span>    FVector <a class="code hl_function" href="classUYasiuMathFunctionLibrary.html#a2906171433f9633f346fe8e204fb6540">RotateBoundingBox</a>( const FVector&amp; BoxSize, const FQuat&amp; Rotation );</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(DisplayName=<span class="stringliteral">&quot;Remap&quot;</span>))</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classUYasiuMathFunctionLibrary.html#a3cfd1e96fa380c7734f5b1eca5055e37">  123</a></span>    <span class="keywordtype">float</span> <a class="code hl_function" href="classUYasiuMathFunctionLibrary.html#a3cfd1e96fa380c7734f5b1eca5055e37">RemapFloat</a>( const <span class="keywordtype">float</span> Value, <span class="keywordtype">float</span> MinIn, <span class="keywordtype">float</span> MaxIn, <span class="keywordtype">float</span> MinOut, <span class="keywordtype">float</span> MaxOut, <span class="keywordtype">bool</span> ClampOut = true );</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(DisplayName=<span class="stringliteral">&quot;Remap&quot;</span>))</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classUYasiuMathFunctionLibrary.html#a0d8e43404b2a5dbc854302b7e9dd0ff5">  137</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classUYasiuMathFunctionLibrary.html#a0d8e43404b2a5dbc854302b7e9dd0ff5">RemapDouble</a>( const <span class="keywordtype">double</span> Value, <span class="keywordtype">double</span> MinIn, <span class="keywordtype">double</span> MaxIn, <span class="keywordtype">double</span> MinOut, <span class="keywordtype">double</span> MaxOut, <span class="keywordtype">bool</span> ClampOut = true );</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>};</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;YasiuMathBPLibrary.generated.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>UCLASS(BlueprintType)</div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classUYasiuMathFunctionLibrary.html">   28</a></span>class <a class="code hl_class" href="classUYasiuMathFunctionLibrary.html">UYasiuMathFunctionLibrary</a> : public UBlueprintFunctionLibrary {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    GENERATED_BODY()</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
 </div>
-<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html">UYasiuMathFunctionLibrary</a></div><div class="ttdoc">BP Function library having all implementations ready for use in BP Editor.</div><div class="ttdef"><b>Definition</b> YasiuMathBPLibrary.h:21</div></div>
-<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html_a0d8e43404b2a5dbc854302b7e9dd0ff5"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html#a0d8e43404b2a5dbc854302b7e9dd0ff5">UYasiuMathFunctionLibrary::RemapDouble</a></div><div class="ttdeci">double RemapDouble(const double Value, double MinIn, double MaxIn, double MinOut, double MaxOut, bool ClampOut=true)</div><div class="ttdoc">Remap float value to given range with optional clamping.</div></div>
-<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html_a2906171433f9633f346fe8e204fb6540"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html#a2906171433f9633f346fe8e204fb6540">UYasiuMathFunctionLibrary::RotateBoundingBox</a></div><div class="ttdeci">FVector RotateBoundingBox(const FVector &amp;BoxSize, const FQuat &amp;Rotation)</div><div class="ttdoc">Rotate Box and calculate new bounding box along same axes to fix old box inside.213123.</div></div>
-<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html_a3894271a43a95cce551c2746898c9cec"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html#a3894271a43a95cce551c2746898c9cec">UYasiuMathFunctionLibrary::FindMinimalRadiusForIntersectingTangentsOnArc</a></div><div class="ttdeci">double FindMinimalRadiusForIntersectingTangentsOnArc(double alfa, double beta, double symmetricWidth)</div><div class="ttdoc">Find radius of circle for both tangent lines that intersect. Tangents on circle are defined by angle ...</div></div>
-<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html_a3cfd1e96fa380c7734f5b1eca5055e37"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html#a3cfd1e96fa380c7734f5b1eca5055e37">UYasiuMathFunctionLibrary::RemapFloat</a></div><div class="ttdeci">float RemapFloat(const float Value, float MinIn, float MaxIn, float MinOut, float MaxOut, bool ClampOut=true)</div><div class="ttdoc">Remap float value to given range with optional clamping.</div></div>
-<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html_a679692e29440cc0fe9620ddec3b9b4b3"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html#a679692e29440cc0fe9620ddec3b9b4b3">UYasiuMathFunctionLibrary::ConvexHull2D</a></div><div class="ttdeci">void ConvexHull2D(TArray&lt; int &gt; &amp;result, const TArray&lt; FVector2D &gt; &amp;polygonPoints)</div><div class="ttdoc">Find points that create convex hull in 2D Space.</div></div>
-<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html_a7db2ed4dbe5fb5d761f6c38ab63ab65e"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html#a7db2ed4dbe5fb5d761f6c38ab63ab65e">UYasiuMathFunctionLibrary::FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric</a></div><div class="ttdeci">FVector2D FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric(double alfa, double beta, double widthA, double widthB)</div><div class="ttdoc">Find radius of circle for both tangent line that intersect. Asymmetry comes from 2 different widths....</div></div>
-<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html_aaea2ff884f7e45dca09b804827e299cc"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html#aaea2ff884f7e45dca09b804827e299cc">UYasiuMathFunctionLibrary::SpreadPointsOnTangentByXY</a></div><div class="ttdeci">void SpreadPointsOnTangentByXY(TArray&lt; FVector2D &gt; &amp;out, const double X, const double Y, const double spreadDistance)</div><div class="ttdoc">Spread points on tangent line to arc located by XY offset from arc center point 0,...</div></div>
-<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html_ae034d293d70a24bd75d910b47525e522"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html#ae034d293d70a24bd75d910b47525e522">UYasiuMathFunctionLibrary::ClipAngleToCycle</a></div><div class="ttdeci">double ClipAngleToCycle(double angle, double period)</div><div class="ttdoc">Normalize angle to its period, to be in range &lt;0, period&gt;.</div></div>
-<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html_ae848642257ee1450e2193b015471d56f"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html#ae848642257ee1450e2193b015471d56f">UYasiuMathFunctionLibrary::SpreadPointsOnTangentByAngleRadius</a></div><div class="ttdeci">void SpreadPointsOnTangentByAngleRadius(TArray&lt; FVector2D &gt; &amp;out, double angle, double radius, double spreadDistance)</div><div class="ttdoc">Spread points on tangent line to arc located by angle and radius of given arc. Points are moved away ...</div></div>
+<div class="ttc" id="aclassUYasiuMathFunctionLibrary_html"><div class="ttname"><a href="classUYasiuMathFunctionLibrary.html">UYasiuMathFunctionLibrary</a></div><div class="ttdoc">BP Function placeholder to group libraries in documentation.</div><div class="ttdef"><b>Definition</b> YasiuMathBPLibrary.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>Source</b></li><li class="navelem"><b>YasiuMath</b></li><li class="navelem"><b>Public</b></li><li class="navelem"><a href="YasiuMathBPLibrary_8h.html">YasiuMathBPLibrary.h</a></li>
+    <li class="navelem"><b>Source</b></li><li class="navelem"><b>YasiuMath</b></li><li class="navelem"><b>Public</b></li><li class="navelem"><b>YasiuMathBP</b></li><li class="navelem"><a href="YasiuMathBPLibrary_8h.html">YasiuMathBPLibrary.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

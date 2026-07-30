@@ -7,8 +7,8 @@ var searchData=
   ['plugin_20in_20unreal_20engine_4',['2B. Enable the Plugin in Unreal Engine',['../install.html#autotoc_md15',1,'']]],
   ['point_5',['Point',['../structYasiuMath_1_1Types_1_1Point.html',1,'YasiuMath::Types']]],
   ['pointangle_6',['PointAngle',['../structYasiuMath_1_1Types_1_1PointAngle.html',1,'YasiuMath::Types']]],
-  ['position_7',['Position',['../structYasiuMath_1_1Types_1_1ProjectileDynamicState.html#aeea21719c1319f51ff2f276716115214',1,'YasiuMath::Types::ProjectileDynamicState']]],
-  ['predict_8',['Predict',['../structYasiuMath_1_1Types_1_1ProjectileDynamicState.html#ad304be7cdfc6721c64d856a575e10d16',1,'YasiuMath::Types::ProjectileDynamicState']]],
-  ['predictquick_9',['PredictQuick',['../structYasiuMath_1_1Types_1_1ProjectileDynamicState.html#ad9c3dd2bd50cedfeac85d3c0e12cf945',1,'YasiuMath::Types::ProjectileDynamicState']]],
-  ['projectiledynamicstate_10',['ProjectileDynamicState',['../structYasiuMath_1_1Types_1_1ProjectileDynamicState.html',1,'YasiuMath::Types']]]
+  ['position_7',['Position',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html#a8ea16cea73c3d6261d14593c0b312115',1,'YasiuMath::Ballistics::ProjectileDynamicState::Position'],['../structFBallisticObject.html#a40dc1074c8eab0ba5e98e7450b079842',1,'FBallisticObject::Position']]],
+  ['predict_8',['Predict',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html#a9bf2798d848b13a58591faf25c5b76df',1,'YasiuMath::Ballistics::ProjectileDynamicState']]],
+  ['predictquick_9',['PredictQuick',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html#a0d76e4c16d761716e2884a7e78cd9837',1,'YasiuMath::Ballistics::ProjectileDynamicState']]],
+  ['projectiledynamicstate_10',['ProjectileDynamicState',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html',1,'YasiuMath::Ballistics']]]
 ];

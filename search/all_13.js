@@ -7,11 +7,10 @@ var searchData=
   ['setseed_4',['SetSeed',['../classUSquirrel13__RNG.html#a678110142e8179cc9f102f5939453d50',1,'USquirrel13_RNG']]],
   ['setstate_5',['SetState',['../classUPCG32__RNG.html#ac71881380e38bf7f21f41ca062ba7953',1,'UPCG32_RNG']]],
   ['setstream_6',['SetStream',['../classUPCG32__RNG.html#a6fe608cc6fbdabfce7733a9d0938231f',1,'UPCG32_RNG']]],
-  ['spreadpointsontangentbyangleradius_7',['SpreadPointsOnTangentByAngleRadius',['../classUYasiuMathFunctionLibrary.html#ae848642257ee1450e2193b015471d56f',1,'UYasiuMathFunctionLibrary::SpreadPointsOnTangentByAngleRadius()'],['../namespaceYasiuMath_1_1Trigonometry.html#a8805107e89bc32cf46f47e1ed3db1e43',1,'YasiuMath::Trigonometry::SpreadPointsOnTangentByAngleRadius()']]],
-  ['spreadpointsontangentbyxy_8',['SpreadPointsOnTangentByXY',['../classUYasiuMathFunctionLibrary.html#aaea2ff884f7e45dca09b804827e299cc',1,'UYasiuMathFunctionLibrary::SpreadPointsOnTangentByXY()'],['../namespaceYasiuMath_1_1Trigonometry.html#aa7bc14fbaed48606f6c94bc97d46e0a7',1,'YasiuMath::Trigonometry::SpreadPointsOnTangentByXY()']]],
+  ['spreadpointsontangentbyangleradius_7',['SpreadPointsOnTangentByAngleRadius',['../classUYasiuMathFL__Trigonometry.html#a8a8efcd2448e9bad69e9f70ee6f2e0bc',1,'UYasiuMathFL_Trigonometry::SpreadPointsOnTangentByAngleRadius()'],['../namespaceYasiuMath_1_1Trigonometry.html#a8805107e89bc32cf46f47e1ed3db1e43',1,'YasiuMath::Trigonometry::SpreadPointsOnTangentByAngleRadius()']]],
+  ['spreadpointsontangentbyxy_8',['SpreadPointsOnTangentByXY',['../classUYasiuMathFL__Trigonometry.html#a91adcca7f3686db54a097d1ed928c9e5',1,'UYasiuMathFL_Trigonometry::SpreadPointsOnTangentByXY()'],['../namespaceYasiuMath_1_1Trigonometry.html#aa7bc14fbaed48606f6c94bc97d46e0a7',1,'YasiuMath::Trigonometry::SpreadPointsOnTangentByXY()']]],
   ['squirrel_20rng_20in_20blueprints_9',['Squirrel RNG in Blueprints',['../baseuse.html#autotoc_md20',1,'']]],
   ['squirrelrng_2eh_10',['SquirrelRNG.h',['../SquirrelRNG_8h.html',1,'']]],
   ['start_11',['Start',['../mainpage.html',1,'Quick Start'],['../md_Documentation_2About.html#autotoc_md9',1,'Start']]],
-  ['step_12',['Step',['../structYasiuMath_1_1Types_1_1ProjectileDynamicState.html#a488c08fa88b2808b03d230aee0bd9a26',1,'YasiuMath::Types::ProjectileDynamicState']]],
-  ['sum_13',['Sum',['../structYasiuMath_1_1Types_1_1Vec3.html#a3fbb40cc4bd2c1e5ceff5fb29bf8e52a',1,'YasiuMath::Types::Vec3']]]
+  ['sum_12',['Sum',['../structYasiuMath_1_1Types_1_1Vec3.html#a3fbb40cc4bd2c1e5ceff5fb29bf8e52a',1,'YasiuMath::Types::Vec3']]]
 ];

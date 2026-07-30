@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['velocity_0',['Velocity',['../structYasiuMath_1_1Types_1_1ProjectileDynamicState.html#a30091bf1c2dc9f6cc8e2f7af20bc04e4',1,'YasiuMath::Types::ProjectileDynamicState']]]
+  ['x_0',['X',['../structYasiuMath_1_1Types_1_1Vec3.html#a4a856c397824af855b2539e3cc13d8e6',1,'YasiuMath::Types::Vec3']]],
+  ['x_1',['x',['../structYasiuMath_1_1Types_1_1Point.html#a3b03a2ccc519f7304a5ae96cbe25fdfc',1,'YasiuMath::Types::Point']]]
 ];

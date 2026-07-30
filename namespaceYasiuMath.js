@@ -1,16 +1,15 @@
 var namespaceYasiuMath =
 [
     [ "Algebra", "namespaceYasiuMath_1_1Algebra.html", [
-      [ "Remap", "namespaceYasiuMath_1_1Algebra.html#aba93ed33da129cd39c5e78a58ebe225f", null ]
+      [ "Remap", "namespaceYasiuMath_1_1Algebra.html#aba93ed33da129cd39c5e78a58ebe225f", null ],
+      [ "RemapVector", "namespaceYasiuMath_1_1Algebra.html#af156c73977374d796fe75e7d68c42844", null ],
+      [ "RemapVector", "namespaceYasiuMath_1_1Algebra.html#a33c1973b951ab59354188f287c2800fa", null ]
     ] ],
     [ "AngleUtils", "namespaceYasiuMath_1_1AngleUtils.html", [
       [ "NormalizeAngleToPeriod", "namespaceYasiuMath_1_1AngleUtils.html#a9b871900e7139385e6e4c9a7a099a96a", null ],
       [ "RotateBoundingBox", "namespaceYasiuMath_1_1AngleUtils.html#ac963a3abddcdac5e01665eaee5fc4743", null ]
     ] ],
-    [ "Ballistics", "namespaceYasiuMath_1_1Ballistics.html", [
-      [ "InterceptMissile_Dynamic", "namespaceYasiuMath_1_1Ballistics.html#a8f703a6ca840acd2f2c0f4963e110ee2", null ],
-      [ "InterceptMissile_Linear", "namespaceYasiuMath_1_1Ballistics.html#a300b3610f8af1f2916b815b8ca3faa05", null ]
-    ] ],
+    [ "Ballistics", "namespaceYasiuMath_1_1Ballistics.html", "namespaceYasiuMath_1_1Ballistics" ],
     [ "Constants", "namespaceYasiuMath_1_1Constants.html", [
       [ "EPSILON", "namespaceYasiuMath_1_1Constants.html#adeb8ac4e74bfd7486ff00fbac09203d2", null ],
       [ "Y_PI", "namespaceYasiuMath_1_1Constants.html#a3fe041b9aecdb9abf7811edf4457337f", null ]

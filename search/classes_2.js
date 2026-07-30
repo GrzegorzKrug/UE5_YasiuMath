@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['upcg32_5frng_0',['UPCG32_RNG',['../classUPCG32__RNG.html',1,'']]],
-  ['usquirrel13_5frng_1',['USquirrel13_RNG',['../classUSquirrel13__RNG.html',1,'']]],
-  ['usquirrel13_5frngcomponent_2',['USquirrel13_RNGComponent',['../classUSquirrel13__RNGComponent.html',1,'']]],
-  ['uyasiumathfunctionlibrary_3',['UYasiuMathFunctionLibrary',['../classUYasiuMathFunctionLibrary.html',1,'']]]
+  ['point_0',['Point',['../structYasiuMath_1_1Types_1_1Point.html',1,'YasiuMath::Types']]],
+  ['pointangle_1',['PointAngle',['../structYasiuMath_1_1Types_1_1PointAngle.html',1,'YasiuMath::Types']]],
+  ['projectiledynamicstate_2',['ProjectileDynamicState',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html',1,'YasiuMath::Ballistics']]]
 ];

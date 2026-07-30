@@ -61,7 +61,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Constants_8h.html"
+"BPFunLib__Algebra_8h_source.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

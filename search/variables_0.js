@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['acceleration_0',['Acceleration',['../structYasiuMath_1_1Types_1_1InterceptorParams.html#af092353e2e33f128fbf17b39ab2e740b',1,'YasiuMath::Types::InterceptorParams']]],
-  ['airfrictioncoeff_1',['AirFrictionCoeff',['../structYasiuMath_1_1Types_1_1ProjectileDynamicState.html#a7e4811aab6c1e425940b781551396d36',1,'YasiuMath::Types::ProjectileDynamicState']]],
-  ['airresistance_2',['AirResistance',['../structYasiuMath_1_1Types_1_1InterceptorParams.html#acca11217bfaac370c63c7037f033270f',1,'YasiuMath::Types::InterceptorParams']]]
+  ['acceleration_0',['Acceleration',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html#a37e62496a52488f33f1c331d9282c75c',1,'YasiuMath::Ballistics::ProjectileDynamicState::Acceleration'],['../structYasiuMath_1_1Ballistics_1_1InterceptorParams.html#a3e8411b057edaaf1cd7b96f4273c4313',1,'YasiuMath::Ballistics::InterceptorParams::Acceleration'],['../structFBallisticObject.html#aa4b7db288325e6f1ec0da5b320fd28d7',1,'FBallisticObject::Acceleration'],['../structFBallisticInterceptor.html#a42cd14e613a5b6a47112c8598ec7fe10',1,'FBallisticInterceptor::Acceleration']]],
+  ['airfrictioncoeff_1',['AirFrictionCoeff',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html#ab18496485e344e785ca42a1bbc1b2517',1,'YasiuMath::Ballistics::ProjectileDynamicState::AirFrictionCoeff'],['../structFBallisticObject.html#a7062fb5e2a80f5573d3fa7ebf638ddbb',1,'FBallisticObject::AirFrictionCoeff']]],
+  ['airresistance_2',['AirResistance',['../structYasiuMath_1_1Ballistics_1_1InterceptorParams.html#a65e9749334725b1aeb318ab265da2fa2',1,'YasiuMath::Ballistics::InterceptorParams::AirResistance'],['../structFBallisticInterceptor.html#aaa2f687afe8874993a264ec3b08047cc',1,'FBallisticInterceptor::AirResistance']]]
 ];

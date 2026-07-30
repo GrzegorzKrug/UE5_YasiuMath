@@ -7,5 +7,10 @@ var searchData=
   ['use_20of_20plugin_20and_20functions_4',['Use of plugin and functions',['../baseuse.html',1,'mainpage']]],
   ['usquirrel13_5frng_5',['USquirrel13_RNG',['../classUSquirrel13__RNG.html',1,'']]],
   ['usquirrel13_5frngcomponent_6',['USquirrel13_RNGComponent',['../classUSquirrel13__RNGComponent.html',1,'']]],
-  ['uyasiumathfunctionlibrary_7',['UYasiuMathFunctionLibrary',['../classUYasiuMathFunctionLibrary.html',1,'']]]
+  ['uyasiumathfl_5falgebra_7',['UYasiuMathFL_Algebra',['../classUYasiuMathFL__Algebra.html',1,'']]],
+  ['uyasiumathfl_5fangle_8',['UYasiuMathFL_Angle',['../classUYasiuMathFL__Angle.html',1,'']]],
+  ['uyasiumathfl_5fballistic_9',['UYasiuMathFL_Ballistic',['../classUYasiuMathFL__Ballistic.html',1,'']]],
+  ['uyasiumathfl_5fconvexhull_10',['UYasiuMathFL_ConvexHull',['../classUYasiuMathFL__ConvexHull.html',1,'']]],
+  ['uyasiumathfl_5ftrigonometry_11',['UYasiuMathFL_Trigonometry',['../classUYasiuMathFL__Trigonometry.html',1,'']]],
+  ['uyasiumathfunctionlibrary_12',['UYasiuMathFunctionLibrary',['../classUYasiuMathFunctionLibrary.html',1,'']]]
 ];
