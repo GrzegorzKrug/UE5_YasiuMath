@@ -203,7 +203,9 @@ template&lt;typename T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>Last step has very small DeltaTime depending on math error </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Normally function uses <a class="el" href="#a671b0516a8f08b9bb0c3c2ad60332fcb" title="DiscreteStep">DiscreteStep</a>, but switchest to <a class="el" href="#a0d76e4c16d761716e2884a7e78cd9837" title="PredictQuick">PredictQuick</a> when AirDrag is 0, effectively being O(1)</dd>
+<dd>
+Last step has very small DeltaTime depending on math error </dd></dl>
 
 </div>
 </div>
@@ -239,7 +241,9 @@ template&lt;typename T&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section warning"><dt>Warning</dt><dd>Using big deltaTime can lead to numeric inaccuracy when dealing with air drag. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Using big deltaTime can lead to numeric inaccuracy when dealing with air drag.</dd>
+<dd>
+Keep <b>deltaTime</b> in small range &lt;0.01, 1&gt;. Suggested value 0.1. </dd></dl>
 
 </div>
 </div>
@@ -318,7 +322,7 @@ template&lt;typename T&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Flag tells if projectile has reached full speed or still accelerates</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Use <a class="el" href="#a9bf2798d848b13a58591faf25c5b76df" title="Predict">Predict</a> for accurate state </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Use <a class="el" href="#a9bf2798d848b13a58591faf25c5b76df" title="Predict">Predict</a> for iterative solution when dealing with AirDrag </dd></dl>
 
 </div>
 </div>

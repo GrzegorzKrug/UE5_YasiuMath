@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classUYasiuMat
 </div><!--header-->
 <div class="contents">
 
-<p>BP Function library.  
+<p>Function library used for projectile prediction and missile interception calculations.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="BPFunLib__Ballistic_8h_source.html">BPFunLib_Ballistic.h</a>&gt;</code></p>
@@ -143,13 +143,182 @@ Inheritance diagram for UYasiuMathFL_Ballistic:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a33286c025ac53e479552a81715709de5" id="r_a33286c025ac53e479552a81715709de5"><td class="memItemLeft"><a id="a33286c025ac53e479552a81715709de5" name="a33286c025ac53e479552a81715709de5"></a>
-bool&#160;</td><td class="memItemRight"><b>Intercept_Linear</b> (const FVector &amp;TargetPosition, const FVector &amp;TargetVelocity, double InterceptSpeed, FVector &amp;OutLocation)</td></tr>
-<tr class="memdesc:a33286c025ac53e479552a81715709de5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prediction works only for objects with constant speeds, can not accelerate or be affected by air resistance. <br /></td></tr>
+<tr class="memitem:a6e4e072cfcf0ab854538479b30d98d8d" id="r_a6e4e072cfcf0ab854538479b30d98d8d"><td class="memItemLeft"><a class="el" href="structFBallisticObject.html">FBallisticObject</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6e4e072cfcf0ab854538479b30d98d8d">DiscreteStep</a> (const <a class="el" href="structFBallisticObject.html">FBallisticObject</a> &amp;Ob, const float DeltaStep)</td></tr>
+<tr class="memdesc:a6e4e072cfcf0ab854538479b30d98d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single iterative step.  <br /></td></tr>
+<tr class="memitem:a7896349d3353abb52c2997dded3628b2" id="r_a7896349d3353abb52c2997dded3628b2"><td class="memItemLeft"><a class="el" href="structFBallisticObject.html">FBallisticObject</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7896349d3353abb52c2997dded3628b2">AutoStep</a> (const <a class="el" href="structFBallisticObject.html">FBallisticObject</a> &amp;Ob, const float PredictTime, const float DeltaStep)</td></tr>
+<tr class="memdesc:a7896349d3353abb52c2997dded3628b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict multiple steps in loop. Optimized for AirDrag=0, see details...  <br /></td></tr>
+<tr class="memitem:a33286c025ac53e479552a81715709de5" id="r_a33286c025ac53e479552a81715709de5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a33286c025ac53e479552a81715709de5">Intercept_Linear</a> (const FVector &amp;TargetPosition, const FVector &amp;TargetVelocity, double InterceptSpeed, FVector &amp;OutLocation)</td></tr>
+<tr class="memdesc:a33286c025ac53e479552a81715709de5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prediction function for linear objects. Works only for objects with constant speeds, can not accelerate or be affected by air resistance.  <br /></td></tr>
+<tr class="memitem:a83c5812b56b9d5c4f1917e27f9842328" id="r_a83c5812b56b9d5c4f1917e27f9842328"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a83c5812b56b9d5c4f1917e27f9842328">Intercept_Dynamic</a> (const <a class="el" href="structFBallisticObject.html">FBallisticObject</a> &amp;Target, const <a class="el" href="structFBallisticInterceptor.html">FBallisticInterceptor</a> Interceptor, FVector &amp;OutLocation, float MaxQueryTime=10, float DeltaStep=0.1)</td></tr>
+<tr class="memdesc:a83c5812b56b9d5c4f1917e27f9842328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prediction function for objects with variable speed and resistance.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>BP Function library. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>Function library used for projectile prediction and missile interception calculations. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a7896349d3353abb52c2997dded3628b2" name="a7896349d3353abb52c2997dded3628b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7896349d3353abb52c2997dded3628b2">&#9670;&#160;</a></span>AutoStep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFBallisticObject.html">FBallisticObject</a> UYasiuMathFL_Ballistic::AutoStep </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structFBallisticObject.html">FBallisticObject</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>Ob</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>PredictTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>DeltaStep</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Predict multiple steps in loop. Optimized for AirDrag=0, see details... </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Ob</td><td>Struct with ballistic parameters </td></tr>
+    <tr><td class="paramname">PredictTime</td><td>TimeRange to predict </td></tr>
+    <tr><td class="paramname">DeltaStep</td><td>Single calculation time. Keep in small range &lt;0.01, 1&gt; (for accuracy). Used only when calculating air drag.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New Object state</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Normally function uses <a class="el" href="#a6e4e072cfcf0ab854538479b30d98d8d" title="DiscreteStep">DiscreteStep</a>, but switchest to fast calculation when AirDrag is 0, effectively being <b>O(1)</b> </dd>
+<dd>
+<a class="el" href="structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html#a67f4105cc068c7232b33df5598a948af" title="YasiuMath::Ballistics::ProjectileDynamicState::AutoStep">YasiuMath::Ballistics::ProjectileDynamicState::AutoStep</a> </dd></dl>
+
+</div>
+</div>
+<a id="a6e4e072cfcf0ab854538479b30d98d8d" name="a6e4e072cfcf0ab854538479b30d98d8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e4e072cfcf0ab854538479b30d98d8d">&#9670;&#160;</a></span>DiscreteStep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structFBallisticObject.html">FBallisticObject</a> UYasiuMathFL_Ballistic::DiscreteStep </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structFBallisticObject.html">FBallisticObject</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>Ob</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>DeltaStep</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Single iterative step. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Ob</td><td>Struct with ballistic parameters </td></tr>
+    <tr><td class="paramname">DeltaStep</td><td>Single calculation time. Keep in small range &lt;0.01, 1&gt; (for accuracy) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>New Object state </dd></dl>
+
+</div>
+</div>
+<a id="a83c5812b56b9d5c4f1917e27f9842328" name="a83c5812b56b9d5c4f1917e27f9842328"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83c5812b56b9d5c4f1917e27f9842328">&#9670;&#160;</a></span>Intercept_Dynamic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UYasiuMathFL_Ballistic::Intercept_Dynamic </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structFBallisticObject.html">FBallisticObject</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>Target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structFBallisticInterceptor.html">FBallisticInterceptor</a></td>          <td class="paramname"><span class="paramname"><em>Interceptor</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FVector &amp;</td>          <td class="paramname"><span class="paramname"><em>OutLocation</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>MaxQueryTime</em></span><span class="paramdefsep"> = </span><span class="paramdefval">10</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>DeltaStep</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.1</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prediction function for objects with variable speed and resistance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Target</td><td>Struct with dynamic parameters of target </td></tr>
+    <tr><td class="paramname">Interceptor</td><td>Struct with dynamic parameters of interceptor </td></tr>
+    <tr><td class="paramname">OutLocation</td><td>Output intercept location </td></tr>
+    <tr><td class="paramname">MaxQueryTime</td><td>Time range used to find solution. </td></tr>
+    <tr><td class="paramname">DeltaStep</td><td>Single calculation time. Keep in small range &lt;0.01, 1&gt; (for accuracy). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Flag indicating if output location is valid. </dd></dl>
+
+</div>
+</div>
+<a id="a33286c025ac53e479552a81715709de5" name="a33286c025ac53e479552a81715709de5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33286c025ac53e479552a81715709de5">&#9670;&#160;</a></span>Intercept_Linear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UYasiuMathFL_Ballistic::Intercept_Linear </td>
+          <td>(</td>
+          <td class="paramtype">const FVector &amp;</td>          <td class="paramname"><span class="paramname"><em>TargetPosition</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const FVector &amp;</td>          <td class="paramname"><span class="paramname"><em>TargetVelocity</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>InterceptSpeed</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FVector &amp;</td>          <td class="paramname"><span class="paramname"><em>OutLocation</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prediction function for linear objects. Works only for objects with constant speeds, can not accelerate or be affected by air resistance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TargetPosition</td><td>Target input position </td></tr>
+    <tr><td class="paramname">TargetVelocity</td><td>Target input velocity </td></tr>
+    <tr><td class="paramname">InterceptSpeed</td><td>Interceptor speed in any direction </td></tr>
+    <tr><td class="paramname">OutLocation</td><td>Output intercept location </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Flag indicating if output location is valid. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>Source/YasiuMath/Public/YasiuMathBP/<a class="el" href="BPFunLib__Ballistic_8h_source.html">BPFunLib_Ballistic.h</a></li>
 </ul>
 </div><!-- contents -->
