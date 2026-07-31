@@ -77,21 +77,21 @@ void FBallisticInterceptor::FromInterceptor( const YasiuMath::Ballistics::Interc
 }
 
 
-FBallisticObject UYasiuMathFL_Ballistic::DiscreteStep( const FBallisticObject& Ob, const float DeltaStep )
+FBallisticObject UYasiuMathFL_Ballistics::DiscreteStep( const FBallisticObject& Ob, const float DeltaStep )
 {
     auto Proj = Ob.ToDynamicObject();
     Proj.DiscreteStep(DeltaStep);
     return FBallisticObject().FromDynamic(Proj);
 }
 
-FBallisticObject UYasiuMathFL_Ballistic::AutoStep( const FBallisticObject& Ob, const float PredictTime, const float DeltaStep )
+FBallisticObject UYasiuMathFL_Ballistics::AutoStep( const FBallisticObject& Ob, const float PredictTime, const float DeltaStep )
 {
     auto Proj = Ob.ToDynamicObject();
     Proj.AutoStep(PredictTime, DeltaStep);
     return FBallisticObject().FromDynamic(Proj);
 }
 
-bool UYasiuMathFL_Ballistic::Intercept_Linear(
+bool UYasiuMathFL_Ballistics::Intercept_Linear(
     const FVector& TargetPosition,
     const FVector& TargetVelocity,
     double InterceptSpeed,
@@ -112,7 +112,7 @@ bool UYasiuMathFL_Ballistic::Intercept_Linear(
     return ret;
 }
 
-bool UYasiuMathFL_Ballistic::Intercept_Dynamic(
+bool UYasiuMathFL_Ballistics::Intercept_Dynamic(
     const FBallisticObject& Target,
     const FBallisticInterceptor Interceptor,
     FVector& OutLocation,

@@ -145,8 +145,10 @@ protected:
 };
 
 
-/// Squirrel RNG as Actor Component for NetReplication
-UCLASS(BlueprintType, Blueprintable)
+/** @brief Component with attached \ref USquirrel13_RNG object
+ * 
+ * Component has Network replication support */
+UCLASS(BlueprintType, Blueprintable, meta=(BlueprintSpawnableComponent), DefaultToInstanced)
 class YASIUMATH_API USquirrel13_RNGComponent : public UActorComponent {
     GENERATED_BODY()
 
@@ -157,10 +159,6 @@ public:
 
     UPROPERTY(BlueprintReadWrite, Replicated, Category="Yasiu|RNG")
     TObjectPtr<USquirrel13_RNG> RNG;
-    // USquirrel13_RNG* RNG;
-
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Category="Yasiu|RNG")
-    int TempValue11 = 11;
 
     UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void InitBP( int seed, int pos = 0 );

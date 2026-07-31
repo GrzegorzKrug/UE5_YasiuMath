@@ -31,14 +31,18 @@ Gives better results than unreal random functions
 
 ### Math functions
 
-- **Trigonometry**: Runtime trigonometric functions
+- **Algebra**: Math functions.
+- **Ballistics**: Model for simulation and prediction
+- **Trigonometry**: Trigonometric calculations
 - **Convex Functions**: Mathematical operations for procedural geometry and content generation
 
 ---
 
 ## Start
 
-- \ref mainpage
+- \subpage install
+
+- \subpage baseuse
 
 - [MarketPlace (Fab)](https://www.fab.com/listings/2918e6a2-a380-48a5-90e8-d6c98dfde2a9)
 

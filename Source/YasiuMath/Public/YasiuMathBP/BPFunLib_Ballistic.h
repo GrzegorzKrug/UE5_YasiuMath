@@ -14,7 +14,11 @@
 
 
 /**
- * @brief Type reflecting \ref YasiuMath::Ballistics::ProjectileDynamicState
+ * @brief Type for simulating movement, see details how use...
+ * 
+ * Type reflecting \ref YasiuMath::Ballistics::ProjectileDynamicState
+ * 
+ * @note Check \ref UYasiuMathFL_Ballistics for usage
  */
 USTRUCT(BlueprintType, Category="Math|Yasiu|Ballistic")
 struct FBallisticObject {
@@ -50,7 +54,9 @@ struct FBallisticObject {
 
 
 /**
- * @brief Type reflecting \ref YasiuMath::Ballistics::InterceptorParams
+ * @brief Type for passing parameters, see details how use...
+ * 
+ * @note Check \ref UYasiuMathFL_Ballistics for usage
  */
 USTRUCT(BlueprintType, Category="Math|Yasiu|Ballistic")
 struct FBallisticInterceptor {
@@ -85,7 +91,7 @@ struct FBallisticInterceptor {
 * @brief Function library used for projectile prediction and missile interception calculations
  */
 UCLASS(BlueprintType)
-class UYasiuMathFL_Ballistic : public UYasiuMathFunctionLibrary {
+class UYasiuMathFL_Ballistics : public UYasiuMathFunctionLibrary {
     GENERATED_BODY()
 
 
