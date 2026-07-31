@@ -19,7 +19,7 @@ var annotated_dup =
     [ "USquirrel13_RNGComponent", "classUSquirrel13__RNGComponent.html", null ],
     [ "UYasiuMathFL_Algebra", "classUYasiuMathFL__Algebra.html", "classUYasiuMathFL__Algebra" ],
     [ "UYasiuMathFL_Angle", "classUYasiuMathFL__Angle.html", "classUYasiuMathFL__Angle" ],
-    [ "UYasiuMathFL_Ballistic", "classUYasiuMathFL__Ballistic.html", "classUYasiuMathFL__Ballistic" ],
+    [ "UYasiuMathFL_Ballistics", "classUYasiuMathFL__Ballistics.html", "classUYasiuMathFL__Ballistics" ],
     [ "UYasiuMathFL_ConvexHull", "classUYasiuMathFL__ConvexHull.html", "classUYasiuMathFL__ConvexHull" ],
     [ "UYasiuMathFL_Trigonometry", "classUYasiuMathFL__Trigonometry.html", "classUYasiuMathFL__Trigonometry" ],
     [ "UYasiuMathFunctionLibrary", "classUYasiuMathFunctionLibrary.html", null ]

@@ -27,6 +27,9 @@ var NAVTREE =
   [ "Yasiu Math", "index.html", [
     [ "About Math Library", "index.html", "index" ],
     [ "Quick Start", "mainpage.html", "mainpage" ],
+    [ "Unreal types", "unreal.html", [
+      [ "Unreal types supported for BP", "unreal.html#autotoc_md18", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [

@@ -2,8 +2,12 @@ var searchData=
 [
   ['features_0',['Features',['../index.html#autotoc_md3',1,'']]],
   ['finished_1',['3. Finished!',['../install.html#autotoc_md17',1,'']]],
-  ['for_20c_2',['&lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;List of all functions for C++&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md23',1,'']]],
-  ['functions_3',['functions',['../index.html#autotoc_md7',1,'Math functions'],['../baseuse.html',1,'Use of plugin and functions']]],
-  ['functions_20accessible_20in_20bp_4',['&lt;a href=&quot;classUYasiuMathFunctionLibrary.html&quot;&gt;&lt;b&gt;Functions accessible in BP&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md19',1,'']]],
-  ['functions_20for_20c_5',['&lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;List of all functions for C++&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md23',1,'']]]
+  ['for_20blueprints_2',['For Blueprints',['../baseuse.html#autotoc_md23',1,'']]],
+  ['for_20bp_3',['Unreal types supported for BP',['../unreal.html#autotoc_md18',1,'']]],
+  ['for_20c_20grouped_20into_3a_20name_20spaces_4',['List of all &lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;functions for C++&lt;/b&gt;&lt;/a&gt; grouped into: &lt;a href=&quot;namespaces.html&quot;&gt;&lt;b&gt;Name spaces&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md33',1,'']]],
+  ['for_20coding_20in_20c_5',['For coding in C++',['../baseuse.html#autotoc_md32',1,'']]],
+  ['function_20list_6',['&lt;a href=&quot;classUYasiuMathFunctionLibrary.html&quot;&gt;&lt;b&gt;Function list&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md25',1,'']]],
+  ['functions_7',['Functions',['../unreal.html#autotoc_md22',1,'Functions'],['../baseuse.html#autotoc_md24',1,'Functions']]],
+  ['functions_8',['Math functions',['../index.html#autotoc_md7',1,'']]],
+  ['functions_20for_20c_20grouped_20into_3a_20name_20spaces_9',['List of all &lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;functions for C++&lt;/b&gt;&lt;/a&gt; grouped into: &lt;a href=&quot;namespaces.html&quot;&gt;&lt;b&gt;Name spaces&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md33',1,'']]]
 ];

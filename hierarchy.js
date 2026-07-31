@@ -14,7 +14,7 @@ var hierarchy =
       [ "UYasiuMathFunctionLibrary", "classUYasiuMathFunctionLibrary.html", [
         [ "UYasiuMathFL_Algebra", "classUYasiuMathFL__Algebra.html", null ],
         [ "UYasiuMathFL_Angle", "classUYasiuMathFL__Angle.html", null ],
-        [ "UYasiuMathFL_Ballistic", "classUYasiuMathFL__Ballistic.html", null ],
+        [ "UYasiuMathFL_Ballistics", "classUYasiuMathFL__Ballistics.html", null ],
         [ "UYasiuMathFL_ConvexHull", "classUYasiuMathFL__ConvexHull.html", null ],
         [ "UYasiuMathFL_Trigonometry", "classUYasiuMathFL__Trigonometry.html", null ]
       ] ]

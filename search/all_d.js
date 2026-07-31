@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['m_5fvariant_0',['m_variant',['../classUSquirrel13__RNG.html#a77ce5d55854d24a50ebc2afb46a5b043',1,'USquirrel13_RNG']]],
-  ['math_20functions_1',['Math functions',['../index.html#autotoc_md7',1,'']]],
-  ['math_20library_2',['About Math Library',['../index.html',1,'']]],
-  ['maxspeed_3',['MaxSpeed',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html#a0bad43c74ab4e38e5f1c98ed35468657',1,'YasiuMath::Ballistics::ProjectileDynamicState::MaxSpeed'],['../structYasiuMath_1_1Ballistics_1_1InterceptorParams.html#af0596ea7f8bbee31a883b99b0b091d8c',1,'YasiuMath::Ballistics::InterceptorParams::MaxSpeed'],['../structFBallisticObject.html#a6b7f9989feaecda2abfc36d5ebfb0916',1,'FBallisticObject::MaxSpeed'],['../structFBallisticInterceptor.html#ab5ef2ea24c724708673bba4e6dd636a7',1,'FBallisticInterceptor::MaxSpeed']]]
+  ['name_20spaces_0',['List of all &lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;functions for C++&lt;/b&gt;&lt;/a&gt; grouped into: &lt;a href=&quot;namespaces.html&quot;&gt;&lt;b&gt;Name spaces&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md33',1,'']]],
+  ['normalize_1',['Normalize',['../structYasiuMath_1_1Types_1_1Vec3.html#a2dd1a634842dadc05a0467283da5042b',1,'YasiuMath::Types::Vec3']]],
+  ['normalizeangletoperiod_2',['NormalizeAngleToPeriod',['../namespaceYasiuMath_1_1AngleUtils.html#a9b871900e7139385e6e4c9a7a099a96a',1,'YasiuMath::AngleUtils']]],
+  ['normalizeinplace_3',['NormalizeInPlace',['../structYasiuMath_1_1Types_1_1Vec3.html#a4c6d362197cc6d0fa5aff09975b36847',1,'YasiuMath::Types::Vec3']]],
+  ['number_20generation_4',['RNG (Random Number Generation)',['../index.html#autotoc_md6',1,'']]]
 ];

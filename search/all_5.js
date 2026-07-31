@@ -1,10 +1,14 @@
 var searchData=
 [
-  ['c_0',['C',['../baseuse.html#autotoc_md23',1,'&lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;List of all functions for C++&lt;/b&gt;&lt;/a&gt;'],['../baseuse.html#autotoc_md22',1,'How to use in C++']]],
+  ['c_0',['For coding in C++',['../baseuse.html#autotoc_md32',1,'']]],
   ['c_20dependency_1',['2A. C++ Dependency',['../install.html#autotoc_md13',1,'']]],
-  ['clipangletocycle_2',['ClipAngleToCycle',['../classUYasiuMathFL__Angle.html#af0da3b4a3d8b1ed36610ac65f7c08ed7',1,'UYasiuMathFL_Angle']]],
-  ['components_3',['Components',['../index.html#autotoc_md5',1,'']]],
-  ['constants_2eh_4',['Constants.h',['../Constants_8h.html',1,'']]],
-  ['convexhull2d_5',['ConvexHull2D',['../classUYasiuMathFL__ConvexHull.html#a5698c161475c78a4a848071f25d54b0b',1,'UYasiuMathFL_ConvexHull::ConvexHull2D()'],['../namespaceYasiuMath_1_1ConvexHull.html#a9398ebbd4067e31a89e077464565ae0a',1,'YasiuMath::ConvexHull::ConvexHull2D()']]],
-  ['cross_6',['Cross',['../structYasiuMath_1_1Types_1_1Vec3.html#a2662b3c9f99ee4fa8b7ca855a73d0650',1,'YasiuMath::Types::Vec3']]]
+  ['c_20grouped_20into_3a_20name_20spaces_2',['List of all &lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;functions for C++&lt;/b&gt;&lt;/a&gt; grouped into: &lt;a href=&quot;namespaces.html&quot;&gt;&lt;b&gt;Name spaces&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md33',1,'']]],
+  ['classes_20list_3',['&lt;a href=&quot;annotated.html&quot;&gt;&lt;b&gt;All Classes list&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md35',1,'']]],
+  ['clipangletocycle_4',['ClipAngleToCycle',['../classUYasiuMathFL__Angle.html#af0da3b4a3d8b1ed36610ac65f7c08ed7',1,'UYasiuMathFL_Angle']]],
+  ['coding_20in_20c_5',['For coding in C++',['../baseuse.html#autotoc_md32',1,'']]],
+  ['components_6',['Components',['../index.html#autotoc_md5',1,'']]],
+  ['components_7',['components',['../unreal.html#autotoc_md20',1,'Actor components'],['../baseuse.html#autotoc_md29',1,'Actor components']]],
+  ['constants_2eh_8',['Constants.h',['../Constants_8h.html',1,'']]],
+  ['convexhull2d_9',['ConvexHull2D',['../classUYasiuMathFL__ConvexHull.html#a5698c161475c78a4a848071f25d54b0b',1,'UYasiuMathFL_ConvexHull::ConvexHull2D()'],['../namespaceYasiuMath_1_1ConvexHull.html#a9398ebbd4067e31a89e077464565ae0a',1,'YasiuMath::ConvexHull::ConvexHull2D()']]],
+  ['cross_10',['Cross',['../structYasiuMath_1_1Types_1_1Vec3.html#a2662b3c9f99ee4fa8b7ca855a73d0650',1,'YasiuMath::Types::Vec3']]]
 ];

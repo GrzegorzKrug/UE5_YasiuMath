@@ -8,10 +8,13 @@ var mainpage =
         [ "3. Finished!", "install.html#autotoc_md17", null ]
       ] ]
     ] ],
-    [ "Use of plugin and functions", "baseuse.html", [
-      [ "How to use it in blueprints", "baseuse.html#autotoc_md18", [
-        [ "Squirrel RNG in Blueprints", "baseuse.html#autotoc_md20", null ]
+    [ "Usage guide", "baseuse.html", [
+      [ "For Blueprints", "baseuse.html#autotoc_md23", [
+        [ "Functions", "baseuse.html#autotoc_md24", null ],
+        [ "UObjects", "baseuse.html#autotoc_md27", null ],
+        [ "Actor components", "baseuse.html#autotoc_md29", null ],
+        [ "<a href=\"unreal.html\"><b>List of unreal objects</b></a>", "baseuse.html#autotoc_md30", null ]
       ] ],
-      [ "How to use in C++", "baseuse.html#autotoc_md22", null ]
+      [ "For coding in C++", "baseuse.html#autotoc_md32", null ]
     ] ]
 ];

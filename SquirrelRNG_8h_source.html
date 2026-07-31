@@ -230,50 +230,46 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('SquirrelRNG_8h
 </div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>UCLASS(BlueprintType, Blueprintable)</div>
-<div class="foldopen" id="foldopen00150" data-start="{" data-end="};">
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNGComponent.html">  150</a></span>class YASIUMATH_API USquirrel13_RNGComponent : public UActorComponent {</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    GENERATED_BODY()</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    USquirrel13_RNGComponent();</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetLifetimeReplicatedProps( TArray&lt;class FLifetimeProperty&gt;&amp; OutLifetimeProps ) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>UCLASS(BlueprintType, Blueprintable, meta=(BlueprintSpawnableComponent), DefaultToInstanced)</div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="};">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNGComponent.html">  152</a></span>class YASIUMATH_API USquirrel13_RNGComponent : public UActorComponent {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    GENERATED_BODY()</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    USquirrel13_RNGComponent();</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    UPROPERTY(BlueprintReadWrite, Replicated, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    TObjectPtr&lt;USquirrel13_RNG&gt; RNG;</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="comment">// USquirrel13_RNG* RNG;</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">int</span> TempValue11 = 11;</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordtype">void</span> InitBP( <span class="keywordtype">int</span> seed, <span class="keywordtype">int</span> pos = 0 );</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    int32 GetSeed() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordtype">void</span> SetSeed( int64 Seed );</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordtype">int</span> GetPosition() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordtype">void</span> SetPosition( <span class="keywordtype">int</span> Pos );</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>, BlueprintPure=<span class="keyword">false</span>)</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordtype">int</span> GetCurrentInt( <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max ) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordtype">int</span> GetNextInt( <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max );</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>, BlueprintPure=<span class="keyword">false</span>)</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordtype">double</span> GetCurrentDouble() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordtype">double</span> GetNextDouble();</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>};</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetLifetimeReplicatedProps( TArray&lt;class FLifetimeProperty&gt;&amp; OutLifetimeProps ) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    UPROPERTY(BlueprintReadWrite, Replicated, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    TObjectPtr&lt;USquirrel13_RNG&gt; RNG;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordtype">void</span> InitBP( <span class="keywordtype">int</span> seed, <span class="keywordtype">int</span> pos = 0 );</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    int32 GetSeed() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordtype">void</span> SetSeed( int64 Seed );</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordtype">int</span> GetPosition() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordtype">void</span> SetPosition( <span class="keywordtype">int</span> Pos );</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>, BlueprintPure=<span class="keyword">false</span>)</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordtype">int</span> GetCurrentInt( <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max ) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordtype">int</span> GetNextInt( <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max );</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>, BlueprintPure=<span class="keyword">false</span>)</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordtype">double</span> GetCurrentDouble() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">double</span> GetNextDouble();</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>};</div>
 </div>
 <div class="ttc" id="aclassUSquirrel13__RNG_html_a1d3850b06314b050b1adba64c1669373"><div class="ttname"><a href="classUSquirrel13__RNG.html#a1d3850b06314b050b1adba64c1669373">USquirrel13_RNG::ResetSeedPos</a></div><div class="ttdeci">void ResetSeedPos()</div><div class="ttdoc">Reset to internal initial values.</div></div>
 <div class="ttc" id="aclassUSquirrel13__RNG_html_a2737ccdd5e2cbe962561c180d3f99e36"><div class="ttname"><a href="classUSquirrel13__RNG.html#a2737ccdd5e2cbe962561c180d3f99e36">USquirrel13_RNG::SetNoiseVariant</a></div><div class="ttdeci">void SetNoiseVariant(int newVariant=0)</div><div class="ttdoc">Internal noise variants (it is not initialized), default=0, max=5 Invalid variants will use default n...</div></div>

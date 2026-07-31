@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['of_20all_20functions_20for_20c_0',['&lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;List of all functions for C++&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md23',1,'']]],
-  ['of_20plugin_1',['Installation of plugin',['../install.html#autotoc_md10',1,'']]],
-  ['of_20plugin_20and_20functions_2',['Use of plugin and functions',['../baseuse.html',1,'mainpage']]],
-  ['offsetposition_3',['OffsetPosition',['../classUSquirrel13__RNG.html#a4b46cb4f3aa4b3d04e767225edfde007',1,'USquirrel13_RNG']]],
-  ['operator_21_3d_4',['operator!=',['../structYasiuMath_1_1Types_1_1Vec3.html#a5dcff8e23f7b61895a96b15891c645c2',1,'YasiuMath::Types::Vec3']]],
-  ['operator_3c_5',['operator&lt;',['../structYasiuMath_1_1Types_1_1Vec3.html#aa7cd9e8b240c3ad754b4c1ec0e94de84',1,'YasiuMath::Types::Vec3::operator&lt;(const T value) const'],['../structYasiuMath_1_1Types_1_1Vec3.html#a235aa5d2295b6c20e9ee3130fbde238a',1,'YasiuMath::Types::Vec3::operator&lt;(const Vec3 &amp;other) const']]],
-  ['operator_3d_3d_6',['operator==',['../structYasiuMath_1_1Types_1_1Vec3.html#a0956279477c1e659ee700395d7a75632',1,'YasiuMath::Types::Vec3']]],
-  ['operator_3e_7',['operator&gt;',['../structYasiuMath_1_1Types_1_1Vec3.html#a3569b6b9cfe2771d5fc390eb367159c1',1,'YasiuMath::Types::Vec3::operator&gt;(const T value) const'],['../structYasiuMath_1_1Types_1_1Vec3.html#a81685cc50de4ee0f11570897a55a045f',1,'YasiuMath::Types::Vec3::operator&gt;(const Vec3 &amp;other) const']]],
-  ['overview_8',['Overview',['../index.html#autotoc_md1',1,'']]]
+  ['pcg_5frng_2eh_0',['PCG_RNG.h',['../PCG__RNG_8h.html',1,'']]],
+  ['plugin_1',['1. Download and Extract the Plugin',['../install.html#autotoc_md11',1,'']]],
+  ['plugin_2',['Installation of plugin',['../install.html#autotoc_md10',1,'']]],
+  ['plugin_20in_20unreal_20engine_3',['2B. Enable the Plugin in Unreal Engine',['../install.html#autotoc_md15',1,'']]],
+  ['point_4',['Point',['../structYasiuMath_1_1Types_1_1Point.html',1,'YasiuMath::Types']]],
+  ['pointangle_5',['PointAngle',['../structYasiuMath_1_1Types_1_1PointAngle.html',1,'YasiuMath::Types']]],
+  ['position_6',['Position',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html#a8ea16cea73c3d6261d14593c0b312115',1,'YasiuMath::Ballistics::ProjectileDynamicState::Position'],['../structFBallisticObject.html#a40dc1074c8eab0ba5e98e7450b079842',1,'FBallisticObject::Position']]],
+  ['predict_7',['Predict',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html#a9bf2798d848b13a58591faf25c5b76df',1,'YasiuMath::Ballistics::ProjectileDynamicState']]],
+  ['predictquick_8',['PredictQuick',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html#a0d76e4c16d761716e2884a7e78cd9837',1,'YasiuMath::Ballistics::ProjectileDynamicState']]],
+  ['projectiledynamicstate_9',['ProjectileDynamicState',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html',1,'YasiuMath::Ballistics']]]
 ];

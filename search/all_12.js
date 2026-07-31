@@ -1,18 +1,18 @@
 var searchData=
 [
-  ['random_20number_20generation_0',['RNG (Random Number Generation)',['../index.html#autotoc_md6',1,'']]],
-  ['remap_1',['Remap',['../namespaceYasiuMath_1_1Algebra.html#aba93ed33da129cd39c5e78a58ebe225f',1,'YasiuMath::Algebra']]],
-  ['remapdouble_2',['RemapDouble',['../classUYasiuMathFL__Algebra.html#abd7a4de3923f419ae102389d2d5d99fc',1,'UYasiuMathFL_Algebra']]],
-  ['remapfloat_3',['RemapFloat',['../classUYasiuMathFL__Algebra.html#a8f78e1f294aa7b7505b78afe663e44f6',1,'UYasiuMathFL_Algebra']]],
-  ['remapvector_4',['RemapVector',['../classUYasiuMathFL__Algebra.html#adf71ff0ba41a54b5a6ef9196fb52d258',1,'UYasiuMathFL_Algebra::RemapVector()'],['../namespaceYasiuMath_1_1Algebra.html#af156c73977374d796fe75e7d68c42844',1,'YasiuMath::Algebra::RemapVector(const FVector &amp;Input, const FVector2d &amp;InputRange, const FVector2d &amp;OutputRange, const bool ClampOutput)'],['../namespaceYasiuMath_1_1Algebra.html#a33c1973b951ab59354188f287c2800fa',1,'YasiuMath::Algebra::RemapVector(const FVector3f &amp;Input, const FVector2f &amp;InputRange, const FVector2f &amp;OutputRange, const bool ClampOutput)']]],
-  ['resetseedpos_5',['ResetSeedPos',['../classUSquirrel13__RNG.html#a1d3850b06314b050b1adba64c1669373',1,'USquirrel13_RNG']]],
-  ['rng_20in_20blueprints_6',['Squirrel RNG in Blueprints',['../baseuse.html#autotoc_md20',1,'']]],
-  ['rng_20random_20number_20generation_7',['RNG (Random Number Generation)',['../index.html#autotoc_md6',1,'']]],
-  ['rng_5f0_8',['RNG_0',['../classUSquirrel13__RNG.html#a32e0bd53b5ea7a07d14e5c2f76d45810',1,'USquirrel13_RNG']]],
-  ['rng_5f1_9',['RNG_1',['../classUSquirrel13__RNG.html#a7a8e1fa95de8100c38101356ae0c1c51',1,'USquirrel13_RNG']]],
-  ['rng_5f2_10',['RNG_2',['../classUSquirrel13__RNG.html#a81ac6715eda9c9bd51c4ec2f212b6697',1,'USquirrel13_RNG']]],
-  ['rng_5f3_11',['RNG_3',['../classUSquirrel13__RNG.html#a2da74ed47f02cd912dc0cc3bc1b3fc31',1,'USquirrel13_RNG']]],
-  ['rng_5f4_12',['RNG_4',['../classUSquirrel13__RNG.html#a7eb6f58f0f360b6d12a9cba68b9924d3',1,'USquirrel13_RNG']]],
-  ['rng_5f5_13',['RNG_5',['../classUSquirrel13__RNG.html#a3c9a74baad0881729c5f26fca7fb0d41',1,'USquirrel13_RNG']]],
-  ['rotateboundingbox_14',['RotateBoundingBox',['../classUYasiuMathFL__Angle.html#a92b0fe313dbfa0fcf1e7f31ce81ddb9a',1,'UYasiuMathFL_Angle::RotateBoundingBox()'],['../namespaceYasiuMath_1_1AngleUtils.html#ac963a3abddcdac5e01665eaee5fc4743',1,'YasiuMath::AngleUtils::RotateBoundingBox()']]]
+  ['second_0',['second',['../structYasiuMath_1_1Types_1_1IndexedPair.html#a0622f75d77dddcc96893fa469c4ce8f2',1,'YasiuMath::Types::IndexedPair']]],
+  ['serialize_1',['Serialize',['../classUSquirrel13__RNG.html#aea23820677da582efd48543842cb3a68',1,'USquirrel13_RNG']]],
+  ['setnoisevariant_2',['SetNoiseVariant',['../classUSquirrel13__RNG.html#a2737ccdd5e2cbe962561c180d3f99e36',1,'USquirrel13_RNG']]],
+  ['setposition_3',['SetPosition',['../classUSquirrel13__RNG.html#ad0e0562cf0f6ba8e16b53a21087f96c1',1,'USquirrel13_RNG']]],
+  ['setseed_4',['SetSeed',['../classUSquirrel13__RNG.html#a678110142e8179cc9f102f5939453d50',1,'USquirrel13_RNG']]],
+  ['setstate_5',['SetState',['../classUPCG32__RNG.html#ac71881380e38bf7f21f41ca062ba7953',1,'UPCG32_RNG']]],
+  ['setstream_6',['SetStream',['../classUPCG32__RNG.html#a6fe608cc6fbdabfce7733a9d0938231f',1,'UPCG32_RNG']]],
+  ['spaces_7',['List of all &lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;functions for C++&lt;/b&gt;&lt;/a&gt; grouped into: &lt;a href=&quot;namespaces.html&quot;&gt;&lt;b&gt;Name spaces&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md33',1,'']]],
+  ['spreadpointsontangentbyangleradius_8',['SpreadPointsOnTangentByAngleRadius',['../classUYasiuMathFL__Trigonometry.html#a8a8efcd2448e9bad69e9f70ee6f2e0bc',1,'UYasiuMathFL_Trigonometry::SpreadPointsOnTangentByAngleRadius()'],['../namespaceYasiuMath_1_1Trigonometry.html#a8805107e89bc32cf46f47e1ed3db1e43',1,'YasiuMath::Trigonometry::SpreadPointsOnTangentByAngleRadius()']]],
+  ['spreadpointsontangentbyxy_9',['SpreadPointsOnTangentByXY',['../classUYasiuMathFL__Trigonometry.html#a91adcca7f3686db54a097d1ed928c9e5',1,'UYasiuMathFL_Trigonometry::SpreadPointsOnTangentByXY()'],['../namespaceYasiuMath_1_1Trigonometry.html#aa7bc14fbaed48606f6c94bc97d46e0a7',1,'YasiuMath::Trigonometry::SpreadPointsOnTangentByXY()']]],
+  ['squirrelrng_2eh_10',['SquirrelRNG.h',['../SquirrelRNG_8h.html',1,'']]],
+  ['start_11',['Start',['../mainpage.html',1,'Quick Start'],['../index.html#autotoc_md9',1,'Start']]],
+  ['strcuts_12',['Strcuts',['../unreal.html#autotoc_md21',1,'']]],
+  ['sum_13',['Sum',['../structYasiuMath_1_1Types_1_1Vec3.html#a3fbb40cc4bd2c1e5ceff5fb29bf8e52a',1,'YasiuMath::Types::Vec3']]],
+  ['supported_20for_20bp_14',['Unreal types supported for BP',['../unreal.html#autotoc_md18',1,'']]]
 ];

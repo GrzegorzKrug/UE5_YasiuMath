@@ -7,5 +7,6 @@ var searchData=
   ['getnextint_4',['GetNextInt',['../classUPCG32__RNG.html#a9e81e697195520b04bd85102b1218c3d',1,'UPCG32_RNG::GetNextInt()'],['../classUSquirrel13__RNG.html#a9a50daf32fabcf27a60abbfe34bdaaa8',1,'USquirrel13_RNG::GetNextInt(int min, int max)']]],
   ['getposition_5',['GetPosition',['../classUSquirrel13__RNG.html#a9fb49d1b45894cbecb3ab388e0d12b37',1,'USquirrel13_RNG']]],
   ['getseed_6',['GetSeed',['../classUSquirrel13__RNG.html#a45583396a167c24a88092209e5e4f6d5',1,'USquirrel13_RNG']]],
-  ['guide_7',['Installation guide',['../install.html',1,'mainpage']]]
+  ['grouped_20into_3a_20name_20spaces_7',['List of all &lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;functions for C++&lt;/b&gt;&lt;/a&gt; grouped into: &lt;a href=&quot;namespaces.html&quot;&gt;&lt;b&gt;Name spaces&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md33',1,'']]],
+  ['guide_8',['guide',['../install.html',1,'Installation guide'],['../baseuse.html',1,'Usage guide']]]
 ];
