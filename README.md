@@ -10,6 +10,6 @@ Math Plugin for unreal engine 5
 Put files into folder: YourProject/Plugins.
 Add module to build. (check docs for more details)
 
-## Docs
-[Github Pages](https://grzegorzkrug.github.io/UE5_YasiuMath/md_Documentation_2About.html)
+## Documentation
+[Github Pages]([https://grzegorzkrug.github.io/UE5_YasiuMath/md_Documentation_2About.html](https://grzegorzkrug.github.io/UE5_YasiuMath))
 
