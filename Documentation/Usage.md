@@ -13,11 +13,13 @@
 
 ---
 
-## UObjects
-Currently most classes are made as UObjects for coding flexibility. 
+## Random number generators
+
+Currently most classes are made as **UObjects** for coding flexibility. 
+
+### UObjects
 They are spawned a bit different than actor components.
 
-#### RNG in Blueprints
 Squirrel Object is not treated as ActorComponent, it has to be spawned from class using node
  **CreateFromClass**  
 1. Right-click in the Blueprint graph.
@@ -27,15 +29,13 @@ Squirrel Object is not treated as ActorComponent, it has to be spawned from clas
 	- This is only required to keep object alive during gameplay and prevent UE from destroying it.
 
 
-## Actor components
+### Actor components
 1. Create actor or use existing one
 2. Open actors editor window
 3. In tree structure click "Add" button
 4. Find component u want to add
 
-<div align="left">
-    \image html Images/AddingComponent.png "Adding component" width=300px
-</div>
+\image html Images/AddingComponent.png "Adding component" width=300px
 
 ## [**List of unreal objects**](unreal.html)
 
