@@ -18,8 +18,10 @@ var index =
     [ "Usage guide", "baseuse.html", [
       [ "For Blueprints", "baseuse.html#autotoc_md23", [
         [ "Functions", "baseuse.html#autotoc_md24", null ],
-        [ "UObjects", "baseuse.html#autotoc_md27", null ],
-        [ "Actor components", "baseuse.html#autotoc_md29", null ],
+        [ "Random number generators", "baseuse.html#autotoc_md27", [
+          [ "UObjects", "baseuse.html#autotoc_md28", null ],
+          [ "Actor components", "baseuse.html#autotoc_md29", null ]
+        ] ],
         [ "<a href=\"unreal.html\"><b>List of unreal objects</b></a>", "baseuse.html#autotoc_md30", null ]
       ] ],
       [ "For coding in C++", "baseuse.html#autotoc_md32", null ]
