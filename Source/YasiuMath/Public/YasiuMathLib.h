@@ -7,6 +7,7 @@
 
 #pragma once
 
+
 #include <vector>
 #include <cassert>
 #include <cmath>
@@ -18,10 +19,14 @@
 #include <algorithm>
 #include <unordered_set>
 
+
 #include "Constants.h"
+
+
 #include "YasiuMathDataTypes.h"
 
 
+/* Fixes for 5.0~5.1 */
 #if __cplusplus >= 202002L
 #define CPP20_OR_LATER 1
 #else
@@ -39,13 +44,13 @@ namespace YasiuMath {
     /** @brief Collection of functions working with angles and rotation */
     namespace AngleUtils {
         template<typename T>
-        static inline double Degrees2Radians( T degree )
+        T Degrees2Radians( T degree )
         {
             return static_cast<T>(YasiuMath::Constants::Y_PI * degree / 180.f);
         }
 
         template<typename T>
-        static inline T Radians2Degrees( T radian )
+        T Radians2Degrees( T radian )
         {
             return static_cast<T>(radian * 180.f / YasiuMath::Constants::Y_PI);
         }
@@ -57,7 +62,7 @@ namespace YasiuMath {
          * @warning Does not support negative periods
          */
         template<typename T>
-        static T NormalizeAngleToPeriod( T angle, T period = 360.f )
+        T NormalizeAngleToPeriod( T angle, T period = 360.f )
         {
             if ( period < 0 ) { return angle; }
             T temp = static_cast<T>(fmod(angle, period));
@@ -280,7 +285,7 @@ namespace YasiuMath {
         }
 
         template<typename T>
-        static T Cross( const std::pair<T, T>& A, const std::pair<T, T>& B )
+        T Cross( const std::pair<T, T>& A, const std::pair<T, T>& B )
         {
             auto temp1 = A.first * B.second; //- B.second * A.first;
             auto temp2 = A.second * B.first;
@@ -289,7 +294,7 @@ namespace YasiuMath {
 
         /* Function to check backwards if any previous points need to be removed */
         template<typename T>
-        static void CheckHullBackwards(
+        void CheckHullBackwards(
             std::vector<int>& currentConvex,
             const int& checkIndex,
             const std::vector<std::pair<T, T>>& allPoints,
@@ -337,7 +342,7 @@ namespace YasiuMath {
          * @brief Helper function for convex calculation
          */
         template<typename T>
-        static void AddPointToConvex(
+        void AddPointToConvex(
             std::vector<int>& currentConvex,
             const int& index,
             const std::vector<std::pair<T, T>>& allPoints,
@@ -363,7 +368,7 @@ namespace YasiuMath {
          * @return Collection of indexes assigned to convex hull in order
          */
         template<typename T>
-        static std::vector<int> ConvexHull2D( const std::vector<std::pair<T, T>>& polygonPoints )
+        std::vector<int> ConvexHull2D( const std::vector<std::pair<T, T>>& polygonPoints )
         {
             using namespace Types;
             if ( polygonPoints.size() == 0 ) {
@@ -848,7 +853,7 @@ namespace YasiuMath {
     namespace Numeric {
         /** @brief Checks if value is nearly 0, \ref YasiuMath::Constants::EPSILON */
         template<typename T>
-        static bool IsNearly0( T Value )
+        bool IsNearly0( T Value )
         {
             return std::fabs(Value) <= YasiuMath::Constants::EPSILON;
         }
@@ -869,7 +874,7 @@ namespace YasiuMath {
          * @return Value
          */
         template<typename T>
-        static T Remap( const T Value, const T InMin, const T InMax, T OutMin, T OutMax, const bool ClampOutput = false )
+        T Remap( const T Value, const T InMin, const T InMax, T OutMin, T OutMax, const bool ClampOutput = false )
         {
             const T SubVal = Value - InMin;
             const T Divid = InMax - InMin;
@@ -896,3 +901,6 @@ namespace YasiuMath {
         }
     }
 };
+
+
+#include "YasiuMathLib.inl"

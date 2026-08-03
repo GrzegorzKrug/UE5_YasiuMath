@@ -7,7 +7,9 @@
 
 #pragma once
 
-#include  "CoreMinimal.h"
+
+#include "Components/ActorComponent.h"
+
 
 #include  "SquirrelRNG.generated.h"
 
@@ -38,8 +40,6 @@ public:
     /** @brief Serialization of RNG Object */
     virtual void Serialize( FArchive& Ar ) override;
 
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
-    int SomeValue{0};
 
 protected:
     UPROPERTY(Replicated)
@@ -58,6 +58,7 @@ protected:
     // UPROPERTY(BlueprintReadWrite)
     UPROPERTY(Replicated)
     int32 init_seed = 0;
+
 
 public:
     /**
@@ -124,6 +125,7 @@ public:
     UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void ResetSeedPos();
 
+
 protected:
     /** @brief Noise variant */
     static uint32_t RNG_0( int position, unsigned int seed );
@@ -151,6 +153,7 @@ protected:
 UCLASS(BlueprintType, Blueprintable, meta=(BlueprintSpawnableComponent), DefaultToInstanced)
 class YASIUMATH_API USquirrel13_RNGComponent : public UActorComponent {
     GENERATED_BODY()
+
 
 public:
     USquirrel13_RNGComponent();

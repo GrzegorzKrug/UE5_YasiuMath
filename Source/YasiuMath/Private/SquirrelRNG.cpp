@@ -3,7 +3,10 @@
  * All Rights Reserved.
  */
 
+
 #include "SquirrelRNG.h"
+
+#include "YasiuMathLogs.h"
 
 #include "Net/UnrealNetwork.h"
 
@@ -236,10 +239,10 @@ void USquirrel13_RNG::Serialize( FArchive& Ar )
     UObject::Serialize(Ar);
     Ar << init_seed; // Non-Uproperty
     if ( Ar.IsLoading() ) {
-        UE_LOGFMT(LogTemp, Log, "Loading seed: init_seed: {0}, m_seed: {1}", init_seed, m_seed);
+        UE_LOGFMT(YasiuMathPlugin, Verbose, "Loading seed: init_seed: {0}, m_seed: {1}", init_seed, m_seed);
     }
     else {
-        UE_LOGFMT(LogTemp, Log, "Saving seed: init_seed: {0}, m_seed: {1}", init_seed, m_seed);
+        UE_LOGFMT(YasiuMathPlugin, Verbose, "Saving seed: init_seed: {0}, m_seed: {1}", init_seed, m_seed);
     }
 }
 
