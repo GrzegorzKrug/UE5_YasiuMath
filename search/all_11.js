@@ -2,7 +2,7 @@ var searchData=
 [
   ['random_20number_20generation_0',['RNG (Random Number Generation)',['../index.html#autotoc_md6',1,'']]],
   ['random_20number_20generators_1',['Random number generators',['../baseuse.html#autotoc_md27',1,'']]],
-  ['remap_2',['Remap',['../namespaceYasiuMath_1_1Algebra.html#aba93ed33da129cd39c5e78a58ebe225f',1,'YasiuMath::Algebra']]],
+  ['remap_2',['Remap',['../namespaceYasiuMath_1_1Algebra.html#abafb90f71042353d3cbfc08aef1ef772',1,'YasiuMath::Algebra']]],
   ['remapdouble_3',['RemapDouble',['../classUYasiuMathFL__Algebra.html#abd7a4de3923f419ae102389d2d5d99fc',1,'UYasiuMathFL_Algebra']]],
   ['remapfloat_4',['RemapFloat',['../classUYasiuMathFL__Algebra.html#a8f78e1f294aa7b7505b78afe663e44f6',1,'UYasiuMathFL_Algebra']]],
   ['remapvector_5',['RemapVector',['../classUYasiuMathFL__Algebra.html#adf71ff0ba41a54b5a6ef9196fb52d258',1,'UYasiuMathFL_Algebra::RemapVector()'],['../namespaceYasiuMath_1_1Algebra.html#af156c73977374d796fe75e7d68c42844',1,'YasiuMath::Algebra::RemapVector(const FVector &amp;Input, const FVector2d &amp;InputRange, const FVector2d &amp;OutputRange, const bool ClampOutput)'],['../namespaceYasiuMath_1_1Algebra.html#a33c1973b951ab59354188f287c2800fa',1,'YasiuMath::Algebra::RemapVector(const FVector3f &amp;Input, const FVector2f &amp;InputRange, const FVector2f &amp;OutputRange, const bool ClampOutput)']]],

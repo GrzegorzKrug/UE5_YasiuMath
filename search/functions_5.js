@@ -5,5 +5,5 @@ var searchData=
   ['intercept_5flinear_2',['Intercept_Linear',['../classUYasiuMathFL__Ballistics.html#a42e0c3c3ebccd800e32b528d9234adaf',1,'UYasiuMathFL_Ballistics']]],
   ['interceptmissile_5fdynamic_3',['InterceptMissile_Dynamic',['../namespaceYasiuMath_1_1Ballistics.html#a72584fc90f76518e974cbc1a34d813f8',1,'YasiuMath::Ballistics']]],
   ['interceptmissile_5flinear_4',['InterceptMissile_Linear',['../namespaceYasiuMath_1_1Ballistics.html#ac576a4f70ca61b53c4f8eb8707058d52',1,'YasiuMath::Ballistics']]],
-  ['isnearly0_5',['IsNearly0',['../structYasiuMath_1_1Types_1_1Vec3.html#a6eb5a635774b591a5c670130063b5cfb',1,'YasiuMath::Types::Vec3::IsNearly0()'],['../namespaceYasiuMath_1_1Numeric.html#a1516b5b2410f4317ea3e52936b24ece7',1,'YasiuMath::Numeric::IsNearly0()']]]
+  ['isnearly0_5',['IsNearly0',['../structYasiuMath_1_1Types_1_1Vec3.html#a6eb5a635774b591a5c670130063b5cfb',1,'YasiuMath::Types::Vec3::IsNearly0()'],['../namespaceYasiuMath_1_1Numeric.html#a746dd89ab7474b979047dd888ec51d81',1,'YasiuMath::Numeric::IsNearly0()']]]
 ];

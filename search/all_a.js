@@ -14,5 +14,5 @@ var searchData=
   ['interceptmissile_5flinear_11',['InterceptMissile_Linear',['../namespaceYasiuMath_1_1Ballistics.html#ac576a4f70ca61b53c4f8eb8707058d52',1,'YasiuMath::Ballistics']]],
   ['interceptorparams_12',['InterceptorParams',['../structYasiuMath_1_1Ballistics_1_1InterceptorParams.html',1,'YasiuMath::Ballistics']]],
   ['into_3a_20name_20spaces_13',['List of all &lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;functions for C++&lt;/b&gt;&lt;/a&gt; grouped into: &lt;a href=&quot;namespaces.html&quot;&gt;&lt;b&gt;Name spaces&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md33',1,'']]],
-  ['isnearly0_14',['IsNearly0',['../structYasiuMath_1_1Types_1_1Vec3.html#a6eb5a635774b591a5c670130063b5cfb',1,'YasiuMath::Types::Vec3::IsNearly0()'],['../namespaceYasiuMath_1_1Numeric.html#a1516b5b2410f4317ea3e52936b24ece7',1,'YasiuMath::Numeric::IsNearly0()']]]
+  ['isnearly0_14',['IsNearly0',['../structYasiuMath_1_1Types_1_1Vec3.html#a6eb5a635774b591a5c670130063b5cfb',1,'YasiuMath::Types::Vec3::IsNearly0()'],['../namespaceYasiuMath_1_1Numeric.html#a746dd89ab7474b979047dd888ec51d81',1,'YasiuMath::Numeric::IsNearly0()']]]
 ];

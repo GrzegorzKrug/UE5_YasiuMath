@@ -9,6 +9,6 @@ var searchData=
   ['components_6',['Components',['../index.html#autotoc_md5',1,'']]],
   ['components_7',['components',['../unreal.html#autotoc_md20',1,'Actor components'],['../baseuse.html#autotoc_md29',1,'Actor components']]],
   ['constants_2eh_8',['Constants.h',['../Constants_8h.html',1,'']]],
-  ['convexhull2d_9',['ConvexHull2D',['../classUYasiuMathFL__ConvexHull.html#a5698c161475c78a4a848071f25d54b0b',1,'UYasiuMathFL_ConvexHull::ConvexHull2D()'],['../namespaceYasiuMath_1_1ConvexHull.html#a9398ebbd4067e31a89e077464565ae0a',1,'YasiuMath::ConvexHull::ConvexHull2D()']]],
+  ['convexhull2d_9',['ConvexHull2D',['../classUYasiuMathFL__ConvexHull.html#a5698c161475c78a4a848071f25d54b0b',1,'UYasiuMathFL_ConvexHull::ConvexHull2D()'],['../namespaceYasiuMath_1_1ConvexHull.html#a913a4b6d459a2627341749c7c18f982a',1,'YasiuMath::ConvexHull::ConvexHull2D()']]],
   ['cross_10',['Cross',['../structYasiuMath_1_1Types_1_1Vec3.html#a2662b3c9f99ee4fa8b7ca855a73d0650',1,'YasiuMath::Types::Vec3']]]
 ];

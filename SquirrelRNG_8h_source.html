@@ -127,34 +127,34 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('SquirrelRNG_8h
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include  &quot;CoreMinimal.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include  &quot;SquirrelRNG.generated.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;Components/ActorComponent.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>UCLASS(BlueprintType, Blueprintable, DefaultToInstanced)</div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html">   21</a></span>class YASIUMATH_API USquirrel13_RNG : public UObject {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    GENERATED_BODY()</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    USquirrel13_RNG() {};</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include  &quot;SquirrelRNG.generated.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>UCLASS(BlueprintType, Blueprintable, DefaultToInstanced)</div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html">   23</a></span>class YASIUMATH_API USquirrel13_RNG : public UObject {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    GENERATED_BODY()</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    USquirrel13_RNG( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed )</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        : m_seed(seed), init_seed(seed) {};</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    USquirrel13_RNG( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed )</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        : m_position(position), m_seed(seed), init_position(position), init_seed(seed) {};</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    USquirrel13_RNG( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> variant )</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        : m_position(position), m_seed(seed), <a class="code hl_variable" href="classUSquirrel13__RNG.html#a77ce5d55854d24a50ebc2afb46a5b043">m_variant</a>(variant), init_position(position), init_seed(seed) {};</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetLifetimeReplicatedProps( TArray&lt;class FLifetimeProperty&gt;&amp; OutLifetimeProps ) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#aea23820677da582efd48543842cb3a68">   39</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#aea23820677da582efd48543842cb3a68">Serialize</a>( FArchive&amp; Ar ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    UPROPERTY(BlueprintReadWrite, EditAnywhere)</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">int</span> SomeValue{0};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    USquirrel13_RNG() {};</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    USquirrel13_RNG( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed )</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        : m_seed(seed), init_seed(seed) {};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    USquirrel13_RNG( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed )</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        : m_position(position), m_seed(seed), init_position(position), init_seed(seed) {};</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    USquirrel13_RNG( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> variant )</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        : m_position(position), m_seed(seed), <a class="code hl_variable" href="classUSquirrel13__RNG.html#a77ce5d55854d24a50ebc2afb46a5b043">m_variant</a>(variant), init_position(position), init_seed(seed) {};</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetLifetimeReplicatedProps( TArray&lt;class FLifetimeProperty&gt;&amp; OutLifetimeProps ) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#aea23820677da582efd48543842cb3a68">   41</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#aea23820677da582efd48543842cb3a68">Serialize</a>( FArchive&amp; Ar ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">protected</span>:</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    UPROPERTY(Replicated)</div>
@@ -173,103 +173,106 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('SquirrelRNG_8h
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    UPROPERTY(Replicated)</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    int32 init_seed = 0;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#ae7c536d7b9a7f4b0d31d1f45f2952a32">   68</a></span>    void <a class="code hl_function" href="classUSquirrel13__RNG.html#ae7c536d7b9a7f4b0d31d1f45f2952a32">InitBP</a>( <span class="keywordtype">int</span> seed, <span class="keywordtype">int</span> position = 0 );</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    uint32_t get_current_random() const;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    uint32_t get_next_random();</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#ac47d4e2b3d4d284d819e9afc87316440">   78</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#ac47d4e2b3d4d284d819e9afc87316440">GetCurrentInt</a>( <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max ) const;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a9a50daf32fabcf27a60abbfe34bdaaa8">   82</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a9a50daf32fabcf27a60abbfe34bdaaa8">GetNextInt</a>( <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max );</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a2cbc543c399f233c149135a2dd2ae832">   86</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a2cbc543c399f233c149135a2dd2ae832">GetCurrentDouble</a>() const;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a859b7ce1974448979b0c74518d43278f">   92</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a859b7ce1974448979b0c74518d43278f">GetNextDouble</a>();</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a9fb49d1b45894cbecb3ab388e0d12b37">   96</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a9fb49d1b45894cbecb3ab388e0d12b37">GetPosition</a>() const;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#ad0e0562cf0f6ba8e16b53a21087f96c1">  100</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#ad0e0562cf0f6ba8e16b53a21087f96c1">SetPosition</a>( <span class="keywordtype">int</span> new_position );</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a4b46cb4f3aa4b3d04e767225edfde007">  107</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a4b46cb4f3aa4b3d04e767225edfde007">OffsetPosition</a>( <span class="keywordtype">int</span> offset = 1 );</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a45583396a167c24a88092209e5e4f6d5">  111</a></span>    int32 <a class="code hl_function" href="classUSquirrel13__RNG.html#a45583396a167c24a88092209e5e4f6d5">GetSeed</a>() const;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a678110142e8179cc9f102f5939453d50">  115</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a678110142e8179cc9f102f5939453d50">SetSeed</a>( <span class="keywordtype">int</span> new_seed );</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a2737ccdd5e2cbe962561c180d3f99e36">  121</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a2737ccdd5e2cbe962561c180d3f99e36">SetNoiseVariant</a>( <span class="keywordtype">int</span> newVariant = 0 );</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a1d3850b06314b050b1adba64c1669373">  125</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a1d3850b06314b050b1adba64c1669373">ResetSeedPos</a>();</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>protected:</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a32e0bd53b5ea7a07d14e5c2f76d45810">  129</a></span>    static uint32_t <a class="code hl_function" href="classUSquirrel13__RNG.html#a32e0bd53b5ea7a07d14e5c2f76d45810">RNG_0</a>( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed );</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a7a8e1fa95de8100c38101356ae0c1c51">  132</a></span>    static uint32_t <a class="code hl_function" href="classUSquirrel13__RNG.html#a7a8e1fa95de8100c38101356ae0c1c51">RNG_1</a>( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed );</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a81ac6715eda9c9bd51c4ec2f212b6697">  135</a></span>    static uint32_t <a class="code hl_function" href="classUSquirrel13__RNG.html#a81ac6715eda9c9bd51c4ec2f212b6697">RNG_2</a>( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed );</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a2da74ed47f02cd912dc0cc3bc1b3fc31">  138</a></span>    static uint32_t <a class="code hl_function" href="classUSquirrel13__RNG.html#a2da74ed47f02cd912dc0cc3bc1b3fc31">RNG_3</a>( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed );</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a7eb6f58f0f360b6d12a9cba68b9924d3">  141</a></span>    static uint32_t <a class="code hl_function" href="classUSquirrel13__RNG.html#a7eb6f58f0f360b6d12a9cba68b9924d3">RNG_4</a>( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed );</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a3c9a74baad0881729c5f26fca7fb0d41">  144</a></span>    static uint32_t <a class="code hl_function" href="classUSquirrel13__RNG.html#a3c9a74baad0881729c5f26fca7fb0d41">RNG_5</a>( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed );</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>};</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#ae7c536d7b9a7f4b0d31d1f45f2952a32">   69</a></span>    void <a class="code hl_function" href="classUSquirrel13__RNG.html#ae7c536d7b9a7f4b0d31d1f45f2952a32">InitBP</a>( <span class="keywordtype">int</span> seed, <span class="keywordtype">int</span> position = 0 );</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    uint32_t get_current_random() const;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    uint32_t get_next_random();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#ac47d4e2b3d4d284d819e9afc87316440">   79</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#ac47d4e2b3d4d284d819e9afc87316440">GetCurrentInt</a>( <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max ) const;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a9a50daf32fabcf27a60abbfe34bdaaa8">   83</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a9a50daf32fabcf27a60abbfe34bdaaa8">GetNextInt</a>( <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max );</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a2cbc543c399f233c149135a2dd2ae832">   87</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a2cbc543c399f233c149135a2dd2ae832">GetCurrentDouble</a>() const;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a859b7ce1974448979b0c74518d43278f">   93</a></span>    <span class="keywordtype">double</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a859b7ce1974448979b0c74518d43278f">GetNextDouble</a>();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a9fb49d1b45894cbecb3ab388e0d12b37">   97</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a9fb49d1b45894cbecb3ab388e0d12b37">GetPosition</a>() const;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#ad0e0562cf0f6ba8e16b53a21087f96c1">  101</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#ad0e0562cf0f6ba8e16b53a21087f96c1">SetPosition</a>( <span class="keywordtype">int</span> new_position );</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a4b46cb4f3aa4b3d04e767225edfde007">  108</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a4b46cb4f3aa4b3d04e767225edfde007">OffsetPosition</a>( <span class="keywordtype">int</span> offset = 1 );</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a45583396a167c24a88092209e5e4f6d5">  112</a></span>    int32 <a class="code hl_function" href="classUSquirrel13__RNG.html#a45583396a167c24a88092209e5e4f6d5">GetSeed</a>() const;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a678110142e8179cc9f102f5939453d50">  116</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a678110142e8179cc9f102f5939453d50">SetSeed</a>( <span class="keywordtype">int</span> new_seed );</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a2737ccdd5e2cbe962561c180d3f99e36">  122</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a2737ccdd5e2cbe962561c180d3f99e36">SetNoiseVariant</a>( <span class="keywordtype">int</span> newVariant = 0 );</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a1d3850b06314b050b1adba64c1669373">  126</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classUSquirrel13__RNG.html#a1d3850b06314b050b1adba64c1669373">ResetSeedPos</a>();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>protected:</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a32e0bd53b5ea7a07d14e5c2f76d45810">  131</a></span>    static uint32_t <a class="code hl_function" href="classUSquirrel13__RNG.html#a32e0bd53b5ea7a07d14e5c2f76d45810">RNG_0</a>( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed );</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a7a8e1fa95de8100c38101356ae0c1c51">  134</a></span>    static uint32_t <a class="code hl_function" href="classUSquirrel13__RNG.html#a7a8e1fa95de8100c38101356ae0c1c51">RNG_1</a>( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed );</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a81ac6715eda9c9bd51c4ec2f212b6697">  137</a></span>    static uint32_t <a class="code hl_function" href="classUSquirrel13__RNG.html#a81ac6715eda9c9bd51c4ec2f212b6697">RNG_2</a>( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed );</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a2da74ed47f02cd912dc0cc3bc1b3fc31">  140</a></span>    static uint32_t <a class="code hl_function" href="classUSquirrel13__RNG.html#a2da74ed47f02cd912dc0cc3bc1b3fc31">RNG_3</a>( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed );</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a7eb6f58f0f360b6d12a9cba68b9924d3">  143</a></span>    static uint32_t <a class="code hl_function" href="classUSquirrel13__RNG.html#a7eb6f58f0f360b6d12a9cba68b9924d3">RNG_4</a>( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed );</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNG.html#a3c9a74baad0881729c5f26fca7fb0d41">  146</a></span>    static uint32_t <a class="code hl_function" href="classUSquirrel13__RNG.html#a3c9a74baad0881729c5f26fca7fb0d41">RNG_5</a>( <span class="keywordtype">int</span> position, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> seed );</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>};</div>
 </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>UCLASS(BlueprintType, Blueprintable, meta=(BlueprintSpawnableComponent), DefaultToInstanced)</div>
-<div class="foldopen" id="foldopen00152" data-start="{" data-end="};">
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNGComponent.html">  152</a></span>class YASIUMATH_API USquirrel13_RNGComponent : public UActorComponent {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    GENERATED_BODY()</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    USquirrel13_RNGComponent();</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>UCLASS(BlueprintType, Blueprintable, meta=(BlueprintSpawnableComponent), DefaultToInstanced)</div>
+<div class="foldopen" id="foldopen00154" data-start="{" data-end="};">
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="classUSquirrel13__RNGComponent.html">  154</a></span>class YASIUMATH_API USquirrel13_RNGComponent : public UActorComponent {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    GENERATED_BODY()</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetLifetimeReplicatedProps( TArray&lt;class FLifetimeProperty&gt;&amp; OutLifetimeProps ) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    UPROPERTY(BlueprintReadWrite, Replicated, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    TObjectPtr&lt;USquirrel13_RNG&gt; RNG;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    USquirrel13_RNGComponent();</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetLifetimeReplicatedProps( TArray&lt;class FLifetimeProperty&gt;&amp; OutLifetimeProps ) <span class="keyword">const override</span>;</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordtype">void</span> InitBP( <span class="keywordtype">int</span> seed, <span class="keywordtype">int</span> pos = 0 );</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    UPROPERTY(BlueprintReadWrite, Replicated, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    TObjectPtr&lt;USquirrel13_RNG&gt; RNG;</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    int32 GetSeed() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordtype">void</span> InitBP( <span class="keywordtype">int</span> seed, <span class="keywordtype">int</span> pos = 0 );</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordtype">void</span> SetSeed( int64 Seed );</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    int32 GetSeed() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordtype">int</span> GetPosition() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordtype">void</span> SetSeed( int64 Seed );</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordtype">void</span> SetPosition( <span class="keywordtype">int</span> Pos );</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordtype">int</span> GetPosition() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>, BlueprintPure=<span class="keyword">false</span>)</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordtype">int</span> GetCurrentInt( <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max ) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordtype">void</span> SetPosition( <span class="keywordtype">int</span> Pos );</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordtype">int</span> GetNextInt( <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max );</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>, BlueprintPure=<span class="keyword">false</span>)</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordtype">int</span> GetCurrentInt( <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max ) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>, BlueprintPure=<span class="keyword">false</span>)</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordtype">double</span> GetCurrentDouble() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordtype">int</span> GetNextInt( <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max );</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">double</span> GetNextDouble();</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>};</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>, BlueprintPure=<span class="keyword">false</span>)</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">double</span> GetCurrentDouble() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    UFUNCTION(BlueprintCallable, Category=<span class="stringliteral">&quot;Yasiu|RNG&quot;</span>)</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordtype">double</span> GetNextDouble();</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>};</div>
 </div>
 <div class="ttc" id="aclassUSquirrel13__RNG_html_a1d3850b06314b050b1adba64c1669373"><div class="ttname"><a href="classUSquirrel13__RNG.html#a1d3850b06314b050b1adba64c1669373">USquirrel13_RNG::ResetSeedPos</a></div><div class="ttdeci">void ResetSeedPos()</div><div class="ttdoc">Reset to internal initial values.</div></div>
 <div class="ttc" id="aclassUSquirrel13__RNG_html_a2737ccdd5e2cbe962561c180d3f99e36"><div class="ttname"><a href="classUSquirrel13__RNG.html#a2737ccdd5e2cbe962561c180d3f99e36">USquirrel13_RNG::SetNoiseVariant</a></div><div class="ttdeci">void SetNoiseVariant(int newVariant=0)</div><div class="ttdoc">Internal noise variants (it is not initialized), default=0, max=5 Invalid variants will use default n...</div></div>

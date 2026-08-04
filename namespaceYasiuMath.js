@@ -1,12 +1,12 @@
 var namespaceYasiuMath =
 [
     [ "Algebra", "namespaceYasiuMath_1_1Algebra.html", [
-      [ "Remap", "namespaceYasiuMath_1_1Algebra.html#aba93ed33da129cd39c5e78a58ebe225f", null ],
+      [ "Remap", "namespaceYasiuMath_1_1Algebra.html#abafb90f71042353d3cbfc08aef1ef772", null ],
       [ "RemapVector", "namespaceYasiuMath_1_1Algebra.html#af156c73977374d796fe75e7d68c42844", null ],
       [ "RemapVector", "namespaceYasiuMath_1_1Algebra.html#a33c1973b951ab59354188f287c2800fa", null ]
     ] ],
     [ "AngleUtils", "namespaceYasiuMath_1_1AngleUtils.html", [
-      [ "NormalizeAngleToPeriod", "namespaceYasiuMath_1_1AngleUtils.html#a9b871900e7139385e6e4c9a7a099a96a", null ],
+      [ "NormalizeAngleToPeriod", "namespaceYasiuMath_1_1AngleUtils.html#ad625779ebb545a7d9532fa3164f767da", null ],
       [ "RotateBoundingBox", "namespaceYasiuMath_1_1AngleUtils.html#ac963a3abddcdac5e01665eaee5fc4743", null ]
     ] ],
     [ "Ballistics", "namespaceYasiuMath_1_1Ballistics.html", "namespaceYasiuMath_1_1Ballistics" ],
@@ -15,10 +15,10 @@ var namespaceYasiuMath =
       [ "Y_PI", "namespaceYasiuMath_1_1Constants.html#a3fe041b9aecdb9abf7811edf4457337f", null ]
     ] ],
     [ "ConvexHull", "namespaceYasiuMath_1_1ConvexHull.html", [
-      [ "ConvexHull2D", "namespaceYasiuMath_1_1ConvexHull.html#a9398ebbd4067e31a89e077464565ae0a", null ]
+      [ "ConvexHull2D", "namespaceYasiuMath_1_1ConvexHull.html#a913a4b6d459a2627341749c7c18f982a", null ]
     ] ],
     [ "Numeric", "namespaceYasiuMath_1_1Numeric.html", [
-      [ "IsNearly0", "namespaceYasiuMath_1_1Numeric.html#a1516b5b2410f4317ea3e52936b24ece7", null ]
+      [ "IsNearly0", "namespaceYasiuMath_1_1Numeric.html#a746dd89ab7474b979047dd888ec51d81", null ]
     ] ],
     [ "Trigonometry", "namespaceYasiuMath_1_1Trigonometry.html", [
       [ "FindMinimalRadiusForIntersectingTangentsOnArc", "namespaceYasiuMath_1_1Trigonometry.html#a9f5895c931517c1d7ac65ebaa525a9a6", null ],
