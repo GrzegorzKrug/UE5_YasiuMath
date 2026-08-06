@@ -1,40 +1,40 @@
 {
-  "FileVersion": 1,
-  "Version": 3,
-  "VersionName": "0.6.0",
-  "FriendlyName": "Yasiu Math",
-  "Description": "Math functions library",
-  "Category": "Math",
-  "CreatedBy": "Krug Grzegorz (Youshisu)",
-  "CreatedByURL": "https://github.com/GrzegorzKrug",
-  "DocsURL": "https://grzegorzkrug.github.io/UE5_YasiuMath/md_Documentation_2About.html",
-  "FabURL": "com.epicgames.launcher://ue/Fab/product/2918e6a2-a380-48a5-90e8-d6c98dfde2a9",
-  "MarketplaceURL": "https://www.fab.com/listings/6f23ad4c-25b9-4818-a9eb-118e661d3032",
-  "SupportURL": "",
-  "CanContainContent": false,
-  "IsBetaVersion": true,
-  "IsExperimentalVersion": false,
-  "Installed": false,
-  "EngineVersion": "5.7",
-  "Modules": [
-    {
-      "Name": "YasiuMath",
-      "Type": "Runtime",
-      "LoadingPhase": "Default",
-      "PlatformAllowList": [
-        "Win64",
-        "Linux",
-        "Mac",
-        "Android",
-        "IOS"
-      ],
-      "PlatformDenyList": [],
-	  "WhitelistTargets": [
-				"Editor",
-				"Game",
-				"Client",
-				"Server"
-		]
-    }
-  ]
+    "FileVersion": 1,
+    "Version": 3,
+    "VersionName": "0.6.0",
+    "FriendlyName": "Yasiu Math",
+    "Description": "Math functions library",
+    "Category": "Math",
+    "CreatedBy": "Krug Grzegorz (Youshisu)",
+    "CreatedByURL": "https://github.com/GrzegorzKrug",
+    "DocsURL": "https://grzegorzkrug.github.io/UE5_YasiuMath",
+    "FabURL": "com.epicgames.launcher://ue/Fab/product/2918e6a2-a380-48a5-90e8-d6c98dfde2a9",
+    "MarketplaceURL": "https://www.fab.com/listings/6f23ad4c-25b9-4818-a9eb-118e661d3032",
+    "SupportURL": "",
+    "CanContainContent": false,
+    "IsBetaVersion": true,
+    "IsExperimentalVersion": false,
+    "Installed": false,
+    "EngineVersion": "5.6",
+    "Modules": [
+        {
+            "Name": "YasiuMath",
+            "Type": "Runtime",
+            "LoadingPhase": "Default",
+            "PlatformAllowList": [
+                "Win64",
+                "Linux",
+                "Mac",
+                "Android",
+                "IOS"
+            ],
+            "PlatformDenyList": [],
+            "WhitelistTargets": [
+                "Editor",
+                "Game",
+                "Client",
+                "Server"
+            ]
+        }
+    ]
 }
