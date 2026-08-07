@@ -14,13 +14,14 @@ var annotated_dup =
     ] ],
     [ "FBallisticInterceptor", "structFBallisticInterceptor.html", "structFBallisticInterceptor" ],
     [ "FBallisticObject", "structFBallisticObject.html", "structFBallisticObject" ],
-    [ "UPCG32_RNG", "classUPCG32__RNG.html", "classUPCG32__RNG" ],
-    [ "USquirrel13_RNG", "classUSquirrel13__RNG.html", "classUSquirrel13__RNG" ],
-    [ "USquirrel13_RNGComponent", "classUSquirrel13__RNGComponent.html", null ],
+    [ "UPCG32_RNGComponent", "classUPCG32__RNGComponent.html", null ],
+    [ "UPCG_RNG32", "classUPCG__RNG32.html", "classUPCG__RNG32" ],
+    [ "USquirrel13", "classUSquirrel13.html", "classUSquirrel13" ],
+    [ "USquirrel13_RNGComponent", "classUSquirrel13__RNGComponent.html", "classUSquirrel13__RNGComponent" ],
     [ "UYasiuMathFL_Algebra", "classUYasiuMathFL__Algebra.html", "classUYasiuMathFL__Algebra" ],
-    [ "UYasiuMathFL_Angle", "classUYasiuMathFL__Angle.html", "classUYasiuMathFL__Angle" ],
     [ "UYasiuMathFL_Ballistics", "classUYasiuMathFL__Ballistics.html", "classUYasiuMathFL__Ballistics" ],
     [ "UYasiuMathFL_ConvexHull", "classUYasiuMathFL__ConvexHull.html", "classUYasiuMathFL__ConvexHull" ],
+    [ "UYasiuMathFL_Rotation", "classUYasiuMathFL__Rotation.html", "classUYasiuMathFL__Rotation" ],
     [ "UYasiuMathFL_Trigonometry", "classUYasiuMathFL__Trigonometry.html", "classUYasiuMathFL__Trigonometry" ],
     [ "UYasiuMathFunctionLibrary", "classUYasiuMathFunctionLibrary.html", null ]
 ];

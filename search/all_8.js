@@ -13,7 +13,8 @@ var searchData=
   ['for_20c_20grouped_20into_3a_20name_20spaces_10',['List of all &lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;functions for C++&lt;/b&gt;&lt;/a&gt; grouped into: &lt;a href=&quot;namespaces.html&quot;&gt;&lt;b&gt;Name spaces&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md33',1,'']]],
   ['for_20coding_20in_20c_11',['For coding in C++',['../baseuse.html#autotoc_md32',1,'']]],
   ['function_20list_12',['&lt;a href=&quot;classUYasiuMathFunctionLibrary.html&quot;&gt;&lt;b&gt;Function list&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md25',1,'']]],
-  ['functions_13',['Functions',['../unreal.html#autotoc_md22',1,'Functions'],['../baseuse.html#autotoc_md24',1,'Functions']]],
+  ['functions_13',['Functions',['../baseuse.html#autotoc_md24',1,'']]],
   ['functions_14',['Math functions',['../index.html#autotoc_md7',1,'']]],
-  ['functions_20for_20c_20grouped_20into_3a_20name_20spaces_15',['List of all &lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;functions for C++&lt;/b&gt;&lt;/a&gt; grouped into: &lt;a href=&quot;namespaces.html&quot;&gt;&lt;b&gt;Name spaces&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md33',1,'']]]
+  ['functions_20for_20c_20grouped_20into_3a_20name_20spaces_15',['List of all &lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;functions for C++&lt;/b&gt;&lt;/a&gt; grouped into: &lt;a href=&quot;namespaces.html&quot;&gt;&lt;b&gt;Name spaces&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md33',1,'']]],
+  ['functions_20in_20bp_16',['Functions in BP',['../unreal.html#autotoc_md22',1,'']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Yasiu Math: UYasiuMathFL_Angle Class Reference</title>
+<title>Yasiu Math: UPCG_RNG32 Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('classUYasiuMathFL__Angle.html','','classUYasiuMathFL__Angle-members'); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classUPCG__RNG32.html','','classUPCG__RNG32-members'); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -123,92 +123,92 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classUYasiuMat
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">UYasiuMathFL_Angle Class Reference</div></div>
+  <div class="headertitle"><div class="title">UPCG_RNG32 Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>BP Function library related to rotation and angles.  
+<p>State based RNG, good for MonteCarlo sampling.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="BPFunLib__Angle_8h_source.html">BPFunLib_Angle.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="PCG__RNG_8h_source.html">PCG_RNG.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for UYasiuMathFL_Angle:</div>
+Inheritance diagram for UPCG_RNG32:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classUYasiuMathFL__Angle.png" usemap="#UYasiuMathFL_5FAngle_map" alt=""/>
-  <map id="UYasiuMathFL_5FAngle_map" name="UYasiuMathFL_5FAngle_map">
-<area href="classUYasiuMathFunctionLibrary.html" title="BP Function placeholder to group libraries in documentation." alt="UYasiuMathFunctionLibrary" shape="rect" coords="0,56,170,80"/>
-  </map>
-</div></div>
+  <img src="classUPCG__RNG32.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af0da3b4a3d8b1ed36610ac65f7c08ed7" id="r_af0da3b4a3d8b1ed36610ac65f7c08ed7"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#af0da3b4a3d8b1ed36610ac65f7c08ed7">ClipAngleToCycle</a> (double angle, double period)</td></tr>
-<tr class="memdesc:af0da3b4a3d8b1ed36610ac65f7c08ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize angle to its period, to be in range &lt;0, period&gt;.  <br /></td></tr>
-<tr class="memitem:a92b0fe313dbfa0fcf1e7f31ce81ddb9a" id="r_a92b0fe313dbfa0fcf1e7f31ce81ddb9a"><td class="memItemLeft">FVector&#160;</td><td class="memItemRight"><a class="el" href="#a92b0fe313dbfa0fcf1e7f31ce81ddb9a">RotateBoundingBox</a> (const FVector &amp;BoxSize, const FQuat &amp;Rotation)</td></tr>
-<tr class="memdesc:a92b0fe313dbfa0fcf1e7f31ce81ddb9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate Box and calculate new bounding box along same axes to fix old box inside.213123.  <br /></td></tr>
+<tr class="memitem:aa3b53da9f9bf68d5537bd26628c8f246" id="r_aa3b53da9f9bf68d5537bd26628c8f246"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa3b53da9f9bf68d5537bd26628c8f246">InitBP</a> (int64 StateIn, int64 StreamIn)</td></tr>
+<tr class="memdesc:aa3b53da9f9bf68d5537bd26628c8f246"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial set with 2 variables.  <br /></td></tr>
+<tr class="memitem:abca09fca0f87eceb0d7b1b851f18ef58" id="r_abca09fca0f87eceb0d7b1b851f18ef58"><td class="memItemLeft"><a id="abca09fca0f87eceb0d7b1b851f18ef58" name="abca09fca0f87eceb0d7b1b851f18ef58"></a>
+int64&#160;</td><td class="memItemRight"><b>GetState</b> () const</td></tr>
+<tr class="memdesc:abca09fca0f87eceb0d7b1b851f18ef58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current state in PCG. <br /></td></tr>
+<tr class="memitem:a7a88f47dfc68e54efb320e3c13739832" id="r_a7a88f47dfc68e54efb320e3c13739832"><td class="memItemLeft"><a id="a7a88f47dfc68e54efb320e3c13739832" name="a7a88f47dfc68e54efb320e3c13739832"></a>
+void&#160;</td><td class="memItemRight"><b>SetState</b> (int64 stateIn)</td></tr>
+<tr class="memdesc:a7a88f47dfc68e54efb320e3c13739832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set only state in PCG. <br /></td></tr>
+<tr class="memitem:a292342a8d145b292ce37f1010b4ffcd9" id="r_a292342a8d145b292ce37f1010b4ffcd9"><td class="memItemLeft"><a id="a292342a8d145b292ce37f1010b4ffcd9" name="a292342a8d145b292ce37f1010b4ffcd9"></a>
+void&#160;</td><td class="memItemRight"><b>SetNoiseStream</b> (int64 streamIn)</td></tr>
+<tr class="memdesc:a292342a8d145b292ce37f1010b4ffcd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set stream variable, used for generating next states. (must bee odd or will be changed to odd). <br /></td></tr>
+<tr class="memitem:a8dd87fefd6f87023304f1c39f9f96eab" id="r_a8dd87fefd6f87023304f1c39f9f96eab"><td class="memItemLeft"><a id="a8dd87fefd6f87023304f1c39f9f96eab" name="a8dd87fefd6f87023304f1c39f9f96eab"></a>
+double&#160;</td><td class="memItemRight"><b>GetNextDouble</b> ()</td></tr>
+<tr class="memdesc:a8dd87fefd6f87023304f1c39f9f96eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate next random number. <br /></td></tr>
+<tr class="memitem:afb6d508039f9d844995c4bc2422dfd61" id="r_afb6d508039f9d844995c4bc2422dfd61"><td class="memItemLeft"><a id="afb6d508039f9d844995c4bc2422dfd61" name="afb6d508039f9d844995c4bc2422dfd61"></a>
+double&#160;</td><td class="memItemRight"><b>GetCurrentDouble</b> () const</td></tr>
+<tr class="memdesc:afb6d508039f9d844995c4bc2422dfd61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return last random double in range &lt;0, 1&gt;. <br /></td></tr>
+<tr class="memitem:af1bc3d003accc98acd65fdb3e6f491ad" id="r_af1bc3d003accc98acd65fdb3e6f491ad"><td class="memItemLeft"><a id="af1bc3d003accc98acd65fdb3e6f491ad" name="af1bc3d003accc98acd65fdb3e6f491ad"></a>
+int&#160;</td><td class="memItemRight"><b>GetNextInt</b> (int A, int B)</td></tr>
+<tr class="memdesc:af1bc3d003accc98acd65fdb3e6f491ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get random value in range &lt;A, B&gt;. <br /></td></tr>
+<tr class="memitem:ab7b8a4c9a75a3a1d79ab2b8a419a65c2" id="r_ab7b8a4c9a75a3a1d79ab2b8a419a65c2"><td class="memItemLeft"><a id="ab7b8a4c9a75a3a1d79ab2b8a419a65c2" name="ab7b8a4c9a75a3a1d79ab2b8a419a65c2"></a>
+int&#160;</td><td class="memItemRight"><b>GetCurrentInt</b> (int A, int B) const</td></tr>
+<tr class="memdesc:ab7b8a4c9a75a3a1d79ab2b8a419a65c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get random value in range &lt;A, B&gt;. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a8cc98f2f407f599fb87fa9ab8ddd6f0c" id="r_a8cc98f2f407f599fb87fa9ab8ddd6f0c"><td class="memItemLeft"><a id="a8cc98f2f407f599fb87fa9ab8ddd6f0c" name="a8cc98f2f407f599fb87fa9ab8ddd6f0c"></a>
+uint64&#160;</td><td class="memItemRight"><b>stream</b> = 0xda3e39cb94b95bdbULL</td></tr>
+<tr class="memdesc:a8cc98f2f407f599fb87fa9ab8ddd6f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Noise for generation numbers. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>BP Function library related to rotation and angles. </p>
+<div class="textblock"><p>State based RNG, good for MonteCarlo sampling. </p>
+<ul>
+<li><b>NetReplicated</b>: Yes</li>
+<li><b>GameSave</b>: Yes </li>
+</ul>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="af0da3b4a3d8b1ed36610ac65f7c08ed7" name="af0da3b4a3d8b1ed36610ac65f7c08ed7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0da3b4a3d8b1ed36610ac65f7c08ed7">&#9670;&#160;</a></span>ClipAngleToCycle()</h2>
+<a id="aa3b53da9f9bf68d5537bd26628c8f246" name="aa3b53da9f9bf68d5537bd26628c8f246"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3b53da9f9bf68d5537bd26628c8f246">&#9670;&#160;</a></span>InitBP()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double UYasiuMathFL_Angle::ClipAngleToCycle </td>
+          <td class="memname">void UPCG_RNG32::InitBP </td>
           <td>(</td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>angle</em></span>, </td>
+          <td class="paramtype">int64</td>          <td class="paramname"><span class="paramname"><em>StateIn</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>period</em></span>&#160;)</td>
+          <td class="paramtype">int64</td>          <td class="paramname"><span class="paramname"><em>StreamIn</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Normalize angle to its period, to be in range &lt;0, period&gt;. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Does not support negative periods </dd></dl>
-
-</div>
-</div>
-<a id="a92b0fe313dbfa0fcf1e7f31ce81ddb9a" name="a92b0fe313dbfa0fcf1e7f31ce81ddb9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92b0fe313dbfa0fcf1e7f31ce81ddb9a">&#9670;&#160;</a></span>RotateBoundingBox()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">FVector UYasiuMathFL_Angle::RotateBoundingBox </td>
-          <td>(</td>
-          <td class="paramtype">const FVector &amp;</td>          <td class="paramname"><span class="paramname"><em>BoxSize</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const FQuat &amp;</td>          <td class="paramname"><span class="paramname"><em>Rotation</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Rotate Box and calculate new bounding box along same axes to fix old box inside.213123. </p>
-<p>Helps find suboptimal bounding box for rotated meshes </p><dl class="section note"><dt>Note</dt><dd>Function can take both Dimensions and Box Extent. </dd></dl>
+<p>Initial set with 2 variables. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">BoxSize</td><td>Dimension of Bounding box </td></tr>
-    <tr><td class="paramname">Rotation</td><td>Rotation to calculate </td></tr>
+    <tr><td class="paramname">StateIn</td><td>- model state </td></tr>
+    <tr><td class="paramname">StreamIn</td><td>- Noise pattern to generate states </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns size in same units as passed <b>BoxSize</b> </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Source/YasiuMath/Public/YasiuMathBP/<a class="el" href="BPFunLib__Angle_8h_source.html">BPFunLib_Angle.h</a></li>
+<li>Source/YasiuMath/Public/<a class="el" href="PCG__RNG_8h_source.html">PCG_RNG.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -223,7 +223,7 @@ Public Member Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="classUYasiuMathFL__Angle.html">UYasiuMathFL_Angle</a></li>
+    <li class="navelem"><a href="classUPCG__RNG32.html">UPCG_RNG32</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

@@ -56,7 +56,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"BPFunLib__Algebra_8h_source.html"
+"BPFunLib__Algebra_8h_source.html",
+"structYasiuMath_1_1Types_1_1Vec3.html#af703722fdfb96493a954b7e6c36c05e2"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

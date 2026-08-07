@@ -134,31 +134,39 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('YasiuMathUnrea
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceYasiuMath.html">YasiuMath</a> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceYasiuMath_1_1AngleUtils.html">AngleUtils</a> {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespaceYasiuMath_1_1AngleUtils.html#ac963a3abddcdac5e01665eaee5fc4743">   27</a></span>        FVector YASIUMATH_API <a class="code hl_function" href="namespaceYasiuMath_1_1AngleUtils.html#ac963a3abddcdac5e01665eaee5fc4743">RotateBoundingBox</a>( <span class="keyword">const</span> FVector&amp; Box, <span class="keyword">const</span> FQuat&amp; Rotation );</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceYasiuMath_1_1Algebra.html">Algebra</a> {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespaceYasiuMath_1_1Algebra.html#af156c73977374d796fe75e7d68c42844">   40</a></span>        FVector YASIUMATH_API <a class="code hl_function" href="namespaceYasiuMath_1_1Algebra.html#af156c73977374d796fe75e7d68c42844">RemapVector</a>(</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keyword">const</span> FVector&amp; Input,</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keyword">const</span> FVector2d&amp; InputRange,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keyword">const</span> FVector2d&amp; OutputRange,</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keyword">const</span> <span class="keywordtype">bool</span> ClampOutput</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        );</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="namespaceYasiuMath_1_1Algebra.html#a33c1973b951ab59354188f287c2800fa">   55</a></span>        FVector3f YASIUMATH_API <a class="code hl_function" href="namespaceYasiuMath_1_1Algebra.html#af156c73977374d796fe75e7d68c42844">RemapVector</a>(</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keyword">const</span> FVector3f&amp; Input,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keyword">const</span> FVector2f&amp; InputRange,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keyword">const</span> FVector2f&amp; OutputRange,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceYasiuMath_1_1Rotation.html">Rotation</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespaceYasiuMath_1_1Rotation.html#a5ffbadff411be38750a7a2c740d238fa">   27</a></span>        FVector YASIUMATH_API <a class="code hl_function" href="namespaceYasiuMath_1_1Rotation.html#a5ffbadff411be38750a7a2c740d238fa">RotateBoundingBox</a>( <span class="keyword">const</span> FVector&amp; Box, <span class="keyword">const</span> FQuat&amp; <a class="code hl_namespace" href="namespaceYasiuMath_1_1Rotation.html">Rotation</a> );</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespaceYasiuMath_1_1Rotation.html#acac5566c388c005deb3273af231d8025">   37</a></span>        <span class="keywordtype">void</span> YASIUMATH_API <a class="code hl_function" href="namespaceYasiuMath_1_1Rotation.html#acac5566c388c005deb3273af231d8025">RotateCameraWithoutRoll</a>(</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            FRotator&amp; CurrentRotator,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordtype">float</span> YawChange,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keywordtype">float</span> PitchChange,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keyword">const</span> <span class="keywordtype">float</span> PitchLimit = 85</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        );</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceYasiuMath_1_1Algebra.html">Algebra</a> {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="namespaceYasiuMath_1_1Algebra.html#af156c73977374d796fe75e7d68c42844">   55</a></span>        FVector YASIUMATH_API <a class="code hl_function" href="namespaceYasiuMath_1_1Algebra.html#af156c73977374d796fe75e7d68c42844">RemapVector</a>(</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keyword">const</span> FVector&amp; Input,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keyword">const</span> FVector2d&amp; InputRange,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keyword">const</span> FVector2d&amp; OutputRange,</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keyword">const</span> <span class="keywordtype">bool</span> ClampOutput</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        );</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
-<div class="ttc" id="anamespaceYasiuMath_1_1Algebra_html"><div class="ttname"><a href="namespaceYasiuMath_1_1Algebra.html">YasiuMath::Algebra</a></div><div class="ttdoc">Functions that calculate something using algebra.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:864</div></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="namespaceYasiuMath_1_1Algebra.html#a33c1973b951ab59354188f287c2800fa">   70</a></span>        FVector3f YASIUMATH_API <a class="code hl_function" href="namespaceYasiuMath_1_1Algebra.html#af156c73977374d796fe75e7d68c42844">RemapVector</a>(</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keyword">const</span> FVector3f&amp; Input,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keyword">const</span> FVector2f&amp; InputRange,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keyword">const</span> FVector2f&amp; OutputRange,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keyword">const</span> <span class="keywordtype">bool</span> ClampOutput</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        );</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
+<div class="ttc" id="anamespaceYasiuMath_1_1Algebra_html"><div class="ttname"><a href="namespaceYasiuMath_1_1Algebra.html">YasiuMath::Algebra</a></div><div class="ttdoc">Linear algebra problems.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:875</div></div>
 <div class="ttc" id="anamespaceYasiuMath_1_1Algebra_html_af156c73977374d796fe75e7d68c42844"><div class="ttname"><a href="namespaceYasiuMath_1_1Algebra.html#af156c73977374d796fe75e7d68c42844">YasiuMath::Algebra::RemapVector</a></div><div class="ttdeci">FVector YASIUMATH_API RemapVector(const FVector &amp;Input, const FVector2d &amp;InputRange, const FVector2d &amp;OutputRange, const bool ClampOutput)</div><div class="ttdoc">Remaps Value between input range to output range with optional clamping.</div></div>
-<div class="ttc" id="anamespaceYasiuMath_1_1AngleUtils_html"><div class="ttname"><a href="namespaceYasiuMath_1_1AngleUtils.html">YasiuMath::AngleUtils</a></div><div class="ttdoc">Collection of functions working with angles and rotation.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:45</div></div>
-<div class="ttc" id="anamespaceYasiuMath_1_1AngleUtils_html_ac963a3abddcdac5e01665eaee5fc4743"><div class="ttname"><a href="namespaceYasiuMath_1_1AngleUtils.html#ac963a3abddcdac5e01665eaee5fc4743">YasiuMath::AngleUtils::RotateBoundingBox</a></div><div class="ttdeci">FVector YASIUMATH_API RotateBoundingBox(const FVector &amp;Box, const FQuat &amp;Rotation)</div><div class="ttdoc">Rotate Box and calculate new bounding box along same axes to fit old box inside.</div></div>
+<div class="ttc" id="anamespaceYasiuMath_1_1Rotation_html"><div class="ttname"><a href="namespaceYasiuMath_1_1Rotation.html">YasiuMath::Rotation</a></div><div class="ttdoc">Manipulation of rotation or angles.</div><div class="ttdef"><b>Definition</b> YasiuMathLib.h:45</div></div>
+<div class="ttc" id="anamespaceYasiuMath_1_1Rotation_html_a5ffbadff411be38750a7a2c740d238fa"><div class="ttname"><a href="namespaceYasiuMath_1_1Rotation.html#a5ffbadff411be38750a7a2c740d238fa">YasiuMath::Rotation::RotateBoundingBox</a></div><div class="ttdeci">FVector YASIUMATH_API RotateBoundingBox(const FVector &amp;Box, const FQuat &amp;Rotation)</div><div class="ttdoc">Rotate Box and calculate new bounding box along same axes to fit old box inside.</div></div>
+<div class="ttc" id="anamespaceYasiuMath_1_1Rotation_html_acac5566c388c005deb3273af231d8025"><div class="ttname"><a href="namespaceYasiuMath_1_1Rotation.html#acac5566c388c005deb3273af231d8025">YasiuMath::Rotation::RotateCameraWithoutRoll</a></div><div class="ttdeci">void YASIUMATH_API RotateCameraWithoutRoll(FRotator &amp;CurrentRotator, float YawChange, float PitchChange, const float PitchLimit=85)</div><div class="ttdoc">Adjust rotator yaw and pitch and keeps roll 0.</div></div>
 <div class="ttc" id="anamespaceYasiuMath_html"><div class="ttname"><a href="namespaceYasiuMath.html">YasiuMath</a></div><div class="ttdoc">Categorized name spaces.</div><div class="ttdef"><b>Definition</b> Constants.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

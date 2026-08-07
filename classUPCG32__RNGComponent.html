@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Yasiu Math: UPCG32_RNG Class Reference</title>
+<title>Yasiu Math: UPCG32_RNGComponent Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('classUPCG32__RNG.html','','classUPCG32__RNG-members'); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('classUPCG32__RNGComponent.html','','classUPCG32__RNGComponent-members'); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -123,48 +123,26 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('classUPCG32__R
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">UPCG32_RNG Class Reference</div></div>
+  <div class="headertitle"><div class="title">UPCG32_RNGComponent Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>State based RNG, good for MonteCarlo sampling.  
+<p>Component with attached <a class="el" href="classUPCG__RNG32.html" title="UPCG_RNG32">UPCG_RNG32</a> object.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="PCG__RNG_8h_source.html">PCG_RNG.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for UPCG32_RNG:</div>
+Inheritance diagram for UPCG32_RNGComponent:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="classUPCG32__RNG.png" alt=""/>
+  <img src="classUPCG32__RNGComponent.png" alt=""/>
  </div></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a8ecce8d35957ccb149a742e515590386" id="r_a8ecce8d35957ccb149a742e515590386"><td class="memItemLeft"><a id="a8ecce8d35957ccb149a742e515590386" name="a8ecce8d35957ccb149a742e515590386"></a>
-void&#160;</td><td class="memItemRight"><b>InitBP</b> (int64 stateIn, int64 streamIn)</td></tr>
-<tr class="memdesc:a8ecce8d35957ccb149a742e515590386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set state and stream in PCG. <br /></td></tr>
-<tr class="memitem:ac71881380e38bf7f21f41ca062ba7953" id="r_ac71881380e38bf7f21f41ca062ba7953"><td class="memItemLeft"><a id="ac71881380e38bf7f21f41ca062ba7953" name="ac71881380e38bf7f21f41ca062ba7953"></a>
-void&#160;</td><td class="memItemRight"><b>SetState</b> (int64 stateIn)</td></tr>
-<tr class="memdesc:ac71881380e38bf7f21f41ca062ba7953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set only state in PCG. <br /></td></tr>
-<tr class="memitem:a6fe608cc6fbdabfce7733a9d0938231f" id="r_a6fe608cc6fbdabfce7733a9d0938231f"><td class="memItemLeft"><a id="a6fe608cc6fbdabfce7733a9d0938231f" name="a6fe608cc6fbdabfce7733a9d0938231f"></a>
-void&#160;</td><td class="memItemRight"><b>SetStream</b> (int64 streamIn)</td></tr>
-<tr class="memdesc:a6fe608cc6fbdabfce7733a9d0938231f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set stream variable, used for generating next states. <br /></td></tr>
-<tr class="memitem:a0138dc46d590a8af71c8dc117ac25686" id="r_a0138dc46d590a8af71c8dc117ac25686"><td class="memItemLeft"><a id="a0138dc46d590a8af71c8dc117ac25686" name="a0138dc46d590a8af71c8dc117ac25686"></a>
-double&#160;</td><td class="memItemRight"><b>GetNextDouble</b> ()</td></tr>
-<tr class="memdesc:a0138dc46d590a8af71c8dc117ac25686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate next random number. <br /></td></tr>
-<tr class="memitem:a8d41cbb954d62008ef2e59b7fc765327" id="r_a8d41cbb954d62008ef2e59b7fc765327"><td class="memItemLeft"><a id="a8d41cbb954d62008ef2e59b7fc765327" name="a8d41cbb954d62008ef2e59b7fc765327"></a>
-double&#160;</td><td class="memItemRight"><b>GetCurrentDouble</b> () const</td></tr>
-<tr class="memdesc:a8d41cbb954d62008ef2e59b7fc765327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return last random double in range &lt;0, 1&gt;. <br /></td></tr>
-<tr class="memitem:a9e81e697195520b04bd85102b1218c3d" id="r_a9e81e697195520b04bd85102b1218c3d"><td class="memItemLeft"><a id="a9e81e697195520b04bd85102b1218c3d" name="a9e81e697195520b04bd85102b1218c3d"></a>
-int&#160;</td><td class="memItemRight"><b>GetNextInt</b> (int A, int B)</td></tr>
-<tr class="memdesc:a9e81e697195520b04bd85102b1218c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get random value in range &lt;A, B&gt;. <br /></td></tr>
-<tr class="memitem:a184bd8ffc12f201aca8a39b283680d57" id="r_a184bd8ffc12f201aca8a39b283680d57"><td class="memItemLeft"><a id="a184bd8ffc12f201aca8a39b283680d57" name="a184bd8ffc12f201aca8a39b283680d57"></a>
-int&#160;</td><td class="memItemRight"><b>GetCurrentInt</b> (int A, int B) const</td></tr>
-<tr class="memdesc:a184bd8ffc12f201aca8a39b283680d57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get random value in range &lt;A, B&gt;. <br /></td></tr>
-</table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>State based RNG, good for MonteCarlo sampling. </p>
-<p>Supports serialization for saving/loading </p>
+<div class="textblock"><p>Component with attached <a class="el" href="classUPCG__RNG32.html" title="UPCG_RNG32">UPCG_RNG32</a> object. </p>
+<ul>
+<li><b>NetReplicated</b>: Yes</li>
+<li><b>GameSave</b>: Yes </li>
+</ul>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>Source/YasiuMath/Public/<a class="el" href="PCG__RNG_8h_source.html">PCG_RNG.h</a></li>
 </ul>
@@ -181,7 +159,7 @@ int&#160;</td><td class="memItemRight"><b>GetCurrentInt</b> (int A, int B) const
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="classUPCG32__RNG.html">UPCG32_RNG</a></li>
+    <li class="navelem"><a href="classUPCG32__RNGComponent.html">UPCG32_RNGComponent</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Yasiu Math: YasiuMath::AngleUtils Namespace Reference</title>
+<title>Yasiu Math: YasiuMath::Rotation Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('namespaceYasiuMath_1_1AngleUtils.html','',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('namespaceYasiuMath_1_1Rotation.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -123,26 +123,28 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('namespaceYasiu
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">YasiuMath::AngleUtils Namespace Reference</div></div>
+  <div class="headertitle"><div class="title">YasiuMath::Rotation Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Collection of functions working with angles and rotation.  
+<p>Manipulation of rotation or angles.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad625779ebb545a7d9532fa3164f767da" id="r_ad625779ebb545a7d9532fa3164f767da"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:ad625779ebb545a7d9532fa3164f767da template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="#ad625779ebb545a7d9532fa3164f767da">NormalizeAngleToPeriod</a> (T angle, T period=360.f)</td></tr>
-<tr class="memdesc:ad625779ebb545a7d9532fa3164f767da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize angle by removing full periods from value, result is in range &lt;0, period&gt;.  <br /></td></tr>
-<tr class="memitem:ac963a3abddcdac5e01665eaee5fc4743" id="r_ac963a3abddcdac5e01665eaee5fc4743"><td class="memItemLeft">FVector YASIUMATH_API&#160;</td><td class="memItemRight"><a class="el" href="#ac963a3abddcdac5e01665eaee5fc4743">RotateBoundingBox</a> (const FVector &amp;Box, const FQuat &amp;Rotation)</td></tr>
-<tr class="memdesc:ac963a3abddcdac5e01665eaee5fc4743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate Box and calculate new bounding box along same axes to fit old box inside.  <br /></td></tr>
+<tr class="memitem:a6574990a7770a795638b974033392827" id="r_a6574990a7770a795638b974033392827"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a6574990a7770a795638b974033392827 template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="#a6574990a7770a795638b974033392827">NormalizeAngleToPeriod</a> (T angle, T period=360.f)</td></tr>
+<tr class="memdesc:a6574990a7770a795638b974033392827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize angle to range &lt;0, period&gt;. Unit independent.  <br /></td></tr>
+<tr class="memitem:a5ffbadff411be38750a7a2c740d238fa" id="r_a5ffbadff411be38750a7a2c740d238fa"><td class="memItemLeft">FVector YASIUMATH_API&#160;</td><td class="memItemRight"><a class="el" href="#a5ffbadff411be38750a7a2c740d238fa">RotateBoundingBox</a> (const FVector &amp;Box, const FQuat &amp;Rotation)</td></tr>
+<tr class="memdesc:a5ffbadff411be38750a7a2c740d238fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate Box and calculate new bounding box along same axes to fit old box inside.  <br /></td></tr>
+<tr class="memitem:acac5566c388c005deb3273af231d8025" id="r_acac5566c388c005deb3273af231d8025"><td class="memItemLeft">void YASIUMATH_API&#160;</td><td class="memItemRight"><a class="el" href="#acac5566c388c005deb3273af231d8025">RotateCameraWithoutRoll</a> (FRotator &amp;CurrentRotator, float YawChange, float PitchChange, const float PitchLimit=85)</td></tr>
+<tr class="memdesc:acac5566c388c005deb3273af231d8025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust rotator yaw and pitch and keeps roll 0.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Collection of functions working with angles and rotation. </p>
+<div class="textblock"><p>Manipulation of rotation or angles. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ad625779ebb545a7d9532fa3164f767da" name="ad625779ebb545a7d9532fa3164f767da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad625779ebb545a7d9532fa3164f767da">&#9670;&#160;</a></span>NormalizeAngleToPeriod()</h2>
+<a id="a6574990a7770a795638b974033392827" name="a6574990a7770a795638b974033392827"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6574990a7770a795638b974033392827">&#9670;&#160;</a></span>NormalizeAngleToPeriod()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -150,7 +152,7 @@ Functions</h2></td></tr>
 template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T YasiuMath::AngleUtils::NormalizeAngleToPeriod </td>
+          <td class="memname">T YasiuMath::Rotation::NormalizeAngleToPeriod </td>
           <td>(</td>
           <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>angle</em></span>, </td>
         </tr>
@@ -162,19 +164,25 @@ template&lt;typename T&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Normalize angle by removing full periods from value, result is in range &lt;0, period&gt;. </p>
-<p>Angle normalization removes any excessive amount of periods from its value. </p><dl class="section warning"><dt>Warning</dt><dd>Does not support negative periods </dd></dl>
+<p>Normalize angle to range &lt;0, period&gt;. Unit independent. </p>
+<p>Normalization removes any excess periods.</p>
+<p>Angle can be negative. Period must be &gt; 0</p>
+<dl class="section note"><dt>Note</dt><dd>Example: </dd>
+<dd>
+Angle = <b>-12</b>, Period = <b>10</b> </dd>
+<dd>
+Result -&gt; <b>8</b> </dd></dl>
 
 </div>
 </div>
-<a id="ac963a3abddcdac5e01665eaee5fc4743" name="ac963a3abddcdac5e01665eaee5fc4743"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac963a3abddcdac5e01665eaee5fc4743">&#9670;&#160;</a></span>RotateBoundingBox()</h2>
+<a id="a5ffbadff411be38750a7a2c740d238fa" name="a5ffbadff411be38750a7a2c740d238fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ffbadff411be38750a7a2c740d238fa">&#9670;&#160;</a></span>RotateBoundingBox()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">FVector YASIUMATH_API YasiuMath::AngleUtils::RotateBoundingBox </td>
+          <td class="memname">FVector YASIUMATH_API YasiuMath::Rotation::RotateBoundingBox </td>
           <td>(</td>
           <td class="paramtype">const FVector &amp;</td>          <td class="paramname"><span class="paramname"><em>Box</em></span>, </td>
         </tr>
@@ -191,11 +199,53 @@ template&lt;typename T&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">Box</td><td>Dimension of Bounding box </td></tr>
-    <tr><td class="paramname">Rotation</td><td>Rotation to calculate </td></tr>
+    <tr><td class="paramname">Rotation</td><td><a class="el" href="namespaceYasiuMath_1_1Rotation.html" title="Manipulation of rotation or angles.">Rotation</a> to calculate </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns size in same units as passed <b>Box</b> </dd></dl>
+
+</div>
+</div>
+<a id="acac5566c388c005deb3273af231d8025" name="acac5566c388c005deb3273af231d8025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac5566c388c005deb3273af231d8025">&#9670;&#160;</a></span>RotateCameraWithoutRoll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void YASIUMATH_API YasiuMath::Rotation::RotateCameraWithoutRoll </td>
+          <td>(</td>
+          <td class="paramtype">FRotator &amp;</td>          <td class="paramname"><span class="paramname"><em>CurrentRotator</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>YawChange</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>PitchChange</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>PitchLimit</em></span><span class="paramdefsep"> = </span><span class="paramdefval">85</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adjust rotator yaw and pitch and keeps roll 0. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">CurrentRotator</td><td></td></tr>
+    <tr><td class="paramname">YawChange</td><td></td></tr>
+    <tr><td class="paramname">PitchChange</td><td></td></tr>
+    <tr><td class="paramname">PitchLimit</td><td>Limits pitch value to &lt;-PitchLimit, PitchLimit&gt; </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -212,7 +262,7 @@ template&lt;typename T&gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="namespaceYasiuMath.html">YasiuMath</a></li><li class="navelem"><a href="namespaceYasiuMath_1_1AngleUtils.html">AngleUtils</a></li>
+    <li class="navelem"><a href="namespaceYasiuMath.html">YasiuMath</a></li><li class="navelem"><a href="namespaceYasiuMath_1_1Rotation.html">Rotation</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

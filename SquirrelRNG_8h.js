@@ -1,5 +1,5 @@
 var SquirrelRNG_8h =
 [
-    [ "USquirrel13_RNG", "classUSquirrel13__RNG.html", "classUSquirrel13__RNG" ],
-    [ "USquirrel13_RNGComponent", "classUSquirrel13__RNGComponent.html", null ]
+    [ "USquirrel13", "classUSquirrel13.html", "classUSquirrel13" ],
+    [ "USquirrel13_RNGComponent", "classUSquirrel13__RNGComponent.html", "classUSquirrel13__RNGComponent" ]
 ];

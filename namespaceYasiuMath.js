@@ -5,10 +5,6 @@ var namespaceYasiuMath =
       [ "RemapVector", "namespaceYasiuMath_1_1Algebra.html#af156c73977374d796fe75e7d68c42844", null ],
       [ "RemapVector", "namespaceYasiuMath_1_1Algebra.html#a33c1973b951ab59354188f287c2800fa", null ]
     ] ],
-    [ "AngleUtils", "namespaceYasiuMath_1_1AngleUtils.html", [
-      [ "NormalizeAngleToPeriod", "namespaceYasiuMath_1_1AngleUtils.html#ad625779ebb545a7d9532fa3164f767da", null ],
-      [ "RotateBoundingBox", "namespaceYasiuMath_1_1AngleUtils.html#ac963a3abddcdac5e01665eaee5fc4743", null ]
-    ] ],
     [ "Ballistics", "namespaceYasiuMath_1_1Ballistics.html", "namespaceYasiuMath_1_1Ballistics" ],
     [ "Constants", "namespaceYasiuMath_1_1Constants.html", [
       [ "EPSILON", "namespaceYasiuMath_1_1Constants.html#adeb8ac4e74bfd7486ff00fbac09203d2", null ],
@@ -19,6 +15,11 @@ var namespaceYasiuMath =
     ] ],
     [ "Numeric", "namespaceYasiuMath_1_1Numeric.html", [
       [ "IsNearly0", "namespaceYasiuMath_1_1Numeric.html#a746dd89ab7474b979047dd888ec51d81", null ]
+    ] ],
+    [ "Rotation", "namespaceYasiuMath_1_1Rotation.html", [
+      [ "NormalizeAngleToPeriod", "namespaceYasiuMath_1_1Rotation.html#a6574990a7770a795638b974033392827", null ],
+      [ "RotateBoundingBox", "namespaceYasiuMath_1_1Rotation.html#a5ffbadff411be38750a7a2c740d238fa", null ],
+      [ "RotateCameraWithoutRoll", "namespaceYasiuMath_1_1Rotation.html#acac5566c388c005deb3273af231d8025", null ]
     ] ],
     [ "Trigonometry", "namespaceYasiuMath_1_1Trigonometry.html", [
       [ "FindMinimalRadiusForIntersectingTangentsOnArc", "namespaceYasiuMath_1_1Trigonometry.html#a9f5895c931517c1d7ac65ebaa525a9a6", null ],
