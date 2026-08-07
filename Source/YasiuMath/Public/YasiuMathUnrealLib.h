@@ -14,7 +14,7 @@
 
 
 namespace YasiuMath {
-    namespace AngleUtils {
+    namespace Rotation {
         /**
          * @brief Rotate Box and calculate new bounding box along same axes to fit old box inside.
          * 
@@ -25,6 +25,21 @@ namespace YasiuMath {
          * @return Returns size in same units as passed **Box**
          */
         FVector YASIUMATH_API RotateBoundingBox( const FVector& Box, const FQuat& Rotation );
+
+        /**
+         * @brief Adjust rotator yaw and pitch and keeps roll 0.
+         * 
+         * @param CurrentRotator 
+         * @param YawChange 
+         * @param PitchChange 
+         * @param PitchLimit Limits pitch value to <-PitchLimit, PitchLimit> 
+         */
+        void YASIUMATH_API RotateCameraWithoutRoll(
+            FRotator& CurrentRotator,
+            float YawChange,
+            float PitchChange,
+            const float PitchLimit = 85
+        );
     }
 
 

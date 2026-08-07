@@ -13,7 +13,7 @@
 
 
 /**
-* @brief BP Function library containing algebra functions
+* @brief BP Function library: common linear algebra problems
  */
 UCLASS(BlueprintType)
 class UYasiuMathFL_Algebra : public UYasiuMathFunctionLibrary {
@@ -34,7 +34,7 @@ public:
      */
     UFUNCTION(BlueprintCallable, BlueprintPure, Category="Math|Yasiu|Algebra", meta=(DisplayName="Remap"))
     float RemapFloat( const float Value, float MinIn, float MaxIn, float MinOut, float MaxOut, bool ClampOut = true );
-    
+
     /**
      * @brief Remap double value to given range with optional clamping
      * 

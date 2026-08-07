@@ -24,10 +24,10 @@ public class YasiuMath : ModuleRules
 			// Enable additional checks used for Engine modules
 			bTreatAsEngineModule = true;
 		}
-		// bUseUnity = false;
-		// PCHUsage = ModuleRules.PCHUsageMode.NoPCHs;
+		// /* Temp override */
+		// bUseUnity = true;
+		// PCHUsage = PCHUsageMode.NoPCHs;
 		// bTreatAsEngineModule = true;
-
 
 		PublicIncludePaths.AddRange(
 			new string[]

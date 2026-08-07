@@ -19,10 +19,10 @@
  * @brief BP Function placeholder to group libraries in documentation.
  * 
  * Check individual library:
- * - \ref UYasiuMathFL_Angle
  * - \ref UYasiuMathFL_Algebra
  * - \ref UYasiuMathFL_Ballistics
  * - \ref UYasiuMathFL_ConvexHull
+ * - \ref UYasiuMathFL_Rotation
  * - \ref UYasiuMathFL_Trigonometry
  */
 UCLASS(BlueprintType)

@@ -7,7 +7,7 @@
 #include "CoreMinimal.h"
 #include "YasiuMathLib.h"
 
-FVector YasiuMath::AngleUtils::RotateBoundingBox( const FVector& Box, const FQuat& Rotation )
+FVector YasiuMath::Rotation::RotateBoundingBox( const FVector& Box, const FQuat& Rotation )
 {
     // FVector BoxSize = BoxSize / 2;
 
@@ -21,6 +21,16 @@ FVector YasiuMath::AngleUtils::RotateBoundingBox( const FVector& Box, const FQua
     NewBox.Z = FMath::Abs(X.Z) * Box.X + FMath::Abs(Y.Z) * Box.Y + FMath::Abs(Z.Z) * Box.Z;
 
     return NewBox;
+}
+
+void YasiuMath::Rotation::RotateCameraWithoutRoll( FRotator& CurrentRotator, float YawChange, float PitchChange, const float PitchLimit )
+{
+    const float tempYaw = CurrentRotator.Yaw + YawChange;
+    const float tempPitch = CurrentRotator.Pitch + PitchChange;
+
+    CurrentRotator.Yaw = tempYaw;
+    CurrentRotator.Pitch = FMath::Clamp(tempPitch, -PitchLimit, PitchLimit);
+    CurrentRotator.Roll = 0;
 }
 
 FVector YasiuMath::Algebra::RemapVector(

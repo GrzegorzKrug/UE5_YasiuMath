@@ -9,20 +9,30 @@
 #include "YasiuMathBP//YasiuMathBPLibrary.h"
 
 
-#include "BPFunLib_Angle.generated.h"
+#include "BPFunLib_Rotation.generated.h"
 
 
 /**
 * @brief BP Function library related to rotation and angles
  */
 UCLASS(BlueprintType)
-class UYasiuMathFL_Angle : public UYasiuMathFunctionLibrary {
+class UYasiuMathFL_Rotation : public UYasiuMathFunctionLibrary {
     GENERATED_BODY()
 
 
 public:
-    /** @brief Normalize angle to its period, to be in range <0, period>
-     *  @warning Does not support negative periods
+    /** @brief Normalize angle to range <0, period>.
+     * Unit independent.
+     * 
+     * Normalization removes any excess periods.
+     * 
+     * Angle can be negative.
+     * Period must be > 0
+     * 
+     * @note Example: 
+     * @note Angle = **-12**, Period = **10**
+     * @note Result -> **8**
+     * 
      */
     UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Angle")
     double ClipAngleToCycle( double angle, double period );
@@ -38,4 +48,16 @@ public:
      */
     UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Angle")
     FVector RotateBoundingBox( const FVector& BoxSize, const FQuat& Rotation );
+
+    /**
+     * @brief Adjust rotator yaw and pitch and keeps roll 0.
+     * 
+     * @param CurrentRotator 
+     * @param YawChange 
+     * @param PitchChange 
+     * @param PitchLimit Limits pitch value to <-PitchLimit, PitchLimit> 
+     * @return New Rotator
+     */
+    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Angle")
+    FRotator RotateCamera( const FRotator& CurrentRotator, float YawChange, float PitchChange, const float PitchLimit = 85 );
 };

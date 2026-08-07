@@ -128,6 +128,7 @@ public:
      * @param TargetVelocity Target input velocity
      * @param InterceptSpeed Interceptor speed in any direction
      * @param OutLocation Output intercept location
+     * @param InterceptTime
      * @return Flag indicating if output location is valid.
      */
     UFUNCTION(BlueprintCallable, BlueprintPure=false, Category="Math|Yasiu|Ballistic")
@@ -135,13 +136,15 @@ public:
         const FVector& TargetPosition,
         const FVector& TargetVelocity,
         double InterceptSpeed,
-        FVector& OutLocation
+        FVector& OutLocation,
+        double& InterceptTime
     );
 
     /** @brief Prediction function for objects with variable speed and resistance
      * @param Target Struct with dynamic parameters of target
      * @param Interceptor Struct with dynamic parameters of interceptor
-     * @param OutLocation Output intercept location
+     * @param InterceptLocation Output intercept location
+     * @param InterceptTime Estimated time to hit
      * @param MaxQueryTime Time range used to find solution.
      * @param DeltaStep Single calculation time. Keep in small range <0.01, 1> (for accuracy). 
      * @return Flag indicating if output location is valid.
@@ -150,8 +153,9 @@ public:
     bool Intercept_Dynamic(
         const FBallisticObject& Target,
         const FBallisticInterceptor Interceptor,
-        FVector& OutLocation,
-        float MaxQueryTime = 10,
-        float DeltaStep = 0.1
+        FVector& InterceptLocation,
+        double& InterceptTime,
+        double MaxQueryTime = 10,
+        double DeltaStep = 0.1
     );
 };

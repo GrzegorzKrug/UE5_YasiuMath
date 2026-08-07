@@ -15,24 +15,24 @@ namespace YasiuMath {
     namespace Ballistics {
         template<typename T>
         bool InterceptMissile_Linear(
+            const Vec3<T>& TargetPosition,
+            const Vec3<T>& TargetVelocity,
+            const T BulletSpeed,
             Vec3<T>& InterceptLocation,
-            const Vec3<T>& MissilePosition,
-            const Vec3<T>& MissileVelocity,
-            const double BulletSpeed
+            T& ImpactTime
         )
         {
-            T a = MissileVelocity.Dot(MissileVelocity) - BulletSpeed * BulletSpeed;
-            T b = 2.0f * MissilePosition.Dot(MissileVelocity);
-            T c = MissilePosition.Dot(MissilePosition);
+            T a = TargetVelocity.Dot(TargetVelocity) - BulletSpeed * BulletSpeed;
+            T b = 2.0f * TargetPosition.Dot(TargetVelocity);
+            T c = TargetPosition.Dot(TargetPosition);
 
-            T t;
 
             if ( fabs(a) < 1e-6f ) {
                 // Bullet speed ~= target speed
                 if ( fabs(b) < 1e-6f )
                     return false; // No solution
-                t = -c / b;
-                if ( t < 0 )
+                ImpactTime = -c / b;
+                if ( ImpactTime < 0 )
                     return false;
             }
             else {
@@ -44,56 +44,65 @@ namespace YasiuMath {
                 T t2 = (-b - sqrtD) / (2.0f * a);
 
                 // Choose smallest positive t
-                t = (t1 > 0 && t2 > 0) ? fminf(t1, t2) : (t1 > 0 ? t1 : t2);
-                if ( t < 0 )
+                ImpactTime = (t1 > 0 && t2 > 0) ? fminf(t1, t2) : (t1 > 0 ? t1 : t2);
+                if ( ImpactTime < 0 )
                     return false; // Both solutions negative
             }
-
-            InterceptLocation = MissilePosition + MissileVelocity * t;
+            InterceptLocation = TargetPosition + TargetVelocity * ImpactTime;
             return true;
         }
 
         template<typename T>
         bool InterceptMissile_Dynamic(
-            Vec3<T>& PredictedLocation,
-            ProjectileDynamicState<T> Missile,
+            ProjectileDynamicState<T> Target,
             const InterceptorParams<T>& Interceptor,
-            const double MaxQueryTime,
-            const double DeltaTime
+            const T MaxQueryTime,
+            const T StepTime,
+            const T AccurateStepTime,
+            Vec3<T>& HitLocation,
+            T& HitTime
         )
         {
             bool calculationValid = false;
-            // Vec3<double>
-            Vec3<double> InitialOffset = Interceptor.Position;
-            // Bullet.BulletPosition = PositionOffset;
-            Missile.Position -= InitialOffset;
+            const auto HalfStepTime = StepTime / 2;
+            const auto HalfAccurateStepTime = AccurateStepTime / 2;
 
-            double Velocity = Interceptor.InitialSpeed;
-            double Range = 0;
+            Vec3<T> InitialOffset = Interceptor.Position;
+            Target.Position -= InitialOffset;
 
-            if ( DeltaTime < YasiuMath::Constants::EPSILON ) {
+            T Velocity = Interceptor.InitialSpeed;
+            T Range = 0;
+
+            if ( StepTime < YasiuMath::Constants::EPSILON ) {
                 /* Too Small Eps */
-                throw std::runtime_error("Delta time in Intercept is too small");
+                // throw std::runtime_error("Delta time in Intercept is too small");
+                return false;
             }
 
-            unsigned int StepsN = static_cast<unsigned int>(floor(MaxQueryTime / DeltaTime));
+            unsigned int StepsMax = static_cast<unsigned int>(floor(MaxQueryTime / StepTime));
 
             /* 1-Indexed for time calculation */
-            // auto QueryTime = 0;
-            for ( unsigned int i = 1; i < StepsN + 1; i++ ) {
+            unsigned int Steps = 0;
+            auto PrevMissile = Target;
+            T PrevRange = 0;
+            T PrevVelocity = Velocity;
+
+            for ( Steps = 1; Steps < (StepsMax + 1); Steps++ ) {
                 /* Missile update */
-                Missile.DiscreteStep(DeltaTime);
+                Target.DiscreteStep(StepTime);
 
                 /* Interceptor state update */
-                const auto oldVel = Velocity;
-                Velocity += Interceptor.Acceleration * DeltaTime;
+                const auto OldVel = Velocity;
+                Velocity += Interceptor.Acceleration * StepTime;
+
 
                 if ( Interceptor.AirResistance > 0 ) {
                     /* Velocity is always positive */
-                    const auto drag = Velocity * Velocity * Interceptor.AirResistance * DeltaTime;
+                    const auto TrapezVelocity = (OldVel + Velocity) / 2;
+                    const auto drag = TrapezVelocity * TrapezVelocity * Interceptor.AirResistance * StepTime;
                     Velocity -= drag;
                     if ( Velocity <= 0 ) {
-                        return calculationValid;
+                        return false;
                     }
                 }
 
@@ -101,19 +110,68 @@ namespace YasiuMath {
                     Velocity = Interceptor.MaxSpeed;
                 }
 
-                /* Dynamic update must be iterative */
-                Range += (Velocity + oldVel) * 0.5 * DeltaTime;
+                /* Must use velocity affected by drag */
+                Range += (Velocity + OldVel) * HalfStepTime;
 
-                if ( Missile.Position.Length() <= Range ) {
-                    // QueryTime = i * DeltaTime;
+                if ( Target.Position.Length() <= Range ) {
                     calculationValid = true;
                     /* Reached estimation */
                     break;
                 }
+
+                PrevMissile = Target;
+                PrevRange = Range;
+                PrevVelocity = Velocity;
             }
 
-            /* TODO : fix overshoot calculation */
-            PredictedLocation = Missile.Position + InitialOffset;
+            /* Phase 2 backward + Accurate estimation */
+            if ( AccurateStepTime > 0 && AccurateStepTime < StepTime ) {
+                Steps -= 1;
+                Target = PrevMissile;
+                Range = PrevRange;
+                Velocity = PrevVelocity;
+
+                /* SUBSTEP LOOP Duplicate */
+                unsigned int AccSteps = 1;
+                for ( AccSteps = 1; AccSteps < 100000; AccSteps++ ) {
+                    /* Missile update */
+                    Target.DiscreteStep(AccurateStepTime);
+
+                    /* Interceptor state update */
+                    const auto OldVel = Velocity;
+                    Velocity += Interceptor.Acceleration * AccurateStepTime;
+
+
+                    if ( Interceptor.AirResistance > 0 ) {
+                        /* Velocity is always positive */
+                        const auto TrapezVelocity = (OldVel + Velocity) / 2;
+                        const auto drag = TrapezVelocity * TrapezVelocity * Interceptor.AirResistance * AccurateStepTime;
+                        Velocity -= drag;
+                        if ( Velocity <= 0 ) {
+                            return false;
+                        }
+                    }
+
+                    if ( Velocity > Interceptor.MaxSpeed && Interceptor.MaxSpeed > 0 ) {
+                        Velocity = Interceptor.MaxSpeed;
+                    }
+
+                    /* Dynamic update must be iterative */
+                    Range += (Velocity + OldVel) * HalfAccurateStepTime;
+
+                    if ( Target.Position.Length() <= Range ) {
+                        calculationValid = true;
+                        /* Reached estimation */
+                        break;
+                    }
+                }
+                HitTime = Steps * StepTime + AccSteps * AccurateStepTime;
+            }
+            else {
+                HitTime = Steps * StepTime;
+            }
+
+            HitLocation = Target.Position + InitialOffset;
             return calculationValid;
         }
     }

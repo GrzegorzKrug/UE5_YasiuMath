@@ -41,8 +41,8 @@ namespace YasiuMath {
     using Vec3d = YasiuMath::Types::Vec3<double>;
 
 
-    /** @brief Collection of functions working with angles and rotation */
-    namespace AngleUtils {
+    /** @brief Manipulation of rotation or angles */
+    namespace Rotation {
         template<typename T>
         T Degrees2Radians( T degree )
         {
@@ -56,15 +56,26 @@ namespace YasiuMath {
         }
 
         /**
-         * @brief Normalize angle by removing full periods from value, result is in range <0, period>
+         * @brief Normalize angle to range <0, period>.
+         * Unit independent.
          * 
-         * Angle normalization removes any excessive amount of periods from its value.
-         * @warning Does not support negative periods
+         * Normalization removes any excess periods.
+         * 
+         * Angle can be negative.
+         * Period must be > 0
+         * 
+         * @note Example: 
+         * @note Angle = **-12**, Period = **10**
+         * @note Result -> **8**
+         * 
          */
         template<typename T>
         T NormalizeAngleToPeriod( T angle, T period = 360.f )
         {
-            if ( period < 0 ) { return angle; }
+            if ( period < 0 ) {
+                return angle;
+            }
+
             T temp = static_cast<T>(fmod(angle, period));
             if ( temp < 0 ) {
                 temp += period;
@@ -75,7 +86,7 @@ namespace YasiuMath {
 
 
     /**
-     * @brief Functions that calculate trigonometry problems in 2D / 3D space
+     * @brief Trigonometry problems in 2D or 3D space
      */
     namespace Trigonometry {
         /**
@@ -257,7 +268,7 @@ namespace YasiuMath {
 
 
     /**
-     * @brief Collection of convex hull functions and helper functions
+     * @brief Convex hull functions and helper functions
      */
     namespace ConvexHull {
         /* @cond INTERNAL */
@@ -563,7 +574,7 @@ namespace YasiuMath {
     }
 
 
-    /** @brief Projectile movement functions */
+    /** @brief Linear and dynamic objects simulation / prediction */
     namespace Ballistics {
         /** @brief Ballistic state. Can move in time with \ref DiscreteStep function
          *
@@ -651,8 +662,8 @@ namespace YasiuMath {
                     /* Technically should never occur
                      * Case(Accel=0) is computed before (Accel 0 can't fall into negative delta condition)
                      */
-                    throw std::runtime_error("Delta negative. Can't return false. Solution is not Valid at all.");
-                    // return false;
+                    // throw std::runtime_error("Delta negative. Can't return false. Solution is not Valid at all.");
+                    return {};
                 }
                 else if ( fabs(delta) <= YasiuMath::Constants::EPSILON ) {
                     /* 1 solution close to ~0 */
@@ -685,9 +696,10 @@ namespace YasiuMath {
                  * ----------> Time
                  * X - Area is velocity -> Triangle formula 
                  */
+
                 /* TimeMax<0 to catch error when limit is set 0, not to use <= to not use clamping */
                 if ( QueryTime < TimeToMaxSpeed || TimeToMaxSpeed < 0 ) {
-                    /* Travel to MaxSpeed only */
+                    /* Keep acceleration, Cap not reached */
                     ProjectileState.Position += ProjectileState.Velocity * QueryTime + ProjectileState.Acceleration * (0.5 *
                         QueryTime * QueryTime);
                     ProjectileState.Velocity += ProjectileState.Acceleration * QueryTime;
@@ -701,6 +713,7 @@ namespace YasiuMath {
 
                     /* Normalize to Max */
                     ProjectileState.Velocity = ProjectileState.Velocity.NormalizeInPlace() * ProjectileState.MaxSpeed;
+
                     /* Max Speed reached */
                     float RestofTime = QueryTime - TimeToMaxSpeed;
                     if ( RestofTime > 0 ) {
@@ -731,8 +744,11 @@ namespace YasiuMath {
 
                 /* Friction as last step to damp all forces */
                 if ( AirFrictionCoeff > 0 ) {
+                    /* Using unclamped value for reduction */
+                    const auto TrapezVelocity = (oldVel + Velocity) / 2;
+
                     /* Preserve sign! not loose it with square */
-                    Vec3<T> drag = (Velocity * Velocity.Abs()) * AirFrictionCoeff * deltaTime;
+                    Vec3<T> drag = (TrapezVelocity * TrapezVelocity.Abs()) * AirFrictionCoeff * deltaTime;
                     if ( drag.Length() >= Velocity.Length() ) {
                         Velocity = 0;
                     }
@@ -741,14 +757,18 @@ namespace YasiuMath {
                     }
                 }
 
-
                 /* Speed limit */
-                /* Not need for checking Velocity!=0 safety/optimization */
-                if ( MaxSpeed > 0 && Velocity.Length() > MaxSpeed ) {
+                const auto CurSpeed = Velocity.Length();
+                if ( MaxSpeed > 0 && CurSpeed > MaxSpeed ) {
                     Velocity = Velocity.NormalizeInPlace() * MaxSpeed;
-                }
 
-                Position += (oldVel + Velocity) * (deltaTime * 0.5);
+                    /* Trapezoid approximation of position from acceleration */
+                    Position += (oldVel + Velocity) * deltaTime * 0.5;
+                }
+                else {
+                    /* Trapezoid approximation of position from acceleration */
+                    Position += (oldVel + Velocity) * 0.5 * deltaTime;
+                }
             };
 
 
@@ -809,19 +829,105 @@ namespace YasiuMath {
 
         /** @brief Linear movement with linear velocity, Fast: O(1) 
         * 
-        * @param InterceptLocation Position relative to bullet starting position
         * @param MissilePosition Current Relative position
         * @param MissileVelocity Current Vector
         * @param BulletSpeed Maximal bullet speed
+        * @param InterceptLocation Position relative to bullet starting position
+        * @param ImpactTime Predicted time
         * @return Flag if solution is valid
         */
         template<typename T>
         bool InterceptMissile_Linear(
-            Types::Vec3<T>& InterceptLocation,
             const Types::Vec3<T>& MissilePosition,
             const Types::Vec3<T>& MissileVelocity,
-            const double BulletSpeed
+            const T BulletSpeed,
+            Types::Vec3<T>& InterceptLocation,
+            T& ImpactTime
         );
+
+        /** @brief Linear movement with linear velocity, Fast: O(1) 
+        * 
+        * @param TargetPosition Current Relative position
+        * @param TargetVelocity Current Vector
+        * @param BulletSpeed Maximal bullet speed
+        * @param InterceptLocation Position relative to bullet starting position
+        * @return Flag if solution is valid
+        */
+        template<typename T>
+        bool InterceptMissile_Linear(
+            const Vec3<T>& TargetPosition,
+            const Vec3<T>& TargetVelocity,
+            const T BulletSpeed,
+            Vec3<T>& InterceptLocation
+        )
+        {
+            T TempTime;
+            return InterceptMissile_Linear(TargetPosition, TargetVelocity, BulletSpeed, InterceptLocation, TempTime);
+        }
+
+        /** @brief Iterative state prediction. Returns first possible intercept location and time.
+         *
+         * Accuracy is based on DeltaTime.
+         *
+         *  Minimal arguments.
+         *
+         *  @note There is no iteration limit. Loop is restricted by **N = QueryTime / DeltaTime**
+         *  @note Suggested **Delta** range: <0.1 , 1>. Depending on space and distance.
+         * 
+         * @param Target State of missile
+         * @param Interceptor Params of interceptor
+         * @param MaxQueryTime Prediction time to intercept
+         * @param StepTime Prediction resolution, how big steps to make. Smaller steps = more steps.
+         * @param PredictedLocation Predicted intercept location
+         * @return Flag is solution found estimated intercept location
+         */
+        template<typename T>
+        bool InterceptMissile_Dynamic(
+            ProjectileDynamicState<T> Target,
+            const InterceptorParams<T>& Interceptor,
+            const T MaxQueryTime,
+            const T StepTime,
+            Types::Vec3<T>& PredictedLocation
+        )
+        {
+            T TempTime = 0;
+            constexpr T val = 0;
+            return InterceptMissile_Dynamic(Target, Interceptor, MaxQueryTime, StepTime, val, PredictedLocation, TempTime);
+        };
+
+
+        /** @brief Iterative state prediction. Returns first possible intercept location and time.
+         *
+         * Accuracy is based on DeltaTime.
+         *
+         *
+         *  Return HitTime arguments.
+         *  
+         *  @note There is no iteration limit. Loop is restricted by **N = QueryTime / DeltaTime**
+         *  @note Suggested **Delta** range: <0.1 , 1>. Depending on space and distance.
+         * 
+         * @param Target State of missile
+         * @param Interceptor Params of interceptor
+         * @param MaxQueryTime Prediction time to intercept
+         * @param StepTime Prediction resolution, how big steps to make. Smaller steps = more steps.
+         * @param HitLocation Predicted intercept location
+         * @param HitTime Estimated time
+         * @return Flag is solution found estimated intercept location
+         */
+        template<typename T>
+        bool InterceptMissile_Dynamic(
+            ProjectileDynamicState<T> Target,
+            const InterceptorParams<T>& Interceptor,
+            const T MaxQueryTime,
+            const T StepTime,
+            Types::Vec3<T>& HitLocation,
+            T& HitTime
+        )
+        {
+            T TempTime = 0;
+            constexpr T val = 0;
+            return InterceptMissile_Dynamic(Target, Interceptor, MaxQueryTime, StepTime, val, HitLocation, HitTime);
+        };
 
         /** @brief Iterative state prediction. Returns first possible intercept location and time.
          *
@@ -831,25 +937,64 @@ namespace YasiuMath {
          *  @note There is no iteration limit. Loop is restricted by **N = QueryTime / DeltaTime**
          *  @note Suggested **Delta** range: <0.1 , 1>. Depending on space and distance.
          * 
-         * @param PredictedLocation Predicted intercept location
-         * @param Missile State of missile
+         * @param Target State of missile
          * @param Interceptor Params of interceptor
          * @param MaxQueryTime Prediction time to intercept
-         * @param DeltaTime Prediction resolution, how big steps to make. Smaller steps = more steps.
+         * @param StepTime Prediction resolution, how big steps to make. Smaller steps = more steps.
+         * @param AccurateStepTime Stepsize used in last phase to determine accurate result, 0=Skip accurate phase 
+         * @param HitLocation Predicted intercept location
          * @return Flag is solution found estimated intercept location
          */
         template<typename T>
         bool InterceptMissile_Dynamic(
-            Types::Vec3<T>& PredictedLocation,
-            ProjectileDynamicState<T> Missile,
+            ProjectileDynamicState<T> Target,
             const InterceptorParams<T>& Interceptor,
-            double MaxQueryTime = 10,
-            double DeltaTime = 0.1
+            const T MaxQueryTime,
+            const T StepTime,
+            const T AccurateStepTime,
+            Types::Vec3<T>& HitLocation
+        )
+        {
+            T TempTime = 0;
+            return InterceptMissile_Dynamic(Target, Interceptor, MaxQueryTime, StepTime, AccurateStepTime, HitLocation, TempTime);
+        };
+
+        /// FULL IMPL
+        /** @brief Iterative state prediction. Returns first possible intercept location and time.
+         *
+         * Accuracy is based on StepTime and slightly overshoot position.
+         * 
+         * AccurateStepTime will iterate positon in last step to evaluate more precise hit. 
+         * AccurateStepTime=0 will not do better estimation.
+         *
+         * Implementation with all arguments.
+         *
+         *  @note There is no iteration limit. Loop is restricted by **N = QueryTime / DeltaTime**
+         *  @note Suggested **Delta** range: <0.1 , 1>. Depending on space and distance.
+         * 
+         * @param Target State of missile
+         * @param Interceptor Params of interceptor
+         * @param MaxQueryTime Prediction time to intercept
+         * @param StepTime Prediction resolution, how big steps to make. Smaller steps = more steps.
+         * @param AccurateStepTime SmallStep used to estimate more accurate results
+         * @param HitLocation Predicted intercept location
+         * @param HitTime Estimated time
+         * @return Flag is solution found estimated intercept location
+         */
+        template<typename T>
+        bool InterceptMissile_Dynamic(
+            ProjectileDynamicState<T> Target,
+            const InterceptorParams<T>& Interceptor,
+            const T MaxQueryTime,
+            const T StepTime,
+            const T AccurateStepTime,
+            Types::Vec3<T>& HitLocation,
+            T& HitTime
         );
     }
 
 
-    /** @brief Any functions that don't have category */
+    /** @brief Generic functions */
     namespace Numeric {
         /** @brief Checks if value is nearly 0, \ref YasiuMath::Constants::EPSILON */
         template<typename T>
@@ -860,7 +1005,7 @@ namespace YasiuMath {
     }
 
 
-    /** @brief Functions that calculate something using algebra */
+    /** @brief Linear algebra problems */
     namespace Algebra {
         /**
          * @brief Remaps Value between **input** range to **output** range with optional clamping.

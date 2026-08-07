@@ -95,15 +95,17 @@ bool UYasiuMathFL_Ballistics::Intercept_Linear(
     const FVector& TargetPosition,
     const FVector& TargetVelocity,
     double InterceptSpeed,
-    FVector& OutLocation
+    FVector& OutLocation,
+    double& InterceptTime
 )
 {
     YasiuMath::Types::Vec3<double> InterpLoc;
     const auto ret = YasiuMath::Ballistics::InterceptMissile_Linear(
-        InterpLoc,
         YasiuMath::Types::Vec3<double>(TargetPosition.X, TargetPosition.Y, TargetPosition.Z),
         YasiuMath::Types::Vec3<double>(TargetVelocity.X, TargetVelocity.Y, TargetVelocity.Z),
-        InterceptSpeed
+        InterceptSpeed,
+        InterpLoc,
+        InterceptTime
     );
 
     OutLocation.X = InterpLoc.X;
@@ -115,26 +117,26 @@ bool UYasiuMathFL_Ballistics::Intercept_Linear(
 bool UYasiuMathFL_Ballistics::Intercept_Dynamic(
     const FBallisticObject& Target,
     const FBallisticInterceptor Interceptor,
-    FVector& OutLocation,
-    float MaxQueryTime,
-    float DeltaStep
+    FVector& InterceptLocation,
+    double& InterceptTime,
+    double MaxQueryTime,
+    double DeltaStep
 )
 {
     YasiuMath::Types::Vec3<double> InterpLoc;
-    const auto tg = Target.ToDynamicObject();
-    const auto inc = Interceptor.ToInterceptor();
-    
-     const auto ret = YasiuMath::Ballistics::InterceptMissile_Dynamic(
-        InterpLoc,
-        tg,
-        inc,
+    const auto targ = Target.ToDynamicObject();
+    const auto intcp = Interceptor.ToInterceptor();
+    const auto ret = YasiuMath::Ballistics::InterceptMissile_Dynamic<double>(
+        targ,
+        intcp,
         MaxQueryTime,
-        DeltaStep
+        DeltaStep,
+        InterpLoc,
+        InterceptTime
     );
 
-    OutLocation.X = InterpLoc.X;
-    OutLocation.Y = InterpLoc.Y;
-    OutLocation.Z = InterpLoc.Z;
+    InterceptLocation.X = InterpLoc.X;
+    InterceptLocation.Y = InterpLoc.Y;
+    InterceptLocation.Z = InterpLoc.Z;
     return ret;
-    
 }

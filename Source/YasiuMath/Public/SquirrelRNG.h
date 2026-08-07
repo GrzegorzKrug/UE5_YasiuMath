@@ -15,24 +15,28 @@
 
 
 /**
- * @brief Random number generator. Seedable. Gives better random values than epic generator.
+ * @brief Random number generator. Seedable.
  * 
- * Supports serialization for saving/loading
+ * Gives better random values than epic generator.
+ * 
+ * - **NetReplicated**: Yes
+ * - **GameSave**: Yes
+ * 
  */
 UCLASS(BlueprintType, Blueprintable, DefaultToInstanced)
-class YASIUMATH_API USquirrel13_RNG : public UObject {
+class YASIUMATH_API USquirrel13 : public UObject {
 public:
     GENERATED_BODY()
 
-    USquirrel13_RNG() {};
+    USquirrel13() {};
 
-    USquirrel13_RNG( unsigned int seed )
+    USquirrel13( unsigned int seed )
         : m_seed(seed), init_seed(seed) {};
 
-    USquirrel13_RNG( int position, unsigned int seed )
+    USquirrel13( int position, unsigned int seed )
         : m_position(position), m_seed(seed), init_position(position), init_seed(seed) {};
 
-    USquirrel13_RNG( int position, unsigned int seed, unsigned int variant )
+    USquirrel13( int position, unsigned int seed, unsigned int variant )
         : m_position(position), m_seed(seed), m_variant(variant), init_position(position), init_seed(seed) {};
 
     virtual void GetLifetimeReplicatedProps( TArray<class FLifetimeProperty>& OutLifetimeProps ) const override;
@@ -42,20 +46,19 @@ public:
 
 
 protected:
-    UPROPERTY(Replicated)
+    UPROPERTY(Replicated, SaveGame)
     int m_position{0};
 
-    UPROPERTY(Replicated)
-    unsigned int m_seed{1};
+    UPROPERTY(Replicated, SaveGame)
+    uint32 m_seed{1};
 
     /** @brief variable related to selected noise variant */
-    UPROPERTY(Replicated)
+    UPROPERTY(Replicated, SaveGame)
     int m_variant{0};
 
     UPROPERTY(Replicated)
-    unsigned int init_position = 0;
+    uint32 init_position = 0;
 
-    // UPROPERTY(BlueprintReadWrite)
     UPROPERTY(Replicated)
     int32 init_seed = 0;
 
@@ -67,12 +70,6 @@ public:
      */
     UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void InitBP( int seed, int position = 0 );
-
-    /** @internal Return current uint32_t without changing position */
-    uint32_t get_current_random() const;
-
-    /** @internal Move position by 1 and return uint32_t */
-    uint32_t get_next_random();
 
     /** @brief Return random value scaled to integer range <min, max> at current position */
     UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
@@ -115,41 +112,49 @@ public:
     UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void SetSeed( int new_seed );
 
-    /** @brief Internal noise variants (it is not initialized), default=0, max=5
+    /** @brief Internal noise variants (it is not initialized, but saved), default=0, max=5
      * Invalid variants will use default noise.
      */
     UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void SetNoiseVariant( int newVariant = 0 );
 
-    /** @brief Reset to internal initial values */
+    /** @brief Reset to internal initial values, InitBP must be used before! */
     UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void ResetSeedPos();
 
 
 protected:
-    /** @brief Noise variant */
-    static uint32_t RNG_0( int position, unsigned int seed );
+    /** @internal Return current uint32 without changing position */
+    virtual uint32 get_current_random() const;
+
+    /** @internal Move position by 1 and return uint32 */
+    uint32 get_next_random();
 
     /** @brief Noise variant */
-    static uint32_t RNG_1( int position, unsigned int seed );
+    static uint32 RNG_0( int position, unsigned int seed );
 
     /** @brief Noise variant */
-    static uint32_t RNG_2( int position, unsigned int seed );
+    static uint32 RNG_1( int position, unsigned int seed );
 
     /** @brief Noise variant */
-    static uint32_t RNG_3( int position, unsigned int seed );
+    static uint32 RNG_2( int position, unsigned int seed );
 
     /** @brief Noise variant */
-    static uint32_t RNG_4( int position, unsigned int seed );
+    static uint32 RNG_3( int position, unsigned int seed );
 
     /** @brief Noise variant */
-    static uint32_t RNG_5( int position, unsigned int seed );
+    static uint32 RNG_4( int position, unsigned int seed );
+
+    /** @brief Noise variant */
+    static uint32 RNG_5( int position, unsigned int seed );
 };
 
 
-/** @brief Component with attached \ref USquirrel13_RNG object
+/** @brief Component with attached \ref USquirrel13 object
  * 
- * Component has Network replication support */
+ * - **NetReplicated**: Yes
+ * - **GameSave**: Yes
+ */
 UCLASS(BlueprintType, Blueprintable, meta=(BlueprintSpawnableComponent), DefaultToInstanced)
 class YASIUMATH_API USquirrel13_RNGComponent : public UActorComponent {
     GENERATED_BODY()
@@ -161,8 +166,13 @@ public:
     virtual void GetLifetimeReplicatedProps( TArray<class FLifetimeProperty>& OutLifetimeProps ) const override;
 
     UPROPERTY(BlueprintReadWrite, Replicated, Category="Yasiu|RNG")
-    TObjectPtr<USquirrel13_RNG> RNG;
+    TObjectPtr<USquirrel13> RNG;
 
+    /** @brief Initialize values of RNG
+     * 
+     * @param seed 
+     * @param pos 
+     */
     UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void InitBP( int seed, int pos = 0 );
 

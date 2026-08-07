@@ -20,7 +20,7 @@
 
 /** @brief Categorized name spaces */
 namespace YasiuMath {
-    /** @brief Helper types used in algorithms */
+    /** @brief Generic Types used in library */
     namespace Types {
         /**
          * @brief Pair-like type, Helper for point description in ConvexHull algorithm
@@ -135,7 +135,7 @@ namespace YasiuMath {
 
         /** @brief Structure reflecting vector of size 3, Templated Type
          *
-         * Has all basic operators like **+ - * /**
+         * Vector implements arithmetic operators **
          * Has dot and cross product functions.
          */
         template<typename T>
@@ -156,12 +156,9 @@ namespace YasiuMath {
                 : X(xin), Y(yin), Z(zin) {};
 
             template<typename U>
-            Vec3( const Vec3<U>& other )
+            constexpr Vec3( const Vec3<U>& other )
                 : X(static_cast<T>(other.X)), Y(static_cast<T>(other.Y)), Z(static_cast<T>(other.Z)) {}
 
-            // template<typename U>
-            // Vec3( const Vec3<U>& other )
-            // : X(static_cast<T>(other.X)), Y(static_cast<T>(other.Y)), Z(static_cast<T>(other.Z)) {}
 
             // Addition
             Vec3 operator+( const Vec3& other ) const
@@ -291,6 +288,7 @@ namespace YasiuMath {
                 return X * X + Y * Y + Z * Z;
             }
 
+            /** @brief Default Pythagoras Length */
             T Length() const
             {
                 return static_cast<T>(std::sqrt(LengthSquared()));

@@ -1,57 +1,133 @@
 /* 
- * Copyright (c) 2025 Grzegorz Krug.
+ * Copyright (c) 2026 Grzegorz Krug.
  * All Rights Reserved.
  */
 
+
 #include "PCG_RNG.h"
 
-uint32_t UPCG32_RNG::next()
+
+#include "Net/UnrealNetwork.h"
+
+
+void UPCG_RNG32::GetLifetimeReplicatedProps( TArray<class FLifetimeProperty>& OutLifetimeProps ) const
 {
-    uint64_t oldstate = state;
-    state = oldstate * 6364136223846793005ULL + (stream | 1);
-
-    uint32_t xorshifted = ((oldstate >> 18u) ^ oldstate) >> 27u;
-    uint32_t rot = oldstate >> 59u;
-
-    // last = (xorshifted >> rot) | (xorshifted << ((-rot) & 31));
-    last = (xorshifted >> rot) | (xorshifted << ((32 - rot) & 31));
-    return last;
+    UObject::GetLifetimeReplicatedProps(OutLifetimeProps);
+    DOREPLIFETIME(UPCG_RNG32, state);
+    DOREPLIFETIME(UPCG_RNG32, stream);
 }
 
-
-void UPCG32_RNG::InitBP( int64 stateIn, int64 streamIn )
+void UPCG_RNG32::InitBP( int64 StateIn, int64 StreamIn )
 {
-    SetState(stateIn);
-    SetStream(streamIn);
+    SetState(StateIn);
+    SetNoiseStream(StreamIn);
 }
 
-double UPCG32_RNG::GetNextDouble()
+int64 UPCG_RNG32::GetState() const
 {
-    return static_cast<double>(next()) / UINT32_MAX;
+    return static_cast<int64>(state);
 }
 
-double UPCG32_RNG::GetCurrentDouble() const
+void UPCG_RNG32::SetState( int64 stateIn )
 {
-    return static_cast<double>(last) / UINT32_MAX;
+    state = static_cast<uint64>(stateIn);
 }
 
-int UPCG32_RNG::GetNextInt( int A, int B )
+void UPCG_RNG32::SetNoiseStream( int64 streamIn )
 {
-    next();
+    stream = static_cast<uint64>(streamIn);
+    if ( !(stream % 2) ) {
+        stream |= 1;
+    }
+}
+
+double UPCG_RNG32::GetNextDouble()
+{
+    return static_cast<double>(NextNumber()) / UINT32_MAX;
+}
+
+double UPCG_RNG32::GetCurrentDouble() const
+{
+    return static_cast<double>(CurrentNumber()) / UINT32_MAX;
+}
+
+int UPCG_RNG32::GetNextInt( int A, int B )
+{
+    NextNumber();
     return GetCurrentInt(A, B);
 }
 
-int UPCG32_RNG::GetCurrentInt( int A, int B ) const
+int UPCG_RNG32::GetCurrentInt( int A, int B ) const
 {
-    auto diff = B - A;
-    return static_cast<int>(GetCurrentDouble() * diff + A);
+    const int diff = B - A;
+    return FMath::RoundToInt(GetCurrentDouble() * diff) + A;
 }
 
-
-void UPCG32_RNG::Serialize( FArchive& Ar )
+uint32 UPCG_RNG32::CurrentNumber() const
 {
-    UObject::Serialize(Ar);
-    Ar << state;
-    Ar << stream;
-    Ar << last;
+    const uint64 OldState = state;
+    uint32 xorshifted = ((OldState >> 18u) ^ OldState) >> 27u;
+    uint32 rot = OldState >> 59u;
+
+    // last = (xorshifted >> rot) | (xorshifted << ((-rot) & 31));
+    return (xorshifted >> rot) | (xorshifted << ((32 - rot) & 31));
+}
+
+uint32 UPCG_RNG32::NextNumber()
+{
+    const uint64 OldState = state;
+    state = OldState * 6364136223846793005ULL + (stream | 1);
+
+    return CurrentNumber();
+}
+
+UPCG32_RNGComponent::UPCG32_RNGComponent()
+{
+    RNG = CreateDefaultSubobject<UPCG_RNG32>(TEXT("PCG_RNG"));
+}
+
+void UPCG32_RNGComponent::GetLifetimeReplicatedProps( TArray<class FLifetimeProperty>& OutLifetimeProps ) const
+{
+    Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+    DOREPLIFETIME(UPCG32_RNGComponent, RNG);
+}
+
+void UPCG32_RNGComponent::InitBP( int64 State, int64 Noise )
+{
+    RNG->InitBP(State, Noise);
+}
+
+int64 UPCG32_RNGComponent::GetState() const
+{
+    return RNG->GetState();
+}
+
+void UPCG32_RNGComponent::SetState( int64 State )
+{
+    RNG->SetState(State);
+}
+
+void UPCG32_RNGComponent::SetStreamNoise( int64 Noise )
+{
+    RNG->SetNoiseStream(Noise);
+}
+
+int UPCG32_RNGComponent::GetCurrentInt( int min, int max ) const
+{
+    return RNG->GetCurrentInt(min, max);
+}
+
+int UPCG32_RNGComponent::GetNextInt( int min, int max )
+{
+    return RNG->GetNextInt(min, max);
+}
+
+double UPCG32_RNGComponent::GetCurrentDouble() const
+{
+    return RNG->GetCurrentDouble();
+}
+
+double UPCG32_RNGComponent::GetNextDouble()
+{
+    return RNG->GetNextDouble();
 }

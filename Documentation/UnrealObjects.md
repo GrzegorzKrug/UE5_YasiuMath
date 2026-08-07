@@ -4,24 +4,25 @@
 
 ### UObjects
 
-1. \ref USquirrel13_RNG
-2. \ref UPCG32_RNG
+1. \ref USquirrel13  *(Replicated,GameSave)*
+2. \ref UPCG_RNG32 *(Replicated,GameSave)*
 
 ### Actor components
 
-1. \ref USquirrel13_RNGComponent
+1. \ref USquirrel13_RNGComponent *(Replicated,GameSave)*
+2. \ref UPCG32_RNGComponent *(Replicated,GameSave)*
 
-### Strcuts
+### Strcutures
 
 1. \ref FBallisticObject
 2. \ref FBallisticInterceptor
 
-### Functions
+### Functions in BP
 
 1. \ref UYasiuMathFunctionLibrary
- - \ref UYasiuMathFL_Angle
  - \ref UYasiuMathFL_Algebra
  - \ref UYasiuMathFL_Ballistics
  - \ref UYasiuMathFL_ConvexHull
+ - \ref UYasiuMathFL_Rotation
  - \ref UYasiuMathFL_Trigonometry
 

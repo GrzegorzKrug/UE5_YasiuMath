@@ -1,18 +1,26 @@
 #pragma once
 
+
+/* Testing only current and future builds */
+#include "Runtime/Launch/Resources/Version.h"
+#if WITH_DEV_AUTOMATION_TESTS && ENGINE_MAJOR_VERSION == 5  &&  ENGINE_MINOR_VERSION >= 6
+
+
 #include <vector>
 #include "Misc/AutomationTest.h"
 #include "Serialization/BufferArchive.h"
 
 
 #include "YasiuMathBP/BPFunLib_Algebra.h"
-#include "YasiuMathBP/BPFunLib_Angle.h"
+#include "YasiuMathBP/BPFunLib_Rotation.h"
 #include "YasiuMathBP/BPFunLib_ConvexHull.h"
 #include "YasiuMathBP/BPFunLib_Trigonometry.h"
+
 
 #include "SquirrelRNG.h"
 #include "PCG_RNG.h"
 #include "Serialization/MemoryReader.h"
+
 
 /*
  * 3 Plugins in game project
@@ -32,7 +40,7 @@ bool BasicCallTests1::RunTest( const FString& Parameters )
     TArray<int> resultsInt{};
     TArray<FVector2D> resultsVector2{};
 
-    auto* MathLib = NewObject<UYasiuMathFL_Angle>();
+    auto* MathLib = NewObject<UYasiuMathFL_Rotation>();
     MathLib->ClipAngleToCycle(5, 5);
     MathLib->ClipAngleToCycle(350, 10);
 
@@ -114,7 +122,7 @@ IMPLEMENT_SIMPLE_AUTOMATION_TEST(
 bool MathBoxRotation::RunTest( const FString& Parameters )
 {
     constexpr float YASIU_EPS = 0.0001f;
-    auto* MathLib = NewObject<UYasiuMathFL_Angle>();
+    auto* MathLib = NewObject<UYasiuMathFL_Rotation>();
 
     FVector Box{100, 100, 100};
     FRotator rotator{};
@@ -145,7 +153,7 @@ IMPLEMENT_SIMPLE_AUTOMATION_TEST(
 bool MathBoxPillarRotation::RunTest( const FString& Parameters )
 {
     constexpr float YASIU_EPS = 0.0001f;
-    auto* MathLib = NewObject<UYasiuMathFL_Angle>();
+    auto* MathLib = NewObject<UYasiuMathFL_Rotation>();
 
     FVector Box{65, 150, 352};
     FRotator rotator{0, 0, 0};
@@ -186,7 +194,7 @@ IMPLEMENT_SIMPLE_AUTOMATION_TEST(
 bool RNG_Test::RunTest( const FString& Parameters )
 {
     constexpr double YASIU_EPS = 0.0001;
-    auto* RNG = NewObject<USquirrel13_RNG>();
+    auto* RNG = NewObject<USquirrel13>();
 
     int seed = 123;
     RNG->SetPosition(5);
@@ -229,7 +237,7 @@ bool RNG_Test::RunTest( const FString& Parameters )
     arch2.SetIsLoading(true);
     arch2.SetIsSaving(false);
 
-    auto RNG_2 = NewObject<USquirrel13_RNG>();
+    auto RNG_2 = NewObject<USquirrel13>();
     RNG_2->Serialize(arch2);
     TestNearlyEqual(TEXT("Is same after loading 1?"), valAfterSave, RNG_2->GetNextDouble(), YASIU_EPS);
     // TestNearlyEqual(TEXT("Is same after loading 2?"), valAfterSave, RNG_2->GetNextDouble(), YASIU_EPS);
@@ -248,42 +256,90 @@ bool RNG_Test::RunTest( const FString& Parameters )
 };
 
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(
-    RNG_Test2,
-    "Plugins.Yasiu.Math.RNG.Base2",
+    RNG_Generation_1,
+    "Plugins.Yasiu.Math.RNG.Generation1",
     EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter
 )
 
 
 /* TESTING VALUES */
-bool RNG_Test2::RunTest( const FString& Parameters )
+bool RNG_Generation_1::RunTest( const FString& Parameters )
 {
     constexpr double YASIU_EPS = 0.0001;
-    auto* RNG = NewObject<USquirrel13_RNG>();
+    auto* RNG = NewObject<USquirrel13>();
+
+    const int seed = 66321;
+    const int pos = 4312;
+
+    RNG->InitBP(seed, pos);
+    double VerifyVal1 = RNG->GetNextDouble();
+
+    TestNearlyEqual(TEXT("Is same number7?"), RNG->GetCurrentDouble(), VerifyVal1, YASIU_EPS);
+
+    RNG->ResetSeedPos();
+    TestNearlyEqual(TEXT("Is same number3?"), RNG->GetNextDouble(), VerifyVal1, YASIU_EPS);
+
+    RNG->OffsetPosition(-1);
+    TestNearlyEqual(TEXT("Is same number4?"), RNG->GetNextDouble(), VerifyVal1, YASIU_EPS);
+
+    RNG->ResetSeedPos();
+    auto VerifyVal2 = RNG->GetNextDouble();
+    // TestNearlyEqual(TEXT("Is same number1?"), RNG->GetNextDouble(), VerifyVal, YASIU_EPS);
+    TestNearlyEqual(TEXT("Is same number5?"), RNG->GetCurrentDouble(), VerifyVal2, YASIU_EPS);
+    RNG->OffsetPosition(-1);
+    TestNearlyEqual(TEXT("Is same number6?"), RNG->GetNextDouble(), VerifyVal2, YASIU_EPS);
+
+    RNG->InitBP(442424, 15151);
+    double VerifyInt = RNG->GetNextInt(-5000, 5000);
+    RNG->ResetSeedPos();
+    TestNearlyEqual(TEXT("Is same INT number1?"), RNG->GetNextInt(-5000, 5000), VerifyInt, YASIU_EPS);
+    TestNearlyEqual(TEXT("Is same INT number2?"), RNG->GetCurrentInt(-5000, 5000), VerifyInt, YASIU_EPS);
+
+    return true;
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(
+    RNG_Generation_2,
+    "Plugins.Yasiu.Math.RNG.Generation2",
+    EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter
+)
+
+
+/* TESTING VALUES */
+bool RNG_Generation_2::RunTest( const FString& Parameters )
+{
+    constexpr double YASIU_EPS = 0.0001;
+    auto* RNG = NewObject<UPCG_RNG32>();
 
     const int seed = 66321;
     const int pos = 4312;
 
     RNG->InitBP(seed, pos);
 
-    double VerifyVal1 = RNG->get_next_random();
-    TestNearlyEqual(TEXT("Is same number7?"), RNG->get_current_random(), VerifyVal1, YASIU_EPS);
+    double VerifyVal1 = RNG->GetNextDouble();
+    TestNearlyEqual(TEXT("Is same number7?"), RNG->GetCurrentDouble(), VerifyVal1, YASIU_EPS);
 
-    RNG->ResetSeedPos();
-    TestNearlyEqual(TEXT("Is same number3?"), RNG->get_next_random(), VerifyVal1, YASIU_EPS);
+    RNG->InitBP(seed, pos);
+    TestNearlyEqual(TEXT("Is same number3?"), RNG->GetNextDouble(), VerifyVal1, YASIU_EPS);
 
-    RNG->OffsetPosition(-1);
-    TestNearlyEqual(TEXT("Is same number5?"), RNG->get_next_random(), VerifyVal1, YASIU_EPS);
+    // RNG->OffsetPosition(-1);
+    // TestNearlyEqual(TEXT("Is same number5?"), RNG->GetNextDouble(), VerifyVal1, YASIU_EPS);
 
-    RNG->ResetSeedPos();
-    auto VerifyVal2 = RNG->GetNextDouble();
-    // TestNearlyEqual(TEXT("Is same number1?"), RNG->GetNextDouble(), VerifyVal, YASIU_EPS);
-    TestNearlyEqual(TEXT("Is same number4?"), RNG->GetCurrentDouble(), VerifyVal2, YASIU_EPS);
-    RNG->OffsetPosition(-1);
-    TestNearlyEqual(TEXT("Is same number5?"), RNG->GetNextDouble(), VerifyVal2, YASIU_EPS);
+    RNG->InitBP(seed, pos);
+    auto Verify2_Val = RNG->GetNextDouble();
+
+    const auto Verify2_Next = RNG->GetNextDouble();
+    // TestNearlyEqual(TEXT("Is same number4?"), RNG->GetCurrentDouble(), Verify2_Val, YASIU_EPS);
+
+    RNG->InitBP(seed, pos);
+    TestNearlyEqual(TEXT("Is same number5?"), RNG->GetNextDouble(), Verify2_Val, YASIU_EPS);
+    TestNearlyEqual(TEXT("Is same number6?"), RNG->GetCurrentDouble(), Verify2_Val, YASIU_EPS);
+    TestNearlyEqual(TEXT("Is same number7?"), RNG->GetNextDouble(), Verify2_Next, YASIU_EPS);
 
     RNG->InitBP(442424, 15151);
     double VerifyInt = RNG->GetNextInt(-5000, 5000);
-    RNG->ResetSeedPos();
+
+    RNG->InitBP(442424, 15151);
     TestNearlyEqual(TEXT("Is same INT number1?"), RNG->GetNextInt(-5000, 5000), VerifyInt, YASIU_EPS);
     TestNearlyEqual(TEXT("Is same INT number2?"), RNG->GetCurrentInt(-5000, 5000), VerifyInt, YASIU_EPS);
 
@@ -300,7 +356,7 @@ IMPLEMENT_SIMPLE_AUTOMATION_TEST(
 inline bool RNG_BucketTest1::RunTest( const FString& Parameters )
 {
     constexpr double YASIU_EPS = 0.0001;
-    auto* RNG = NewObject<USquirrel13_RNG>();
+    auto* RNG = NewObject<USquirrel13>();
 
 
     /* Hardcoded lazy case */
@@ -406,7 +462,7 @@ IMPLEMENT_SIMPLE_AUTOMATION_TEST(
 inline bool RNG_BucketTest2::RunTest( const FString& Parameters )
 {
     constexpr double YASIU_EPS = 0.0001;
-    auto* RNG = NewObject<UPCG32_RNG>();
+    auto* RNG = NewObject<UPCG_RNG32>();
 
 
     /* Hardcoded lazy case */
@@ -498,3 +554,7 @@ inline bool RNG_BucketTest2::RunTest( const FString& Parameters )
 
     return true;
 }
+
+
+// #endif
+#endif
