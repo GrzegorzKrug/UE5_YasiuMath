@@ -12,8 +12,8 @@ var searchData=
   ['spreadpointsontangentbyxy_9',['SpreadPointsOnTangentByXY',['../classUYasiuMathFL__Trigonometry.html#a91adcca7f3686db54a097d1ed928c9e5',1,'UYasiuMathFL_Trigonometry::SpreadPointsOnTangentByXY()'],['../namespaceYasiuMath_1_1Trigonometry.html#aa7bc14fbaed48606f6c94bc97d46e0a7',1,'YasiuMath::Trigonometry::SpreadPointsOnTangentByXY()']]],
   ['squirrelrng_2eh_10',['SquirrelRNG.h',['../SquirrelRNG_8h.html',1,'']]],
   ['start_11',['Start',['../mainpage.html',1,'Quick Start'],['../index.html#autotoc_md9',1,'Start']]],
-  ['strcutures_12',['Strcutures',['../unreal.html#autotoc_md21',1,'']]],
-  ['stream_13',['stream',['../classUPCG__RNG32.html#a8cc98f2f407f599fb87fa9ab8ddd6f0c',1,'UPCG_RNG32']]],
+  ['stream_12',['stream',['../classUPCG__RNG32.html#a8cc98f2f407f599fb87fa9ab8ddd6f0c',1,'UPCG_RNG32']]],
+  ['structures_13',['Structures',['../unreal.html#autotoc_md21',1,'']]],
   ['sum_14',['Sum',['../structYasiuMath_1_1Types_1_1Vec3.html#a3fbb40cc4bd2c1e5ceff5fb29bf8e52a',1,'YasiuMath::Types::Vec3']]],
   ['supported_20for_20bp_15',['Unreal types supported for BP',['../unreal.html#autotoc_md18',1,'']]]
 ];
