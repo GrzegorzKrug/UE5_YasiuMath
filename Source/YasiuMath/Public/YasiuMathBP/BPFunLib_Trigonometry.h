@@ -30,8 +30,8 @@ public:
      * @param Y Position Y
      * @param spreadDistance Distance to spread in one direction from tangent point
      */
-    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trigonometry")
-    void SpreadPointsOnTangentByXY( TArray<FVector2D>& out, const double X, const double Y, const double spreadDistance );
+    UFUNCTION(BlueprintCallable, Category = "YasiuMath|Trigonometry")
+    static void SpreadPointsOnTangentByXY( TArray<FVector2D>& out, const double X, const double Y, const double spreadDistance );
 
     /**
      * @brief Spread points on tangent line to arc located by angle and radius of given arc.
@@ -43,8 +43,8 @@ public:
      * @param radius Radius of arc
      * @param spreadDistance Distance to spread in one direction from tangent point
      */
-    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trigonometry")
-    void SpreadPointsOnTangentByAngleRadius( TArray<FVector2D>& out, double angle, double radius, double spreadDistance );
+    UFUNCTION(BlueprintCallable, Category = "YasiuMath|Trigonometry")
+    static void SpreadPointsOnTangentByAngleRadius( TArray<FVector2D>& out, double angle, double radius, double spreadDistance );
 
 
     /**
@@ -60,7 +60,7 @@ public:
      * @param beta Tangent point location defined by angle
      * @param symmetricWidth Width from tangent point to intersect
      */
-    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trigonometry")
+    UFUNCTION(BlueprintCallable, Category = "YasiuMath|Trigonometry")
     double FindMinimalRadiusForIntersectingTangentsOnArc( double alfa, double beta, double symmetricWidth );
 
     /**
@@ -80,6 +80,6 @@ public:
      * @param widthB Distance from intersection for point B
      * @return Pair of radius for each circle. 
      */
-    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|Trigonometry")
+    UFUNCTION(BlueprintCallable, Category = "YasiuMath|Trigonometry")
     FVector2D FindMinimalRadiusForIntersectingTangentsOnArcAsymmetric( double alfa, double beta, double widthA, double widthB );
 };

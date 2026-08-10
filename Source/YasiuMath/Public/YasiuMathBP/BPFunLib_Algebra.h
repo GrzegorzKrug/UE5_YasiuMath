@@ -32,8 +32,8 @@ public:
      * @param ClampOut Optional Clamping to Output limits
      * @return Value remapped to given range
      */
-    UFUNCTION(BlueprintCallable, BlueprintPure, Category="Math|Yasiu|Algebra", meta=(DisplayName="Remap"))
-    float RemapFloat( const float Value, float MinIn, float MaxIn, float MinOut, float MaxOut, bool ClampOut = true );
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category="YasiuMath|Algebra", meta=(DisplayName="Remap"))
+    static float RemapFloat( const float Value, float MinIn, float MaxIn, float MinOut, float MaxOut, bool ClampOut = true );
 
     /**
      * @brief Remap double value to given range with optional clamping
@@ -46,8 +46,15 @@ public:
      * @param ClampOut Optional Clamping to Output limits
      * @return Value remapped to given range
      */
-    UFUNCTION(BlueprintCallable, BlueprintPure, Category="Math|Yasiu|Algebra", meta=(DisplayName="Remap"))
-    double RemapDouble( const double Value, double MinIn, double MaxIn, double MinOut, double MaxOut, bool ClampOut = true );
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category="YasiuMath|Algebra", meta=(DisplayName="Remap"))
+    static double RemapDouble(
+        const double Value,
+        double MinIn,
+        double MaxIn,
+        double MinOut,
+        double MaxOut,
+        bool ClampOut = true
+    );
 
     /**
      * @brief Remap vector value to given range with optional clamping
@@ -60,6 +67,13 @@ public:
      * @param ClampOut Optional Clamping to Output limits
      * @return Vector remapped to given range
      */
-    UFUNCTION(BlueprintCallable, BlueprintPure, Category="Math|Yasiu|Algebra", meta=(DisplayName="Remap"))
-    FVector RemapVector( const FVector& Value, double MinIn, double MaxIn, double MinOut, double MaxOut, bool ClampOut = true );
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category="YasiuMath|Algebra", meta=(DisplayName="Remap"))
+    static FVector RemapVector(
+        const FVector& Value,
+        double MinIn,
+        double MaxIn,
+        double MinOut,
+        double MaxOut,
+        bool ClampOut = true
+    );
 };

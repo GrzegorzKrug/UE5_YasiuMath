@@ -12,7 +12,7 @@
 1. \ref USquirrel13_RNGComponent *(Replicated,GameSave)*
 2. \ref UPCG32_RNGComponent *(Replicated,GameSave)*
 
-### Strcutures
+### Structures
 
 1. \ref FBallisticObject
 2. \ref FBallisticInterceptor

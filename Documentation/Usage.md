@@ -4,8 +4,9 @@
 
 ## Functions
 1. Right-click in the Blueprint graph.  
-2. Type category label **Math|Yasiu**.
+2. Type category label **%YasiuMath**.
 3. Select the function you need.
+\image html Images/YasiuMathMenu.png "Context Menu" width=300px
 
 #### [**Function list**](classUYasiuMathFunctionLibrary.html)
 
@@ -35,7 +36,7 @@ Squirrel Object is not treated as ActorComponent, it has to be spawned from clas
 3. In tree structure click "Add" button
 4. Find component u want to add
 
-\image html Images/AddingComponent.png "Adding component" width=300px
+\image html Images/AddingComponent.png "Adding component" width=250px
 
 ## [**List of unreal objects**](unreal.html)
 

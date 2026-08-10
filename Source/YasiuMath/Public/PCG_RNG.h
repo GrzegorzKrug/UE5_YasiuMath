@@ -35,37 +35,37 @@ public:
      * @param StateIn - model state
      * @param StreamIn - Noise pattern to generate states
      */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void InitBP( int64 StateIn, int64 StreamIn );
 
     /** @brief Get current state in PCG */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     int64 GetState() const;
 
     /** @brief Set only state in PCG */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void SetState( int64 stateIn );
 
     /** @brief Set stream variable, used for generating next states. (must bee odd or will be changed to odd) */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     void SetNoiseStream( int64 streamIn );
 
     /**
      * @brief Generate next random number
      */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     double GetNextDouble();
 
     /** @brief Return last random double in range <0, 1> */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     double GetCurrentDouble() const;
 
     /** @brief Get random value in range <A, B> */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     int GetNextInt( int A, int B );
 
     /** @brief Get random value in range <A, B> */
-    UFUNCTION(BlueprintCallable, Category="RNG")
+    UFUNCTION(BlueprintCallable, Category="Yasiu|RNG")
     int GetCurrentInt( int A, int B ) const;
 
 

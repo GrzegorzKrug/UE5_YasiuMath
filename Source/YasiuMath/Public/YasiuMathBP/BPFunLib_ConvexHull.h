@@ -26,6 +26,6 @@ public:
      * @param result Result array of input point indexes
      * @param polygonPoints Array of points in 2D Space
      */
-    UFUNCTION(BlueprintCallable, Category = "Math|Yasiu|ConvexHull")
-    void ConvexHull2D( TArray<int>& result, const TArray<FVector2D>& polygonPoints );
+    UFUNCTION(BlueprintCallable, Category = "YasiuMath|ConvexHull")
+    static void ConvexHull2D( TArray<int>& result, const TArray<FVector2D>& polygonPoints );
 };
