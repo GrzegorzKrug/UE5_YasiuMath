@@ -139,18 +139,30 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac576a4f70ca61b53c4f8eb8707058d52" id="r_ac576a4f70ca61b53c4f8eb8707058d52"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:ac576a4f70ca61b53c4f8eb8707058d52 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ac576a4f70ca61b53c4f8eb8707058d52">InterceptMissile_Linear</a> (<a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;InterceptLocation, const <a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;MissilePosition, const <a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;MissileVelocity, const double BulletSpeed)</td></tr>
-<tr class="memdesc:ac576a4f70ca61b53c4f8eb8707058d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear movement with linear velocity, Fast: O(1).  <br /></td></tr>
-<tr class="memitem:a72584fc90f76518e974cbc1a34d813f8" id="r_a72584fc90f76518e974cbc1a34d813f8"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a72584fc90f76518e974cbc1a34d813f8 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a72584fc90f76518e974cbc1a34d813f8">InterceptMissile_Dynamic</a> (<a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;PredictedLocation, <a class="el" href="structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html">ProjectileDynamicState</a>&lt; T &gt; Missile, const <a class="el" href="structYasiuMath_1_1Ballistics_1_1InterceptorParams.html">InterceptorParams</a>&lt; T &gt; &amp;Interceptor, double MaxQueryTime=10, double DeltaTime=0.1)</td></tr>
-<tr class="memdesc:a72584fc90f76518e974cbc1a34d813f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterative state prediction. Returns first possible intercept location and time.  <br /></td></tr>
+<tr class="memitem:ae8a024b4f9c6f683620978271247b8a2" id="r_ae8a024b4f9c6f683620978271247b8a2"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:ae8a024b4f9c6f683620978271247b8a2 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae8a024b4f9c6f683620978271247b8a2">InterceptMissile_Linear</a> (const <a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;MissilePosition, const <a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;MissileVelocity, const T BulletSpeed, <a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;InterceptLocation, T &amp;ImpactTime)</td></tr>
+<tr class="memdesc:ae8a024b4f9c6f683620978271247b8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear movement with linear velocity, Fast: O(1).  <br /></td></tr>
+<tr class="memitem:a21f58d3e9929dd1b01fabfe3a51ecb31" id="r_a21f58d3e9929dd1b01fabfe3a51ecb31"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a21f58d3e9929dd1b01fabfe3a51ecb31 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a21f58d3e9929dd1b01fabfe3a51ecb31">InterceptMissile_Linear</a> (const Vec3&lt; T &gt; &amp;TargetPosition, const Vec3&lt; T &gt; &amp;TargetVelocity, const T BulletSpeed, Vec3&lt; T &gt; &amp;InterceptLocation)</td></tr>
+<tr class="memdesc:a21f58d3e9929dd1b01fabfe3a51ecb31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear movement with linear velocity, Fast: O(1).  <br /></td></tr>
+<tr class="memitem:a11d41341643b97a53ed1a8e365fb0ab0" id="r_a11d41341643b97a53ed1a8e365fb0ab0"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a11d41341643b97a53ed1a8e365fb0ab0 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a11d41341643b97a53ed1a8e365fb0ab0">InterceptMissile_Dynamic</a> (<a class="el" href="structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html">ProjectileDynamicState</a>&lt; T &gt; Target, const <a class="el" href="structYasiuMath_1_1Ballistics_1_1InterceptorParams.html">InterceptorParams</a>&lt; T &gt; &amp;Interceptor, const T MaxQueryTime, const T StepTime, <a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;PredictedLocation)</td></tr>
+<tr class="memdesc:a11d41341643b97a53ed1a8e365fb0ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterative state prediction. Returns first possible intercept location and time.  <br /></td></tr>
+<tr class="memitem:a497c3af3bcb72590baec8939035b09af" id="r_a497c3af3bcb72590baec8939035b09af"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a497c3af3bcb72590baec8939035b09af template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a497c3af3bcb72590baec8939035b09af">InterceptMissile_Dynamic</a> (<a class="el" href="structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html">ProjectileDynamicState</a>&lt; T &gt; Target, const <a class="el" href="structYasiuMath_1_1Ballistics_1_1InterceptorParams.html">InterceptorParams</a>&lt; T &gt; &amp;Interceptor, const T MaxQueryTime, const T StepTime, <a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;HitLocation, T &amp;HitTime)</td></tr>
+<tr class="memdesc:a497c3af3bcb72590baec8939035b09af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterative state prediction. Returns first possible intercept location and time.  <br /></td></tr>
+<tr class="memitem:a021f498a52f4b3f64dee127a4e187ea9" id="r_a021f498a52f4b3f64dee127a4e187ea9"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a021f498a52f4b3f64dee127a4e187ea9 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a021f498a52f4b3f64dee127a4e187ea9">InterceptMissile_Dynamic</a> (<a class="el" href="structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html">ProjectileDynamicState</a>&lt; T &gt; Target, const <a class="el" href="structYasiuMath_1_1Ballistics_1_1InterceptorParams.html">InterceptorParams</a>&lt; T &gt; &amp;Interceptor, const T MaxQueryTime, const T StepTime, const T AccurateStepTime, <a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;HitLocation)</td></tr>
+<tr class="memdesc:a021f498a52f4b3f64dee127a4e187ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterative state prediction. Returns first possible intercept location and time.  <br /></td></tr>
+<tr class="memitem:acf78cb11f00a55252ca69388de2a81bd" id="r_acf78cb11f00a55252ca69388de2a81bd"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:acf78cb11f00a55252ca69388de2a81bd template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#acf78cb11f00a55252ca69388de2a81bd">InterceptMissile_Dynamic</a> (<a class="el" href="structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html">ProjectileDynamicState</a>&lt; T &gt; Target, const <a class="el" href="structYasiuMath_1_1Ballistics_1_1InterceptorParams.html">InterceptorParams</a>&lt; T &gt; &amp;Interceptor, const T MaxQueryTime, const T StepTime, const T AccurateStepTime, <a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;HitLocation, T &amp;HitTime)</td></tr>
+<tr class="memdesc:acf78cb11f00a55252ca69388de2a81bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">FULL IMPL.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Linear and dynamic objects simulation / prediction. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a72584fc90f76518e974cbc1a34d813f8" name="a72584fc90f76518e974cbc1a34d813f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72584fc90f76518e974cbc1a34d813f8">&#9670;&#160;</a></span>InterceptMissile_Dynamic()</h2>
+<a id="a021f498a52f4b3f64dee127a4e187ea9" name="a021f498a52f4b3f64dee127a4e187ea9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a021f498a52f4b3f64dee127a4e187ea9">&#9670;&#160;</a></span>InterceptMissile_Dynamic() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,12 +172,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">bool YasiuMath::Ballistics::InterceptMissile_Dynamic </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>PredictedLocation</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html">ProjectileDynamicState</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>Missile</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html">ProjectileDynamicState</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>Target</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -175,12 +182,22 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>MaxQueryTime</em></span><span class="paramdefsep"> = </span><span class="paramdefval">10</span>, </td>
+          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>MaxQueryTime</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>DeltaTime</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.1</span>&#160;)</td>
+          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>StepTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>AccurateStepTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>HitLocation</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -192,11 +209,12 @@ template&lt;typename T&gt; </div>
 Suggested <b>Delta</b> range: &lt;0.1 , 1&gt;. Depending on space and distance.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">PredictedLocation</td><td>Predicted intercept location </td></tr>
-    <tr><td class="paramname">Missile</td><td>State of missile </td></tr>
+    <tr><td class="paramname">Target</td><td>State of missile </td></tr>
     <tr><td class="paramname">Interceptor</td><td>Params of interceptor </td></tr>
     <tr><td class="paramname">MaxQueryTime</td><td>Prediction time to intercept </td></tr>
-    <tr><td class="paramname">DeltaTime</td><td>Prediction resolution, how big steps to make. Smaller steps = more steps. </td></tr>
+    <tr><td class="paramname">StepTime</td><td>Prediction resolution, how big steps to make. Smaller steps = more steps. </td></tr>
+    <tr><td class="paramname">AccurateStepTime</td><td>Stepsize used in last phase to determine accurate result, 0=Skip accurate phase </td></tr>
+    <tr><td class="paramname">HitLocation</td><td>Predicted intercept location </td></tr>
   </table>
   </dd>
 </dl>
@@ -204,8 +222,196 @@ Suggested <b>Delta</b> range: &lt;0.1 , 1&gt;. Depending on space and distance.<
 
 </div>
 </div>
-<a id="ac576a4f70ca61b53c4f8eb8707058d52" name="ac576a4f70ca61b53c4f8eb8707058d52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac576a4f70ca61b53c4f8eb8707058d52">&#9670;&#160;</a></span>InterceptMissile_Linear()</h2>
+<a id="acf78cb11f00a55252ca69388de2a81bd" name="acf78cb11f00a55252ca69388de2a81bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf78cb11f00a55252ca69388de2a81bd">&#9670;&#160;</a></span>InterceptMissile_Dynamic() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool YasiuMath::Ballistics::InterceptMissile_Dynamic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html">ProjectileDynamicState</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>Target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structYasiuMath_1_1Ballistics_1_1InterceptorParams.html">InterceptorParams</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>Interceptor</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>MaxQueryTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>StepTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>AccurateStepTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>HitLocation</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;</td>          <td class="paramname"><span class="paramname"><em>HitTime</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FULL IMPL. </p>
+<p>Iterative state prediction. Returns first possible intercept location and time.</p>
+<p>Accuracy is based on StepTime and slightly overshoot position.</p>
+<p>AccurateStepTime will iterate positon in last step to evaluate more precise hit. AccurateStepTime=0 will not do better estimation.</p>
+<p>Implementation with all arguments.</p>
+<dl class="section note"><dt>Note</dt><dd>There is no iteration limit. Loop is restricted by <b>N = QueryTime / DeltaTime</b> </dd>
+<dd>
+Suggested <b>Delta</b> range: &lt;0.1 , 1&gt;. Depending on space and distance.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Target</td><td>State of missile </td></tr>
+    <tr><td class="paramname">Interceptor</td><td>Params of interceptor </td></tr>
+    <tr><td class="paramname">MaxQueryTime</td><td>Prediction time to intercept </td></tr>
+    <tr><td class="paramname">StepTime</td><td>Prediction resolution, how big steps to make. Smaller steps = more steps. </td></tr>
+    <tr><td class="paramname">AccurateStepTime</td><td>SmallStep used to estimate more accurate results </td></tr>
+    <tr><td class="paramname">HitLocation</td><td>Predicted intercept location </td></tr>
+    <tr><td class="paramname">HitTime</td><td>Estimated time </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Flag is solution found estimated intercept location </dd></dl>
+
+</div>
+</div>
+<a id="a497c3af3bcb72590baec8939035b09af" name="a497c3af3bcb72590baec8939035b09af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a497c3af3bcb72590baec8939035b09af">&#9670;&#160;</a></span>InterceptMissile_Dynamic() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool YasiuMath::Ballistics::InterceptMissile_Dynamic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html">ProjectileDynamicState</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>Target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structYasiuMath_1_1Ballistics_1_1InterceptorParams.html">InterceptorParams</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>Interceptor</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>MaxQueryTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>StepTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>HitLocation</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;</td>          <td class="paramname"><span class="paramname"><em>HitTime</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Iterative state prediction. Returns first possible intercept location and time. </p>
+<p>Accuracy is based on DeltaTime.</p>
+<p>Return HitTime arguments.</p>
+<dl class="section note"><dt>Note</dt><dd>There is no iteration limit. Loop is restricted by <b>N = QueryTime / DeltaTime</b> </dd>
+<dd>
+Suggested <b>Delta</b> range: &lt;0.1 , 1&gt;. Depending on space and distance.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Target</td><td>State of missile </td></tr>
+    <tr><td class="paramname">Interceptor</td><td>Params of interceptor </td></tr>
+    <tr><td class="paramname">MaxQueryTime</td><td>Prediction time to intercept </td></tr>
+    <tr><td class="paramname">StepTime</td><td>Prediction resolution, how big steps to make. Smaller steps = more steps. </td></tr>
+    <tr><td class="paramname">HitLocation</td><td>Predicted intercept location </td></tr>
+    <tr><td class="paramname">HitTime</td><td>Estimated time </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Flag is solution found estimated intercept location </dd></dl>
+
+</div>
+</div>
+<a id="a11d41341643b97a53ed1a8e365fb0ab0" name="a11d41341643b97a53ed1a8e365fb0ab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11d41341643b97a53ed1a8e365fb0ab0">&#9670;&#160;</a></span>InterceptMissile_Dynamic() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool YasiuMath::Ballistics::InterceptMissile_Dynamic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html">ProjectileDynamicState</a>&lt; T &gt;</td>          <td class="paramname"><span class="paramname"><em>Target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structYasiuMath_1_1Ballistics_1_1InterceptorParams.html">InterceptorParams</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>Interceptor</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>MaxQueryTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>StepTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>PredictedLocation</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Iterative state prediction. Returns first possible intercept location and time. </p>
+<p>Accuracy is based on DeltaTime.</p>
+<p>Minimal arguments.</p>
+<dl class="section note"><dt>Note</dt><dd>There is no iteration limit. Loop is restricted by <b>N = QueryTime / DeltaTime</b> </dd>
+<dd>
+Suggested <b>Delta</b> range: &lt;0.1 , 1&gt;. Depending on space and distance.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Target</td><td>State of missile </td></tr>
+    <tr><td class="paramname">Interceptor</td><td>Params of interceptor </td></tr>
+    <tr><td class="paramname">MaxQueryTime</td><td>Prediction time to intercept </td></tr>
+    <tr><td class="paramname">StepTime</td><td>Prediction resolution, how big steps to make. Smaller steps = more steps. </td></tr>
+    <tr><td class="paramname">PredictedLocation</td><td>Predicted intercept location </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Flag is solution found estimated intercept location </dd></dl>
+
+</div>
+</div>
+<a id="ae8a024b4f9c6f683620978271247b8a2" name="ae8a024b4f9c6f683620978271247b8a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8a024b4f9c6f683620978271247b8a2">&#9670;&#160;</a></span>InterceptMissile_Linear() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,11 +421,6 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">bool YasiuMath::Ballistics::InterceptMissile_Linear </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>InterceptLocation</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const <a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>MissilePosition</em></span>, </td>
         </tr>
         <tr>
@@ -230,7 +431,17 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const double</td>          <td class="paramname"><span class="paramname"><em>BulletSpeed</em></span>&#160;)</td>
+          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>BulletSpeed</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structYasiuMath_1_1Types_1_1Vec3.html">Types::Vec3</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>InterceptLocation</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;</td>          <td class="paramname"><span class="paramname"><em>ImpactTime</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -238,10 +449,56 @@ template&lt;typename T&gt; </div>
 <p>Linear movement with linear velocity, Fast: O(1). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">InterceptLocation</td><td>Position relative to bullet starting position </td></tr>
     <tr><td class="paramname">MissilePosition</td><td>Current Relative position </td></tr>
     <tr><td class="paramname">MissileVelocity</td><td>Current Vector </td></tr>
     <tr><td class="paramname">BulletSpeed</td><td>Maximal bullet speed </td></tr>
+    <tr><td class="paramname">InterceptLocation</td><td>Position relative to bullet starting position </td></tr>
+    <tr><td class="paramname">ImpactTime</td><td>Predicted time </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Flag if solution is valid </dd></dl>
+
+</div>
+</div>
+<a id="a21f58d3e9929dd1b01fabfe3a51ecb31" name="a21f58d3e9929dd1b01fabfe3a51ecb31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21f58d3e9929dd1b01fabfe3a51ecb31">&#9670;&#160;</a></span>InterceptMissile_Linear() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool YasiuMath::Ballistics::InterceptMissile_Linear </td>
+          <td>(</td>
+          <td class="paramtype">const Vec3&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>TargetPosition</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Vec3&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>TargetVelocity</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T</td>          <td class="paramname"><span class="paramname"><em>BulletSpeed</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vec3&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>InterceptLocation</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Linear movement with linear velocity, Fast: O(1). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TargetPosition</td><td>Current Relative position </td></tr>
+    <tr><td class="paramname">TargetVelocity</td><td>Current Vector </td></tr>
+    <tr><td class="paramname">BulletSpeed</td><td>Maximal bullet speed </td></tr>
+    <tr><td class="paramname">InterceptLocation</td><td>Position relative to bullet starting position </td></tr>
   </table>
   </dd>
 </dl>

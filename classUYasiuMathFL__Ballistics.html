@@ -147,10 +147,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5b654df12dc6c7b411b7b8db4a68fe21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single iterative step.  <br /></td></tr>
 <tr class="memitem:a94c7f5a0ec4588700f0b135c816dc727" id="r_a94c7f5a0ec4588700f0b135c816dc727"><td class="memItemLeft"><a class="el" href="structFBallisticObject.html">FBallisticObject</a>&#160;</td><td class="memItemRight"><a class="el" href="#a94c7f5a0ec4588700f0b135c816dc727">AutoStep</a> (const <a class="el" href="structFBallisticObject.html">FBallisticObject</a> &amp;Ob, const float PredictTime, const float DeltaStep)</td></tr>
 <tr class="memdesc:a94c7f5a0ec4588700f0b135c816dc727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predict multiple steps in loop. Optimized for AirDrag=0, see details...  <br /></td></tr>
-<tr class="memitem:a42e0c3c3ebccd800e32b528d9234adaf" id="r_a42e0c3c3ebccd800e32b528d9234adaf"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a42e0c3c3ebccd800e32b528d9234adaf">Intercept_Linear</a> (const FVector &amp;TargetPosition, const FVector &amp;TargetVelocity, double InterceptSpeed, FVector &amp;OutLocation)</td></tr>
-<tr class="memdesc:a42e0c3c3ebccd800e32b528d9234adaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prediction function for linear objects. Works only for objects with constant speeds, can not accelerate or be affected by air resistance.  <br /></td></tr>
-<tr class="memitem:a3d673ab413e4ab05af45272b758aad70" id="r_a3d673ab413e4ab05af45272b758aad70"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a3d673ab413e4ab05af45272b758aad70">Intercept_Dynamic</a> (const <a class="el" href="structFBallisticObject.html">FBallisticObject</a> &amp;Target, const <a class="el" href="structFBallisticInterceptor.html">FBallisticInterceptor</a> Interceptor, FVector &amp;OutLocation, float MaxQueryTime=10, float DeltaStep=0.1)</td></tr>
-<tr class="memdesc:a3d673ab413e4ab05af45272b758aad70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prediction function for objects with variable speed and resistance.  <br /></td></tr>
+<tr class="memitem:a0eca7d25f6751c126ed1a4b2e02a4cf2" id="r_a0eca7d25f6751c126ed1a4b2e02a4cf2"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0eca7d25f6751c126ed1a4b2e02a4cf2">Intercept_Linear</a> (const FVector &amp;TargetPosition, const FVector &amp;TargetVelocity, double InterceptSpeed, FVector &amp;OutLocation, double &amp;InterceptTime)</td></tr>
+<tr class="memdesc:a0eca7d25f6751c126ed1a4b2e02a4cf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prediction function for linear objects. Works only for objects with constant speeds, can not accelerate or be affected by air resistance.  <br /></td></tr>
+<tr class="memitem:a8df01972ec051bfffffe60ba56cb349b" id="r_a8df01972ec051bfffffe60ba56cb349b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8df01972ec051bfffffe60ba56cb349b">Intercept_Dynamic</a> (const <a class="el" href="structFBallisticObject.html">FBallisticObject</a> &amp;Target, const <a class="el" href="structFBallisticInterceptor.html">FBallisticInterceptor</a> Interceptor, FVector &amp;InterceptLocation, double &amp;InterceptTime, double MaxQueryTime=10, double DeltaStep=0.1)</td></tr>
+<tr class="memdesc:a8df01972ec051bfffffe60ba56cb349b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prediction function for objects with variable speed and resistance.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function library used for projectile prediction and missile interception calculations. </p>
@@ -226,8 +226,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3d673ab413e4ab05af45272b758aad70" name="a3d673ab413e4ab05af45272b758aad70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d673ab413e4ab05af45272b758aad70">&#9670;&#160;</a></span>Intercept_Dynamic()</h2>
+<a id="a8df01972ec051bfffffe60ba56cb349b" name="a8df01972ec051bfffffe60ba56cb349b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8df01972ec051bfffffe60ba56cb349b">&#9670;&#160;</a></span>Intercept_Dynamic()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,17 +245,22 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">FVector &amp;</td>          <td class="paramname"><span class="paramname"><em>OutLocation</em></span>, </td>
+          <td class="paramtype">FVector &amp;</td>          <td class="paramname"><span class="paramname"><em>InterceptLocation</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>MaxQueryTime</em></span><span class="paramdefsep"> = </span><span class="paramdefval">10</span>, </td>
+          <td class="paramtype">double &amp;</td>          <td class="paramname"><span class="paramname"><em>InterceptTime</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>DeltaStep</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.1</span>&#160;)</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>MaxQueryTime</em></span><span class="paramdefsep"> = </span><span class="paramdefval">10</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>DeltaStep</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0.1</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -265,7 +270,8 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">Target</td><td>Struct with dynamic parameters of target </td></tr>
     <tr><td class="paramname">Interceptor</td><td>Struct with dynamic parameters of interceptor </td></tr>
-    <tr><td class="paramname">OutLocation</td><td>Output intercept location </td></tr>
+    <tr><td class="paramname">InterceptLocation</td><td>Output intercept location </td></tr>
+    <tr><td class="paramname">InterceptTime</td><td>Estimated time to hit </td></tr>
     <tr><td class="paramname">MaxQueryTime</td><td>Time range used to find solution. </td></tr>
     <tr><td class="paramname">DeltaStep</td><td>Single calculation time. Keep in small range &lt;0.01, 1&gt; (for accuracy). </td></tr>
   </table>
@@ -275,8 +281,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a42e0c3c3ebccd800e32b528d9234adaf" name="a42e0c3c3ebccd800e32b528d9234adaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42e0c3c3ebccd800e32b528d9234adaf">&#9670;&#160;</a></span>Intercept_Linear()</h2>
+<a id="a0eca7d25f6751c126ed1a4b2e02a4cf2" name="a0eca7d25f6751c126ed1a4b2e02a4cf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eca7d25f6751c126ed1a4b2e02a4cf2">&#9670;&#160;</a></span>Intercept_Linear()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -299,7 +305,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">FVector &amp;</td>          <td class="paramname"><span class="paramname"><em>OutLocation</em></span>&#160;)</td>
+          <td class="paramtype">FVector &amp;</td>          <td class="paramname"><span class="paramname"><em>OutLocation</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;</td>          <td class="paramname"><span class="paramname"><em>InterceptTime</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -311,6 +322,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">TargetVelocity</td><td>Target input velocity </td></tr>
     <tr><td class="paramname">InterceptSpeed</td><td>Interceptor speed in any direction </td></tr>
     <tr><td class="paramname">OutLocation</td><td>Output intercept location </td></tr>
+    <tr><td class="paramname">InterceptTime</td><td></td></tr>
   </table>
   </dd>
 </dl>
