@@ -134,9 +134,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structFBallist
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aac015480c0e0303e40d02b5eca21eafb" id="r_aac015480c0e0303e40d02b5eca21eafb"><td class="memItemLeft"><a id="aac015480c0e0303e40d02b5eca21eafb" name="aac015480c0e0303e40d02b5eca21eafb"></a>
-double&#160;</td><td class="memItemRight"><b>InitialSpeed</b> = 0</td></tr>
-<tr class="memdesc:aac015480c0e0303e40d02b5eca21eafb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Speed at which object starts moving. <br /></td></tr>
+<tr class="memitem:aac015480c0e0303e40d02b5eca21eafb" id="r_aac015480c0e0303e40d02b5eca21eafb"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#aac015480c0e0303e40d02b5eca21eafb">InitialSpeed</a> = 0</td></tr>
+<tr class="memdesc:aac015480c0e0303e40d02b5eca21eafb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Speed at which object starts moving, should move towards correct location!  <br /></td></tr>
 <tr class="memitem:a42cd14e613a5b6a47112c8598ec7fe10" id="r_a42cd14e613a5b6a47112c8598ec7fe10"><td class="memItemLeft"><a id="a42cd14e613a5b6a47112c8598ec7fe10" name="a42cd14e613a5b6a47112c8598ec7fe10"></a>
 double&#160;</td><td class="memItemRight"><b>Acceleration</b> = 0</td></tr>
 <tr class="memdesc:a42cd14e613a5b6a47112c8598ec7fe10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acceleration in any direction. <br /></td></tr>
@@ -150,7 +149,25 @@ double&#160;</td><td class="memItemRight"><b>AirResistance</b> = 0</td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Type for passing parameters, see details how use... </p>
 <dl class="section note"><dt>Note</dt><dd>Check <a class="el" href="classUYasiuMathFL__Ballistics.html" title="UYasiuMathFL_Ballistics">UYasiuMathFL_Ballistics</a> for usage </dd></dl>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="aac015480c0e0303e40d02b5eca21eafb" name="aac015480c0e0303e40d02b5eca21eafb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac015480c0e0303e40d02b5eca21eafb">&#9670;&#160;</a></span>InitialSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double FBallisticInterceptor::InitialSpeed = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Speed at which object starts moving, should move towards correct location! </p>
+<p>Objects moving backwards will yield wrong result. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>Source/YasiuMath/Public/YasiuMathBP/<a class="el" href="BPFunLib__Ballistic_8h_source.html">BPFunLib_Ballistic.h</a></li>
 </ul>
 </div><!-- contents -->

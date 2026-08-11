@@ -10,5 +10,5 @@ var searchData=
   ['all_20classes_20list_7',['&lt;a href=&quot;annotated.html&quot;&gt;&lt;b&gt;All Classes list&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md35',1,'']]],
   ['all_20functions_20for_20c_20grouped_20into_3a_20name_20spaces_8',['List of all &lt;a href=&quot;namespacemembers_func.html&quot;&gt;&lt;b&gt;functions for C++&lt;/b&gt;&lt;/a&gt; grouped into: &lt;a href=&quot;namespaces.html&quot;&gt;&lt;b&gt;Name spaces&lt;/b&gt;&lt;/a&gt;',['../baseuse.html#autotoc_md33',1,'']]],
   ['and_20extract_20the_20plugin_9',['1. Download and Extract the Plugin',['../install.html#autotoc_md11',1,'']]],
-  ['autostep_10',['AutoStep',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html#a67f4105cc068c7232b33df5598a948af',1,'YasiuMath::Ballistics::ProjectileDynamicState::AutoStep()'],['../classUYasiuMathFL__Ballistics.html#a94c7f5a0ec4588700f0b135c816dc727',1,'UYasiuMathFL_Ballistics::AutoStep()']]]
+  ['autostep_10',['AutoStep',['../structYasiuMath_1_1Ballistics_1_1ProjectileDynamicState.html#a67f4105cc068c7232b33df5598a948af',1,'YasiuMath::Ballistics::ProjectileDynamicState::AutoStep()'],['../classUYasiuMathFL__Ballistics.html#a7b366be4d2fa14ab49fc040f5cc04563',1,'UYasiuMathFL_Ballistics::AutoStep()']]]
 ];

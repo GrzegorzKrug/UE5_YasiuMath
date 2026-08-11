@@ -1,4 +1,4 @@
 var classUYasiuMathFL__ConvexHull =
 [
-    [ "ConvexHull2D", "classUYasiuMathFL__ConvexHull.html#a5698c161475c78a4a848071f25d54b0b", null ]
+    [ "ConvexHull2D", "classUYasiuMathFL__ConvexHull.html#a731225caec67760ec43a50de0d3d392c", null ]
 ];

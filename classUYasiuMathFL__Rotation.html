@@ -141,23 +141,26 @@ Inheritance diagram for UYasiuMathFL_Rotation:</div>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a997958bb8b9e3dc92bf2854365766565" id="r_a997958bb8b9e3dc92bf2854365766565"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a997958bb8b9e3dc92bf2854365766565">ClipAngleToCycle</a> (double angle, double period)</td></tr>
-<tr class="memdesc:a997958bb8b9e3dc92bf2854365766565"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize angle to range &lt;0, period&gt;. Unit independent.  <br /></td></tr>
-<tr class="memitem:a929e4b37a96a64fcf6cb7c89b1788d58" id="r_a929e4b37a96a64fcf6cb7c89b1788d58"><td class="memItemLeft">FVector&#160;</td><td class="memItemRight"><a class="el" href="#a929e4b37a96a64fcf6cb7c89b1788d58">RotateBoundingBox</a> (const FVector &amp;BoxSize, const FQuat &amp;Rotation)</td></tr>
-<tr class="memdesc:a929e4b37a96a64fcf6cb7c89b1788d58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate Box and calculate new bounding box along same axes to fix old box inside.213123.  <br /></td></tr>
-<tr class="memitem:a809ab6135389fb033bde343de023eb1c" id="r_a809ab6135389fb033bde343de023eb1c"><td class="memItemLeft">FRotator&#160;</td><td class="memItemRight"><a class="el" href="#a809ab6135389fb033bde343de023eb1c">RotateCamera</a> (const FRotator &amp;CurrentRotator, float YawChange, float PitchChange, const float PitchLimit=85)</td></tr>
-<tr class="memdesc:a809ab6135389fb033bde343de023eb1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust rotator yaw and pitch and keeps roll 0.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aec8ef91e1020e6a1fac96457bb0e64ec" id="r_aec8ef91e1020e6a1fac96457bb0e64ec"><td class="memItemLeft">static double&#160;</td><td class="memItemRight"><a class="el" href="#aec8ef91e1020e6a1fac96457bb0e64ec">ClipAngleToCycle</a> (double angle, double period)</td></tr>
+<tr class="memdesc:aec8ef91e1020e6a1fac96457bb0e64ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize angle to range &lt;0, period&gt;. Unit independent.  <br /></td></tr>
+<tr class="memitem:a289e24b3e264d7c9d5808638409b172c" id="r_a289e24b3e264d7c9d5808638409b172c"><td class="memItemLeft">static FVector&#160;</td><td class="memItemRight"><a class="el" href="#a289e24b3e264d7c9d5808638409b172c">RotateBoundingBox</a> (const FVector &amp;BoxSize, const FQuat &amp;Rotation)</td></tr>
+<tr class="memdesc:a289e24b3e264d7c9d5808638409b172c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate Box and calculate new bounding box along same axes to fix old box inside.213123.  <br /></td></tr>
+<tr class="memitem:ae3a1b4614c5f4d349f439475a6e93691" id="r_ae3a1b4614c5f4d349f439475a6e93691"><td class="memItemLeft">static FRotator&#160;</td><td class="memItemRight"><a class="el" href="#ae3a1b4614c5f4d349f439475a6e93691">RotateCamera</a> (const FRotator &amp;CurrentRotator, float YawChange, float PitchChange, const float PitchLimit=85)</td></tr>
+<tr class="memdesc:ae3a1b4614c5f4d349f439475a6e93691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjust rotator yaw and pitch and keeps roll 0.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>BP Function library related to rotation and angles. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a997958bb8b9e3dc92bf2854365766565" name="a997958bb8b9e3dc92bf2854365766565"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a997958bb8b9e3dc92bf2854365766565">&#9670;&#160;</a></span>ClipAngleToCycle()</h2>
+<a id="aec8ef91e1020e6a1fac96457bb0e64ec" name="aec8ef91e1020e6a1fac96457bb0e64ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec8ef91e1020e6a1fac96457bb0e64ec">&#9670;&#160;</a></span>ClipAngleToCycle()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">double UYasiuMathFL_Rotation::ClipAngleToCycle </td>
@@ -170,6 +173,11 @@ Public Member Functions</h2></td></tr>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>period</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Normalize angle to range &lt;0, period&gt;. Unit independent. </p>
@@ -183,11 +191,14 @@ Result -&gt; <b>8</b> </dd></dl>
 
 </div>
 </div>
-<a id="a929e4b37a96a64fcf6cb7c89b1788d58" name="a929e4b37a96a64fcf6cb7c89b1788d58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a929e4b37a96a64fcf6cb7c89b1788d58">&#9670;&#160;</a></span>RotateBoundingBox()</h2>
+<a id="a289e24b3e264d7c9d5808638409b172c" name="a289e24b3e264d7c9d5808638409b172c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a289e24b3e264d7c9d5808638409b172c">&#9670;&#160;</a></span>RotateBoundingBox()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">FVector UYasiuMathFL_Rotation::RotateBoundingBox </td>
@@ -200,6 +211,11 @@ Result -&gt; <b>8</b> </dd></dl>
           <td class="paramtype">const FQuat &amp;</td>          <td class="paramname"><span class="paramname"><em>Rotation</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Rotate Box and calculate new bounding box along same axes to fix old box inside.213123. </p>
@@ -215,11 +231,14 @@ Result -&gt; <b>8</b> </dd></dl>
 
 </div>
 </div>
-<a id="a809ab6135389fb033bde343de023eb1c" name="a809ab6135389fb033bde343de023eb1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a809ab6135389fb033bde343de023eb1c">&#9670;&#160;</a></span>RotateCamera()</h2>
+<a id="ae3a1b4614c5f4d349f439475a6e93691" name="ae3a1b4614c5f4d349f439475a6e93691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3a1b4614c5f4d349f439475a6e93691">&#9670;&#160;</a></span>RotateCamera()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">FRotator UYasiuMathFL_Rotation::RotateCamera </td>
@@ -242,6 +261,11 @@ Result -&gt; <b>8</b> </dd></dl>
           <td class="paramtype">const float</td>          <td class="paramname"><span class="paramname"><em>PitchLimit</em></span><span class="paramdefsep"> = </span><span class="paramdefval">85</span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Adjust rotator yaw and pitch and keeps roll 0. </p>
